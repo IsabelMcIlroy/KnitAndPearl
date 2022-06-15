@@ -1,8 +1,13 @@
 import KnittingTitle from './KnittingTitle'
+import NewOrView from './NewOrView'
 
 const App = () => {
   return (
-    <KnittingTitle />
+    <>
+      <KnittingTitle />
+      <NewOrView />
+      <NewOrView />
+    </>
   )
 }
 
