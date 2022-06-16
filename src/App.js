@@ -4,9 +4,12 @@ import wool from "./images/wool.jpg"
 
 const App = () => {
   return (
-    <div styles={{backgroundImage:`url(${wool})`,
-    height: '100px',
-    width: '100px'}}>
+    <div style={{backgroundImage:`url(${wool})`,
+    height: '100vh',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    marginTop: '-21px'
+    }}>
       <KnittingTitle />
       <NewOrView Title="New Project" Button="New" />
       <NewOrView Title="View Projects" Button="View" />
