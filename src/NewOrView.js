@@ -1,9 +1,10 @@
 
-const NewOrView = () => {
+
+const NewOrView = ({Title, Button}) => {
     return (
        <>
-       <h3>Hello</h3>
-       <button>New Project</button>
+       <h3>{Title}</h3>
+       <button>{Button}</button>
        </>
     )
 }

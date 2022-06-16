@@ -5,8 +5,8 @@ const App = () => {
   return (
     <>
       <KnittingTitle />
-      <NewOrView />
-      <NewOrView />
+      <NewOrView Title="New Project" Button="New" />
+      <NewOrView Title="View Projects" Button="View" />
     </>
   )
 }
