@@ -1,6 +1,6 @@
-import KnittingTitle from './components/KnittingTitle'
-import NewOrView from './components/NewOrView'
-import wool from "./images/wool.jpg"
+import KnittingTitle from './components/KnittingTitle';
+import NewOrView from './components/NewOrView';
+import wool from "./images/wool.jpg";
 
 const App = () => {
   return (
