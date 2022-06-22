@@ -1,4 +1,4 @@
-const NewOrView = ({ Title, Button }) => {
+export const NewOrView = ({ Title, Button }) => {
   return (
     <>
       <h3>{Title}</h3>
@@ -6,5 +6,3 @@ const NewOrView = ({ Title, Button }) => {
     </>
   );
 };
-
-export default NewOrView;
