@@ -18,4 +18,15 @@ const Knittingtheme = createTheme({
       main: palette.knittingBlue,
     },
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        btnText: {
+          fontSize: "1rem",
+          backgroundColor: palette.knittingRosewood,
+          color: palette.knittingGray,
+        },
+      },
+    },
+  },
 });
