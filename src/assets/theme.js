@@ -2,7 +2,7 @@ import { createTheme } from "@mui/material";
 
 export const palette = {
   knittingGray: "#717568",
-  knittingWhite: "#61C9A8",
+  knittingBlue: "#002642",
   knittingRosewood: "#650D1B",
 };
 
@@ -14,8 +14,8 @@ const Knittingtheme = createTheme({
     secondary: {
       main: palette.knittingGray,
     },
-    white: {
-      main: palette.knittingWhite,
+    blue: {
+      main: palette.knittingBlue,
     },
   },
 });

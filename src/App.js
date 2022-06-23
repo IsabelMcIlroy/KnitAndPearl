@@ -1,3 +1,4 @@
+import { Title } from "./components/title.js";
 import { WelcomePageOptionButtons } from "./components/WelcomePageOptionButtons";
 import wool from "./images/wool.jpg";
 import logo from "./images/logo.png";
@@ -13,7 +14,7 @@ const App = () => {
         marginTop: "-21px",
       }}
     >
-      <h1>Knitting Project Manager</h1>
+      <Title titleText={"Knitting Project Manager"} />
       <WelcomePageOptionButtons btnText={"New Project"} />
       <img src={logo} alt="ball of wool" />
       <WelcomePageOptionButtons btnText={"View Projects"} />
