@@ -14,8 +14,8 @@ const App = () => {
       }}
     >
       <KnittingTitle />
-      <NewOrView Title="New Project" Button="New" />
-      <NewOrView Title="View Projects" Button="View" />
+      <NewOrView btnText={"new"} />
+      <NewOrView btnText={"view"} />
     </div>
   );
 };

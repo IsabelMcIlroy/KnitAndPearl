@@ -1,8 +1,11 @@
-export const NewOrView = ({ Title, Button }) => {
+import Button from "@mui/material/Button";
+
+export const NewOrView = ({ btnText }) => {
   return (
     <>
-      <h3>{Title}</h3>
-      <button>{Button}</button>
+      <Button variant="contained" size="large" color="secondary">
+        {btnText}
+      </Button>
     </>
   );
 };
