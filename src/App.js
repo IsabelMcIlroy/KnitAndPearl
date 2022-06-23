@@ -15,9 +15,9 @@ const App = () => {
       }}
     >
       <KnittingTitle />
-      <NewOrView btnText={"new"} />
+      <NewOrView btnText={"New Project"} />
       <img src={logo} alt="ball of wool" />
-      <NewOrView btnText={"view"} />
+      <NewOrView btnText={"View Projects"} />
     </div>
   );
 };
