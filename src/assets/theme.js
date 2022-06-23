@@ -6,7 +6,7 @@ export const palette = {
   knittingRosewood: "#650D1B",
 };
 
-const Kniitingtheme = createTheme({
+const Knittingtheme = createTheme({
   palette: {
     primary: {
       main: palette.knittingRosewood,
