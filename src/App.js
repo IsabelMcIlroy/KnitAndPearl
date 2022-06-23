@@ -1,4 +1,3 @@
-import { KnittingTitle } from "./components/KnittingTitle";
 import { NewOrView } from "./components/NewOrView";
 import wool from "./images/wool.jpg";
 import logo from "./images/logo.png";
@@ -14,7 +13,7 @@ const App = () => {
         marginTop: "-21px",
       }}
     >
-      <KnittingTitle />
+      <h1>Knitting Project Manager</h1>
       <NewOrView btnText={"New Project"} />
       <img src={logo} alt="ball of wool" />
       <NewOrView btnText={"View Projects"} />
