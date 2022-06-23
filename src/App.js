@@ -1,7 +1,7 @@
 import { Title } from "./components/title.js";
 import { WelcomePageOptionButtons } from "./components/WelcomePageOptionButtons";
 import wool from "./images/wool.jpg";
-import logo from "./images/logo.png";
+import { Logo } from "./components/logo";
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
       <div style={{ textAlign: "center", paddingTop: "100px" }}>
         <Title titleText={"Knitting Project Manager"} />
         <WelcomePageOptionButtons btnText={"New Project"} />
-        <img src={logo} alt="ball of wool" />
+        <Logo />
         <WelcomePageOptionButtons btnText={"View Projects"} />
       </div>
     </div>
