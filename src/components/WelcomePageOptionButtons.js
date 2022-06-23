@@ -10,6 +10,7 @@ export const WelcomePageOptionButtons = ({ btnText }) => {
         sx={{
           backgroundColor: palette.knittingRosewood,
           color: palette.knittingGray,
+          margin: "0 20px",
         }}
       >
         {btnText}
