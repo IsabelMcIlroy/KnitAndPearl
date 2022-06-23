@@ -7,7 +7,10 @@ export const WelcomePageOptionButtons = ({ btnText }) => {
       <Button
         variant="contained"
         size="large"
-        sx={{ backgroundColor: palette.knittingRosewood }}
+        sx={{
+          backgroundColor: palette.knittingRosewood,
+          color: palette.knittingGray,
+        }}
       >
         {btnText}
       </Button>

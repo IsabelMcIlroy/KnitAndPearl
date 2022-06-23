@@ -1,8 +1,8 @@
 import { createTheme } from "@mui/material";
 
 export const palette = {
-  knittingBlack: "#272727",
-  knittingWhite: "#F3EFE0",
+  knittingGray: "#717568",
+  knittingWhite: "#61C9A8",
   knittingRosewood: "#650D1B",
 };
 
@@ -12,7 +12,7 @@ const Knittingtheme = createTheme({
       main: palette.knittingRosewood,
     },
     secondary: {
-      main: palette.knittingBlack,
+      main: palette.knittingGray,
     },
     white: {
       main: palette.knittingWhite,
