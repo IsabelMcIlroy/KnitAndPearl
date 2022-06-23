@@ -13,7 +13,7 @@ const App = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div style={{ paddingLeft: "30%", paddingTop: "10%" }}>
+      <div style={{ textAlign: "center", paddingTop: "100px" }}>
         <Title titleText={"Knitting Project Manager"} />
         <WelcomePageOptionButtons btnText={"New Project"} />
         <img src={logo} alt="ball of wool" />
