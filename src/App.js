@@ -1,4 +1,4 @@
-import { NewOrView } from "./components/NewOrView";
+import { WelcomePageOptionButtons } from "./components/WelcomePageOptionButtons";
 import wool from "./images/wool.jpg";
 import logo from "./images/logo.png";
 
@@ -14,9 +14,9 @@ const App = () => {
       }}
     >
       <h1>Knitting Project Manager</h1>
-      <NewOrView btnText={"New Project"} />
+      <WelcomePageOptionButtons btnText={"New Project"} />
       <img src={logo} alt="ball of wool" />
-      <NewOrView btnText={"View Projects"} />
+      <WelcomePageOptionButtons btnText={"View Projects"} />
     </div>
   );
 };
