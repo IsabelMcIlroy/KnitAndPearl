@@ -11,13 +11,14 @@ const App = () => {
         height: "100vh",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        marginTop: "-21px",
       }}
     >
-      <Title titleText={"Knitting Project Manager"} />
-      <WelcomePageOptionButtons btnText={"New Project"} />
-      <img src={logo} alt="ball of wool" />
-      <WelcomePageOptionButtons btnText={"View Projects"} />
+      <div style={{ paddingLeft: "30%", paddingTop: "10%" }}>
+        <Title titleText={"Knitting Project Manager"} />
+        <WelcomePageOptionButtons btnText={"New Project"} />
+        <img src={logo} alt="ball of wool" />
+        <WelcomePageOptionButtons btnText={"View Projects"} />
+      </div>
     </div>
   );
 };
