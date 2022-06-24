@@ -30,3 +30,5 @@ const Knittingtheme = createTheme({
     },
   },
 });
+
+export default Knittingtheme;
