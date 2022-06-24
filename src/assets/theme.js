@@ -21,7 +21,7 @@ const Knittingtheme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
-        btnText: {
+        root: {
           fontSize: "1rem",
           backgroundColor: palette.knittingRosewood,
           color: palette.knittingGray,

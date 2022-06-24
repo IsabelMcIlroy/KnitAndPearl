@@ -1,20 +1,15 @@
 import Button from "@mui/material/Button";
-import { palette } from "../assets/theme";
+import Knittingtheme from "../assets/theme";
+import { ThemeProvider } from "@mui/material";
 
 export const WelcomePageOptionButtons = ({ btnText }) => {
   return (
     <>
-      <Button
-        variant="contained"
-        size="large"
-        sx={{
-          backgroundColor: palette.knittingRosewood,
-          color: palette.knittingGray,
-          margin: "0 20px",
-        }}
-      >
-        {btnText}
-      </Button>
+      <ThemeProvider theme={Knittingtheme}>
+        <Button variant="contained" size="large">
+          {btnText}
+        </Button>
+      </ThemeProvider>
     </>
   );
 };
