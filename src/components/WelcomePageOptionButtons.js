@@ -6,9 +6,7 @@ export const WelcomePageOptionButtons = ({ btnText }) => {
   return (
     <>
       <ThemeProvider theme={Knittingtheme}>
-        <Button variant="contained" size="large">
-          {btnText}
-        </Button>
+        <Button size="large">{btnText}</Button>
       </ThemeProvider>
     </>
   );
