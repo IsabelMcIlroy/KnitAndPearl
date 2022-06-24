@@ -27,8 +27,8 @@ const Knittingtheme = createTheme({
           color: palette.knittingGray,
           margin: "0 20px",
           "&:hover": {
-            fontSize: "1.1rem",
-            backgroundColor: palette.knittingRosewood,
+            color: palette.knittingRosewood,
+            backgroundColor: palette.knittingGray,
           },
         },
       },
