@@ -13,7 +13,12 @@ const App = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div style={{ textAlign: "center", paddingTop: "100px" }}>
+      <div
+        style={{
+          textAlign: "center",
+          paddingTop: "100px",
+        }}
+      >
         <Title titleText={"Knitting Project Manager"} />
         <WelcomePageOptionButtons btnText={"New Project"} />
         <Logo />
