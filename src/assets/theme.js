@@ -22,7 +22,7 @@ const Knittingtheme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          fontSize: "1rem",
+          fontSize: "2vw",
           backgroundColor: palette.knittingRosewood,
           color: palette.knittingGray,
           margin: "0 20px",
@@ -46,5 +46,5 @@ export default Knittingtheme;
 export const titleFontSx = {
   fontFamily: "La Belle Aurore",
   color: palette.knittingBlue,
-  fontSize: "32px",
+  fontSize: "4vw",
 };
