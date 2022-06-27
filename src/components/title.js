@@ -9,7 +9,7 @@ export const Title = ({ titleText }) => {
           ...titleFontSx,
         }}
       >
-        <h1>{titleText}</h1>
+        <h1 style={{ marginBottom: "0" }}>{titleText}</h1>
       </Box>
     </>
   );
