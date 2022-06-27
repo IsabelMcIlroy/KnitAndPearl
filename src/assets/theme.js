@@ -34,6 +34,17 @@ const Knittingtheme = createTheme({
       },
     },
   },
+  h1: {
+    typography: {
+      fontFamily: [],
+    },
+  },
 });
 
 export default Knittingtheme;
+
+export const titleFontSx = {
+  fontFamily: "La Belle Aurore",
+  color: palette.knittingBlue,
+  fontSize: "32px",
+};
