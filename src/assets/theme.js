@@ -34,11 +34,6 @@ const Knittingtheme = createTheme({
       },
     },
   },
-  h1: {
-    typography: {
-      fontFamily: [],
-    },
-  },
 });
 
 export default Knittingtheme;
