@@ -6,7 +6,7 @@ export const palette = {
   knittingRosewood: "#650D1B",
 };
 
-const Knittingtheme = createTheme({
+const KnittingTheme = createTheme({
   palette: {
     primary: {
       main: palette.knittingRosewood,
@@ -36,7 +36,7 @@ const Knittingtheme = createTheme({
   },
 });
 
-export default Knittingtheme;
+export default KnittingTheme;
 
 export const titleFontSx = {
   fontFamily: "La Belle Aurore",
