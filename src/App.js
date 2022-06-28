@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 const App = () => {
   return (
     <Box
-      style={{
+      sx={{
         backgroundImage: `url(${wool})`,
         height: "100vh",
         backgroundSize: "cover",
@@ -15,7 +15,7 @@ const App = () => {
       }}
     >
       <Box
-        style={{
+        sx={{
           textAlign: "center",
           paddingTop: "100px",
         }}
