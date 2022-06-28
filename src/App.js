@@ -1,7 +1,7 @@
 import { Title } from "./components/Title.js";
 import { WelcomePageOptionButtons } from "./components/WelcomePageOptionButtons";
 import wool from "./images/wool.jpg";
-import { Logo } from "./components/logo";
+import { Logo } from "./components/Logo";
 import Box from "@mui/material/Box";
 
 const App = () => {
