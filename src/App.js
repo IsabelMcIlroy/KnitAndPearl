@@ -1,4 +1,4 @@
-import { Title } from "./components/title.js";
+import { Title } from "./components/Title.js";
 import { WelcomePageOptionButtons } from "./components/WelcomePageOptionButtons";
 import wool from "./images/wool.jpg";
 import { Logo } from "./components/logo";
