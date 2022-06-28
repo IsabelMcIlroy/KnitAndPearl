@@ -1,21 +1,25 @@
 import { createTheme } from "@mui/material";
 
 export const palette = {
-  knittingGray: "#717566",
+  knittingGray: "#CAC4CE",
   knittingBlue: "#002642",
-  knittingRosewood: "#650D1B",
+  knittingLightBlue: "#468189",
+  knittingPurple: "#40343B",
 };
 
 const KnittingTheme = createTheme({
   palette: {
     primary: {
-      main: palette.knittingRosewood,
+      main: palette.knittingPurple,
     },
     secondary: {
-      main: palette.knittingGray,
+      main: palette.knittingBlue,
     },
     blue: {
-      main: palette.knittingBlue,
+      main: palette.knittingLightBlue,
+    },
+    gray: {
+      main: palette.knittingGray,
     },
   },
   components: {
@@ -23,12 +27,12 @@ const KnittingTheme = createTheme({
       styleOverrides: {
         root: {
           fontSize: "2vw",
-          backgroundColor: palette.knittingRosewood,
+          backgroundColor: palette.knittingLightBlue,
           color: palette.knittingGray,
           margin: "0 20px",
           "&:hover": {
-            color: palette.knittingRosewood,
-            backgroundColor: palette.knittingGray,
+            backgroundColor: palette.knittingBlue,
+            color: palette.knittingGray,
           },
         },
       },
@@ -40,6 +44,6 @@ export default KnittingTheme;
 
 export const titleFontSx = {
   fontFamily: "La Belle Aurore",
-  color: palette.knittingBlue,
+  color: palette.knittingColour,
   fontSize: "4vw",
 };
