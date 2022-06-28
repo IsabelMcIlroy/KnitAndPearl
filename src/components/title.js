@@ -1,5 +1,5 @@
 import Box from "@mui/material/Box";
-import { titleFontSx } from "../assets/theme";
+import { titleFontSx } from "../assets/Theme";
 
 export const Title = ({ titleText }) => {
   return (

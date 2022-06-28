@@ -1,5 +1,5 @@
 import Button from "@mui/material/Button";
-import Knittingtheme from "../assets/theme";
+import Knittingtheme from "../assets/Theme";
 import { ThemeProvider } from "@mui/material";
 
 export const WelcomePageOptionButtons = ({ btnText }) => {
