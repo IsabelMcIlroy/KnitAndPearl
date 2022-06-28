@@ -1,10 +1,10 @@
-import Box from "@mui/material/Box";
+import { Typography } from "@mui/material";
 import { titleFontSx } from "../assets/Theme";
 
 export const Title = ({ titleText }) => {
   return (
-    <Box sx={titleFontSx}>
-      <h1 style={{ marginBottom: "0" }}>{titleText}</h1>
-    </Box>
+    <Typography variant="h1" sx={{ ...titleFontSx }}>
+      {titleText}
+    </Typography>
   );
 };
