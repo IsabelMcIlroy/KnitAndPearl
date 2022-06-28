@@ -2,10 +2,11 @@ import { Title } from "./components/Title.js";
 import { WelcomePageOptionButtons } from "./components/WelcomePageOptionButtons";
 import wool from "./images/wool.jpg";
 import { Logo } from "./components/logo";
+import Box from "@mui/material/Box";
 
 const App = () => {
   return (
-    <div
+    <Box
       style={{
         backgroundImage: `url(${wool})`,
         height: "100vh",
@@ -13,7 +14,7 @@ const App = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div
+      <Box
         style={{
           textAlign: "center",
           paddingTop: "100px",
@@ -23,8 +24,8 @@ const App = () => {
         <WelcomePageOptionButtons btnText={"New Project"} />
         <Logo />
         <WelcomePageOptionButtons btnText={"View Projects"} />
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 
