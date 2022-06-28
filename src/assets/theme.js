@@ -4,7 +4,7 @@ export const palette = {
   knittingGray: "#CAC4CE",
   knittingBlue: "#002642",
   knittingLightBlue: "#468189",
-  knittingPurple: "#40343B",
+  knittingPurple: "#4B3843",
 };
 
 const KnittingTheme = createTheme({
@@ -44,6 +44,6 @@ export default KnittingTheme;
 
 export const titleFontSx = {
   fontFamily: "La Belle Aurore",
-  color: palette.knittingColour,
+  color: palette.knittingPurple,
   fontSize: "4vw",
 };
