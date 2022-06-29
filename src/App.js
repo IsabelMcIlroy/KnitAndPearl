@@ -1,3 +1,5 @@
+import { render } from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Title } from "./components/Title.js";
 import { WelcomePageOptionButtons } from "./components/WelcomePageOptionButtons";
 import wool from "./images/wool.jpg";
