@@ -25,4 +25,4 @@ https://isabelmcilroy.github.io/KnittingProjectManager/
 
 ## Screenshot
 
-to come...
+![Screenshot](Screenshot.jpg)
