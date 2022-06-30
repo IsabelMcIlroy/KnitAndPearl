@@ -1,17 +1,50 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+// import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+import { render } from "react-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+import { Title } from "./components/Title.js";
+import { WelcomePageOptionButtons } from "./components/WelcomePageOptionButtons";
+import wool from "./images/wool.jpg";
+import { Logo } from "./components/Logo";
+import Box from "@mui/material/Box";
+import { NewProject } from "./NewProject.js";
+
+const Index = () => {
+  return (
+    <Box
+      sx={{
+        backgroundImage: `url(${wool})`,
+        height: "100vh",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <Box
+        sx={{
+          textAlign: "center",
+          paddingTop: "100px",
+        }}
+      >
+        <Title titleText={"Knitting Project Manager"} />
+        <Link to="/NewProject">
+          <WelcomePageOptionButtons btnText={"New Project"} />
+        </Link>
+        <Logo />
+        <WelcomePageOptionButtons btnText={"View Projects"} />
+      </Box>
+    </Box>
+  );
+};
+
+const rootElement = document.getElementById("root");
+render(
+  <BrowserRouter>
+    <Routes>
+      <Route path="/NewProject" element={<NewProject />} />
+      <Route path="/" element={<Index />} />
+    </Routes>
+  </BrowserRouter>,
+  rootElement
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
