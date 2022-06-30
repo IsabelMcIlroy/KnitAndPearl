@@ -32,7 +32,9 @@ const Index = () => {
           <WelcomePageOptionButtons btnText={"New Project"} />
         </Link>
         <Logo />
-        <WelcomePageOptionButtons btnText={"View Projects"} />
+        <Link to="/ViewProject">
+          <WelcomePageOptionButtons btnText={"View Projects"} />
+        </Link>
       </Box>
     </Box>
   );
@@ -43,6 +45,7 @@ render(
   <BrowserRouter>
     <Routes>
       <Route path="/NewProject" element={<NewProject />} />
+      <Route path="/ViewProject" element={<NewProject />} />
       <Route path="/" element={<Index />} />
     </Routes>
   </BrowserRouter>,
