@@ -8,10 +8,20 @@ import { Title } from "./components/Title.js";
 import { WelcomePageOptionButtons } from "./components/WelcomePageOptionButtons";
 import wool from "./images/wool.jpg";
 import { Logo } from "./components/Logo";
-import Box from "@mui/material/Box";
 import { NewProject } from "./NewProject.js";
+import { NewProjectSizeAndColourSelectionModal } from "./components/NewProjectSizeAndColourSelectionModal";
+
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
 
 const Index = () => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <Box
       sx={{
@@ -28,9 +38,26 @@ const Index = () => {
         }}
       >
         <Title titleText={"Knitting Project Manager"} />
-        <Link to="/NewProject">
-          <WelcomePageOptionButtons btnText={"New Project"} />
-        </Link>
+
+        <WelcomePageOptionButtons
+          btnText={"New Project"}
+          onClick={handleOpen}
+        />
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="parent-modal-title"
+          aria-describedby="parent-modal-description"
+        >
+          <Box sx={{ width: 400 }}>
+            <h2 id="parent-modal-title">Text in a modal</h2>
+            <p id="parent-modal-description">
+              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            </p>
+            <NewProjectSizeAndColourSelectionModal />
+          </Box>
+        </Modal>
+
         <Logo />
         <Link to="/ViewProject">
           <WelcomePageOptionButtons btnText={"View Projects"} />
