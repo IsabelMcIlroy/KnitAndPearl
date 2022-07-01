@@ -6,7 +6,10 @@ export const NewProjectSizeAndColourSelectionModal = ({
 }) => {
   return (
     <Modal open={open} onClose={handleClose}>
-      <></>
+      <>
+        <h1>Hello</h1>
+        <p>the big red dump truck went down the road</p>
+      </>
     </Modal>
   );
 };

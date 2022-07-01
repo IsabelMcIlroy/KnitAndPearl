@@ -1,5 +1,4 @@
 import React from "react";
-// import ReactDOM from "react-dom/client";
 import "./index.css";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -12,7 +11,6 @@ import { NewProject } from "./NewProject.js";
 import { NewProjectSizeAndColourSelectionModal } from "./components/NewProjectSizeAndColourSelectionModal";
 
 import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
 
 const Index = () => {
   const [open, setOpen] = React.useState(false);
@@ -43,20 +41,10 @@ const Index = () => {
           btnText={"New Project"}
           onClick={handleOpen}
         />
-        <Modal
+        <NewProjectSizeAndColourSelectionModal
           open={open}
           onClose={handleClose}
-          aria-labelledby="parent-modal-title"
-          aria-describedby="parent-modal-description"
-        >
-          <Box sx={{ width: 400 }}>
-            <h2 id="parent-modal-title">Text in a modal</h2>
-            <p id="parent-modal-description">
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </p>
-            <NewProjectSizeAndColourSelectionModal />
-          </Box>
-        </Modal>
+        />
 
         <Logo />
         <Link to="/ViewProject">
