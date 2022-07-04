@@ -3,14 +3,14 @@ import "./index.css";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
+import Box from "@mui/material/Box";
+
 import { Title } from "./components/Title.js";
 import { WelcomePageOptionButtons } from "./components/WelcomePageOptionButtons";
 import wool from "./images/wool.jpg";
 import { Logo } from "./components/Logo";
 import { NewProject } from "./NewProject.js";
 import { NewProjectSizeAndColourSelectionModal } from "./components/NewProjectSizeAndColourSelectionModal";
-
-import Box from "@mui/material/Box";
 
 const Index = () => {
   const [open, setOpen] = React.useState(false);
