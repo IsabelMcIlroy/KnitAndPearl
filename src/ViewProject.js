@@ -1,5 +1,6 @@
 import { AppBar } from "@mui/material";
 import Toolbar from "@mui/material/Toolbar";
+import Grid from "@mui/material/Grid";
 
 import wool from "./images/wool.jpg";
 
@@ -9,13 +10,17 @@ import { Logo } from "./components/Logo";
 export const ViewProject = () => {
   return (
     <>
-      <AppBar postion="sticky" sx={{ backgroundImage: `url(${wool})` }}>
+      <AppBar
+        postion="sticky"
+        sx={{ backgroundImage: `url(${wool})`, padding: "10px" }}
+      >
         <Toolbar>
-          <Logo />
-          <WelcomePageOptionButtons btnText="New Project" />
+          <Grid container direction="row" justifyContent="flex-end">
+            <Logo />
+            <WelcomePageOptionButtons btnText="New Project" />
+          </Grid>
         </Toolbar>
       </AppBar>
-      <h1>Hello</h1>
     </>
   );
 };
