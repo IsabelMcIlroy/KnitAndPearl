@@ -9,8 +9,16 @@ import wool from "./images/wool.jpg";
 
 import { WelcomePageOptionButtons } from "./components/WelcomePageOptionButtons";
 import { Logo } from "./components/Logo";
+import { NewProjectSizeAndColourSelectionModal } from "./components/NewProjectSizeAndColourSelectionModal";
 
 export const ViewProject = () => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <>
       <AppBar
@@ -19,7 +27,14 @@ export const ViewProject = () => {
       >
         <Toolbar>
           <Grid container direction="row" justifyContent="flex-end">
-            <WelcomePageOptionButtons btnText="New Project" />
+            <WelcomePageOptionButtons
+              btnText="New Project"
+              onClick={handleOpen}
+            />
+            <NewProjectSizeAndColourSelectionModal
+              open={open}
+              onClose={handleClose}
+            />
             <Link to="/">
               <Logo />
             </Link>
