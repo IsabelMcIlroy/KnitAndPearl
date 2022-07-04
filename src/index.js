@@ -13,7 +13,7 @@ import { NewProject } from "./NewProject.js";
 import { NewProjectSizeAndColourSelectionModal } from "./components/NewProjectSizeAndColourSelectionModal";
 import { ViewProject } from "./ViewProject";
 
-const Index = () => {
+export const Index = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -47,7 +47,9 @@ const Index = () => {
           onClose={handleClose}
         />
 
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
         <Link to="/ViewProject">
           <WelcomePageOptionButtons btnText={"View Projects"} />
         </Link>

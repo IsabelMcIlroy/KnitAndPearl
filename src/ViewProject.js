@@ -1,3 +1,6 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
 import { AppBar } from "@mui/material";
 import Toolbar from "@mui/material/Toolbar";
 import Grid from "@mui/material/Grid";
@@ -16,8 +19,10 @@ export const ViewProject = () => {
       >
         <Toolbar>
           <Grid container direction="row" justifyContent="flex-end">
-            <Logo />
             <WelcomePageOptionButtons btnText="New Project" />
+            <Link to="/">
+              <Logo />
+            </Link>
           </Grid>
         </Toolbar>
       </AppBar>
