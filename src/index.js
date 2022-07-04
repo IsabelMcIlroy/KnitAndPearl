@@ -11,6 +11,7 @@ import wool from "./images/wool.jpg";
 import { Logo } from "./components/Logo";
 import { NewProject } from "./NewProject.js";
 import { NewProjectSizeAndColourSelectionModal } from "./components/NewProjectSizeAndColourSelectionModal";
+import { ViewProject } from "./ViewProject";
 
 const Index = () => {
   const [open, setOpen] = React.useState(false);
@@ -60,7 +61,7 @@ render(
   <BrowserRouter>
     <Routes>
       <Route path="/NewProject" element={<NewProject />} />
-      <Route path="/ViewProject" element={<NewProject />} />
+      <Route path="/ViewProject" element={<ViewProject />} />
       <Route path="/" element={<Index />} />
     </Routes>
   </BrowserRouter>,
