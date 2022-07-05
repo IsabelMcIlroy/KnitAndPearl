@@ -1,11 +1,11 @@
 import Button from "@mui/material/Button";
 import { ThemeProvider } from "@mui/material";
-import Knittingtheme from "../assets/Theme";
+import KnittingTheme from "../assets/Theme";
 
 export const WelcomePageOptionButtons = ({ btnText, onClick }) => {
   return (
     <>
-      <ThemeProvider theme={Knittingtheme}>
+      <ThemeProvider theme={KnittingTheme}>
         <Button onClick={onClick} size="large">
           {btnText}
         </Button>

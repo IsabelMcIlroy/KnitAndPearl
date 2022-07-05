@@ -37,6 +37,18 @@ const KnittingTheme = createTheme({
         },
       },
     },
+    MuiModal: {
+      styleOverrides: {
+        root: {
+          backgroundColor: palette.knittingLightBlue,
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "50%",
+        },
+      },
+    },
   },
 });
 
