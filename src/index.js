@@ -14,12 +14,12 @@ import { NewProjectSizeAndColourSelectionModal } from "./components/NewProjectSi
 import { ViewProject } from "./ViewProject";
 
 export const Index = () => {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const handleOpen = () => {
-    setOpen(true);
+    setIsOpen(true);
   };
   const handleClose = () => {
-    setOpen(false);
+    setIsOpen(false);
   };
   return (
     <Box
@@ -44,7 +44,7 @@ export const Index = () => {
             onClick={handleOpen}
           />
           <NewProjectSizeAndColourSelectionModal
-            open={open}
+            open={isOpen}
             onClose={handleClose}
           />
 
