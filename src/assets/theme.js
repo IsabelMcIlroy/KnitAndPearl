@@ -26,10 +26,10 @@ const KnittingTheme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          fontSize: "2vw",
           backgroundColor: palette.knittingLightBlue,
           color: palette.knittingGray,
           margin: "0 20px",
+          flexBasis: "auto",
           "&:hover": {
             backgroundColor: palette.knittingBlue,
             color: palette.knittingGray,

@@ -38,21 +38,23 @@ export const Index = () => {
       >
         <Title titleText={"Knitting Project Manager"} />
 
-        <WelcomePageOptionButtons
-          btnText={"New Project"}
-          onClick={handleOpen}
-        />
-        <NewProjectSizeAndColourSelectionModal
-          open={open}
-          onClose={handleClose}
-        />
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <WelcomePageOptionButtons
+            btnText={"New Project"}
+            onClick={handleOpen}
+          />
+          <NewProjectSizeAndColourSelectionModal
+            open={open}
+            onClose={handleClose}
+          />
 
-        <Link to="/">
-          <Logo />
-        </Link>
-        <Link to="/ViewProject">
-          <WelcomePageOptionButtons btnText={"View Projects"} />
-        </Link>
+          <Link to="/">
+            <Logo />
+          </Link>
+          <Link to="/ViewProject">
+            <WelcomePageOptionButtons btnText={"View Projects"} />
+          </Link>
+        </Box>
       </Box>
     </Box>
   );
