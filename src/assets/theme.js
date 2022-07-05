@@ -40,12 +40,13 @@ const KnittingTheme = createTheme({
     MuiModal: {
       styleOverrides: {
         root: {
+          color: palette.knittingPurple,
           position: "absolute",
-          top: "50%",
+          top: "48%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: "50%",
-          padding: "10px",
+          width: "60%",
+          padding: "16px",
         },
         backdrop: {
           backgroundColor: palette.knittingLightBlue,

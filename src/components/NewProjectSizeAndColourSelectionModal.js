@@ -6,12 +6,18 @@ import KnittingTheme from "../assets/Theme";
 export const NewProjectSizeAndColourSelectionModal = ({
   open,
   handleClose,
+  onClick,
 }) => {
   return (
     <ThemeProvider theme={KnittingTheme}>
-      <Modal open={open} onClose={handleClose}>
+      <Modal open={open} onClose={handleClose} onClick={onClick}>
         <>
-          <Typography variant="h4">New Knitting Project</Typography>
+          <Typography
+            variant="h4"
+            sx={{ fontFamily: "La Belle Aurore", textAlign: "center" }}
+          >
+            New Knitting Project
+          </Typography>
         </>
       </Modal>
     </ThemeProvider>
