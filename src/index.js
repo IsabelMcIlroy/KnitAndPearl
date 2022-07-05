@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import "./index.css";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -14,7 +14,7 @@ import { NewProjectSizeAndColourSelectionModal } from "./components/NewProjectSi
 import { ViewProject } from "./ViewProject";
 
 export const Index = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
   };
