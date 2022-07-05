@@ -46,7 +46,6 @@ const KnittingTheme = createTheme({
           left: "50%",
           transform: "translate(-50%, -50%)",
           width: "60%",
-          padding: "16px",
         },
         backdrop: {
           backgroundColor: palette.knittingLightBlue,
@@ -64,4 +63,12 @@ export const titleFontSx = {
   color: palette.knittingPurple,
   marginBottom: "4%",
   userSelect: "none",
+};
+
+export const modalTitle = {
+  fontFamily: "La Belle Aurore",
+  textAlign: "center",
+  backgroundColor: palette.knittingBlue,
+  paddingTop: "16px",
+  borderRadius: "10px 10px 0 0",
 };
