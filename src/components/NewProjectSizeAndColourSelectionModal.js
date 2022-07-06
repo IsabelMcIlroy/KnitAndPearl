@@ -14,7 +14,11 @@ export const NewProjectSizeAndColourSelectionModal = ({
   handleClose,
   onClick,
 }) => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   return (
     <ThemeProvider theme={KnittingTheme}>
       <Modal open={open} onClose={handleClose} onClick={onClick}>
@@ -25,9 +29,10 @@ export const NewProjectSizeAndColourSelectionModal = ({
           <form onSubmit={handleSubmit()}>
             <Box>
               <TextField
-                {...register("projectName")}
+                {...register("projectName", { required: "This is required" })}
                 placeholder="Project Name*"
               />
+              <Typography variant="p">{errors.projectName?.message}</Typography>
             </Box>
             <Box>
               <TextField
@@ -36,7 +41,11 @@ export const NewProjectSizeAndColourSelectionModal = ({
               />
             </Box>
             <Box>
-              <Select native label="Row">
+              <Select
+                {...register("Row", { required: "This is required" })}
+                native
+                label="Row"
+              >
                 <option value="">Row*</option>
                 <option value={2}>Two</option>
                 <option value={3}>Three</option>
@@ -50,7 +59,11 @@ export const NewProjectSizeAndColourSelectionModal = ({
                 <option value={11}>Eleven</option>
                 <option value={12}>Twelve</option>
               </Select>
-              <Select native label="Column">
+              <Select
+                {...register("Row", { required: "This is required" })}
+                native
+                label="Column"
+              >
                 <option value="">Column*</option>
                 <option value={2}>Two</option>
                 <option value={3}>Three</option>
