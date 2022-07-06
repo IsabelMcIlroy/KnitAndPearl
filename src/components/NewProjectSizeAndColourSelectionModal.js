@@ -1,6 +1,8 @@
+import { useForm } from "react-hook-form";
 import Modal from "@mui/material/Modal";
 import { ThemeProvider } from "@mui/material";
 import { Typography } from "@mui/material";
+import TextField from "@mui/material/TextField";
 import KnittingTheme from "../assets/Theme";
 import { modalTitle } from "../assets/Theme";
 
@@ -9,6 +11,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
   handleClose,
   onClick,
 }) => {
+  const { register, handleSubmit } = useForm();
   return (
     <ThemeProvider theme={KnittingTheme}>
       <Modal open={open} onClose={handleClose} onClick={onClick}>
@@ -16,6 +19,13 @@ export const NewProjectSizeAndColourSelectionModal = ({
           <Typography variant="h4" sx={modalTitle}>
             New Knitting Project
           </Typography>
+          <form onSubmit={handleSubmit()}>
+            <TextField
+              {...register("projectName")}
+              placeholder="Project Name"
+            />
+            <input type="submit" />
+          </form>
         </>
       </Modal>
     </ThemeProvider>
