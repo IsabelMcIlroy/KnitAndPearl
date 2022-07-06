@@ -5,6 +5,7 @@ export const palette = {
   knittingBlue: "#002642",
   knittingLightBlue: "#468189",
   knittingPurple: "#4B3843",
+  knittingLightPurple: "#927F8A",
 };
 
 const KnittingTheme = createTheme({
@@ -20,6 +21,9 @@ const KnittingTheme = createTheme({
     },
     gray: {
       main: palette.knittingGray,
+    },
+    purple: {
+      main: palette.knittingLightPurple,
     },
   },
   components: {
@@ -40,7 +44,7 @@ const KnittingTheme = createTheme({
     MuiModal: {
       styleOverrides: {
         root: {
-          color: palette.knittingPurple,
+          color: palette.knittingLightPurple,
           position: "absolute",
           top: "48%",
           left: "50%",
