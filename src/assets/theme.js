@@ -42,14 +42,17 @@ const KnittingTheme = createTheme({
         submit: {
           backgroundColor: palette.knittingBlue,
           "&:hover": {
-            backgroundColor: "#00365C",
+            backgroundColor: "#0B5082",
           },
         },
         cancel: {
           backgroundColor: palette.knittingPurple,
           "&:hover": {
-            backgroundColor: palette.knittingLightPurple,
+            backgroundColor: "#5C3E3E",
           },
+        },
+        other: {
+          color: palette.knittingPurple,
         },
       },
     },

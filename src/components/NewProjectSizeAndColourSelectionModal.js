@@ -6,9 +6,9 @@ import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Select from "@mui/material/Select";
-import Button from "@mui/material/Button";
 import KnittingTheme from "../assets/Theme";
 import { modalTitle } from "../assets/Theme";
+import { ModalButton } from "./ModalButton";
 
 export const NewProjectSizeAndColourSelectionModal = ({ open, onClick }) => {
   const {
@@ -77,10 +77,8 @@ export const NewProjectSizeAndColourSelectionModal = ({ open, onClick }) => {
                 <option value={12}>Twelve</option>
               </Select>
             </Box>
-            <Button variant="submit" type="submit">
-              Submit
-            </Button>
-            <Button variant="cancel">Cancel</Button>
+            <ModalButton type="submit" text="Submit" />
+            <ModalButton text="Cancel" />
           </form>
         </>
       </Modal>
