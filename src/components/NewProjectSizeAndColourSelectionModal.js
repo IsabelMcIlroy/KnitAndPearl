@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Modal from "@mui/material/Modal";
 import { ThemeProvider } from "@mui/material";
@@ -9,20 +10,17 @@ import Button from "@mui/material/Button";
 import KnittingTheme from "../assets/Theme";
 import { modalTitle } from "../assets/Theme";
 
-export const NewProjectSizeAndColourSelectionModal = ({
-  open,
-  handleClose,
-  onClick,
-}) => {
+export const NewProjectSizeAndColourSelectionModal = ({ open, onClick }) => {
   const {
     register,
+    toggleIsOpen,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
   return (
     <ThemeProvider theme={KnittingTheme}>
-      <Modal open={open} onClose={handleClose} onClick={onClick}>
+      <Modal open={open} onClose={toggleIsOpen} onClick={onClick}>
         <>
           <Typography variant="h4" sx={modalTitle}>
             New Knitting Project
@@ -79,7 +77,10 @@ export const NewProjectSizeAndColourSelectionModal = ({
                 <option value={12}>Twelve</option>
               </Select>
             </Box>
-            <Button type="submit">Submit</Button>
+            <Button variant="submit" type="submit">
+              Submit
+            </Button>
+            <Button variant="cancel">Cancel</Button>
           </form>
         </>
       </Modal>

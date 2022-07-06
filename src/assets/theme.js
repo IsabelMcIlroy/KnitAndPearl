@@ -39,6 +39,18 @@ const KnittingTheme = createTheme({
             color: palette.knittingGray,
           },
         },
+        submit: {
+          backgroundColor: palette.knittingBlue,
+          "&:hover": {
+            backgroundColor: "#00365C",
+          },
+        },
+        cancel: {
+          backgroundColor: palette.knittingPurple,
+          "&:hover": {
+            backgroundColor: palette.knittingLightPurple,
+          },
+        },
       },
     },
     MuiModal: {
