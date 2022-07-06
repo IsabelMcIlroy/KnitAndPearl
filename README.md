@@ -16,8 +16,9 @@ to come...
 ## Built With
 
 -React\
+-MUI\
 -React Router\
--MUI
+-React Hook Form
 
 ## Link to Demo Site
 
