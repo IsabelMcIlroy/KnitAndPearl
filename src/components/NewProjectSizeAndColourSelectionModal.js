@@ -3,6 +3,7 @@ import Modal from "@mui/material/Modal";
 import { ThemeProvider } from "@mui/material";
 import { Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import KnittingTheme from "../assets/Theme";
 import { modalTitle } from "../assets/Theme";
 
@@ -24,7 +25,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
               {...register("projectName")}
               placeholder="Project Name"
             />
-            <input type="submit" />
+            <Button type="submit">Submit</Button>
           </form>
         </>
       </Modal>
