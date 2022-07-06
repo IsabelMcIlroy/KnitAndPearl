@@ -19,6 +19,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const onSubmit = (data) => console.log(data);
   return (
     <ThemeProvider theme={KnittingTheme}>
       <Modal open={open} onClose={handleClose} onClick={onClick}>
@@ -26,7 +27,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
           <Typography variant="h4" sx={modalTitle}>
             New Knitting Project
           </Typography>
-          <form onSubmit={handleSubmit()}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <Box>
               <TextField
                 {...register("projectName", { required: "This is required" })}
