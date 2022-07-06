@@ -60,7 +60,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
                 <option value={12}>Twelve</option>
               </Select>
               <Select
-                {...register("Row", { required: "This is required" })}
+                {...register("Column", { required: "This is required" })}
                 native
                 label="Column"
               >
