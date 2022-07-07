@@ -61,10 +61,11 @@ const KnittingTheme = createTheme({
         root: {
           color: palette.knittingLightPurple,
           position: "absolute",
-          top: "48%",
+          top: "40%",
           left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: "60%",
+          transform: "translate(-50%, -40%)",
+          height: "90%",
+          width: "70%",
         },
         backdrop: {
           backgroundColor: palette.knittingLightBlue,

@@ -8,7 +8,6 @@ import Select from "@mui/material/Select";
 import KnittingTheme from "../assets/Theme";
 import { modalTitle } from "../assets/Theme";
 import { ModalButton } from "./ModalButton";
-import ColorPicker from "./ColorPicker";
 
 export const NewProjectSizeAndColourSelectionModal = ({ open, onClick }) => {
   const {
@@ -25,65 +24,69 @@ export const NewProjectSizeAndColourSelectionModal = ({ open, onClick }) => {
           <Typography variant="h4" sx={modalTitle}>
             New Knitting Project
           </Typography>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <Box>
-              <TextField
-                {...register("projectName", { required: "This is required" })}
-                placeholder="Project Name*"
-              />
-              <Typography variant="p">{errors.projectName?.message}</Typography>
-            </Box>
-            <Box>
-              <TextField
-                {...register("projectType")}
-                placeholder="Project Type"
-              />
-            </Box>
-            <ColorPicker />
-            <ColorPicker />
-            <ColorPicker />
-            <ColorPicker />
-            <Box>
-              <Select
-                {...register("Row", { required: "This is required" })}
-                native
-                label="Row"
-              >
-                <option value="">Row*</option>
-                <option value={2}>Two</option>
-                <option value={3}>Three</option>
-                <option value={4}>Four</option>
-                <option value={5}>Five</option>
-                <option value={6}>Six</option>
-                <option value={7}>Seven</option>
-                <option value={8}>Eight</option>
-                <option value={9}>Nine</option>
-                <option value={10}>Ten</option>
-                <option value={11}>Eleven</option>
-                <option value={12}>Twelve</option>
-              </Select>
-              <Select
-                {...register("Column", { required: "This is required" })}
-                native
-                label="Column"
-              >
-                <option value="">Column*</option>
-                <option value={2}>Two</option>
-                <option value={3}>Three</option>
-                <option value={4}>Four</option>
-                <option value={5}>Five</option>
-                <option value={6}>Six</option>
-                <option value={7}>Seven</option>
-                <option value={8}>Eight</option>
-                <option value={9}>Nine</option>
-                <option value={10}>Ten</option>
-                <option value={11}>Eleven</option>
-                <option value={12}>Twelve</option>
-              </Select>
-            </Box>
-            <ModalButton type="submit" text="Submit" />
-            <ModalButton text="Cancel" />
-          </form>
+          <Box sx={{ maxWidth: "60%", margin: "0 auto", padding: "10px 0" }}>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <Box padding="10px">
+                <TextField
+                  fullWidth
+                  {...register("projectName", { required: "This is required" })}
+                  placeholder="Project Name*"
+                />
+                <Typography variant="p">
+                  {errors.projectName?.message}
+                </Typography>
+              </Box>
+              <Box padding="10px">
+                <TextField
+                  fullWidth
+                  {...register("projectType")}
+                  placeholder="Project Type"
+                />
+              </Box>
+              <Box padding="10px" textAlign="center">
+                <Select
+                  {...register("Row", { required: "This is required" })}
+                  native
+                  label="Row"
+                >
+                  <option value="">Row*</option>
+                  <option value={2}>Two</option>
+                  <option value={3}>Three</option>
+                  <option value={4}>Four</option>
+                  <option value={5}>Five</option>
+                  <option value={6}>Six</option>
+                  <option value={7}>Seven</option>
+                  <option value={8}>Eight</option>
+                  <option value={9}>Nine</option>
+                  <option value={10}>Ten</option>
+                  <option value={11}>Eleven</option>
+                  <option value={12}>Twelve</option>
+                </Select>
+                <Select
+                  {...register("Column", { required: "This is required" })}
+                  native
+                  label="Column"
+                >
+                  <option value="">Column*</option>
+                  <option value={2}>Two</option>
+                  <option value={3}>Three</option>
+                  <option value={4}>Four</option>
+                  <option value={5}>Five</option>
+                  <option value={6}>Six</option>
+                  <option value={7}>Seven</option>
+                  <option value={8}>Eight</option>
+                  <option value={9}>Nine</option>
+                  <option value={10}>Ten</option>
+                  <option value={11}>Eleven</option>
+                  <option value={12}>Twelve</option>
+                </Select>
+                <Typography variant="p">{errors.Column?.message}</Typography>
+                <Typography variant="p">{errors.Row?.message}</Typography>
+              </Box>
+              <ModalButton type="submit" text="Submit" />
+              <ModalButton text="Cancel" />
+            </form>
+          </Box>
         </>
       </Modal>
     </ThemeProvider>
