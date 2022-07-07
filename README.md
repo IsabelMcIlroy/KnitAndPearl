@@ -18,7 +18,8 @@ to come...
 -React\
 -MUI\
 -React Router\
--React Hook Form
+-React Hook Form\
+-React Color
 
 ## Link to Demo Site
 
