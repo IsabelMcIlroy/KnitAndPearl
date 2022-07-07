@@ -15,7 +15,6 @@ import { ViewProject } from "./ViewProject";
 
 export const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleIsOpen = () => setIsOpen(!isOpen);
   return (
     <Box
       sx={{
@@ -36,11 +35,13 @@ export const Index = () => {
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <WelcomePageOptionButtons
             btnText={"New Project"}
-            onClick={toggleIsOpen}
+            onClick={() => {
+              setIsOpen(true);
+            }}
           />
           <NewProjectSizeAndColourSelectionModal
             open={isOpen}
-            onClose={toggleIsOpen}
+            closeModal={setIsOpen}
           />
 
           <Link to="/">

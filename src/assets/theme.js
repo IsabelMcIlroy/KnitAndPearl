@@ -66,6 +66,8 @@ const KnittingTheme = createTheme({
           transform: "translate(-50%, -40%)",
           height: "90%",
           width: "70%",
+          display: "flex",
+          flexDirection: "column",
         },
         backdrop: {
           backgroundColor: palette.knittingLightBlue,
