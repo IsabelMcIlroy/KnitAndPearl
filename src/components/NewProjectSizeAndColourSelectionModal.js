@@ -5,7 +5,7 @@ import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Select from "@mui/material/Select";
-import KnittingTheme from "../assets/Theme";
+import KnittingTheme, { palette } from "../assets/Theme";
 import { modalTitle } from "../assets/Theme";
 import { ModalButton } from "./ModalButton";
 
@@ -24,7 +24,7 @@ export const NewProjectSizeAndColourSelectionModal = ({ open, onClick }) => {
           <Typography variant="h4" sx={modalTitle}>
             New Knitting Project
           </Typography>
-          <Box sx={{ maxWidth: "60%", margin: "0 auto", padding: "10px 0" }}>
+          <Box sx={{ maxWidth: "80%", margin: "0 auto", padding: "10px 0" }}>
             <form onSubmit={handleSubmit(onSubmit)}>
               <Box padding="10px">
                 <TextField
@@ -32,7 +32,7 @@ export const NewProjectSizeAndColourSelectionModal = ({ open, onClick }) => {
                   {...register("projectName", { required: "This is required" })}
                   placeholder="Project Name*"
                 />
-                <Typography variant="p">
+                <Typography variant="p" color={palette.knittingPurple}>
                   {errors.projectName?.message}
                 </Typography>
               </Box>
@@ -48,8 +48,9 @@ export const NewProjectSizeAndColourSelectionModal = ({ open, onClick }) => {
                   {...register("Row", { required: "This is required" })}
                   native
                   label="Row"
+                  sx={{ margin: "10px" }}
                 >
-                  <option value="">Row*</option>
+                  <option value=""> ---Row*--- </option>
                   <option value={2}>Two</option>
                   <option value={3}>Three</option>
                   <option value={4}>Four</option>
@@ -66,8 +67,9 @@ export const NewProjectSizeAndColourSelectionModal = ({ open, onClick }) => {
                   {...register("Column", { required: "This is required" })}
                   native
                   label="Column"
+                  sx={{ margin: "10px" }}
                 >
-                  <option value="">Column*</option>
+                  <option value=""> --Column*-- </option>
                   <option value={2}>Two</option>
                   <option value={3}>Three</option>
                   <option value={4}>Four</option>
@@ -80,11 +82,17 @@ export const NewProjectSizeAndColourSelectionModal = ({ open, onClick }) => {
                   <option value={11}>Eleven</option>
                   <option value={12}>Twelve</option>
                 </Select>
-                <Typography variant="p">{errors.Column?.message}</Typography>
-                <Typography variant="p">{errors.Row?.message}</Typography>
+                <Typography variant="p" color={palette.knittingPurple}>
+                  {errors.Column?.message}
+                </Typography>
+                <Typography variant="p" color={palette.knittingPurple}>
+                  {errors.Row?.message}
+                </Typography>
               </Box>
-              <ModalButton type="submit" text="Submit" />
-              <ModalButton text="Cancel" />
+              <Box textAlign="center">
+                <ModalButton type="submit" text="Submit" />
+                <ModalButton text="Cancel" />
+              </Box>
             </form>
           </Box>
         </>
