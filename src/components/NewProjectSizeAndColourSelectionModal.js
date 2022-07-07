@@ -8,6 +8,7 @@ import Select from "@mui/material/Select";
 import KnittingTheme from "../assets/Theme";
 import { modalTitle } from "../assets/Theme";
 import { ModalButton } from "./ModalButton";
+import ColorPicker from "./ColorPicker";
 
 export const NewProjectSizeAndColourSelectionModal = ({ open, onClick }) => {
   const {
@@ -38,6 +39,10 @@ export const NewProjectSizeAndColourSelectionModal = ({ open, onClick }) => {
                 placeholder="Project Type"
               />
             </Box>
+            <ColorPicker />
+            <ColorPicker />
+            <ColorPicker />
+            <ColorPicker />
             <Box>
               <Select
                 {...register("Row", { required: "This is required" })}
