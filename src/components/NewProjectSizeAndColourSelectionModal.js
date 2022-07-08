@@ -24,8 +24,8 @@ export const NewProjectSizeAndColourSelectionModal = ({
   const onSubmit = (data) => console.log(data);
   return (
     <ThemeProvider theme={KnittingTheme}>
-      <Modal open={open} onClick={onClick}>
-        <>
+      <Modal open={open} onClick={onClick} style={{ overflow: "hidden" }}>
+        <Box style={{ overflow: "scroll" }}>
           <Typography variant="h4" sx={modalTitle}>
             New Knitting Project
           </Typography>
@@ -116,7 +116,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
               </Box>
             </form>
           </Box>
-        </>
+        </Box>
       </Modal>
     </ThemeProvider>
   );

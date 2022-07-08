@@ -32,7 +32,7 @@ const KnittingTheme = createTheme({
         root: {
           backgroundColor: palette.knittingLightBlue,
           color: palette.knittingGray,
-          margin: "0 20px",
+          margin: "10px 20px",
           flexBasis: "auto",
           "&:hover": {
             backgroundColor: palette.knittingBlue,
