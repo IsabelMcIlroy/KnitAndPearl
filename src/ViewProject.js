@@ -12,13 +12,7 @@ import { Logo } from "./components/Logo";
 import { NewProjectSizeAndColourSelectionModal } from "./components/NewProjectSizeAndColourSelectionModal";
 
 export const ViewProject = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <AppBar
@@ -29,11 +23,13 @@ export const ViewProject = () => {
           <Grid container direction="row" justifyContent="flex-end">
             <WelcomePageOptionButtons
               btnText="New Project"
-              onClick={handleOpen}
+              onClick={() => {
+                setIsOpen(true);
+              }}
             />
             <NewProjectSizeAndColourSelectionModal
-              open={open}
-              onClose={handleClose}
+              open={isOpen}
+              closeModal={setIsOpen}
             />
             <Link to="/">
               <Logo />
