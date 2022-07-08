@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Modal from "@mui/material/Modal";
 import { ThemeProvider } from "@mui/material";
@@ -103,7 +104,9 @@ export const NewProjectSizeAndColourSelectionModal = ({
                 </Typography>
               </Box>
               <Box textAlign="center">
-                <ModalButton type="submit" text="Submit" />
+                <Link to="/NewProject">
+                  <ModalButton type="submit" text="Submit" />
+                </Link>
                 <ModalButton
                   text="Cancel"
                   onClick={() => {
