@@ -24,19 +24,24 @@ export const NewProjectSizeAndColourSelectionModal = ({
   const onSubmit = (data) => console.log(data);
   return (
     <ThemeProvider theme={KnittingTheme}>
-      <Modal open={open} onClick={onClick} style={{ overflow: "hidden" }}>
+      <Modal open={open} onClick={onClick}>
         <Box style={{ overflow: "scroll" }}>
-          <Typography variant="h4" sx={modalTitle}>
+          <Typography
+            variant="h4"
+            sx={{
+              ...modalTitle,
+              overflow: "hidden",
+              position: "fixed",
+              width: "100%",
+            }}
+          >
             New Knitting Project
           </Typography>
           <Box
             sx={{
-              minWidth: "80%",
+              maxWidth: "80%",
               margin: "0 auto",
-              padding: "10px 0",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
+              paddingTop: "100px",
             }}
           >
             <form onSubmit={handleSubmit(onSubmit)}>
