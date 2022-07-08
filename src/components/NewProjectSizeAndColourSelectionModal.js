@@ -28,7 +28,16 @@ export const NewProjectSizeAndColourSelectionModal = ({
           <Typography variant="h4" sx={modalTitle}>
             New Knitting Project
           </Typography>
-          <Box sx={{ maxWidth: "90%", margin: "0 auto", padding: "10px 0" }}>
+          <Box
+            sx={{
+              minWidth: "80%",
+              margin: "0 auto",
+              padding: "10px 0",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
+          >
             <form onSubmit={handleSubmit(onSubmit)}>
               <Box padding="10px">
                 <TextField
