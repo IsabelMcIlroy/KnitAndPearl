@@ -32,8 +32,9 @@ const KnittingTheme = createTheme({
         root: {
           backgroundColor: palette.knittingLightBlue,
           color: palette.knittingGray,
-          margin: "10px 20px",
+          margin: "12px 24px",
           flexBasis: "auto",
+          height: "48px",
           "&:hover": {
             backgroundColor: palette.knittingBlue,
             color: palette.knittingGray,
@@ -71,7 +72,7 @@ const KnittingTheme = createTheme({
         },
         backdrop: {
           backgroundColor: palette.knittingLightBlue,
-          borderRadius: "20px",
+          borderRadius: "24px",
         },
       },
     },
@@ -91,6 +92,6 @@ export const modalTitle = {
   fontFamily: "La Belle Aurore",
   textAlign: "center",
   backgroundColor: palette.knittingBlue,
-  paddingTop: "16px",
-  borderRadius: "10px 10px 0 0",
+  paddingTop: "18px",
+  borderRadius: "12px 12px 0 0",
 };
