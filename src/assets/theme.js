@@ -49,7 +49,7 @@ const KnittingTheme = createTheme({
         cancel: {
           backgroundColor: palette.knittingPurple,
           "&:hover": {
-            backgroundColor: "#5C3E3E",
+            backgroundColor: "#724949",
           },
         },
         other: {
