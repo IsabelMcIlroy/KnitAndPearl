@@ -110,7 +110,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
                 </Typography>
               </Box>
               <Box textAlign="center">
-                <input type="submit" style={submitButton} />
+                <input type="submit" value="Submit" style={submitButton} />
                 <ModalButton
                   text="Cancel"
                   onClick={() => {
