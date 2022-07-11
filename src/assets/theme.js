@@ -95,3 +95,13 @@ export const modalTitle = {
   paddingTop: "18px",
   borderRadius: "12px 12px 0 0",
 };
+
+export const submitButton = {
+  backgroundColor: palette.knittingBlue,
+  margin: "12px 24px",
+  flexBasis: "auto",
+  height: "48px",
+  "&:hover": {
+    backgroundColor: "#0B5082",
+  },
+};

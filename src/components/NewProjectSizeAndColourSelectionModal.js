@@ -7,7 +7,7 @@ import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Select from "@mui/material/Select";
-import KnittingTheme, { palette } from "../assets/Theme";
+import KnittingTheme, { palette, submitButton } from "../assets/Theme";
 import { modalTitle } from "../assets/Theme";
 import { ModalButton } from "./ModalButton";
 
@@ -64,7 +64,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
               </Box>
               <Box padding="10px" textAlign="center">
                 <Select
-                  {...register("Row", { required: "This is required" })}
+                  {...register("Row", { required: "These are required" })}
                   native
                   label="Row"
                   sx={{ margin: "10px" }}
@@ -83,7 +83,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   <option value={12}>Twelve</option>
                 </Select>
                 <Select
-                  {...register("Column", { required: "This is required" })}
+                  {...register("Column", { required: "These are required" })}
                   native
                   label="Column"
                   sx={{ margin: "10px" }}
@@ -101,17 +101,16 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   <option value={11}>Eleven</option>
                   <option value={12}>Twelve</option>
                 </Select>
-                <Typography variant="p" color={palette.knittingPurple}>
-                  {errors.Column?.message}
-                </Typography>
+                <Typography
+                  variant="p"
+                  color={palette.knittingPurple}
+                ></Typography>
                 <Typography variant="p" color={palette.knittingPurple}>
                   {errors.Row?.message}
                 </Typography>
               </Box>
               <Box textAlign="center">
-                <Link to="/NewProject">
-                  <ModalButton type="submit" text="Submit" />
-                </Link>
+                <input type="submit" style={submitButton} />
                 <ModalButton
                   text="Cancel"
                   onClick={() => {
