@@ -28,7 +28,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
     formState: { errors },
     handleSubmit,
   } = useForm({ resolver: yupResolver(validationSchema) });
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => console.log(JSON.stringify(data, null, 2));
   return (
     <ThemeProvider theme={KnittingTheme}>
       <Modal open={open} onClick={onClick}>
@@ -46,12 +46,13 @@ export const NewProjectSizeAndColourSelectionModal = ({
             <form ref={form} onSubmit={handleSubmit(onSubmit)}>
               <Box padding="10px">
                 <TextField
+                  required
                   fullWidth
                   {...register("projectName")}
                   error={errors.projectName ? true : false}
                   placeholder="Project Name*"
                 />
-                <Typography variant="p" color={palette.knittingPurple}>
+                <Typography variant="inherit" color={palette.knittingPurple}>
                   {errors.projectName?.message}
                 </Typography>
               </Box>
@@ -64,6 +65,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
               </Box>
               <Box padding="10px" textAlign="center">
                 <Select
+                  required
                   {...register("Row")}
                   error={errors.Row ? true : false}
                   native
@@ -83,7 +85,11 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   <option value={11}>Eleven</option>
                   <option value={12}>Twelve</option>
                 </Select>
+                <Typography variant="inherit" color={palette.knittingPurple}>
+                  {errors.Row?.message}
+                </Typography>
                 <Select
+                  required
                   {...register("Column")}
                   error={errors.Column ? true : false}
                   native
@@ -103,16 +109,12 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   <option value={11}>Eleven</option>
                   <option value={12}>Twelve</option>
                 </Select>
-                <Typography
-                  variant="p"
-                  color={palette.knittingPurple}
-                ></Typography>
-                <Typography variant="p" color={palette.knittingPurple}>
+                <Typography variant="inherit" color={palette.knittingPurple}>
                   {errors.Column?.message}
                 </Typography>
               </Box>
               <Box textAlign="center">
-                <ModalButton type="submit" text="Submit" />
+                <ModalButton onClick={handleSubmit(onSubmit)} text="Submit" />
                 <ModalButton
                   text="Cancel"
                   onClick={() => {
