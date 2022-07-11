@@ -26,15 +26,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
     <ThemeProvider theme={KnittingTheme}>
       <Modal open={open} onClick={onClick}>
         <Box style={{ overflow: "scroll" }}>
-          <Typography
-            variant="h4"
-            sx={{
-              ...modalTitle,
-              overflow: "hidden",
-              position: "fixed",
-              width: "100%",
-            }}
-          >
+          <Typography variant="h4" sx={modalTitle}>
             New Knitting Project
           </Typography>
           <Box

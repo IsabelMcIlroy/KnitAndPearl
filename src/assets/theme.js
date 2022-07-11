@@ -94,6 +94,9 @@ export const modalTitle = {
   backgroundColor: palette.knittingBlue,
   paddingTop: "18px",
   borderRadius: "12px 12px 0 0",
+  overflow: "hidden",
+  position: "fixed",
+  width: "100%",
 };
 
 export const submitButton = {
