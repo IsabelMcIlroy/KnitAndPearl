@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 import Modal from "@mui/material/Modal";
 import { ThemeProvider } from "@mui/material";
 import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Select from "@mui/material/Select";
-import KnittingTheme, { palette, submitButton } from "../assets/Theme";
+import KnittingTheme, { palette } from "../assets/Theme";
 import { modalTitle } from "../assets/Theme";
 import { ModalButton } from "./ModalButton";
 
@@ -15,11 +17,17 @@ export const NewProjectSizeAndColourSelectionModal = ({
   onClick,
   closeModal,
 }) => {
+  const form = useRef();
+  const validationSchema = yup.object().shape({
+    projectName: yup.string().required("This is required"),
+    Row: yup.string().required("This is required"),
+    Column: yup.string().required("This is required"),
+  });
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+  } = useForm({ resolver: yupResolver(validationSchema) });
   const onSubmit = (data) => console.log(data);
   return (
     <ThemeProvider theme={KnittingTheme}>
@@ -35,11 +43,12 @@ export const NewProjectSizeAndColourSelectionModal = ({
               paddingTop: "100px",
             }}
           >
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form ref={form} onSubmit={handleSubmit(onSubmit)}>
               <Box padding="10px">
                 <TextField
                   fullWidth
-                  {...register("projectName", { required: "This is required" })}
+                  {...register("projectName")}
+                  error={errors.projectName ? true : false}
                   placeholder="Project Name*"
                 />
                 <Typography variant="p" color={palette.knittingPurple}>
@@ -55,7 +64,8 @@ export const NewProjectSizeAndColourSelectionModal = ({
               </Box>
               <Box padding="10px" textAlign="center">
                 <Select
-                  {...register("Row", { required: "These are required" })}
+                  {...register("Row")}
+                  error={errors.Row ? true : false}
                   native
                   label="Row"
                   sx={{ margin: "10px" }}
@@ -74,7 +84,8 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   <option value={12}>Twelve</option>
                 </Select>
                 <Select
-                  {...register("Column", { required: "These are required" })}
+                  {...register("Column")}
+                  error={errors.Column ? true : false}
                   native
                   label="Column"
                   sx={{ margin: "10px" }}
@@ -97,11 +108,11 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   color={palette.knittingPurple}
                 ></Typography>
                 <Typography variant="p" color={palette.knittingPurple}>
-                  {errors.Row?.message}
+                  {errors.Column?.message}
                 </Typography>
               </Box>
               <Box textAlign="center">
-                <input type="submit" value="Submit" style={submitButton} />
+                <ModalButton type="submit" text="Submit" />
                 <ModalButton
                   text="Cancel"
                   onClick={() => {

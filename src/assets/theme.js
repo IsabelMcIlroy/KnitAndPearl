@@ -98,24 +98,3 @@ export const modalTitle = {
   position: "fixed",
   width: "100%",
 };
-
-export const submitButton = {
-  backgroundColor: palette.knittingBlue,
-  color: palette.knittingGray,
-  fontFamily: "Roboto",
-  cursor: "pointer",
-  margin: "12px 24px",
-  flexBasis: "auto",
-  height: "48px",
-  border: "none",
-  fontWeight: "500",
-  fontSize: "0.875rem",
-  lineHeight: "1.75",
-  letterSpacing: "0.02857em",
-  textTransform: "uppercase",
-  padding: "6px 16px",
-  borderRadius: "4px",
-  "&:hover": {
-    backgroundColor: "#0B5082",
-  },
-};
