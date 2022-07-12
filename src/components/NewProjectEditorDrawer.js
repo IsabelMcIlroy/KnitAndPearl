@@ -1,11 +1,12 @@
 import React from "react";
-import { Drawer } from "@mui/material";
+import { Drawer, IconButton } from "@mui/material";
+import ReorderIcon from "@mui/icons-material/Reorder";
 
 const styles = {
   sideNav: {
-    marginTop: "-60px",
-    zIndex: 3,
-    marginLeft: "0px",
+    marginTop: "80px",
+    width: "20px",
+    zIndex: 10,
     position: "fixed",
   },
 };
@@ -32,11 +33,15 @@ export default class NewProjectEditorDrawer extends React.Component {
     return (
       <div>
         <div style={styles.sideNav}>
-          <p onClick={this.toggleDrawerStatus}>
-            {!isDrawerOpened ? ">" : null}
-          </p>
+          <IconButton onClick={this.toggleDrawerStatus}>
+            {!isDrawerOpened ? <ReorderIcon /> : null}
+          </IconButton>
         </div>
-        <Drawer>
+        <Drawer
+          variant="temporary"
+          open={isDrawerOpened}
+          onClose={this.closeDrawer}
+        >
           <p>Hello</p>
           <p>World</p>
         </Drawer>
