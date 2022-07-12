@@ -30,11 +30,11 @@ export const NavBar = () => {
               open={isOpen}
               closeModal={setIsOpen}
             />
-            <Link to="/ViewProject">
-              <WelcomePageOptionButtons btnText={"View Projects"} />
-            </Link>
             <Link to="/">
               <Logo />
+            </Link>
+            <Link to="/ViewProject">
+              <WelcomePageOptionButtons btnText={"View Projects"} />
             </Link>
           </Grid>
         </Toolbar>
