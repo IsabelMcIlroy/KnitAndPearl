@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useNavigate } from "react-router-dom";
 import Modal from "@mui/material/Modal";
 import { ThemeProvider } from "@mui/material";
 import { Typography } from "@mui/material";
@@ -28,7 +29,11 @@ export const NewProjectSizeAndColourSelectionModal = ({
     formState: { errors },
     handleSubmit,
   } = useForm({ resolver: yupResolver(validationSchema) });
-  const onSubmit = (data) => console.log(JSON.stringify(data, null, 2));
+  const navigate = useNavigate();
+  const onSubmit = (data) => {
+    console.log(JSON.stringify(data, null, 2));
+    navigate("/NewProject");
+  };
   return (
     <ThemeProvider theme={KnittingTheme}>
       <Modal open={open} onClick={onClick}>
