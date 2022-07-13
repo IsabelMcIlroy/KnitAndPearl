@@ -57,7 +57,7 @@ export const ColorPicker = () => {
       <div style={styles.swatch} onClick={handleClick()}>
         <div style={styles.color} />
       </div>
-      {this.state.displayColorPicker ? (
+      {isDisplayColorPicker ? (
         <div style={styles.popover}>
           <div style={styles.cover} onClick={handleClose()} />
           <GithubPicker color={color} onChange={handleChange()} />

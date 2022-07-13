@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Drawer, IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import { sideNavClosed } from "../assets/theme";
-import { sideNavOpened } from "../assets/theme";
+import { Typography } from "@mui/material";
+import KnittingTheme, { sideNavClosed } from "../assets/theme";
 
 export const NewProjectEditorDrawer = () => {
   const [isOpen, isDrawerOpened] = useState(false);
@@ -24,8 +24,10 @@ export const NewProjectEditorDrawer = () => {
         variant="temporary"
         open={isOpen}
         onClose={closeDrawer}
-        style={sideNavOpened}
-      ></Drawer>
+        style={KnittingTheme}
+      >
+        <Typography variant="p">projectName</Typography>
+      </Drawer>
     </div>
   );
 };

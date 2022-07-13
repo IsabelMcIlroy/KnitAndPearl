@@ -73,6 +73,14 @@ const KnittingTheme = createTheme({
         },
       },
     },
+    MuiDrawer: {
+      styleOverrides: {
+        modal: {
+          width: "300px",
+          backgroundColor: palette.knittingGray,
+        },
+      },
+    },
   },
 });
 
@@ -102,9 +110,4 @@ export const sideNavClosed = {
   position: "fixed",
   height: "100%",
   backgroundColor: palette.knittingLightPurple,
-};
-
-export const sideNavOpened = {
-  width: "300px",
-  backgroundColor: palette.knittingGray,
 };
