@@ -7,7 +7,7 @@ import Grid from "@mui/material/Grid";
 
 import wool from "../images/wool.jpg";
 import { WelcomePageOptionButtons } from "./WelcomePageOptionButtons";
-import { Logo } from "./Logo";
+import { Logo } from "./logo";
 import { NewProjectSizeAndColourSelectionModal } from "./NewProjectSizeAndColourSelectionModal";
 
 export const NavBar = () => {
