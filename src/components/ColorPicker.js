@@ -1,28 +1,26 @@
-import React from "react";
+import {useState} from "react";
 import reactCSS from "reactcss";
 import { GithubPicker } from "react-color";
 
-class ColorPicker extends React.Component {
-  state = {
-    displayColorPicker: false,
-    color: {
-      r: "241",
-      g: "112",
-      b: "19",
-      a: "1",
-    },
-  };
+const ColorPicker = () => {
+  const [isDisplayColorPicker, setIsDsiplayColorPicker] = useState(false);
+  const [color, setColor] = useState({
+    r:"241",
+    g:"112",
+    b:"19",
+    a:"1",
+  })
 
   handleClick = () => {
-    this.setState({ displayColorPicker: !this.state.displayColorPicker });
+    setIsDsiplayColorPicker(true);
   };
 
   handleClose = () => {
-    this.setState({ displayColorPicker: false });
+    isDisplayColorPicker(false);
   };
 
   handleChange = (color) => {
-    this.setState({ color: color.rgb });
+    setColor(color.rgb)
   };
 
   render() {
