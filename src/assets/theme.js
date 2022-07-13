@@ -40,20 +40,17 @@ const KnittingTheme = createTheme({
             color: palette.knittingGray,
           },
         },
-        submit: {
+        Submit: {
           backgroundColor: palette.knittingBlue,
           "&:hover": {
             backgroundColor: "#0B5082",
           },
         },
-        cancel: {
+        Cancel: {
           backgroundColor: palette.knittingPurple,
           "&:hover": {
             backgroundColor: "#724949",
           },
-        },
-        other: {
-          color: palette.knittingPurple,
         },
       },
     },
