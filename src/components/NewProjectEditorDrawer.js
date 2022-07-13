@@ -1,13 +1,18 @@
 import React from "react";
 import { Drawer, IconButton } from "@mui/material";
-import ReorderIcon from "@mui/icons-material/Reorder";
+import EditIcon from "@mui/icons-material/Edit";
 
 const styles = {
   sideNav: {
-    marginTop: "80px",
-    width: "20px",
+    marginTop: "90px",
     zIndex: 10,
     position: "fixed",
+    height: "100%",
+    backgroundColor: "purple",
+  },
+  drawerStyle: {
+    width: "300px",
+    backgroundColor: "black",
   },
 };
 
@@ -34,17 +39,15 @@ export default class NewProjectEditorDrawer extends React.Component {
       <div>
         <div style={styles.sideNav}>
           <IconButton onClick={this.toggleDrawerStatus}>
-            {!isDrawerOpened ? <ReorderIcon /> : null}
+            {!isDrawerOpened ? <EditIcon /> : null}
           </IconButton>
         </div>
         <Drawer
           variant="temporary"
           open={isDrawerOpened}
           onClose={this.closeDrawer}
-        >
-          <p>Hello</p>
-          <p>World</p>
-        </Drawer>
+          style={styles.drawerStyle}
+        ></Drawer>
       </div>
     );
   }
