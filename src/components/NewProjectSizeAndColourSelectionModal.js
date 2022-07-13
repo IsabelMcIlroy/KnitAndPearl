@@ -9,8 +9,8 @@ import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Select from "@mui/material/Select";
-import KnittingTheme, { palette } from "../assets/Theme";
-import { modalTitle } from "../assets/Theme";
+import KnittingTheme, { palette } from "../assets/theme";
+import { modalTitle } from "../assets/theme";
 import { ModalButton } from "./ModalButton";
 
 export const NewProjectSizeAndColourSelectionModal = ({
