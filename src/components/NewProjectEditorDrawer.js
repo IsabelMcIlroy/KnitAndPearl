@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { Drawer, IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 
@@ -16,39 +16,28 @@ const styles = {
   },
 };
 
-export default class NewProjectEditorDrawer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isDrawerOpened: false,
-    };
-  }
-  toggleDrawerStatus = () => {
-    this.setState({
-      isDrawerOpened: true,
-    });
+export const NewProjectEditorDrawer = () => {
+  const [isOpen, isDrawerOpened] = useState(false);
+  const closeDrawer = () => {
+    isDrawerOpened(false);
   };
-  closeDrawer = () => {
-    this.setState({
-      isDrawerOpened: false,
-    });
-  };
-  render() {
-    const { isDrawerOpened } = this.state;
-    return (
-      <div>
-        <div style={styles.sideNav}>
-          <IconButton onClick={this.toggleDrawerStatus}>
-            {!isDrawerOpened ? <EditIcon /> : null}
-          </IconButton>
-        </div>
-        <Drawer
-          variant="temporary"
-          open={isDrawerOpened}
-          onClose={this.closeDrawer}
-          style={styles.drawerStyle}
-        ></Drawer>
+  return (
+    <div>
+      <div style={styles.sideNav}>
+        <IconButton
+          onClick={() => {
+            isDrawerOpened(true);
+          }}
+        >
+          {!isDrawerOpened ? <EditIcon /> : null}
+        </IconButton>
       </div>
-    );
-  }
-}
+      <Drawer
+        variant="temporary"
+        open={isOpen}
+        onClose={closeDrawer}
+        style={styles.drawerStyle}
+      ></Drawer>
+    </div>
+  );
+};

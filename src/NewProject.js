@@ -1,5 +1,5 @@
 import { NavBar } from "./components/NavBar";
-import NewProjectEditorDrawer from "./components/NewProjectEditorDrawer";
+import { NewProjectEditorDrawer } from "./components/NewProjectEditorDrawer";
 
 export const NewProject = () => {
   return (
