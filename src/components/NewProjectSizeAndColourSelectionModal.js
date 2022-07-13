@@ -3,14 +3,15 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
-import Modal from "@mui/material/Modal";
-import { ThemeProvider } from "@mui/material";
-import { Typography } from "@mui/material";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import Select from "@mui/material/Select";
-import KnittingTheme, { palette } from "../assets/theme";
-import { modalTitle } from "../assets/theme";
+import {
+  Modal,
+  ThemeProvider,
+  Typography,
+  Box,
+  TextField,
+  Select,
+} from "@mui/material";
+import KnittingTheme, { palette, modalTitle } from "../assets/theme";
 import { ModalButton } from "./ModalButton";
 
 export const NewProjectSizeAndColourSelectionModal = ({

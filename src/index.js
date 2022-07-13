@@ -9,7 +9,7 @@ import { Title } from "./components/title";
 import { WelcomePageOptionButtons } from "./components/WelcomePageOptionButtons";
 import wool from "./images/wool.jpg";
 import { Logo } from "./components/logo";
-import { NewProject } from "./NewProject.js";
+import { NewProject } from "./NewProject";
 import { NewProjectSizeAndColourSelectionModal } from "./components/NewProjectSizeAndColourSelectionModal";
 import { ViewProject } from "./ViewProject";
 

@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Drawer, IconButton } from "@mui/material";
+import { Drawer, IconButton, Typography } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import { Typography } from "@mui/material";
 import KnittingTheme, { sideNavClosed } from "../assets/theme";
 
 export const NewProjectEditorDrawer = () => {

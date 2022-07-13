@@ -1,10 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-import { AppBar } from "@mui/material";
-import Toolbar from "@mui/material/Toolbar";
-import Grid from "@mui/material/Grid";
-
+import { AppBar, Toolbar, Grid } from "@mui/material";
 import wool from "../images/wool.jpg";
 import { WelcomePageOptionButtons } from "./WelcomePageOptionButtons";
 import { Logo } from "./logo";
