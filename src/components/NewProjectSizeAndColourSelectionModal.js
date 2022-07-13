@@ -33,6 +33,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
   const navigate = useNavigate();
   const onSubmit = (data) => {
     console.log(JSON.stringify(data, null, 2));
+    setIsOpen(false);
     navigate("/NewProject");
   };
   return (
