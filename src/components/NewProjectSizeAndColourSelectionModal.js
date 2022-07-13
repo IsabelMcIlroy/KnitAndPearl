@@ -16,7 +16,7 @@ import { ModalButton } from "./ModalButton";
 export const NewProjectSizeAndColourSelectionModal = ({
   open,
   onClick,
-  closeModal,
+  setIsOpen,
 }) => {
   const form = useRef();
   const validationSchema = yup.object().shape({
@@ -123,7 +123,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
                 <ModalButton
                   text="Cancel"
                   onClick={() => {
-                    closeModal(false);
+                    setIsOpen(false);
                   }}
                 />
               </Box>

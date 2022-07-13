@@ -41,7 +41,7 @@ export const Index = () => {
           />
           <NewProjectSizeAndColourSelectionModal
             open={isOpen}
-            closeModal={setIsOpen}
+            setIsOpen={setIsOpen}
           />
 
           <Link to="/">
