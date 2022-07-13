@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: main
+    branches: master
 
 jobs:
   build:
@@ -18,13 +18,13 @@ jobs:
           node-version: "16"
 
       - name: Install dependencies
-        run: cd my-app && npm install
+        run: npm install
 
       - name: Build
-        run: cd my-app && npm run build
+        run: npm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages
-          folder: KnittingProjectManager/build
+          folder: build
