@@ -1,20 +1,8 @@
 import { useState } from "react";
 import { Drawer, IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-
-const styles = {
-  sideNav: {
-    marginTop: "90px",
-    zIndex: 10,
-    position: "fixed",
-    height: "100%",
-    backgroundColor: "purple",
-  },
-  drawerStyle: {
-    width: "300px",
-    backgroundColor: "black",
-  },
-};
+import { sideNavClosed } from "../assets/theme";
+import { sideNavOpened } from "../assets/theme";
 
 export const NewProjectEditorDrawer = () => {
   const [isOpen, isDrawerOpened] = useState(false);
@@ -23,20 +11,20 @@ export const NewProjectEditorDrawer = () => {
   };
   return (
     <div>
-      <div style={styles.sideNav}>
+      <div style={sideNavClosed}>
         <IconButton
           onClick={() => {
             isDrawerOpened(true);
           }}
         >
-          {!isDrawerOpened ? <EditIcon /> : null}
+          {isDrawerOpened ? <EditIcon /> : null}
         </IconButton>
       </div>
       <Drawer
         variant="temporary"
         open={isOpen}
         onClose={closeDrawer}
-        style={styles.drawerStyle}
+        style={sideNavOpened}
       ></Drawer>
     </div>
   );

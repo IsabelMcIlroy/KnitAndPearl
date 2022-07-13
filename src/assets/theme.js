@@ -95,3 +95,16 @@ export const modalTitle = {
   position: "fixed",
   width: "100%",
 };
+
+export const sideNavClosed = {
+  marginTop: "90px",
+  zIndex: 10,
+  position: "fixed",
+  height: "100%",
+  backgroundColor: palette.knittingLightPurple,
+};
+
+export const sideNavOpened = {
+  width: "300px",
+  backgroundColor: palette.knittingGray,
+};
