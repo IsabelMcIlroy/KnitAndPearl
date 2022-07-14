@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Drawer, IconButton, Typography } from "@mui/material";
+import { Drawer, IconButton, Typography, Box } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import KnittingTheme, { sideNavClosed, palette } from "../assets/theme";
+import { ColorPicker } from "./ColorPicker";
 
 export const NewProjectEditorDrawer = () => {
   const [isOpen, isDrawerOpened] = useState(false);
@@ -28,7 +29,14 @@ export const NewProjectEditorDrawer = () => {
           sx: { backgroundColor: palette.knittingGray, width: "300px" },
         }}
       >
-        <Typography variant="p">projectName</Typography>
+        <Box sx={{ margin: "24px auto" }}>
+          <Typography variant="h4" sx={{ margin: "12px" }}>
+            projectName
+          </Typography>
+          <Typography variant="h6" sx={{ margin: "12px" }}>
+            projectType
+          </Typography>
+        </Box>
       </Drawer>
     </div>
   );

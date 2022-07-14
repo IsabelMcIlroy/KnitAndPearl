@@ -7,7 +7,7 @@ const styles = {
       width: "36px",
       height: "14px",
       borderRadius: "2px",
-      background: `rgba(${setColor.color.r}, ${setColor.color.g}, ${setColor.color.b}, ${setColor.color.a})`,
+      background: `rgba({color.r}, {color.g}, {color.b}, {color.a})`,
     },
     swatch: {
       padding: "5px",
@@ -32,7 +32,7 @@ const styles = {
 };
 
 export const ColorPicker = () => {
-  const [isDisplayColorPicker, setIsDsiplayColorPicker] = useState(false);
+  const [isDisplayColorPicker, setIsDisplayColorPicker] = useState(false);
   const [color, setColor] = useState({
     r: "241",
     g: "112",
@@ -40,15 +40,15 @@ export const ColorPicker = () => {
     a: "1",
   });
 
-  handleClick = () => {
-    setIsDsiplayColorPicker(true);
+  const handleClick = () => {
+    setIsDisplayColorPicker(true);
   };
 
-  handleClose = () => {
-    isDisplayColorPicker(false);
+  const handleClose = () => {
+    setIsDisplayColorPicker(false);
   };
 
-  handleChange = (color) => {
+  const handleChange = (color) => {
     setColor(color.rgb);
   };
 
