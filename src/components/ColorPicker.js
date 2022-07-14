@@ -1,36 +1,6 @@
 import { useState } from "react";
 import { GithubPicker } from "react-color";
 
-const styles = {
-  default: {
-    color: {
-      width: "36px",
-      height: "14px",
-      borderRadius: "2px",
-      background: `rgba({color.r}, {color.g}, {color.b}, {color.a})`,
-    },
-    swatch: {
-      padding: "5px",
-      background: "#fff",
-      borderRadius: "5px",
-      boxShadow: "0 0 0 1px rgba(0,0,0,.1)",
-      display: "inline-block",
-      cursor: "pointer",
-    },
-    popover: {
-      position: "absolute",
-      zIndex: "2",
-    },
-    cover: {
-      position: "fixed",
-      top: "0px",
-      right: "0px",
-      bottom: "0px",
-      left: "0px",
-    },
-  },
-};
-
 export const ColorPicker = () => {
   const [isDisplayColorPicker, setIsDisplayColorPicker] = useState(false);
   const [color, setColor] = useState({
@@ -48,19 +18,45 @@ export const ColorPicker = () => {
     setIsDisplayColorPicker(false);
   };
 
-  const handleChange = (color) => {
+  const handleChange = () => {
     setColor(color.rgb);
   };
 
   return (
     <div>
-      <div style={styles.swatch} onClick={handleClick()}>
-        <div style={styles.color} />
+      <div
+        style={{
+          padding: "5px",
+          background: "#fff",
+          borderRadius: "5px",
+          boxShadow: "0 0 0 1px rgba(0,0,0,.1)",
+          display: "inline-block",
+          cursor: "pointer",
+        }}
+        onClick={handleClick()}
+      >
+        <div
+          style={{
+            width: "36px",
+            height: "14px",
+            borderRadius: "2px",
+            background: `rgba({color.r}, {color.g}, {color.b}, {color.a})`,
+          }}
+        />
       </div>
       {isDisplayColorPicker ? (
-        <div style={styles.popover}>
-          <div style={styles.cover} onClick={handleClose()} />
-          <GithubPicker color={color} onChange={handleChange()} />
+        <div style={{ position: "absolute", zIndex: "2" }}>
+          <div
+            style={{
+              position: "fixed",
+              top: "0px",
+              right: "0px",
+              bottom: "0px",
+              left: "0px",
+            }}
+            onClick={handleClose()}
+          />
+          <GithubPicker color={color.rgb} onChange={handleChange()} />
         </div>
       ) : null}
     </div>
