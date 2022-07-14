@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Drawer, IconButton, Typography, Box } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import KnittingTheme, { sideNavClosed, palette } from "../assets/theme";
+import { sideNavClosed, palette } from "../assets/theme";
 
 export const NewProjectEditorDrawer = () => {
   const [isOpen, isDrawerOpened] = useState(false);
@@ -23,7 +23,6 @@ export const NewProjectEditorDrawer = () => {
         variant="temporary"
         open={isOpen}
         onClose={closeDrawer}
-        style={KnittingTheme}
         PaperProps={{
           sx: { backgroundColor: palette.knittingGray, width: "300px" },
         }}
