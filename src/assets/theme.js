@@ -73,14 +73,6 @@ const KnittingTheme = createTheme({
         },
       },
     },
-    MuiDrawer: {
-      styleOverrides: {
-        modal: {
-          width: "300px",
-          backgroundColor: palette.knittingGray,
-        },
-      },
-    },
   },
 });
 
