@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -30,9 +30,14 @@ export const NewProjectSizeAndColourSelectionModal = ({
     formState: { errors },
     handleSubmit,
   } = useForm({ resolver: yupResolver(validationSchema) });
+  const [projectName, setProjectName] = useState(" ");
+  const handleInput = (event) => {
+    setProjectName(event.target.value);
+  };
   const navigate = useNavigate();
   const onSubmit = (data) => {
     console.log(JSON.stringify(data, null, 2));
+    console.log(projectName);
     setIsOpen(false);
     navigate("/NewProject");
   };
@@ -58,6 +63,8 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   {...register("projectName")}
                   error={errors.projectName ? true : false}
                   placeholder="Project Name*"
+                  id="projectName"
+                  onChange={handleInput}
                 />
                 <Typography variant="inherit" color={palette.knittingPurple}>
                   {errors.projectName?.message}
@@ -68,6 +75,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   fullWidth
                   {...register("projectType")}
                   placeholder="Project Type"
+                  id="projectType"
                 />
               </Box>
               <Box padding="10px" textAlign="center">
