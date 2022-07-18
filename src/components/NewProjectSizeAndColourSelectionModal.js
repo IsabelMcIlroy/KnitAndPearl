@@ -30,16 +30,17 @@ export const NewProjectSizeAndColourSelectionModal = ({
     formState: { errors },
     handleSubmit,
   } = useForm({ resolver: yupResolver(validationSchema) });
-  const [projectName, setProjectName] = useState(" ");
+  const [currentProjectName, setProjectName] = useState(" ");
   const handleInput = (event) => {
     setProjectName(event.target.value);
   };
   const navigate = useNavigate();
   const onSubmit = (data) => {
     console.log(JSON.stringify(data, null, 2));
-    console.log(projectName);
+    console.log(currentProjectName);
     setIsOpen(false);
     navigate("/NewProject");
+    return currentProjectName;
   };
   return (
     <ThemeProvider theme={KnittingTheme}>
