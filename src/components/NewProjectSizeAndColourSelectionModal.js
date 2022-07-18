@@ -35,7 +35,8 @@ export const NewProjectSizeAndColourSelectionModal = ({
     setProjectName(event.target.value);
   };
   const navigate = useNavigate();
-  const onSubmit = (data) => {
+  const onSubmit = (data, event) => {
+    event.preventDefault();
     console.log(JSON.stringify(data, null, 2));
     console.log(currentProjectName);
     setIsOpen(false);
