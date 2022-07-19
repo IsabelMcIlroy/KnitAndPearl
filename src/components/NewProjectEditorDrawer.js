@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Drawer, IconButton, Typography, Box } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import { sideNavClosed, palette } from "../assets/theme";
+import { NewProjectSizeAndColourSelectionModal } from "./NewProjectSizeAndColourSelectionModal";
 
 export const NewProjectEditorDrawer = () => {
   const [isOpen, isDrawerOpened] = useState(false);
@@ -29,7 +30,7 @@ export const NewProjectEditorDrawer = () => {
       >
         <Box sx={{ margin: "24px auto" }}>
           <Typography variant="h4" sx={{ margin: "12px" }}>
-            projectName
+            {NewProjectSizeAndColourSelectionModal.currentProjectName}
           </Typography>
           <Typography variant="h6" sx={{ margin: "12px" }}>
             projectType
