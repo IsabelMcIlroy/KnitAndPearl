@@ -39,6 +39,8 @@ export const NewProjectSizeAndColourSelectionModal = ({
     event.preventDefault();
     console.log(JSON.stringify(data, null, 2));
     console.log(currentProjectName);
+    const CurrentProjectsName = currentProjectName;
+    console.log(CurrentProjectsName);
     setIsOpen(false);
     navigate("/NewProject");
   };
