@@ -31,7 +31,7 @@ export const Index = () => {
         }}
       >
         <Title titleText={"Knitting Project Manager"} />
-
+        <h1>Hello</h1>
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <WelcomePageOptionButtons
             btnText={"New Project"}
