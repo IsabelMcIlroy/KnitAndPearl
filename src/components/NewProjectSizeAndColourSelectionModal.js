@@ -42,7 +42,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
     const CurrentProjectsName = currentProjectName;
     console.log(CurrentProjectsName);
     setIsOpen(false);
-    navigate("/NewProject");
+    navigate("/KnittingProjectManager/NewProject");
   };
   return (
     <ThemeProvider theme={KnittingTheme}>

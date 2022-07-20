@@ -9,9 +9,9 @@ import { Title } from "./components/title";
 import { WelcomePageOptionButtons } from "./components/WelcomePageOptionButtons";
 import wool from "./images/wool.jpg";
 import { Logo } from "./components/logo";
-import { NewProject } from "./NewProject";
+import { NewProject } from "./KnittingProjectManager/NewProject";
 import { NewProjectSizeAndColourSelectionModal } from "./components/NewProjectSizeAndColourSelectionModal";
-import { ViewProject } from "./ViewProject";
+import { ViewProject } from "./KnittingProjectManager/ViewProject";
 
 export const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +47,7 @@ export const Index = () => {
           <Link to="/">
             <Logo />
           </Link>
-          <Link to="/ViewProject">
+          <Link to="/KnittingProjectManager/ViewProject">
             <WelcomePageOptionButtons btnText={"View Projects"} />
           </Link>
         </Box>
@@ -68,7 +68,7 @@ render(
         path="/KnittingProjectManager/ViewProject"
         element={<ViewProject />}
       />
-      <Route path="/KnittingProjectManager/" element={<Index />} />
+      <Route path="/" element={<Index />} />
     </Routes>
   </BrowserRouter>,
   rootElement
