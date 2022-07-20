@@ -47,7 +47,7 @@ export const Index = () => {
           <Link to="/">
             <Logo />
           </Link>
-          <Link to="./KnittingProjectManager/ViewProject">
+          <Link to="/ViewProject">
             <WelcomePageOptionButtons btnText={"View Projects"} />
           </Link>
         </Box>
