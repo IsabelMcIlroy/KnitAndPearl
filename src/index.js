@@ -68,7 +68,7 @@ render(
         path="./KnittingProjectManager/ViewProject"
         element={<ViewProject />}
       />
-      <Route path="./" element={<Index />} />
+      <Route path="./KnittingProjectManager/" element={<Index />} />
     </Routes>
   </BrowserRouter>,
   rootElement
