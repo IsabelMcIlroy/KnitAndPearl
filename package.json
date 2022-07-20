@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://isabelmcilroy.github.io/KnittingProjectManger",
+  "homepage": "https://isabelmcilroy.github.io/",
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
