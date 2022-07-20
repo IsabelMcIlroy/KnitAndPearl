@@ -60,9 +60,9 @@ const rootElement = document.getElementById("root");
 render(
   <BrowserRouter>
     <Routes>
-      <Route path="/KPMPages/NewProject" element={<NewProject />} />
-      <Route path="/KPMPages/ViewProject" element={<ViewProject />} />
-      <Route path="/KPMPages/" element={<Index />} />
+      <Route path="/NewProject" element={<NewProject />} />
+      <Route path="/ViewProject" element={<ViewProject />} />
+      <Route path="/" element={<Index />} />
     </Routes>
   </BrowserRouter>,
   rootElement
