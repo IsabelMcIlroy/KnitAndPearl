@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/index/static/css/main.e6c13ad2.css",
-    "main.js": "/index/static/js/main.9b07b7a6.js",
-    "static/media/wool.jpg": "/index/static/media/wool.50f5b02f8d3a5ede8980.jpg",
-    "index.html": "/index/index.html",
-    "main.e6c13ad2.css.map": "/index/static/css/main.e6c13ad2.css.map",
-    "main.9b07b7a6.js.map": "/index/static/js/main.9b07b7a6.js.map"
+    "main.css": "/KnittingProjectManger/static/css/main.e6c13ad2.css",
+    "main.js": "/KnittingProjectManger/static/js/main.c91e1b0e.js",
+    "static/media/wool.jpg": "/KnittingProjectManger/static/media/wool.50f5b02f8d3a5ede8980.jpg",
+    "index.html": "/KnittingProjectManger/index.html",
+    "main.e6c13ad2.css.map": "/KnittingProjectManger/static/css/main.e6c13ad2.css.map",
+    "main.c91e1b0e.js.map": "/KnittingProjectManger/static/js/main.c91e1b0e.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.9b07b7a6.js"
+    "static/js/main.c91e1b0e.js"
   ]
 }
