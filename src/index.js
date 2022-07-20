@@ -47,7 +47,7 @@ export const Index = () => {
           <Link to="/">
             <Logo />
           </Link>
-          <Link to="/KnittingProjectManager/ViewProject">
+          <Link to="./KnittingProjectManager/ViewProject">
             <WelcomePageOptionButtons btnText={"View Projects"} />
           </Link>
         </Box>
@@ -61,14 +61,14 @@ render(
   <BrowserRouter>
     <Routes>
       <Route
-        path="/KnittingProjectManager/NewProject"
+        path="./KnittingProjectManager/NewProject"
         element={<NewProject />}
       />
       <Route
-        path="/KnittingProjectManager/ViewProject"
+        path="./KnittingProjectManager/ViewProject"
         element={<ViewProject />}
       />
-      <Route path="/" element={<Index />} />
+      <Route path="./" element={<Index />} />
     </Routes>
   </BrowserRouter>,
   rootElement
