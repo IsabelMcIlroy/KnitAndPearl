@@ -62,7 +62,7 @@ const KnittingTheme = createTheme({
           top: "40%",
           left: "50%",
           transform: "translate(-50%, -40%)",
-          height: "90%",
+          height: "500px",
           width: "70%",
           display: "flex",
           flexDirection: "column",

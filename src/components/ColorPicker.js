@@ -18,10 +18,10 @@ export const ColorPicker = () => {
     setIsDisplayColorPicker(false);
   };
 
-  const handleChange = () => {
+  const handleChange = (color) => {
     setColor(color.rgb);
   };
-
+  console.log("ColorPicker");
   return (
     <div>
       <div
@@ -56,7 +56,7 @@ export const ColorPicker = () => {
             }}
             onClick={handleClose()}
           />
-          <GithubPicker color={color.rgb} onChange={handleChange()} />
+          <GithubPicker color={color} onChange={handleChange} />
         </div>
       ) : null}
     </div>

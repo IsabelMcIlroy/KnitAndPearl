@@ -3,12 +3,14 @@ import { Drawer, IconButton, Typography, Box } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import { sideNavClosed, palette } from "../assets/theme";
 import { NewProjectSizeAndColourSelectionModal } from "./NewProjectSizeAndColourSelectionModal";
+import { ColorPicker } from "./ColorPicker";
 
 export const NewProjectEditorDrawer = () => {
   const [isOpen, isDrawerOpened] = useState(false);
   const closeDrawer = () => {
     isDrawerOpened(false);
   };
+  console.log("NewProjectEditorDrawer");
   return (
     <div>
       <div style={sideNavClosed}>
