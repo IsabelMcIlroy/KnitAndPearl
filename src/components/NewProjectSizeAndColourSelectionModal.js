@@ -30,17 +30,26 @@ export const NewProjectSizeAndColourSelectionModal = ({
     formState: { errors },
     handleSubmit,
   } = useForm({ resolver: yupResolver(validationSchema) });
-  const [currentProjectName, setProjectName] = useState(" ");
+  const [state, setState] = useState({
+    currentProjectName: " ",
+    currentProjectType: " ",
+    Row: " ",
+    Column: " ",
+  });
   const handleInput = (event) => {
-    setProjectName(event.target.value);
+    setState({
+      ...state,
+      [event.target.name]: event.target.value,
+    });
   };
   const navigate = useNavigate();
   const onSubmit = (data, event) => {
     event.preventDefault();
     console.log(JSON.stringify(data, null, 2));
-    console.log(currentProjectName);
-    const CurrentProjectsName = currentProjectName;
-    console.log(CurrentProjectsName);
+    console.log(state.currentProjectName);
+    console.log(state.currentProjectType);
+    console.log(state.Row);
+    console.log(state.Column);
     setIsOpen(false);
     navigate("/NewProject");
   };
@@ -65,8 +74,9 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   fullWidth
                   {...register("projectName")}
                   error={errors.projectName ? true : false}
-                  placeholder="Project Name*"
-                  id="projectName"
+                  label="Project Name"
+                  name="currentProjectName"
+                  value={state.currentProjectName}
                   onChange={handleInput}
                 />
                 <Typography variant="inherit" color={palette.knittingPurple}>
@@ -77,8 +87,10 @@ export const NewProjectSizeAndColourSelectionModal = ({
                 <TextField
                   fullWidth
                   {...register("projectType")}
-                  placeholder="Project Type"
-                  id="projectType"
+                  label="Project Type"
+                  name="currentProjectType"
+                  value={state.currentProjectType}
+                  onChange={handleInput}
                 />
               </Box>
               <Box padding="10px" textAlign="center">
@@ -89,6 +101,9 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   native
                   label="Row"
                   sx={{ margin: "10px" }}
+                  name="Row"
+                  value={state.Row}
+                  onChange={handleInput}
                 >
                   <option value=""> ---Row*--- </option>
                   <option value={2}>Two</option>
@@ -113,6 +128,9 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   native
                   label="Column"
                   sx={{ margin: "10px" }}
+                  name="Column"
+                  value={state.Column}
+                  onChange={handleInput}
                 >
                   <option value=""> --Column*-- </option>
                   <option value={2}>Two</option>

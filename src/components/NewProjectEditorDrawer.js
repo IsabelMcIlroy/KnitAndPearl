@@ -30,7 +30,7 @@ export const NewProjectEditorDrawer = () => {
       >
         <Box sx={{ margin: "24px auto" }}>
           <Typography variant="h4" sx={{ margin: "12px" }}>
-            {NewProjectSizeAndColourSelectionModal.CurrentProjectsName}
+            {NewProjectSizeAndColourSelectionModal.currentProjectName}
           </Typography>
           <Typography variant="h6" sx={{ margin: "12px" }}>
             projectType
