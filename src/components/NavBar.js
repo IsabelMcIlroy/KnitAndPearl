@@ -26,7 +26,7 @@ export const NavBar = () => {
               open={isOpen}
               setIsOpen={setIsOpen}
             />
-            <Link to="/">
+            <Link to="/KnittingProjectManager/">
               <Logo />
             </Link>
             <Link to="/ViewProject">
