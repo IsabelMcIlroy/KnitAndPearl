@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./index.css";
 import { render } from "react-dom";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { HashRouter, Routes, Route, Link } from "react-router-dom";
 
 import Box from "@mui/material/Box";
 
@@ -58,7 +58,7 @@ export const Index = () => {
 
 const rootElement = document.getElementById("root");
 render(
-  <BrowserRouter>
+  <HashRouter>
     <Routes>
       <Route
         path="/KnittingProjectManager/NewProject"
@@ -70,6 +70,6 @@ render(
       />
       <Route path="/KnittingProjectManager/" element={<Index />} />
     </Routes>
-  </BrowserRouter>,
+  </HashRouter>,
   rootElement
 );
