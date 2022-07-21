@@ -2,9 +2,7 @@ import { useState } from "react";
 import "./index.css";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-
 import Box from "@mui/material/Box";
-
 import { Title } from "./components/title";
 import { WelcomePageOptionButtons } from "./components/WelcomePageOptionButtons";
 import wool from "./images/wool.jpg";
