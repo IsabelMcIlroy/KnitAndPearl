@@ -15,6 +15,12 @@ export const NewProjectEditorDrawer = () => {
         <IconButton
           onClick={() => {
             isDrawerOpened(true);
+            console.log(
+              NewProjectSizeAndColourSelectionModal.currentProjectName
+            );
+            console.log(
+              NewProjectSizeAndColourSelectionModal.currentProjectType
+            );
           }}
         >
           {isDrawerOpened ? <EditIcon /> : null}
