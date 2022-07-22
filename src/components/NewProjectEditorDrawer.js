@@ -10,7 +10,6 @@ export const NewProjectEditorDrawer = () => {
   const closeDrawer = () => {
     isDrawerOpened(false);
   };
-  console.log("NewProjectEditorDrawer");
   return (
     <div>
       <div style={sideNavClosed}>
@@ -43,6 +42,7 @@ export const NewProjectEditorDrawer = () => {
           <Typography variant="h6" sx={{ margin: "12px" }}>
             projectType
           </Typography>
+          <ColorPicker />
         </Box>
       </Drawer>
     </div>

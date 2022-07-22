@@ -10,18 +10,9 @@ export const ColorPicker = () => {
     a: "1",
   });
 
-  const handleClick = () => {
-    setIsDisplayColorPicker(true);
-  };
-
-  const handleClose = () => {
-    setIsDisplayColorPicker(false);
-  };
-
   const handleChange = (color) => {
     setColor(color.rgb);
   };
-  console.log("ColorPicker");
   return (
     <div>
       <div
@@ -33,14 +24,16 @@ export const ColorPicker = () => {
           display: "inline-block",
           cursor: "pointer",
         }}
-        onClick={handleClick()}
+        onClick={() => {
+          setIsDisplayColorPicker(true);
+        }}
       >
         <div
           style={{
             width: "36px",
             height: "14px",
             borderRadius: "2px",
-            background: `rgba({color.r}, {color.g}, {color.b}, {color.a})`,
+            background: `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`,
           }}
         />
       </div>
@@ -54,9 +47,11 @@ export const ColorPicker = () => {
               bottom: "0px",
               left: "0px",
             }}
-            onClick={handleClose()}
+            onClick={() => {
+              setIsDisplayColorPicker(false);
+            }}
           />
-          <GithubPicker color={color} onChange={handleChange} />
+          <GithubPicker color={color.rgb} onChange={handleChange} />
         </div>
       ) : null}
     </div>
