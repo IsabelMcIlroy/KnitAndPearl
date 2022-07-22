@@ -24,7 +24,7 @@ export const NewProjectEditorDrawer = () => {
             );
           }}
         >
-          {isDrawerOpened ? <EditIcon /> : null}
+          {isDrawerOpened && <EditIcon />}
         </IconButton>
       </div>
       <Drawer
