@@ -12,6 +12,7 @@ export const ColorPicker = () => {
 
   const handleChange = (color) => {
     setColor(color.rgb);
+    setIsDisplayColorPicker(false);
   };
   return (
     <div>
@@ -37,7 +38,7 @@ export const ColorPicker = () => {
           }}
         />
       </div>
-      {isDisplayColorPicker ? (
+      {isDisplayColorPicker && (
         <div style={{ position: "absolute", zIndex: "2" }}>
           <div
             style={{
@@ -53,7 +54,7 @@ export const ColorPicker = () => {
           />
           <GithubPicker color={color.rgb} onChange={handleChange} />
         </div>
-      ) : null}
+      )}
     </div>
   );
 };
