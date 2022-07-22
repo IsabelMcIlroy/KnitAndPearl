@@ -57,19 +57,15 @@ const KnittingTheme = createTheme({
     MuiModal: {
       styleOverrides: {
         root: {
-          color: palette.knittingLightPurple,
+          backgroundColor: "000000",
+          color: palette.knittingPurple,
           position: "absolute",
-          top: "40%",
-          left: "50%",
-          transform: "translate(-50%, -40%)",
-          height: "500px",
-          width: "70%",
+
           display: "flex",
           flexDirection: "column",
         },
         backdrop: {
-          backgroundColor: palette.knittingLightBlue,
-          borderRadius: "24px",
+          backgroundColor: "0f00f0",
         },
       },
     },
@@ -88,7 +84,7 @@ export const titleFontSx = {
 export const modalTitle = {
   fontFamily: "La Belle Aurore",
   textAlign: "center",
-  backgroundColor: palette.knittingBlue,
+  backgroundColor: palette.knittingLightBlue,
   paddingTop: "18px",
   borderRadius: "12px 12px 0 0",
   overflow: "hidden",

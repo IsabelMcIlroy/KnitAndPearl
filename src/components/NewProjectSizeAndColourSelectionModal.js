@@ -56,15 +56,24 @@ export const NewProjectSizeAndColourSelectionModal = ({
   return (
     <ThemeProvider theme={KnittingTheme}>
       <Modal open={open} onClick={onClick}>
-        <Box style={{ overflow: "scroll" }}>
+        <Box
+          style={{
+            overflow: "scroll",
+            top: "40%",
+            left: "50%",
+            transform: "translate(25%, 15%)",
+            height: "500px",
+            width: "70%",
+          }}
+        >
           <Typography variant="h4" sx={modalTitle}>
             New Knitting Project
           </Typography>
           <Box
             sx={{
-              maxWidth: "80%",
-              margin: "0 auto",
               paddingTop: "100px",
+              backgroundColor: "#f0f0f0",
+              borderRadius: "24px",
             }}
           >
             <form ref={form} onSubmit={handleSubmit(onSubmit)}>
