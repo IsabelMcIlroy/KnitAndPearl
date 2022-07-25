@@ -59,10 +59,10 @@ export const NewProjectSizeAndColourSelectionModal = ({
         <Box
           style={{
             overflow: "scroll",
-            top: "40%",
-            left: "50%",
             transform: "translate(25%, 15%)",
-            height: "500px",
+            display: "inline-block",
+            height: "80%",
+            maxHeight: "500px",
             width: "70%",
           }}
         >
@@ -71,9 +71,9 @@ export const NewProjectSizeAndColourSelectionModal = ({
           </Typography>
           <Box
             sx={{
-              paddingTop: "100px",
-              backgroundColor: "#f0f0f0",
-              borderRadius: "24px",
+              padding: "24px",
+              backgroundColor: "#f1e1f1",
+              borderRadius: "0 0 24px 24px",
             }}
           >
             <form ref={form} onSubmit={handleSubmit(onSubmit)}>
