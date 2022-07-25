@@ -71,7 +71,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
           </Typography>
           <Box
             sx={{
-              padding: "24px",
+              padding: "24px 24px 0 24px",
               backgroundColor: "#f1e1f1",
               borderRadius: "0 0 24px 24px",
             }}
