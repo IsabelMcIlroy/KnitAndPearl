@@ -32,8 +32,9 @@ export const NewProjectEditorDrawer = () => {
           sx: { backgroundColor: palette.knittingGray, width: "300px" },
         }}
       >
-        <Box sx={{ margin: "24px auto" }}>
+        <Box sx={{ margin: "24px" }}>
           <Typography variant="h4" sx={{ margin: "12px" }}>
+            Project Name
             {NewProjectSizeAndColourSelectionModal.currentProjectName}
           </Typography>
           <Typography variant="h6" sx={{ margin: "12px" }}>

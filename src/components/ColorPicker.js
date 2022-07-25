@@ -16,12 +16,12 @@ export const ColorPicker = () => {
     setIsDisplayColorPicker(false);
   };
   return (
-    <Box>
+    <Box style={{ margin: "10px" }}>
       <Box
         style={{
-          padding: "5px",
+          padding: "6px",
           background: "#fff",
-          borderRadius: "5px",
+          borderRadius: "6px",
           boxShadow: "0 0 0 1px rgba(0,0,0,.1)",
           display: "inline-block",
           cursor: "pointer",
@@ -33,8 +33,8 @@ export const ColorPicker = () => {
         <Box
           style={{
             width: "36px",
-            height: "14px",
-            borderRadius: "2px",
+            height: "24px",
+            borderRadius: "3px",
             background: `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`,
           }}
         />
