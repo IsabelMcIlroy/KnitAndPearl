@@ -19,9 +19,6 @@ export const NewProjectEditorDrawer = () => {
             console.log(
               NewProjectSizeAndColourSelectionModal.currentProjectName
             );
-            console.log(
-              NewProjectSizeAndColourSelectionModal.currentProjectType
-            );
           }}
         >
           {isDrawerOpened && <EditIcon />}

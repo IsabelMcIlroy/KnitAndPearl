@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { GithubPicker } from "react-color";
+import { Box } from "@mui/system";
 
 export const ColorPicker = () => {
   const [isDisplayColorPicker, setIsDisplayColorPicker] = useState(false);
@@ -15,8 +16,8 @@ export const ColorPicker = () => {
     setIsDisplayColorPicker(false);
   };
   return (
-    <div>
-      <div
+    <Box>
+      <Box
         style={{
           padding: "5px",
           background: "#fff",
@@ -29,7 +30,7 @@ export const ColorPicker = () => {
           setIsDisplayColorPicker(true);
         }}
       >
-        <div
+        <Box
           style={{
             width: "36px",
             height: "14px",
@@ -37,10 +38,10 @@ export const ColorPicker = () => {
             background: `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`,
           }}
         />
-      </div>
+      </Box>
       {isDisplayColorPicker && (
-        <div style={{ position: "absolute", zIndex: "2" }}>
-          <div
+        <Box style={{ position: "absolute", zIndex: "2" }}>
+          <Box
             style={{
               position: "fixed",
               top: "0px",
@@ -53,8 +54,8 @@ export const ColorPicker = () => {
             }}
           />
           <GithubPicker color={color.rgb} onChange={handleChange} />
-        </div>
+        </Box>
       )}
-    </div>
+    </Box>
   );
 };
