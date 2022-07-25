@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Drawer, IconButton, Typography, Box } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import { sideNavClosed, palette } from "../assets/theme";
-import { NewProjectSizeAndColourSelectionModal } from "./NewProjectSizeAndColourSelectionModal";
 import { ColorPicker } from "./ColorPicker";
 
 export const NewProjectEditorDrawer = () => {
@@ -16,9 +15,6 @@ export const NewProjectEditorDrawer = () => {
         <IconButton
           onClick={() => {
             isDrawerOpened(true);
-            console.log(
-              NewProjectSizeAndColourSelectionModal.currentProjectName
-            );
           }}
         >
           {isDrawerOpened && <EditIcon />}
@@ -34,11 +30,10 @@ export const NewProjectEditorDrawer = () => {
       >
         <Box sx={{ margin: "24px" }}>
           <Typography variant="h4" sx={{ margin: "12px" }}>
-            Project Name
-            {NewProjectSizeAndColourSelectionModal.currentProjectName}
+            projectName
           </Typography>
           <Typography variant="h6" sx={{ margin: "12px" }}>
-            projectType
+            ProjectType
           </Typography>
           <ColorPicker />
         </Box>

@@ -45,13 +45,15 @@ export const NewProjectSizeAndColourSelectionModal = ({
   const navigate = useNavigate();
   const onSubmit = (data, event) => {
     event.preventDefault();
-    console.log(JSON.stringify(data, null, 2));
-    console.log(state.currentProjectName);
-    console.log(state.currentProjectType);
-    console.log(state.Row);
-    console.log(state.Column);
     setIsOpen(false);
-    navigate("/NewProject");
+    navigate("/NewProject", {
+      state: {
+        currentProjectName: state.projectName,
+        currentProjectType: state.projectType,
+        currentRows: state.Row,
+        currentColumns: state.Column,
+      },
+    });
   };
   return (
     <ThemeProvider theme={KnittingTheme}>
@@ -84,8 +86,8 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   {...register("projectName")}
                   error={errors.projectName ? true : false}
                   label="Project Name"
-                  name="currentProjectName"
-                  value={state.currentProjectName}
+                  name="projectName"
+                  value={state.projectName}
                   onChange={handleInput}
                 />
                 <Typography variant="inherit" color={palette.knittingPurple}>
@@ -97,8 +99,8 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   fullWidth
                   {...register("projectType")}
                   label="Project Type"
-                  name="currentProjectType"
-                  value={state.currentProjectType}
+                  name="projectType"
+                  value={state.projectType}
                   onChange={handleInput}
                 />
               </Box>
