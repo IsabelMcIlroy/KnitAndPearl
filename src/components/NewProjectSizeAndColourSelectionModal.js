@@ -43,7 +43,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
     });
   };
   const navigate = useNavigate();
-  const onSubmit = (data, event) => {
+  const onSubmit = (event) => {
     event.preventDefault();
     setIsOpen(false);
     navigate("/NewProject", {
@@ -74,7 +74,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
           <Box
             sx={{
               padding: "24px 24px 0 24px",
-              backgroundColor: "#f1e1f1",
+              backgroundColor: palette.knittingGray,
               borderRadius: "0 0 24px 24px",
             }}
           >
