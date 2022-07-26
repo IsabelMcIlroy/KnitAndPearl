@@ -16,8 +16,8 @@ export const NewProject = () => {
     <>
       <NavBar />
       <NewProjectEditorDrawer
-        currentProjectName={currentProjectName}
-        currentProjectType={currentProjectType}
+        currentProjectNameForDrawer={currentProjectName}
+        currentProjectTypeForDrawer={currentProjectType}
       />
     </>
   );

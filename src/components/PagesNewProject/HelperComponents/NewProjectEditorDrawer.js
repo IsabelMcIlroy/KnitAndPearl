@@ -5,8 +5,8 @@ import { sideNavClosed, palette } from "../../../assets/theme";
 import { ColorPicker } from "./ColorPicker";
 
 export const NewProjectEditorDrawer = ({
-  currentProjectName,
-  currentProjectType,
+  currentProjectNameForDrawer,
+  currentProjectTypeForDrawer,
 }) => {
   const [isOpen, isDrawerOpened] = useState(false);
   const closeDrawer = () => {
@@ -33,10 +33,10 @@ export const NewProjectEditorDrawer = ({
       >
         <Box sx={{ margin: "24px" }}>
           <Typography variant="h4" sx={{ margin: "12px" }}>
-            {currentProjectName}
+            {currentProjectNameForDrawer}
           </Typography>
           <Typography variant="h6" sx={{ margin: "12px" }}>
-            {currentProjectType}
+            {currentProjectTypeForDrawer}
           </Typography>
           <ColorPicker />
         </Box>
