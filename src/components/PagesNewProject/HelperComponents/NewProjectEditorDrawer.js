@@ -45,14 +45,20 @@ export const NewProjectEditorDrawer = ({
           <EditIcon />
         </Typography>
         <Box sx={{ margin: "24px" }}>
-          <Typography variant="h8">Project Name:</Typography>
-          <Typography variant="h4" sx={{ margin: "12px" }}>
-            {currentProjectNameForDrawer}
-          </Typography>
-          <Typography variant="h8">Project Type:</Typography>
-          <Typography variant="h6" sx={{ margin: "12px" }}>
-            {currentProjectTypeForDrawer}
-          </Typography>
+          <Box sx={{ display: "flex" }}>
+            <Typography variant="h8">Project Name:</Typography>
+            <Typography variant="h6" sx={{ margin: "12px" }}>
+              {currentProjectNameForDrawer}
+            </Typography>
+          </Box>
+          <Box sx={{ display: "flex" }}>
+            <Typography variant="h8">Project Type:</Typography>
+            <Typography variant="h6" sx={{ margin: "12px" }}>
+              {currentProjectTypeForDrawer}
+            </Typography>
+          </Box>
+          <hr />
+
           <Typography variant="h8">Color:</Typography>
           <ColorPicker />
         </Box>
