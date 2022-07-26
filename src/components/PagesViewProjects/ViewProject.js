@@ -1,4 +1,4 @@
-import { NavBar } from "./components/NavBar";
+import { NavBar } from "../NavBar";
 
 export const ViewProject = () => {
   return <NavBar />;

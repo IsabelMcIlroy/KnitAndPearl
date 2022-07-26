@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Drawer, IconButton, Typography, Box } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import { sideNavClosed, palette } from "../assets/theme";
+import { sideNavClosed, palette } from "../../../assets/theme";
 import { ColorPicker } from "./ColorPicker";
 
 export const NewProjectEditorDrawer = () => {

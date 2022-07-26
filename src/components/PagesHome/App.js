@@ -1,12 +1,12 @@
 import { useState } from "react";
-import "./index.css";
+import "../../index.css";
 import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
-import { Title } from "./components/title";
-import { WelcomePageOptionButtons } from "./components/WelcomePageOptionButtons";
-import wool from "./images/wool.jpg";
-import { Logo } from "./components/logo";
-import { NewProjectSizeAndColourSelectionModal } from "./components/NewProjectSizeAndColourSelectionModal";
+import { Title } from "../title";
+import { WelcomePageOptionButtons } from "./HelperComponents/WelcomePageOptionButtons";
+import wool from "../../images/wool.jpg";
+import { Logo } from "../logo";
+import { NewProjectSizeAndColourSelectionModal } from "../NewProjectSizeAndColourSelectionModal";
 
 export const App = () => {
   const [isOpen, setIsOpen] = useState(false);

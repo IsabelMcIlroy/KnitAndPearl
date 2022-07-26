@@ -1,9 +1,9 @@
 import "./index.css";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { NewProject } from "./NewProject";
-import { ViewProject } from "./ViewProject";
-import { App } from "./App";
+import { NewProject } from "./components/PagesNewProject/NewProject";
+import { ViewProject } from "./components/PagesViewProjects/ViewProject";
+import { App } from "./components/PagesHome/App";
 
 const rootElement = ReactDOM.createRoot(document.getElementById("root"));
 rootElement.render(

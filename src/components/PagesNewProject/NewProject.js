@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
-import { NavBar } from "./components/NavBar";
-import { NewProjectEditorDrawer } from "./components/NewProjectEditorDrawer";
+import { NavBar } from "../NavBar";
+import { NewProjectEditorDrawer } from "./HelperComponents/NewProjectEditorDrawer";
 
 export const NewProject = () => {
   const { state } = useLocation();
