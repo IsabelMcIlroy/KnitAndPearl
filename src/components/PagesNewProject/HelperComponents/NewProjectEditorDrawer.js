@@ -4,7 +4,10 @@ import EditIcon from "@mui/icons-material/Edit";
 import { sideNavClosed, palette } from "../../../assets/theme";
 import { ColorPicker } from "./ColorPicker";
 
-export const NewProjectEditorDrawer = () => {
+export const NewProjectEditorDrawer = ({
+  currentProjectName,
+  currentProjectType,
+}) => {
   const [isOpen, isDrawerOpened] = useState(false);
   const closeDrawer = () => {
     isDrawerOpened(false);
@@ -30,10 +33,10 @@ export const NewProjectEditorDrawer = () => {
       >
         <Box sx={{ margin: "24px" }}>
           <Typography variant="h4" sx={{ margin: "12px" }}>
-            projectName
+            {currentProjectName}
           </Typography>
           <Typography variant="h6" sx={{ margin: "12px" }}>
-            ProjectType
+            {currentProjectType}
           </Typography>
           <ColorPicker />
         </Box>

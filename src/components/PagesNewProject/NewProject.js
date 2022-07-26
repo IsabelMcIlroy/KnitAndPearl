@@ -10,14 +10,15 @@ export const NewProject = () => {
     currentRows,
     currentColumns,
   } = state;
-  console.log(currentProjectName);
-  console.log(currentProjectType);
   console.log(currentRows);
   console.log(currentColumns);
   return (
     <>
       <NavBar />
-      <NewProjectEditorDrawer />
+      <NewProjectEditorDrawer
+        currentProjectName={currentProjectName}
+        currentProjectType={currentProjectType}
+      />
     </>
   );
 };
