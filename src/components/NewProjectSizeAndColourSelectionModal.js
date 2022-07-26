@@ -43,8 +43,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
     });
   };
   const navigate = useNavigate();
-  const onSubmit = (event) => {
-    event.preventDefault();
+  const onSubmit = () => {
     setIsOpen(false);
     navigate("/NewProject", {
       state: {
