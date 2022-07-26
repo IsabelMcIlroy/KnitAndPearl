@@ -31,13 +31,29 @@ export const NewProjectEditorDrawer = ({
           sx: { backgroundColor: palette.knittingGray, width: "300px" },
         }}
       >
+        <Typography
+          variant="h2"
+          sx={{
+            backgroundColor: palette.knittingLightBlue,
+            paddingTop: "24px",
+            fontFamily: "La Belle Aurore",
+            textAlign: "center",
+            color: palette.knittingPurple,
+          }}
+        >
+          Edit Project
+          <EditIcon />
+        </Typography>
         <Box sx={{ margin: "24px" }}>
+          <Typography variant="h8">Project Name:</Typography>
           <Typography variant="h4" sx={{ margin: "12px" }}>
             {currentProjectNameForDrawer}
           </Typography>
+          <Typography variant="h8">Project Type:</Typography>
           <Typography variant="h6" sx={{ margin: "12px" }}>
             {currentProjectTypeForDrawer}
           </Typography>
+          <Typography variant="h8">Color:</Typography>
           <ColorPicker />
         </Box>
       </Drawer>
