@@ -58,7 +58,6 @@ const KnittingTheme = createTheme({
       styleOverrides: {
         root: {
           color: palette.knittingPurple,
-          position: "absolute",
           display: "flex",
           flexDirection: "column",
         },
