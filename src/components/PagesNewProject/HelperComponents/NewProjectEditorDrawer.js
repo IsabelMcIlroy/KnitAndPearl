@@ -1,17 +1,10 @@
 import { useState } from "react";
 import { Drawer, IconButton, Typography, Box } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import UndoRoundedIcon from "@mui/icons-material/UndoRounded";
-import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
-import ExitToAppRoundedIcon from "@mui/icons-material/ExitToAppRounded";
-import SettingsBackupRestoreRoundedIcon from "@mui/icons-material/SettingsBackupRestoreRounded";
-import {
-  sideNavClosed,
-  palette,
-  editBarButton,
-  editBarButtonIcon,
-} from "../../../assets/theme";
+
+import { sideNavClosed, palette } from "../../../assets/theme";
 import { ColorPicker } from "./ColorPicker";
+import { EditDrawerButtonsAndPopover } from "./EditDrawerButtonsAndPopovers";
 
 export const NewProjectEditorDrawer = ({
   currentProjectNameForDrawer,
@@ -71,18 +64,10 @@ export const NewProjectEditorDrawer = ({
           <Typography variant="h8">Color:</Typography>
           <ColorPicker />
 
-          <IconButton aria-label="Undo" sx={editBarButton}>
-            <UndoRoundedIcon sx={editBarButtonIcon} />
-          </IconButton>
-          <IconButton aria-label="Clear Grid" sx={editBarButton}>
-            <SettingsBackupRestoreRoundedIcon sx={editBarButtonIcon} />
-          </IconButton>
-          <IconButton aria-label="Save" sx={editBarButton}>
-            <SaveRoundedIcon sx={editBarButtonIcon} />
-          </IconButton>
-          <IconButton aria-label="Exit Project" sx={editBarButton}>
-            <ExitToAppRoundedIcon sx={editBarButtonIcon} />
-          </IconButton>
+          <EditDrawerButtonsAndPopover popoverText={"Undo."} />
+          <EditDrawerButtonsAndPopover popoverText={"Clear Grid."} />
+          <EditDrawerButtonsAndPopover popoverText={"Save."} />
+          <EditDrawerButtonsAndPopover popoverText={"Exit."} />
         </Box>
       </Drawer>
     </Box>
