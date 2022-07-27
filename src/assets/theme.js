@@ -101,7 +101,18 @@ export const editBarButtonIcon = {
 
 export const editBarButton = {
   backgroundColor: palette.knittingBlue,
+  margin: "4px",
   "&:hover": {
     backgroundColor: "#0B5082",
   },
+};
+
+export const editorDrawerProjectNames = {
+  margin: "12px",
+  fontFamily: "La Belle Aurore",
+  color: palette.knittingBlue,
+};
+
+export const editorDrawerLabels = {
+  color: palette.knittingPurple,
 };

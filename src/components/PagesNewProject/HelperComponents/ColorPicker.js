@@ -16,9 +16,9 @@ export const ColorPicker = () => {
     setIsDisplayColorPicker(false);
   };
   return (
-    <Box style={{ margin: "10px" }}>
+    <Box sx={{ margin: "10px", textAlign: "center" }}>
       <Box
-        style={{
+        sx={{
           padding: "6px",
           background: "#fff",
           borderRadius: "6px",
@@ -31,7 +31,7 @@ export const ColorPicker = () => {
         }}
       >
         <Box
-          style={{
+          sx={{
             width: "36px",
             height: "24px",
             borderRadius: "3px",
@@ -40,9 +40,9 @@ export const ColorPicker = () => {
         />
       </Box>
       {isDisplayColorPicker && (
-        <Box style={{ position: "absolute", zIndex: "2" }}>
+        <Box sx={{ position: "absolute", zIndex: "2" }}>
           <Box
-            style={{
+            sx={{
               position: "fixed",
               top: "0px",
               right: "0px",
