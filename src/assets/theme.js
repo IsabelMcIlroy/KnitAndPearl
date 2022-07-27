@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material";
 
 export const palette = {
-  knittingGray: "#CAC4CE",
+  knittingGray: "#E8E1EC",
   knittingBlue: "#002642",
   knittingLightBlue: "#468189",
   knittingPurple: "#4B3843",
