@@ -16,7 +16,7 @@ export const ColorPicker = () => {
     setIsDisplayColorPicker(false);
   };
   return (
-    <Box sx={{ margin: "10px" }}>
+    <Box sx={{ margin: "10px", textAlign: "center" }}>
       <Box
         sx={{
           padding: "6px",
@@ -53,7 +53,11 @@ export const ColorPicker = () => {
               setIsDisplayColorPicker(false);
             }}
           />
-          <GithubPicker color={color.rgb} onChange={handleChange} />
+          <GithubPicker
+            triangle="hide"
+            color={color.rgb}
+            onChange={handleChange}
+          />
         </Box>
       )}
     </Box>
