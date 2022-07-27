@@ -94,3 +94,14 @@ export const sideNavClosed = {
   height: "100%",
   backgroundColor: palette.knittingLightPurple,
 };
+
+export const editBarButtonIcon = {
+  color: palette.knittingGray,
+};
+
+export const editBarButton = {
+  backgroundColor: palette.knittingBlue,
+  "&:hover": {
+    backgroundColor: "#0B5082",
+  },
+};

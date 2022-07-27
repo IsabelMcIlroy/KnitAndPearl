@@ -1,7 +1,16 @@
 import { useState } from "react";
 import { Drawer, IconButton, Typography, Box } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import { sideNavClosed, palette } from "../../../assets/theme";
+import UndoRoundedIcon from "@mui/icons-material/UndoRounded";
+import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
+import ExitToAppRoundedIcon from "@mui/icons-material/ExitToAppRounded";
+import SettingsBackupRestoreRoundedIcon from "@mui/icons-material/SettingsBackupRestoreRounded";
+import {
+  sideNavClosed,
+  palette,
+  editBarButton,
+  editBarButtonIcon,
+} from "../../../assets/theme";
 import { ColorPicker } from "./ColorPicker";
 
 export const NewProjectEditorDrawer = ({
@@ -13,8 +22,8 @@ export const NewProjectEditorDrawer = ({
     isDrawerOpened(false);
   };
   return (
-    <div>
-      <div style={sideNavClosed}>
+    <Box>
+      <Box style={sideNavClosed}>
         <IconButton
           onClick={() => {
             isDrawerOpened(true);
@@ -22,7 +31,7 @@ export const NewProjectEditorDrawer = ({
         >
           {isDrawerOpened && <EditIcon />}
         </IconButton>
-      </div>
+      </Box>
       <Drawer
         variant="temporary"
         open={isOpen}
@@ -32,7 +41,7 @@ export const NewProjectEditorDrawer = ({
         }}
       >
         <Typography
-          variant="h2"
+          variant="h4"
           sx={{
             backgroundColor: palette.knittingLightBlue,
             paddingTop: "24px",
@@ -61,8 +70,21 @@ export const NewProjectEditorDrawer = ({
 
           <Typography variant="h8">Color:</Typography>
           <ColorPicker />
+
+          <IconButton aria-label="Undo" sx={editBarButton}>
+            <UndoRoundedIcon sx={editBarButtonIcon} />
+          </IconButton>
+          <IconButton aria-label="Clear Grid" sx={editBarButton}>
+            <SettingsBackupRestoreRoundedIcon sx={editBarButtonIcon} />
+          </IconButton>
+          <IconButton aria-label="Save" sx={editBarButton}>
+            <SaveRoundedIcon sx={editBarButtonIcon} />
+          </IconButton>
+          <IconButton aria-label="Exit Project" sx={editBarButton}>
+            <ExitToAppRoundedIcon sx={editBarButtonIcon} />
+          </IconButton>
         </Box>
       </Drawer>
-    </div>
+    </Box>
   );
 };
