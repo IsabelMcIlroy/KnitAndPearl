@@ -16,9 +16,6 @@ export const NewProjectEditorDrawer = ({
   currentProjectTypeForDrawer,
 }) => {
   const [isOpen, isDrawerOpened] = useState(false);
-  const closeDrawer = () => {
-    isDrawerOpened(false);
-  };
   return (
     <Box>
       <Box style={sideNavClosed}>
@@ -33,7 +30,9 @@ export const NewProjectEditorDrawer = ({
       <Drawer
         variant="temporary"
         open={isOpen}
-        onClose={closeDrawer}
+        onClose={() => {
+          isDrawerOpened(false);
+        }}
         PaperProps={{
           sx: { backgroundColor: palette.knittingGray, width: "300px" },
         }}
