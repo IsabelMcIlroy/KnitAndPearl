@@ -9,7 +9,7 @@ import {
 } from "../../../assets/theme";
 import { ColorPicker } from "./ColorPicker";
 import { EditDrawerButtonsAndPopover } from "./EditDrawerButtonsAndPopovers";
-import wool from "../../../images/woolSmall.jpg";
+import woolSmall from "../../../images/woolSmall.jpg";
 
 export const NewProjectEditorDrawer = ({
   currentProjectNameForDrawer,
@@ -85,7 +85,7 @@ export const NewProjectEditorDrawer = ({
           sx={{
             backgroundColor: palette.knittingLightBlue,
             height: "100vh",
-            backgroundImage: `url(${wool})`,
+            backgroundImage: `url(${woolSmall})`,
             marginTop: "12px",
           }}
         />
