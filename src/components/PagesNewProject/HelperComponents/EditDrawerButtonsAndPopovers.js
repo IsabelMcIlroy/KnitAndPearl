@@ -9,14 +9,6 @@ import { editBarButton, editBarButtonIcon } from "../../../assets/theme";
 export const EditDrawerButtonsAndPopover = ({ popoverText }) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const handlePopoverOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handlePopoverClose = () => {
-    setAnchorEl(null);
-  };
-
   const open = Boolean(anchorEl);
   return (
     <>
@@ -25,8 +17,12 @@ export const EditDrawerButtonsAndPopover = ({ popoverText }) => {
         sx={editBarButton}
         aria-owns={open ? "mouse-over-popover" : undefined}
         aria-haspopup="true"
-        onMouseEnter={handlePopoverOpen}
-        onMouseLeave={handlePopoverClose}
+        onMouseEnter={(event) => {
+          setAnchorEl(event.currentTarget);
+        }}
+        onMouseLeave={() => {
+          setAnchorEl(null);
+        }}
       >
         {popoverText === "Undo." ? (
           <UndoRoundedIcon sx={editBarButtonIcon} />
@@ -53,7 +49,6 @@ export const EditDrawerButtonsAndPopover = ({ popoverText }) => {
           vertical: "top",
           horizontal: "left",
         }}
-        onClose={handlePopoverClose}
         disableRestoreFocus
       >
         <Typography sx={{ p: 1 }}>{popoverText}</Typography>
