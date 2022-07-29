@@ -15,7 +15,7 @@ export const NewProjectEditorDrawer = ({
   currentProjectNameForDrawer,
   currentProjectTypeForDrawer,
 }) => {
-  const [isOpen, setIsDrawerOpened] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpened] = useState(false);
   return (
     <Box>
       <Box style={sideNavClosed}>
@@ -24,12 +24,12 @@ export const NewProjectEditorDrawer = ({
             setIsDrawerOpened(true);
           }}
         >
-          {!isOpen && <EditIcon />}
+          {!isDrawerOpen && <EditIcon />}
         </IconButton>
       </Box>
       <Drawer
         variant="temporary"
-        open={isOpen}
+        open={isDrawerOpen}
         onClose={() => {
           setIsDrawerOpened(false);
         }}
