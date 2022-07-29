@@ -15,23 +15,23 @@ export const NewProjectEditorDrawer = ({
   currentProjectNameForDrawer,
   currentProjectTypeForDrawer,
 }) => {
-  const [isOpen, isDrawerOpened] = useState(false);
+  const [isOpen, setIsDrawerOpened] = useState(false);
   return (
     <Box>
       <Box style={sideNavClosed}>
         <IconButton
           onClick={() => {
-            isDrawerOpened(true);
+            setIsDrawerOpened(true);
           }}
         >
-          {isDrawerOpened && <EditIcon />}
+          {!isOpen && <EditIcon />}
         </IconButton>
       </Box>
       <Drawer
         variant="temporary"
         open={isOpen}
         onClose={() => {
-          isDrawerOpened(false);
+          setIsDrawerOpened(false);
         }}
         PaperProps={{
           sx: { backgroundColor: palette.knittingGray, width: "300px" },
