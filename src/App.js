@@ -11,7 +11,7 @@ export const App = () => {
       <Routes>
         <Route path="/NewProject" element={<NewProject />} />
         <Route path="/ViewProject" element={<ViewProject />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/KnittingProjectManager/" element={<Home />} />
         <Route
           path="*"
           element={

@@ -39,7 +39,7 @@ export const Home = () => {
             setIsOpen={setIsOpen}
           />
 
-          <Link to="/">
+          <Link to="/KnittingProjectManager/">
             <Logo />
           </Link>
           <Link to="/ViewProject">
