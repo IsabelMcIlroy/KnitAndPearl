@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import _ from "lodash";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -19,6 +20,8 @@ export const NewProjectSizeAndColourSelectionModal = ({
   onClick,
   setIsOpen,
 }) => {
+  const maxGrid = 12;
+  var converter = require("number-to-words");
   const form = useRef();
   const validationSchema = yup.object().shape({
     projectName: yup.string().required("This is required"),
@@ -31,8 +34,8 @@ export const NewProjectSizeAndColourSelectionModal = ({
     handleSubmit,
   } = useForm({ resolver: yupResolver(validationSchema) });
   const [state, setState] = useState({
-    currentProjectName: " ",
-    currentProjectType: " ",
+    projectName: " ",
+    projectType: " ",
     Row: " ",
     Column: " ",
   });
@@ -43,14 +46,15 @@ export const NewProjectSizeAndColourSelectionModal = ({
     });
   };
   const navigate = useNavigate();
-  const onSubmit = () => {
+  const onSubmit = (data) => {
     setIsOpen(false);
+    console.log(data);
     navigate("/NewProject", {
       state: {
-        currentProjectName: state.projectName,
-        currentProjectType: state.projectType,
-        currentRows: state.Row,
-        currentColumns: state.Column,
+        currentProjectName: data.projectName,
+        currentProjectType: data.projectType,
+        currentRows: data.Row,
+        currentColumns: data.Column,
       },
     });
   };
@@ -115,18 +119,11 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   value={state.Row}
                   onChange={handleInput}
                 >
-                  <option value=""> ---Row*--- </option>
-                  <option value={2}>Two</option>
-                  <option value={3}>Three</option>
-                  <option value={4}>Four</option>
-                  <option value={5}>Five</option>
-                  <option value={6}>Six</option>
-                  <option value={7}>Seven</option>
-                  <option value={8}>Eight</option>
-                  <option value={9}>Nine</option>
-                  <option value={10}>Ten</option>
-                  <option value={11}>Eleven</option>
-                  <option value={12}>Twelve</option>
+                  {_.range(2, maxGrid + 1).map((value) => (
+                    <option key={value} value={value}>
+                      {converter.toWords(value)}
+                    </option>
+                  ))}
                 </Select>
                 <Typography variant="inherit" color={palette.knittingPurple}>
                   {errors.Row?.message}
@@ -142,18 +139,11 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   value={state.Column}
                   onChange={handleInput}
                 >
-                  <option value=""> --Column*-- </option>
-                  <option value={2}>Two</option>
-                  <option value={3}>Three</option>
-                  <option value={4}>Four</option>
-                  <option value={5}>Five</option>
-                  <option value={6}>Six</option>
-                  <option value={7}>Seven</option>
-                  <option value={8}>Eight</option>
-                  <option value={9}>Nine</option>
-                  <option value={10}>Ten</option>
-                  <option value={11}>Eleven</option>
-                  <option value={12}>Twelve</option>
+                  {_.range(2, maxGrid + 1).map((value) => (
+                    <option key={value} value={value}>
+                      {converter.toWords(value)}
+                    </option>
+                  ))}
                 </Select>
                 <Typography variant="inherit" color={palette.knittingPurple}>
                   {errors.Column?.message}
