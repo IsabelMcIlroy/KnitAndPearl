@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AppBar, Toolbar, Grid } from "@mui/material";
-import wool from "../images/wool.jpg";
-import { WelcomePageOptionButtons } from "./PagesHome/HelperComponents/WelcomePageOptionButtons";
+import wool from "../../images/wool.jpg";
+import { WelcomePageOptionButtons } from "../PagesHome/HelperComponents/WelcomePageOptionButtons";
 import { Logo } from "./logo";
 import { NewProjectSizeAndColourSelectionModal } from "./NewProjectSizeAndColourSelectionModal";
 
@@ -26,7 +26,7 @@ export const NavBar = () => {
               open={isOpen}
               setIsOpen={setIsOpen}
             />
-            <Link to="/KnittingProjectManager/">
+            <Link to="/">
               <Logo />
             </Link>
             <Link to="/ViewProject">

@@ -2,13 +2,13 @@ import { useState } from "react";
 import "../../index.css";
 import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
-import { Title } from "../title";
+import { Title } from "../HelperComponents/title";
 import { WelcomePageOptionButtons } from "./HelperComponents/WelcomePageOptionButtons";
 import wool from "../../images/wool.jpg";
-import { Logo } from "../logo";
-import { NewProjectSizeAndColourSelectionModal } from "../NewProjectSizeAndColourSelectionModal";
+import { Logo } from "../HelperComponents/logo";
+import { NewProjectSizeAndColourSelectionModal } from "../HelperComponents/NewProjectSizeAndColourSelectionModal";
 
-export const App = () => {
+export const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Box

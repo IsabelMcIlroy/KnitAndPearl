@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { titleFontSx } from "../assets/theme";
+import { titleFontSx } from "../../assets/theme";
 
 export const Title = ({ titleText }) => {
   return (

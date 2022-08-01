@@ -1,5 +1,4 @@
 import { useLocation } from "react-router-dom";
-import { NavBar } from "../NavBar";
 import { NewProjectEditorDrawer } from "./HelperComponents/NewProjectEditorDrawer";
 
 export const NewProject = () => {
@@ -14,7 +13,6 @@ export const NewProject = () => {
   console.log(currentColumns);
   return (
     <>
-      <NavBar />
       <NewProjectEditorDrawer
         currentProjectNameForDrawer={currentProjectName}
         currentProjectTypeForDrawer={currentProjectType || "---"}

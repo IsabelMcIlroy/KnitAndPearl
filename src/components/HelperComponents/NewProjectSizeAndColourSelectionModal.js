@@ -11,7 +11,7 @@ import {
   TextField,
   Select,
 } from "@mui/material";
-import KnittingTheme, { palette, modalTitle } from "../assets/theme";
+import KnittingTheme, { palette, modalTitle } from "../../assets/theme";
 import { ModalButton } from "./ModalButton";
 
 export const NewProjectSizeAndColourSelectionModal = ({

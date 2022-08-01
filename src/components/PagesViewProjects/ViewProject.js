@@ -1,5 +1,3 @@
-import { NavBar } from "../NavBar";
-
 export const ViewProject = () => {
-  return <NavBar />;
+  return <h1>View Projects</h1>;
 };
