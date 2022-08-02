@@ -19,13 +19,17 @@ export const NewProject = () => {
         currentProjectNameForDrawer={currentProjectName}
         currentProjectTypeForDrawer={currentProjectType || "---"}
       />
-      <Grid container spacing={currentRows} sx={{ margin: "150px 75px" }}>
-        {_.range(currentRows, 0).map((value) => (
+      <Grid
+        container
+        spacing={12 / currentRows}
+        sx={{ margin: "150px 75px", justifyContent: "center" }}
+      >
+        {_.range(currentRows * currentColumns, 0).map((value) => (
           <Grid
             item
             key={value}
             value={value}
-            xs={currentRows / 12}
+            xs={12 / currentRows}
             sx={{ border: "1px solid black", height: "50px" }}
           >
             {value}
