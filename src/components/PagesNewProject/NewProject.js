@@ -16,7 +16,7 @@ export const NewProject = () => {
   return (
     <Box sx={{ display: "flex" }}>
       <NewProjectEditorDrawer
-        currentProjectNameForDrawer={currentProjectName}
+        currentProjectNameForDrawer={currentProjectName || "---"}
         currentProjectTypeForDrawer={currentProjectType || "---"}
       />
       <Grid

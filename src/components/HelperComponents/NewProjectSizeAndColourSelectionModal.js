@@ -34,8 +34,8 @@ export const NewProjectSizeAndColourSelectionModal = ({
     handleSubmit,
   } = useForm({ resolver: yupResolver(validationSchema) });
   const [state, setState] = useState({
-    projectName: " ",
-    projectType: " ",
+    projectName: "",
+    projectType: "",
     Row: " ",
     Column: " ",
   });
@@ -108,6 +108,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
                 />
               </Box>
               <Box padding="10px" textAlign="center">
+                <Typography variant="p">Row:</Typography>
                 <Select
                   required
                   {...register("Row")}
@@ -128,6 +129,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
                 <Typography variant="inherit" color={palette.knittingPurple}>
                   {errors.Row?.message}
                 </Typography>
+                <Typography variant="p">Column:</Typography>
                 <Select
                   required
                   {...register("Column")}
