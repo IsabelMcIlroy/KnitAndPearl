@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import _ from "lodash";
 import { Grid, Box } from "@mui/material";
@@ -14,7 +15,7 @@ export const NewProject = () => {
   console.log(currentRows);
   console.log(currentColumns);
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <NewProjectEditorDrawer
         currentProjectNameForDrawer={currentProjectName || "---"}
         currentProjectTypeForDrawer={currentProjectType || "---"}
@@ -22,7 +23,7 @@ export const NewProject = () => {
       <Grid
         container
         spacing={12 / currentRows}
-        sx={{ margin: "112px 80px 24px 80px", justifyContent: "center" }}
+        sx={{ margin: "112px 80px 0px 80px", justifyContent: "center" }}
       >
         {_.range(currentRows * currentColumns, 0).map((value) => (
           <Grid
@@ -30,7 +31,28 @@ export const NewProject = () => {
             key={value}
             value={value}
             xs={12 / currentRows}
-            sx={{ border: "1px solid black", height: "50px" }}
+            sx={{
+              border: "1px solid black",
+              height: "50px",
+            }}
+          ></Grid>
+        ))}
+      </Grid>
+      <Grid
+        container
+        spacing={12 / currentRows}
+        sx={{ margin: "0 80px 0 80px", justifyContent: "center" }}
+      >
+        {_.range(currentRows, 0).map((value) => (
+          <Grid
+            item
+            key={value}
+            value={value}
+            xs={12 / currentRows}
+            sx={{
+              height: "50px",
+              textAlign: "center",
+            }}
           >
             {value}
           </Grid>
