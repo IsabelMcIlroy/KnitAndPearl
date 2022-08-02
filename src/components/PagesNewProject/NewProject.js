@@ -22,7 +22,7 @@ export const NewProject = () => {
       <Grid
         container
         spacing={12 / currentRows}
-        sx={{ margin: "150px 75px", justifyContent: "center" }}
+        sx={{ margin: "112px 80px 24px 80px", justifyContent: "center" }}
       >
         {_.range(currentRows * currentColumns, 0).map((value) => (
           <Grid
