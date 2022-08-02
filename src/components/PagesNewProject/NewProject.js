@@ -19,25 +19,19 @@ export const NewProject = () => {
         currentProjectNameForDrawer={currentProjectName}
         currentProjectTypeForDrawer={currentProjectType || "---"}
       />
-      {_.range(0, currentColumns).map((value) => (
-        <Grid
-          container
-          key={value}
-          value={value}
-          spacing={currentRows}
-          sx={{ marginTop: "150px", marginLeft: "100px" }}
-        >
-          {_.range(0, currentRows).map((value) => (
-            <Grid
-              item
-              key={value}
-              value={value}
-              xs={currentRows / 12}
-              sx={{ border: "1px solid black", height: "50px" }}
-            ></Grid>
-          ))}
-        </Grid>
-      ))}
+      <Grid container spacing={currentRows} sx={{ margin: "150px 75px" }}>
+        {_.range(0, currentRows).map((value) => (
+          <Grid
+            item
+            key={value}
+            value={value}
+            xs={currentRows / 12}
+            sx={{ border: "1px solid black", height: "50px" }}
+          >
+            {value + 1}
+          </Grid>
+        ))}
+      </Grid>
     </Box>
   );
 };
