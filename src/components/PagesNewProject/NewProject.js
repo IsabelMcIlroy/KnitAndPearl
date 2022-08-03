@@ -11,7 +11,6 @@ export const NewProject = () => {
     currentRows,
     currentColumns,
   } = state;
-  console.log(currentColumns);
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <NewProjectEditorDrawer
