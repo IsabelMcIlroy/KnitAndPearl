@@ -21,7 +21,10 @@ export const NewProject = () => {
       <Grid
         container
         spacing={12 / currentRows}
-        sx={{ margin: "112px 80px 0px 80px", justifyContent: "center" }}
+        sx={{
+          margin: "112px 80px 0px 80px",
+          justifyContent: "center",
+        }}
       >
         {_.range(currentRows * currentColumns, 0).map((value) => (
           <Grid
@@ -34,6 +37,31 @@ export const NewProject = () => {
               height: "50px",
             }}
           ></Grid>
+        ))}
+      </Grid>
+      <Grid
+        container
+        spacing={1}
+        sx={{
+          marginTop: "112px",
+          marginLeft: "-4%",
+          justifyContent: "end",
+          position: "absolute",
+        }}
+      >
+        {_.range(currentColumns, 0).map((value) => (
+          <Grid
+            item
+            key={value}
+            value={value}
+            xs={12}
+            sx={{
+              height: "50px",
+              textAlign: "end",
+            }}
+          >
+            {value}
+          </Grid>
         ))}
       </Grid>
       <Grid
