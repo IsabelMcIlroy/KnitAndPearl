@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import _ from "lodash";
 import { Grid, Box } from "@mui/material";
@@ -12,7 +11,6 @@ export const NewProject = () => {
     currentRows,
     currentColumns,
   } = state;
-  console.log(currentRows);
   console.log(currentColumns);
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
