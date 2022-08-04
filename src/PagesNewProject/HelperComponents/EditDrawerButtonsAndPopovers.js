@@ -4,7 +4,7 @@ import UndoRoundedIcon from "@mui/icons-material/UndoRounded";
 import ExitToAppRoundedIcon from "@mui/icons-material/ExitToAppRounded";
 import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
 import SettingsBackupRestoreRoundedIcon from "@mui/icons-material/SettingsBackupRestoreRounded";
-import { editBarButton, editBarButtonIcon } from "../../../assets/theme";
+import { editBarButton, editBarButtonIcon } from "../../assets/theme";
 
 export const EditDrawerButtonsAndPopover = ({ popoverText }) => {
   const [anchorEl, setAnchorEl] = useState(null);

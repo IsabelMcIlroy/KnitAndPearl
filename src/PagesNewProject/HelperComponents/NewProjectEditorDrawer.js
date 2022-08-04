@@ -6,10 +6,10 @@ import {
   palette,
   editorDrawerProjectNames,
   editorDrawerLabels,
-} from "../../../assets/theme";
+} from "../../assets/theme";
 import { ColorPicker } from "./ColorPicker";
 import { EditDrawerButtonsAndPopover } from "./EditDrawerButtonsAndPopovers";
-import woolSmall from "../../../images/woolSmall.jpg";
+import woolSmall from "../../images/woolSmall.jpg";
 
 export const NewProjectEditorDrawer = ({
   currentProjectNameForDrawer,

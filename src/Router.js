@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import { NavBar } from "./components/HelperComponents/NavBar";
-import { Home } from "./components/PagesHome/Home";
-import { NewProject } from "./components/PagesNewProject/NewProject";
-import { ViewProject } from "./components/PagesViewProjects/ViewProject";
+import { NavBar } from "./HelperComponents/NavBar";
+import { Home } from "./PagesHome/Home";
+import { NewProject } from "./PagesNewProject/NewProject";
+import { ViewProject } from "./PagesViewProjects/ViewProject";
 
 export const Router = () => {
   return (
