@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
 import _ from "lodash";
-import { Grid, Box } from "@mui/material";
+import { Grid, Box, Button } from "@mui/material";
 import { NewProjectEditorDrawer } from "./HelperComponents/NewProjectEditorDrawer";
 
 export const NewProject = () => {
@@ -11,6 +12,10 @@ export const NewProject = () => {
     currentRows,
     currentColumns,
   } = state;
+  const [background, setBackground] = useState("#e9e1ec");
+  const setKnittingGridColor = (background) => {
+    setBackground(background);
+  };
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <NewProjectEditorDrawer
@@ -35,7 +40,17 @@ export const NewProject = () => {
               border: "1px solid black",
               height: "50px",
             }}
-          ></Grid>
+          >
+            <Button
+              value={value}
+              sx={{
+                backgroundColor: `${background}`,
+                height: "100%",
+                minWidth: "90%",
+              }}
+              onClick={() => setKnittingGridColor("#000000")}
+            />
+          </Grid>
         ))}
       </Grid>
       <Grid
@@ -46,6 +61,7 @@ export const NewProject = () => {
           marginLeft: "-4%",
           justifyContent: "end",
           position: "absolute",
+          zIndex: "-10",
         }}
       >
         {_.range(currentColumns, 0).map((value) => (
