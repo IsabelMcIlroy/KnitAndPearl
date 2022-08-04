@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { AppBar, Toolbar, Grid } from "@mui/material";
 import wool from "../../images/wool.jpg";
 import { WelcomePageOptionButtons } from "../PagesHome/HelperComponents/WelcomePageOptionButtons";
@@ -35,6 +35,7 @@ export const NavBar = () => {
           </Grid>
         </Toolbar>
       </AppBar>
+      <Outlet />
     </>
   );
 };
