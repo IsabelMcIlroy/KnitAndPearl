@@ -8,8 +8,14 @@ export const Router = () => {
   return (
     <Routes>
       <Route element={<NavBar />}>
-        <Route path="/NewProject" element={<NewProject />} />
-        <Route path="/ViewProject" element={<ViewProject />} />
+        <Route
+          path="/KnittingProjectManager/NewProject"
+          element={<NewProject />}
+        />
+        <Route
+          path="/KnittingProjectManager/ViewProject"
+          element={<ViewProject />}
+        />
       </Route>
       <Route path="/KnittingProjectManager/" element={<Home />} />
       <Route
