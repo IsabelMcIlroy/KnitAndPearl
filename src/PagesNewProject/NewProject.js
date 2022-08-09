@@ -5,20 +5,14 @@ import { ProjectGrid } from "./HelperComponents/ProjectGrid";
 
 export const NewProject = () => {
   const { state } = useLocation();
-  const {
-    currentProjectName,
-    currentProjectType,
-    currentRows,
-    currentColumns,
-  } = state;
-  console.log(currentColumns);
+  const { currentProjectName, currentProjectType } = state;
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <NewProjectEditorDrawer
         currentProjectNameForDrawer={currentProjectName}
         currentProjectTypeForDrawer={currentProjectType}
       />
-      <ProjectGrid currentRows={currentRows} currentColumns={currentColumns} />
+      <ProjectGrid />
     </Box>
   );
 };

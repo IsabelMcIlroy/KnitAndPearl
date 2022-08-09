@@ -1,8 +1,12 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import _ from "lodash";
 import { Grid, Button } from "@mui/material";
 
-export const ProjectGrid = (currentRows, currentColumns) => {
+export const ProjectGrid = () => {
+  const { state } = useLocation();
+  const { currentRows, currentColumns } = state;
+  console.log(currentColumns);
   const [background, setBackground] = useState("#e9e1ec");
   const setKnittingGridColor = (background) => {
     setBackground(background);
@@ -11,18 +15,18 @@ export const ProjectGrid = (currentRows, currentColumns) => {
     <>
       <Grid
         container
-        spacing={12 / { currentRows }}
+        spacing={12 / currentRows}
         sx={{
           margin: "112px 80px 0px 80px",
           justifyContent: "center",
         }}
       >
-        {_.range({ currentRows } * { currentColumns }, 0).map((value) => (
+        {_.range(currentRows * currentColumns, 0).map((value) => (
           <Grid
             item
             key={value}
             value={value}
-            xs={12 / { currentRows }}
+            xs={12 / currentRows}
             sx={{
               border: "1px solid black",
               height: "50px",
@@ -51,7 +55,7 @@ export const ProjectGrid = (currentRows, currentColumns) => {
           zIndex: "-10",
         }}
       >
-        {_.range({ currentColumns }, 0).map((value) => (
+        {_.range(currentColumns, 0).map((value) => (
           <Grid
             item
             key={value}
@@ -68,15 +72,15 @@ export const ProjectGrid = (currentRows, currentColumns) => {
       </Grid>
       <Grid
         container
-        spacing={12 / { currentRows }}
+        spacing={12 / currentRows}
         sx={{ margin: "0 80px 0 80px", justifyContent: "center" }}
       >
-        {_.range({ currentRows }, 0).map((value) => (
+        {_.range(currentRows, 0).map((value) => (
           <Grid
             item
             key={value}
             value={value}
-            xs={12 / { currentRows }}
+            xs={12 / currentRows}
             sx={{
               height: "50px",
               textAlign: "center",
