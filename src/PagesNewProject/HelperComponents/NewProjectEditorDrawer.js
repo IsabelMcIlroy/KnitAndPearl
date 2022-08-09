@@ -56,7 +56,7 @@ export const NewProjectEditorDrawer = ({
               Project Name:
             </Typography>
             <Typography variant="h4" sx={editorDrawerProjectNames}>
-              {currentProjectNameForDrawer}
+              {currentProjectNameForDrawer || "---"}
             </Typography>
           </Box>
           <Box sx={{ display: "flex" }}>
@@ -64,7 +64,7 @@ export const NewProjectEditorDrawer = ({
               Project Type:
             </Typography>
             <Typography variant="h4" sx={editorDrawerProjectNames}>
-              {currentProjectTypeForDrawer}
+              {currentProjectTypeForDrawer || "---"}
             </Typography>
           </Box>
           <hr sx={editorDrawerLabels} />
