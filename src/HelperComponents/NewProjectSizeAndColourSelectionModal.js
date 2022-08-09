@@ -48,7 +48,6 @@ export const NewProjectSizeAndColourSelectionModal = ({
   const navigate = useNavigate();
   const onSubmit = (data) => {
     setIsOpen(false);
-    console.log(data);
     navigate("/NewProject", {
       state: {
         currentProjectName: data.projectName,
