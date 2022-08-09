@@ -121,7 +121,8 @@ export const NewProjectSizeAndColourSelectionModal = ({
                 >
                   {_.range(2, maxGrid + 1).map((value) => (
                     <option key={value} value={value}>
-                      {converter.toWords(value)}
+                      {converter.toWords(value).charAt(0).toUpperCase() +
+                        converter.toWords(value).substring(1)}
                     </option>
                   ))}
                 </Select>
@@ -142,7 +143,8 @@ export const NewProjectSizeAndColourSelectionModal = ({
                 >
                   {_.range(2, maxGrid + 1).map((value) => (
                     <option key={value} value={value}>
-                      {converter.toWords(value)}
+                      {converter.toWords(value).charAt(0).toUpperCase() +
+                        converter.toWords(value).substring(1)}
                     </option>
                   ))}
                 </Select>
