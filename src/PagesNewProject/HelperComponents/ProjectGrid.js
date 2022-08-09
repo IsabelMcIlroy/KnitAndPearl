@@ -6,7 +6,6 @@ import { Grid, Button } from "@mui/material";
 export const ProjectGrid = () => {
   const { state } = useLocation();
   const { currentRows, currentColumns } = state;
-  console.log(currentColumns);
   const [background, setBackground] = useState("#e9e1ec");
   const setKnittingGridColor = (background) => {
     setBackground(background);
