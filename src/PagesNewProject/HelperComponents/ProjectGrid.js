@@ -9,10 +9,14 @@ export const ProjectGrid = () => {
   const gridArray = Array(
     ...Array(parseInt(currentRows * currentColumns)).keys()
   );
-  console.log(gridArray);
   const [background, setBackground] = useState("#e9e1ec");
   const setKnittingGridColor = (background) => {
-    setBackground(background);
+    for (let i = 0; i < gridArray.length; i++) {
+      gridArray[i] = setBackground(background);
+    }
+  };
+  const handleChangeColor = (index) => {
+    gridArray[index] = setKnittingGridColor("#000000");
   };
   return (
     <>
@@ -24,28 +28,33 @@ export const ProjectGrid = () => {
           justifyContent: "center",
         }}
       >
-        {_.range(currentRows * currentColumns, 0).map((value) => (
-          <Grid
-            item
-            key={value}
-            value={value}
-            xs={12 / currentRows}
-            sx={{
-              border: "1px solid black",
-              height: "50px",
-            }}
-          >
-            <Button
-              value={value}
+        {gridArray.map((index) => {
+          return (
+            <Grid
+              item
+              key={index}
+              value={index}
+              xs={12 / currentRows}
               sx={{
-                backgroundColor: `${background}`,
-                height: "100%",
-                minWidth: "90%",
+                border: "1px solid black",
+                height: "50px",
               }}
-              onClick={() => setKnittingGridColor("#000000")}
-            />
-          </Grid>
-        ))}
+            >
+              <Button
+                value={index}
+                sx={{
+                  backgroundColor: `${background}`,
+                  height: "100%",
+                  minWidth: "90%",
+                }}
+                key={index}
+                onClick={() => {
+                  handleChangeColor(index);
+                }}
+              />
+            </Grid>
+          );
+        })}
       </Grid>
       <Grid
         container
