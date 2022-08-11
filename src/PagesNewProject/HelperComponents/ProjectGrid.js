@@ -3,9 +3,10 @@ import { useLocation } from "react-router-dom";
 import _ from "lodash";
 import { Grid, Button } from "@mui/material";
 
-export const ProjectGrid = () => {
+export const ProjectGrid = (color) => {
   const { state } = useLocation();
   const { currentRows, currentColumns } = state;
+  console.log(color);
   const gridArray = Array(
     ...Array(parseInt(currentRows * currentColumns)).keys()
   );
@@ -16,7 +17,7 @@ export const ProjectGrid = () => {
     }
   };
   const handleChangeColor = (index) => {
-    gridArray[index] = setKnittingGridColor("#000000");
+    gridArray[index] = setKnittingGridColor({ color });
   };
   return (
     <>

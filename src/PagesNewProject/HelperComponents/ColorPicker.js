@@ -55,6 +55,7 @@ export const ColorPicker = () => {
           />
           <GithubPicker
             triangle="hide"
+            name="currentColor"
             color={color.rgb}
             onChange={handleChange}
           />
