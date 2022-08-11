@@ -40,13 +40,14 @@ export const ProjectGrid = () => {
                 border: "1px solid black",
                 aspectRatio: "1/1",
               }}
+              style={{ padding: "4px" }}
             >
               <Button
                 value={index}
                 sx={{
                   backgroundColor: `${background}`,
                   height: "100%",
-                  minWidth: "90%",
+                  minWidth: "100%",
                 }}
                 key={index}
                 onClick={() => {
