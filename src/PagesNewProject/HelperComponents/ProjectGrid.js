@@ -24,8 +24,9 @@ export const ProjectGrid = () => {
         container
         spacing={12 / currentRows}
         sx={{
-          margin: "112px 80px 0px 80px",
+          margin: "112px auto 0 auto",
           justifyContent: "center",
+          width: "80%",
         }}
       >
         {gridArray.map((index) => {
@@ -37,7 +38,7 @@ export const ProjectGrid = () => {
               xs={12 / currentRows}
               sx={{
                 border: "1px solid black",
-                height: "50px",
+                aspectRatio: "1/1",
               }}
             >
               <Button
@@ -74,7 +75,7 @@ export const ProjectGrid = () => {
             value={value}
             xs={12}
             sx={{
-              height: "50px",
+              aspectRatio: "12/1",
               textAlign: "end",
             }}
           >
@@ -85,7 +86,7 @@ export const ProjectGrid = () => {
       <Grid
         container
         spacing={12 / currentRows}
-        sx={{ margin: "0 80px 0 80px", justifyContent: "center" }}
+        sx={{ margin: "0 auto", justifyContent: "center", width: "80%" }}
       >
         {_.range(currentRows, 0).map((value) => (
           <Grid
