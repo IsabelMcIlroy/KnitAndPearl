@@ -11,11 +11,13 @@ export const ProjectGrid = (color) => {
     ...Array(parseInt(currentRows * currentColumns)).keys()
   );
   const [background, setBackground] = useState("#e9e1ec");
-  const setKnittingGridColor = (background, index) => {
-    gridArray[index] = setBackground(background);
-  };
   const handleChangeColor = (index) => {
-    gridArray[index] = setKnittingGridColor("#000000");
+    console.log(index);
+    for (let i = 0; i > gridArray.length; i++) {
+      if ((i = index)) {
+        gridArray[index].color = setBackground("#000000");
+      }
+    }
   };
   return (
     <>
