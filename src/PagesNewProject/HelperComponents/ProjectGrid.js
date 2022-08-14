@@ -77,7 +77,8 @@ export const ProjectGrid = (color) => {
             value={value}
             xs={12}
             sx={{
-              aspectRatio: "12/1",
+              maxWidth: "50px",
+              aspectRatio: "12 / 1",
               textAlign: "end",
             }}
           >
