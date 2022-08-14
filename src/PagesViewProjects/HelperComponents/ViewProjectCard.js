@@ -11,7 +11,7 @@ import exampleImg from "../../images/grid.jpg";
 export const ViewProjectCard = ({ projectName }, { projectType }) => {
   return (
     <>
-      <Card sx={{ width: "50%" }}>
+      <Card sx={{ width: "50%", margin: "12px" }}>
         <CardContent sx={{ display: "flex" }}>
           <img
             src={exampleImg}
@@ -26,7 +26,7 @@ export const ViewProjectCard = ({ projectName }, { projectType }) => {
               {projectType} Sweater
             </Typography>
             <CardActions>
-              <Button size="small">Edit</Button>
+              <Button size="small">View</Button>
             </CardActions>
           </Box>
         </CardContent>
