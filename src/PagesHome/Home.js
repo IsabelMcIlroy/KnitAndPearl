@@ -14,7 +14,7 @@ export const Home = () => {
     <Box
       sx={{
         backgroundImage: `url(${wool})`,
-        height: "100vh",
+        minHeight: "100vh",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
