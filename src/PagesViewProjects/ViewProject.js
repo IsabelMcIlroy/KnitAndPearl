@@ -16,6 +16,7 @@ export const ViewProject = () => {
         sx={{
           fontFamily: "La Belle Aurore",
           color: palette.knittingPurple,
+          margin: "0 24px",
         }}
       >
         View Projects

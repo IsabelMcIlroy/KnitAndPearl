@@ -38,8 +38,11 @@ export const ViewProjectCard = ({ projectName }, { projectType }) => {
               {projectName}
             </Typography>
             <Typography
-              sx={{ mb: 1.5, margin: "0 24px" }}
-              color="text.secondary"
+              sx={{
+                mb: 1.5,
+                margin: "0 24px",
+                color: palette.knittingLightPurple,
+              }}
             >
               {projectType} Sweater
             </Typography>
