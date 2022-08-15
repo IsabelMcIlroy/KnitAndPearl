@@ -10,7 +10,7 @@ import {
 import KnittingTheme, { palette } from "../../assets/theme";
 import exampleImg from "../../images/grid.jpg";
 
-export const ViewProjectCard = ({ projectName }, { projectType }) => {
+export const ViewProjectCard = ({ projectName, projectType }) => {
   return (
     <>
       <Card
@@ -27,7 +27,7 @@ export const ViewProjectCard = ({ projectName }, { projectType }) => {
           />
           <Box sx={{ margin: "8px" }}>
             <Typography
-              variant="h5"
+              variant="h4"
               component="div"
               sx={{
                 fontFamily: "La Belle Aurore",
@@ -38,13 +38,13 @@ export const ViewProjectCard = ({ projectName }, { projectType }) => {
               {projectName}
             </Typography>
             <Typography
+              variant="p"
               sx={{
-                mb: 1.5,
                 margin: "0 24px",
                 color: palette.knittingLightPurple,
               }}
             >
-              {projectType} Sweater
+              {projectType}
             </Typography>
             <CardActions sx={{ padding: "0" }}>
               <ThemeProvider theme={KnittingTheme}>
