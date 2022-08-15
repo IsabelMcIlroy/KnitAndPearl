@@ -15,17 +15,17 @@ export const ViewProjectCard = ({ projectName, projectType }) => {
     <>
       <Card
         sx={{
-          width: "50%",
+          maxWidth: "45%",
           margin: "12px",
         }}
       >
-        <CardContent sx={{ display: "flex" }}>
+        <CardContent sx={{ display: "flex", flexWrap: "wrap" }}>
           <img
             src={exampleImg}
             alt="example"
-            style={{ width: "25%", margin: "8px" }}
+            style={{ maxWidth: "50%", margin: "8px" }}
           />
-          <Box sx={{ margin: "8px" }}>
+          <Box sx={{ margin: "8px", maxWidth: "50%" }}>
             <Typography
               variant="h4"
               component="div"
