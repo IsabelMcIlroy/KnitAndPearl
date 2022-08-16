@@ -20,7 +20,13 @@ export const ViewProject = () => {
         >
           View Projects
         </Typography>
-        <Box sx={{ display: "flex", margin: "0px 24px", flexWrap: "wrap" }}>
+        <Box
+          sx={{
+            display: "flex",
+            margin: "0px 24px",
+            flexWrap: "wrap",
+          }}
+        >
           <ViewProjectCard projectName={"Trees"} projectType={"Sweater"} />
           <ViewProjectCard projectName={"Mountains"} projectType={"Scarf"} />
           <ViewProjectCard projectName={"Cats"} projectType={"Socks"} />

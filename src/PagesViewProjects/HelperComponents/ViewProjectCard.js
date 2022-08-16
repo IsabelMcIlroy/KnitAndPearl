@@ -15,7 +15,7 @@ export const ViewProjectCard = ({ projectName, projectType }) => {
     <>
       <Card
         sx={{
-          maxWidth: "45%",
+          maxWidth: "40vw",
           margin: "12px",
         }}
       >
