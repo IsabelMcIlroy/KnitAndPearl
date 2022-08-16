@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 
 export const Logo = () => {
   return (
-    <Box sx={{ verticalAlign: "middle", display: "inline-block" }}>
+    <Box sx={{ display: "inline-block" }}>
       <img src={logo} alt="ball of wool" />
     </Box>
   );

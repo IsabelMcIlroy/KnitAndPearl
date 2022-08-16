@@ -34,7 +34,8 @@ const KnittingTheme = createTheme({
           color: palette.knittingGray,
           margin: "12px 24px",
           flexBasis: "auto",
-          height: "48px",
+          height: "3rem",
+          width: "12rem",
           "&:hover": {
             backgroundColor: palette.knittingBlue,
             color: palette.knittingGray,
