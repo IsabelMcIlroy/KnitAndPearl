@@ -23,6 +23,8 @@ export const NavBar = () => {
         sx={{
           backgroundImage: `url(${wool})`,
           padding: "10px",
+          flexDirection: "row",
+          justifyContent: "end",
         }}
       >
         <Button
