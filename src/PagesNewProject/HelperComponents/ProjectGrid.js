@@ -31,6 +31,7 @@ export const ProjectGrid = () => {
                 item
                 rowindex={xindex}
                 columnindex={yindex}
+                key={(xindex, yindex)}
                 xs={12 / currentRows}
                 sx={{
                   border: "1px solid black",
