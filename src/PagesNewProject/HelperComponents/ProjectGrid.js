@@ -14,6 +14,10 @@ export const ProjectGrid = () => {
   });
   const rowArray = Array(...Array(parseInt(currentRows)).keys());
   const columnArray = Array(...Array(parseInt(currentRows)).keys());
+  // const handleChangeColor = (rowindex, columnindex) => {
+  //   const newGridArray = [...gridArray];
+  //   newGridArray[rowindex][columnindex] = setBackground("#ffffff");
+  // };
   return (
     <>
       <Grid
@@ -44,10 +48,11 @@ export const ProjectGrid = () => {
                   rowindex={xindex}
                   columnindex={yindex}
                   sx={{
-                    backgroundColor: "#E8E1EC",
+                    backgroundColor: `${background}`,
                     height: "100%",
                     minWidth: "100%",
                   }}
+                  //onClick={handleChangeColor()}
                 />
               </Grid>
             );
