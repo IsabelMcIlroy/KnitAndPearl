@@ -1,14 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Grid, Button } from "@mui/material";
 
 export const ProjectGrid = () => {
   const { state } = useLocation();
   const { currentRows, currentColumns } = state;
+  const [background, setBackground] = useState("#E8E1EC");
   useEffect(() => {
     let gridArray = Array(parseInt(currentRows))
       .fill(0)
-      .map(() => new Array(parseInt(currentColumns)).fill(1));
+      .map(() => new Array(parseInt(currentColumns)).fill(background));
     console.log(gridArray);
   });
   const rowArray = Array(...Array(parseInt(currentRows)).keys());
