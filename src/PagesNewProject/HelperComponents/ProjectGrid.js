@@ -9,9 +9,9 @@ export const ProjectGrid = () => {
   let gridArray = Array(parseInt(currentColumns))
     .fill(0)
     .map(() => new Array(parseInt(currentRows)).fill(background));
-  // const handleChangeColor = (rowindex, columnindex) => {
+  // const handleChangeColor = () => {
   //   const newGridArray = [...gridArray];
-  //   newGridArray[rowindex][columnindex] = setBackground("#ffffff");
+  //   newGridArray[1] = setBackground("#ffffff");
   // };
   return (
     <>
@@ -31,7 +31,7 @@ export const ProjectGrid = () => {
                 item
                 rowindex={Object.keys(gridArray)}
                 columnindex={Object.keys(gridArray[1])}
-                key={Object.keys(gridArray) + "," + Object.keys(gridArray[1])}
+                key={Math.random()}
                 xs={12 / currentColumns}
                 sx={{
                   border: "1px solid black",
@@ -42,13 +42,13 @@ export const ProjectGrid = () => {
                 <Button
                   rowindex={Object.keys(gridArray)}
                   columnindex={Object.keys(gridArray[1])}
-                  key={Object.keys(gridArray) + "," + Object.keys(gridArray[1])}
+                  key={Math.random()}
                   sx={{
                     backgroundColor: `${background}`,
                     height: "100%",
                     minWidth: "100%",
                   }}
-                  //onClick={handleChangeColor()}
+                  // onClick={handleChangeColor()}
                 />
               </Grid>
             );
