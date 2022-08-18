@@ -5,10 +5,10 @@ import { Grid, Button } from "@mui/material";
 export const ProjectGrid = () => {
   const { state } = useLocation();
   const { currentRows, currentColumns } = state;
-  const [background, setBackground] = useState({ background: "#E8E1EC" });
-  let gridArray = Array(parseInt(currentRows))
+  const [background, setBackground] = useState("#E8E1EC");
+  let gridArray = Array(parseInt(currentColumns))
     .fill(0)
-    .map(() => new Array(parseInt(currentColumns)).fill(background));
+    .map(() => new Array(parseInt(currentRows)).fill(background));
   // const handleChangeColor = (rowindex, columnindex) => {
   //   const newGridArray = [...gridArray];
   //   newGridArray[rowindex][columnindex] = setBackground("#ffffff");
@@ -17,21 +17,22 @@ export const ProjectGrid = () => {
     <>
       <Grid
         container
-        spacing={12 / currentRows}
+        spacing={12 / currentColumns}
         sx={{
           margin: "112px auto 0 auto",
           justifyContent: "center",
           width: "40%",
         }}
       >
-        {gridArray.map((xindex) => {
-          return gridArray.map((yindex) => {
+        {gridArray.map(() => {
+          return gridArray[1].map(() => {
             return (
               <Grid
                 item
-                rowindex={xindex}
-                columnindex={yindex}
-                xs={12 / currentRows}
+                rowindex={Object.keys(gridArray)}
+                columnindex={Object.keys(gridArray[1])}
+                key={Object.keys(gridArray) + "," + Object.keys(gridArray[1])}
+                xs={12 / currentColumns}
                 sx={{
                   border: "1px solid black",
                   aspectRatio: "1/1",
@@ -39,8 +40,9 @@ export const ProjectGrid = () => {
                 style={{ padding: "4px" }}
               >
                 <Button
-                  rowindex={xindex}
-                  columnindex={yindex}
+                  rowindex={Object.keys(gridArray)}
+                  columnindex={Object.keys(gridArray[1])}
+                  key={Object.keys(gridArray) + "," + Object.keys(gridArray[1])}
                   sx={{
                     backgroundColor: `${background}`,
                     height: "100%",
