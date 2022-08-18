@@ -15,11 +15,11 @@ export const ViewProjectCard = ({ projectName, projectType }) => {
     <>
       <Card
         sx={{
-          maxWidth: "40vw",
+          width: "min-content",
           margin: "12px",
         }}
       >
-        <CardContent sx={{ display: "flex", flexWrap: "wrap" }}>
+        <CardContent sx={{ display: "flex", flexWrap: "wrap", flexGrow: "1" }}>
           <img
             src={exampleImg}
             alt="example"

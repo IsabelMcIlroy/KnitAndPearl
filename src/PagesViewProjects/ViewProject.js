@@ -4,7 +4,7 @@ import { ViewProjectCard } from "./HelperComponents/ViewProjectCard";
 
 export const ViewProject = () => {
   return (
-    <Box sx={{ backgroundColor: palette.knittingGray }}>
+    <Box sx={{ backgroundColor: palette.knittingGray, minHeight: "100vh" }}>
       <Box
         sx={{
           padding: "112px 24px 12px 24px",
