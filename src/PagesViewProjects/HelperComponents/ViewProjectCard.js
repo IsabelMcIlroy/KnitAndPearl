@@ -19,13 +19,13 @@ export const ViewProjectCard = ({ projectName, projectType }) => {
           margin: "12px",
         }}
       >
-        <CardContent sx={{ display: "flex", flexWrap: "wrap", flexGrow: "1" }}>
+        <CardContent>
           <img
             src={exampleImg}
             alt="example"
-            style={{ maxWidth: "50%", margin: "8px" }}
+            style={{ maxWidth: "90%", margin: "8px" }}
           />
-          <Box sx={{ margin: "8px", maxWidth: "50%" }}>
+          <Box sx={{ margin: "8px", maxWidth: "90%" }}>
             <Typography
               variant="h4"
               component="div"

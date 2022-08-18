@@ -4,7 +4,12 @@ import { ViewProjectCard } from "./HelperComponents/ViewProjectCard";
 
 export const ViewProject = () => {
   return (
-    <Box sx={{ backgroundColor: palette.knittingGray, minHeight: "100vh" }}>
+    <Box
+      sx={{
+        backgroundColor: palette.knittingGray,
+        minHeight: "100vh",
+      }}
+    >
       <Box
         sx={{
           padding: "112px 24px 12px 24px",
@@ -25,6 +30,7 @@ export const ViewProject = () => {
             display: "flex",
             margin: "0px 24px",
             flexWrap: "wrap",
+            justifyContent: "space-evenly",
           }}
         >
           <ViewProjectCard projectName={"Trees"} projectType={"Sweater"} />
