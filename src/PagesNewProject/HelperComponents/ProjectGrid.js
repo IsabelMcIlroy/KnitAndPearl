@@ -20,8 +20,7 @@ export const ProjectGrid = () => {
         spacing={12 / currentColumns}
         sx={{
           margin: "112px auto 0 auto",
-          justifyContent: "center",
-          width: "40%",
+          width: "50%",
         }}
       >
         {gridArray.map(() => {
