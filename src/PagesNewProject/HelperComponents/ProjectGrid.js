@@ -9,6 +9,8 @@ export const ProjectGrid = () => {
   let gridArray = Array(parseInt(currentColumns))
     .fill(0)
     .map(() => new Array(parseInt(currentRows)).fill(background));
+  console.log(Object.keys(gridArray));
+  console.log(Object.keys(gridArray[1]));
   // const handleChangeColor = () => {
   //   const newGridArray = [...gridArray];
   //   newGridArray[1] = setBackground("#ffffff");
@@ -23,7 +25,7 @@ export const ProjectGrid = () => {
           width: "50%",
         }}
       >
-        {gridArray.map(() => {
+        {gridArray.map((background) => {
           return gridArray[1].map(() => {
             return (
               <Grid
@@ -48,7 +50,9 @@ export const ProjectGrid = () => {
                     minWidth: "100%",
                   }}
                   // onClick={handleChangeColor()}
-                />
+                >
+                  {gridArray[1]}
+                </Button>
               </Grid>
             );
           });
