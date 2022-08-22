@@ -25,7 +25,7 @@ export const ProjectGrid = () => {
           width: "50%",
         }}
       >
-        {gridArray.map((background) => {
+        {gridArray.map(() => {
           return gridArray[1].map(() => {
             return (
               <Grid
@@ -50,9 +50,7 @@ export const ProjectGrid = () => {
                     minWidth: "100%",
                   }}
                   // onClick={handleChangeColor()}
-                >
-                  {gridArray[1]}
-                </Button>
+                />
               </Grid>
             );
           });
