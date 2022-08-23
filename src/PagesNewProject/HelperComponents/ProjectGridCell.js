@@ -14,7 +14,6 @@ export const ProjectGridCell = ({
     setCellColor(
       `rgba(${currentlySelectedColor.r}, ${currentlySelectedColor.g}, ${currentlySelectedColor.b}, ${currentlySelectedColor.a})`
     );
-    console.log(currentlySelectedColor);
     modifyGridColorArray(xIndex, yIndex, currentlySelectedColor);
   };
   return (
