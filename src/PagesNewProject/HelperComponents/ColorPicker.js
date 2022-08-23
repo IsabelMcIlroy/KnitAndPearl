@@ -2,17 +2,14 @@ import { useState } from "react";
 import { GithubPicker } from "react-color";
 import { Box } from "@mui/system";
 
-export const ColorPicker = () => {
+export const ColorPicker = ({
+  currentlySelectedColor,
+  setCurrentlySelectedColor,
+}) => {
   const [isDisplayColorPicker, setIsDisplayColorPicker] = useState(false);
-  const [color, setColor] = useState({
-    r: "241",
-    g: "112",
-    b: "19",
-    a: "1",
-  });
 
   const handleChange = (color) => {
-    setColor(color.rgb);
+    setCurrentlySelectedColor(color.rgb);
     setIsDisplayColorPicker(false);
   };
   return (
@@ -35,7 +32,7 @@ export const ColorPicker = () => {
             width: "36px",
             height: "24px",
             borderRadius: "3px",
-            background: `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`,
+            background: `rgba(${currentlySelectedColor.r}, ${currentlySelectedColor.g}, ${currentlySelectedColor.b}, ${currentlySelectedColor.a})`,
           }}
         />
       </Box>
@@ -56,7 +53,7 @@ export const ColorPicker = () => {
           <GithubPicker
             triangle="hide"
             name="currentColor"
-            color={color.rgb}
+            color={currentlySelectedColor.rgb}
             onChange={handleChange}
           />
         </Box>

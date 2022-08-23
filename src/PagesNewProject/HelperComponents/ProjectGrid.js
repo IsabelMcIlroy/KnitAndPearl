@@ -1,20 +1,27 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Grid, Button } from "@mui/material";
+import { ProjectGridCell } from "./ProjectGridCell";
 
-export const ProjectGrid = () => {
+export const ProjectGrid = ({ currentlySelectedColor }) => {
   const { state } = useLocation();
   const { currentRows, currentColumns } = state;
-  const [background, setBackground] = useState("#E8E1EC");
-  let gridArray = Array(parseInt(currentColumns))
+  const DEFAULT_COLOR = "#E8E1EC";
+  const [background, setBackground] = useState(DEFAULT_COLOR);
+  const gridArray = Array(parseInt(currentColumns))
     .fill(0)
     .map(() => new Array(parseInt(currentRows)).fill(background));
+  const [gridColors, setGridColors] = useState(gridArray);
+
+  const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
+    gridColors[yIndex][xIndex] = currentlySelectedColor;
+    setGridColors(gridColors);
+  };
+  useEffect(() => {
+    console.log(gridColors);
+  }, [gridColors]);
   console.log(Object.keys(gridArray));
   console.log(Object.keys(gridArray[1]));
-  // const handleChangeColor = () => {
-  //   const newGridArray = [...gridArray];
-  //   newGridArray[1] = setBackground("#ffffff");
-  // };
   return (
     <>
       <Grid
@@ -25,8 +32,8 @@ export const ProjectGrid = () => {
           width: "50%",
         }}
       >
-        {gridArray.map(() => {
-          return gridArray[1].map(() => {
+        {gridArray.map((columns, yindex) => {
+          return gridArray[1].map((rows, xindex) => {
             return (
               <Grid
                 item
@@ -40,16 +47,12 @@ export const ProjectGrid = () => {
                 }}
                 style={{ padding: "4px" }}
               >
-                <Button
-                  rowindex={Object.keys(gridArray)}
-                  columnindex={Object.keys(gridArray[1])}
-                  key={Math.random()}
-                  sx={{
-                    backgroundColor: `${background}`,
-                    height: "100%",
-                    minWidth: "100%",
-                  }}
-                  // onClick={handleChangeColor()}
+                <ProjectGridCell
+                  xIndex={xindex}
+                  yIndex={yindex}
+                  currentlySelectedColor={currentlySelectedColor}
+                  defaultColor={DEFAULT_COLOR}
+                  modifyGridColorArray={modifyGridColorArray}
                 />
               </Grid>
             );

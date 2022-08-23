@@ -14,6 +14,8 @@ import woolSmall from "../../images/woolSmall.jpg";
 export const NewProjectEditorDrawer = ({
   currentProjectNameForDrawer,
   currentProjectTypeForDrawer,
+  currentlySelectedColor,
+  setCurrentlySelectedColor,
 }) => {
   const [isDrawerOpen, setIsDrawerOpened] = useState(false);
   return (
@@ -71,7 +73,10 @@ export const NewProjectEditorDrawer = ({
           <Typography variant="h8" sx={editorDrawerLabels}>
             Wool Color:
           </Typography>
-          <ColorPicker />
+          <ColorPicker
+            currentlySelectedColor={currentlySelectedColor}
+            setCurrentlySelectedColor={setCurrentlySelectedColor}
+          />
           <hr sx={editorDrawerLabels} />
           <Box sx={{ textAlign: "center", marginTop: "24px" }}>
             <EditDrawerButtonsAndPopover popoverText={"Undo."} />
