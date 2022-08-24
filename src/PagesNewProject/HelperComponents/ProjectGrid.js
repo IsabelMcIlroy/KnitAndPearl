@@ -35,9 +35,6 @@ export const ProjectGrid = ({ currentlySelectedColor }) => {
             return (
               <Grid
                 item
-                rowindex={Object.keys(gridArray)}
-                columnindex={Object.keys(gridArray[1])}
-                key={Math.random()}
                 xs={12 / currentColumns}
                 sx={{
                   border: "1px solid black",

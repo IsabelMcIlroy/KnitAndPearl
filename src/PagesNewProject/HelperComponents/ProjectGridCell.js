@@ -23,6 +23,7 @@ export const ProjectGridCell = ({
         height: "100%",
         minWidth: "100%",
       }}
+      key={yIndex + xIndex}
       onClick={() => onClick()}
     />
   );
