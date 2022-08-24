@@ -10,12 +10,13 @@ export const ViewProject = () => {
     { projectName: "Cats", projectType: "Socks" },
     { projectName: "Fish", projectType: "Socks" },
   ];
-  const [allProjects] = useState(displayProjectsArray);
+  console.log(displayProjectsArray);
+  const [allProjects] = useState({ displayProjectsArray });
   const [search, setSearch] = useState("");
-  const [searchResults, setSearchResults] = [];
+  const [searchResults, setSearchResults] = useState({ displayProjectsArray });
   useEffect(() => {
-    const projectsToShow = allProjects.filter((allProjects) =>
-      allProjects.projectName.toLocaleUpperCase().includes(search)
+    const projectsToShow = allProjects.filter((p) =>
+      p.projectName.toLowerCase().includes(search)
     );
     setSearchResults(projectsToShow);
   }, [search, setSearchResults, allProjects]);
@@ -61,9 +62,9 @@ export const ViewProject = () => {
             justifyContent: "space-evenly",
           }}
         >
-          {searchResults.map(({ displayProjectsArray, index }) => (
+          {searchResults.map((displayProjectsArray) => (
             <ViewProjectCard
-              key={index}
+              key={displayProjectsArray.projectName}
               projectName={displayProjectsArray.projectName}
               projectType={displayProjectsArray.projectType}
             />
