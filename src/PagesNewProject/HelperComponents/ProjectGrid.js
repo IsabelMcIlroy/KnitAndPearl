@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Grid } from "@mui/material";
 import { ProjectGridCell } from "./ProjectGridCell";
@@ -12,14 +12,10 @@ export const ProjectGrid = ({ currentlySelectedColor }) => {
     .fill(0)
     .map(() => new Array(parseInt(currentRows)).fill(background));
   const [gridColors, setGridColors] = useState(gridArray);
-
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
     gridColors[yIndex][xIndex] = currentlySelectedColor;
     setGridColors(gridColors);
   };
-  useEffect(() => {
-    console.log(gridColors);
-  }, [gridColors]);
   return (
     <>
       <Grid
