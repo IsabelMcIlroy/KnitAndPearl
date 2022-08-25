@@ -41,6 +41,7 @@ export const ProjectGrid = ({ currentlySelectedColor }) => {
                 <ProjectGridCell
                   xIndex={xindex}
                   yIndex={yindex}
+                  key={yindex + xindex}
                   currentlySelectedColor={currentlySelectedColor}
                   defaultColor={DEFAULT_COLOR}
                   modifyGridColorArray={modifyGridColorArray}
