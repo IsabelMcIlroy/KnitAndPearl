@@ -62,13 +62,15 @@ export const ViewProject = () => {
             justifyContent: "space-evenly",
           }}
         >
-          {searchResults.map((displayProjectsArray) => (
-            <ViewProjectCard
-              key={displayProjectsArray.projectName}
-              projectName={displayProjectsArray.projectName}
-              projectType={displayProjectsArray.projectType}
-            />
-          ))}
+          {searchResults.map((displayProjectsArray) => {
+            return (
+              <ViewProjectCard
+                key={displayProjectsArray.projectName}
+                projectName={displayProjectsArray.projectName}
+                projectType={displayProjectsArray.projectType}
+              />
+            );
+          })}
         </Box>
       </Box>
     </Box>
