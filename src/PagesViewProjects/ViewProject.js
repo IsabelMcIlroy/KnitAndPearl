@@ -4,22 +4,21 @@ import { palette } from "../assets/theme";
 import { ViewProjectCard } from "./HelperComponents/ViewProjectCard";
 
 export const ViewProject = () => {
-  const displayProjectsArray = [
+  const [allProjects] = useState([
     { projectName: "Trees", projectType: "Hat" },
     { projectName: "Mountains", projectType: "Sweater" },
     { projectName: "Cats", projectType: "Socks" },
     { projectName: "Fish", projectType: "Socks" },
-  ];
-  console.log(displayProjectsArray);
-  const [allProjects] = useState([displayProjectsArray]);
+  ]);
   const [search, setSearch] = useState("");
-  const [searchResults, setSearchResults] = useState([displayProjectsArray]);
+  const [searchResults, setSearchResults] = useState([]);
   useEffect(() => {
     const projectsToShow = allProjects.filter((project) =>
-      project.projectName.toLowerCase().includes(search)
+      project.projectName.includes(search)
     );
     setSearchResults(projectsToShow);
   }, [search, setSearchResults, allProjects]);
+  //console.log(searchResults);
   return (
     <Box
       sx={{
