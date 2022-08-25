@@ -11,12 +11,12 @@ export const ViewProject = () => {
     { projectName: "Fish", projectType: "Socks" },
   ];
   console.log(displayProjectsArray);
-  const [allProjects] = useState({ displayProjectsArray });
+  const [allProjects] = useState([displayProjectsArray]);
   const [search, setSearch] = useState("");
-  const [searchResults, setSearchResults] = useState({ displayProjectsArray });
+  const [searchResults, setSearchResults] = useState([displayProjectsArray]);
   useEffect(() => {
-    const projectsToShow = allProjects.filter((p) =>
-      p.projectName.toLowerCase().includes(search)
+    const projectsToShow = allProjects.filter((project) =>
+      project.projectName.toLowerCase().includes(search)
     );
     setSearchResults(projectsToShow);
   }, [search, setSearchResults, allProjects]);
