@@ -18,7 +18,6 @@ export const ViewProject = () => {
     );
     setSearchResults(projectsToShow);
   }, [search, setSearchResults, allProjects]);
-  //console.log(searchResults);
   return (
     <Box
       sx={{
