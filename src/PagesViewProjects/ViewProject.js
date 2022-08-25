@@ -14,7 +14,7 @@ export const ViewProject = () => {
   const [searchResults, setSearchResults] = useState([]);
   useEffect(() => {
     const projectsToShow = allProjects.filter((project) =>
-      project.projectName.includes(search)
+      project.projectName.toLowerCase().includes(search.toLowerCase())
     );
     setSearchResults(projectsToShow);
   }, [search, setSearchResults, allProjects]);
