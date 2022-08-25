@@ -13,8 +13,10 @@ export const ViewProject = () => {
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   useEffect(() => {
-    const projectsToShow = allProjects.filter((project) =>
-      project.projectName.toLowerCase().includes(search.toLowerCase())
+    const projectsToShow = allProjects.filter(
+      (project) =>
+        project.projectName.toLowerCase().includes(search.toLowerCase()) ||
+        project.projectType.toLowerCase().includes(search.toLowerCase())
     );
     setSearchResults(projectsToShow);
   }, [search, setSearchResults, allProjects]);
