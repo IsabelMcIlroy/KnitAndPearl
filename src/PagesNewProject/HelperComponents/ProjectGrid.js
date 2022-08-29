@@ -3,11 +3,11 @@ import { useLocation } from "react-router-dom";
 import { Grid } from "@mui/material";
 import { ProjectGridCell } from "./ProjectGridCell";
 
-export const ProjectGrid = ({ currentlySelectedColor }) => {
+export const ProjectGrid = ({ currentlySelectedColor, background }) => {
   const { state } = useLocation();
   const { currentRows, currentColumns } = state;
   const DEFAULT_COLOR = "#E8E1EC";
-  const [background] = useState(DEFAULT_COLOR);
+
   const gridArray = Array(parseInt(currentColumns))
     .fill(0)
     .map(() => new Array(parseInt(currentRows)).fill(background));

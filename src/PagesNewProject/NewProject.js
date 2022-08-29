@@ -13,6 +13,8 @@ export const NewProject = () => {
     b: "19",
     a: "1",
   });
+  const DEFAULT_COLOR = "#E8E1EC";
+  const [background] = useState(DEFAULT_COLOR);
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <NewProjectEditorDrawer
@@ -20,8 +22,12 @@ export const NewProject = () => {
         currentProjectTypeForDrawer={currentProjectType}
         currentlySelectedColor={currentlySelectedColor}
         setCurrentlySelectedColor={setCurrentlySelectedColor}
+        background={background}
       />
-      <ProjectGrid currentlySelectedColor={currentlySelectedColor} />
+      <ProjectGrid
+        currentlySelectedColor={currentlySelectedColor}
+        background={background}
+      />
     </Box>
   );
 };

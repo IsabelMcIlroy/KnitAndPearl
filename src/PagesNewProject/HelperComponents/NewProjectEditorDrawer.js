@@ -16,6 +16,7 @@ export const NewProjectEditorDrawer = ({
   currentProjectTypeForDrawer,
   currentlySelectedColor,
   setCurrentlySelectedColor,
+  background,
 }) => {
   const [isDrawerOpen, setIsDrawerOpened] = useState(false);
   return (
@@ -80,7 +81,10 @@ export const NewProjectEditorDrawer = ({
           <hr sx={editorDrawerLabels} />
           <Box sx={{ textAlign: "center", marginTop: "24px" }}>
             <EditDrawerButtonsAndPopover popoverText={"Undo."} />
-            <EditDrawerButtonsAndPopover popoverText={"Clear Grid."} />
+            <EditDrawerButtonsAndPopover
+              popoverText={"Clear Grid."}
+              background={background}
+            />
             <EditDrawerButtonsAndPopover popoverText={"Save."} />
             <EditDrawerButtonsAndPopover popoverText={"Exit."} />
           </Box>
