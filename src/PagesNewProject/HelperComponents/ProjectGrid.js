@@ -1,17 +1,16 @@
-import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Grid } from "@mui/material";
 import { ProjectGridCell } from "./ProjectGridCell";
 
-export const ProjectGrid = ({ currentlySelectedColor, background }) => {
+export const ProjectGrid = ({
+  currentlySelectedColor,
+  gridArray,
+  gridColors,
+  setGridColors,
+}) => {
   const { state } = useLocation();
-  const { currentRows, currentColumns } = state;
+  const { currentColumns } = state;
   const DEFAULT_COLOR = "#E8E1EC";
-
-  const gridArray = Array(parseInt(currentColumns))
-    .fill(0)
-    .map(() => new Array(parseInt(currentRows)).fill(background));
-  const [gridColors, setGridColors] = useState(gridArray);
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
     gridColors[yIndex][xIndex] = currentlySelectedColor;
     setGridColors(gridColors);
@@ -32,6 +31,7 @@ export const ProjectGrid = ({ currentlySelectedColor, background }) => {
               <Grid
                 item
                 xs={12 / currentColumns}
+                key={yindex + xindex}
                 sx={{
                   border: "1px solid black",
                   aspectRatio: "1/1",
@@ -41,7 +41,6 @@ export const ProjectGrid = ({ currentlySelectedColor, background }) => {
                 <ProjectGridCell
                   xIndex={xindex}
                   yIndex={yindex}
-                  key={yindex + xindex}
                   currentlySelectedColor={currentlySelectedColor}
                   defaultColor={DEFAULT_COLOR}
                   modifyGridColorArray={modifyGridColorArray}
