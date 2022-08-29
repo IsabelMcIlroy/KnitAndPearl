@@ -83,7 +83,7 @@ export const NewProjectEditorDrawer = ({
             <EditDrawerButtonsAndPopover popoverText={"Undo."} />
             <EditDrawerButtonsAndPopover
               popoverText={"Clear Grid."}
-              clearGrid={clearGrid}
+              onClick={clearGrid}
             />
             <EditDrawerButtonsAndPopover popoverText={"Save."} />
             <EditDrawerButtonsAndPopover popoverText={"Exit."} />

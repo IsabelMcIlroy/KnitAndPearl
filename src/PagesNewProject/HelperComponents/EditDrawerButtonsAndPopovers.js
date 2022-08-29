@@ -6,7 +6,7 @@ import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
 import SettingsBackupRestoreRoundedIcon from "@mui/icons-material/SettingsBackupRestoreRounded";
 import { editBarButton, editBarButtonIcon } from "../../assets/theme";
 
-export const EditDrawerButtonsAndPopover = ({ popoverText, clearGrid }) => {
+export const EditDrawerButtonsAndPopover = ({ popoverText }) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const open = Boolean(anchorEl);
@@ -23,7 +23,6 @@ export const EditDrawerButtonsAndPopover = ({ popoverText, clearGrid }) => {
         onMouseLeave={() => {
           setAnchorEl(null);
         }}
-        onClick={clearGrid}
       >
         {popoverText === "Undo." ? (
           <UndoRoundedIcon sx={editBarButtonIcon} />
