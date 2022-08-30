@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Drawer, IconButton, Typography, Box } from "@mui/material";
+import { Drawer, IconButton, Typography, Box, Button } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import {
   sideNavClosed,
@@ -81,12 +81,10 @@ export const NewProjectEditorDrawer = ({
           <hr sx={editorDrawerLabels} />
           <Box sx={{ textAlign: "center", marginTop: "24px" }}>
             <EditDrawerButtonsAndPopover popoverText={"Undo."} />
-            <EditDrawerButtonsAndPopover
-              popoverText={"Clear Grid."}
-              onClick={clearGrid}
-            />
+            <EditDrawerButtonsAndPopover popoverText={"Clear Grid."} />
             <EditDrawerButtonsAndPopover popoverText={"Save."} />
             <EditDrawerButtonsAndPopover popoverText={"Exit."} />
+            <Button onClick={() => clearGrid()}>clear</Button>
           </Box>
         </Box>
         <Box
