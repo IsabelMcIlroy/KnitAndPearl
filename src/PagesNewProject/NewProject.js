@@ -24,7 +24,8 @@ export const NewProject = () => {
     .fill(0)
     .map(() => new Array(parseInt(currentRows)).fill(background));
   const [gridColors, setGridColors] = useState(gridArray);
-  const clearGrid = () => {
+  const clearGrid = (DEFAULT_COLOR) => {
+    console.log(DEFAULT_COLOR);
     setBackground(DEFAULT_COLOR);
     setGridColors(background);
   };
@@ -36,6 +37,7 @@ export const NewProject = () => {
         currentlySelectedColor={currentlySelectedColor}
         setCurrentlySelectedColor={setCurrentlySelectedColor}
         clearGrid={clearGrid}
+        defaultColor={DEFAULT_COLOR}
       />
       <ProjectGrid
         currentlySelectedColor={currentlySelectedColor}
