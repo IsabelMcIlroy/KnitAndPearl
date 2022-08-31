@@ -10,10 +10,10 @@ export const ProjectGrid = ({
 }) => {
   const { state } = useLocation();
   const { currentColumns } = state;
-  const DEFAULT_COLOR = "#E8E1EC";
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
-    gridColors[yIndex][xIndex] = currentlySelectedColor;
+    gridArray[yIndex][xIndex] = currentlySelectedColor;
     setGridColors(gridColors);
+    console.log(gridArray);
   };
   return (
     <>
@@ -42,7 +42,7 @@ export const ProjectGrid = ({
                   xIndex={xindex}
                   yIndex={yindex}
                   currentlySelectedColor={currentlySelectedColor}
-                  defaultColor={DEFAULT_COLOR}
+                  cellsColour={gridArray[xindex][yindex]}
                   modifyGridColorArray={modifyGridColorArray}
                 />
               </Grid>

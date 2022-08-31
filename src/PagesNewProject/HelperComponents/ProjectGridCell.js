@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 
 export const ProjectGridCell = ({
@@ -6,10 +6,12 @@ export const ProjectGridCell = ({
   xIndex,
   yIndex,
   currentlySelectedColor,
-  defaultColor,
+  cellsColor,
 }) => {
-  const [cellColor, setCellColor] = useState(defaultColor);
-
+  const [cellColor, setCellColor] = useState(cellsColor);
+  useEffect(() => {
+    setCellColor(cellsColor);
+  }, [cellsColor]);
   const onClick = () => {
     setCellColor(
       `rgba(${currentlySelectedColor.r}, ${currentlySelectedColor.g}, ${currentlySelectedColor.b}, ${currentlySelectedColor.a})`
