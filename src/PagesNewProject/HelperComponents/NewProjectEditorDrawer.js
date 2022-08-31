@@ -80,7 +80,6 @@ export const NewProjectEditorDrawer = ({
           />
           <hr sx={editorDrawerLabels} />
           <Box sx={{ textAlign: "center", marginTop: "24px" }}>
-            <EditDrawerButtonsAndPopover popoverText={"Undo."} />
             <EditDrawerButtonsAndPopover popoverText={"Clear Grid."} />
             <EditDrawerButtonsAndPopover popoverText={"Save."} />
             <EditDrawerButtonsAndPopover popoverText={"Exit."} />
