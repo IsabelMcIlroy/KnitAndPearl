@@ -6,16 +6,16 @@ import { ViewProjectMockDataList } from "./MockData/MockData";
 
 export const ViewProject = () => {
   const [allProjects] = useState(ViewProjectMockDataList);
-  const [search, setSearch] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   useEffect(() => {
     const projectsToShow = allProjects.filter(
       (project) =>
-        project.projectName.toLowerCase().includes(search.toLowerCase()) ||
-        project.projectType.toLowerCase().includes(search.toLowerCase())
+        project.projectName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        project.projectType.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setSearchResults(projectsToShow);
-  }, [search, setSearchResults, allProjects]);
+  }, [searchQuery, allProjects]);
   return (
     <Box
       sx={{
@@ -46,8 +46,8 @@ export const ViewProject = () => {
           </Typography>
           <TextField
             label="Search Projects"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
         </Box>
         <Box
