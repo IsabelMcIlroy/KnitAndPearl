@@ -31,7 +31,7 @@ export const ProjectGrid = ({
               <Grid
                 item
                 xs={12 / currentColumns}
-                key={yindex + xindex}
+                key={`x:${xindex} y:${yindex}`}
                 sx={{
                   border: "1px solid black",
                   aspectRatio: "1/1",
