@@ -42,7 +42,7 @@ export const ProjectGrid = ({
                   xIndex={xindex}
                   yIndex={yindex}
                   currentlySelectedColor={currentlySelectedColor}
-                  cellsColour={gridArray[xindex][yindex]}
+                  cellsColour={gridArray[yindex][xindex]}
                   modifyGridColorArray={modifyGridColorArray}
                 />
               </Grid>
