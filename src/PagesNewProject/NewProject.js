@@ -19,12 +19,13 @@ export const NewProject = () => {
     a: "1",
   });
   const DEFAULT_COLOR = "#E8E1EC";
-  const [background] = useState(DEFAULT_COLOR);
+  const [background, setBackground] = useState(DEFAULT_COLOR);
   const gridArray = Array(parseInt(currentColumns))
     .fill(0)
     .map(() => new Array(parseInt(currentRows)).fill(background));
   const [gridColors, setGridColors] = useState(gridArray);
   const clearGrid = () => {
+    setBackground(DEFAULT_COLOR);
     setGridColors(background);
   };
   return (
@@ -43,6 +44,7 @@ export const NewProject = () => {
         gridArray={gridArray}
         gridColors={gridColors}
         setGridColors={setGridColors}
+        currentProjectName={currentProjectName}
       />
     </Box>
   );
