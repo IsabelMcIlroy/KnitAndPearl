@@ -17,9 +17,14 @@ export const MockProject = () => {
   });
   const DEFAULT_COLOR = "#E8E1EC";
   const [background, setBackground] = useState(DEFAULT_COLOR);
-  const gridArray = Array(parseInt(mockColumns))
-    .fill(0)
-    .map(() => new Array(parseInt(mockRows)).fill(background));
+  const gridArray = [
+    ["#006B76", "#006B76", "#006B76", "#006B76", "#008B02", "#008B02"],
+    ["#006B76", "#006B76", "#006B76", "#008B02", "#008B02", "#C1E1C5"],
+    ["#006B76", "#006B76", "#008B02", "#008B02", "#C1E1C5", "#C1E1C5"],
+    ["#006B76", "#006B76", "#008B02", "#008B02", "#C1E1C5", "#C1E1C5"],
+    ["#006B76", "#006B76", "#006B76", "#008B02", "#008B02", "#C1E1C5"],
+    ["#006B76", "#006B76", "#006B76", "#006B76", "#008B02", "#008B02"],
+  ];
   const [gridColors, setGridColors] = useState(gridArray);
   const clearGrid = () => {
     setBackground(DEFAULT_COLOR);

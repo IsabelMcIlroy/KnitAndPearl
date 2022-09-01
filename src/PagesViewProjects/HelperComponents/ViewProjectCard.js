@@ -18,9 +18,14 @@ export const ViewProjectCard = ({ projectName, projectType }) => {
   const [background] = useState(DEFAULT_COLOR);
   const mockColumns = 6;
   const mockRows = 6;
-  const gridArray = Array(parseInt(mockColumns))
-    .fill(0)
-    .map(() => new Array(parseInt(mockRows)).fill(background));
+  const gridArray = [
+    ["#006B76", "#006B76", "#006B76", "#006B76", "#008B02", "#008B02"],
+    ["#006B76", "#006B76", "#006B76", "#008B02", "#008B02", "#C1E1C5"],
+    ["#006B76", "#006B76", "#008B02", "#008B02", "#C1E1C5", "#C1E1C5"],
+    ["#006B76", "#006B76", "#008B02", "#008B02", "#C1E1C5", "#C1E1C5"],
+    ["#006B76", "#006B76", "#006B76", "#008B02", "#008B02", "#C1E1C5"],
+    ["#006B76", "#006B76", "#006B76", "#006B76", "#008B02", "#008B02"],
+  ];
   return (
     <>
       <Card

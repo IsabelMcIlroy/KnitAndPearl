@@ -11,7 +11,7 @@ export const ProjectGridCell = ({
 }) => {
   const [cellColor, setCellColor] = useState(gridArray[xIndex][yIndex]);
   useEffect(() => {
-    setCellColor(cellsColor);
+    setCellColor(gridArray[xIndex][yIndex]);
   }, [cellsColor]);
   const onClick = () => {
     setCellColor(

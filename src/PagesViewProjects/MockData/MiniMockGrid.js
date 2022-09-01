@@ -1,17 +1,7 @@
 import { Box, Grid } from "@mui/material";
 import { ProjectGridCell } from "../../PagesNewProject/HelperComponents/ProjectGridCell";
 
-export const MiniMockGrid = ({
-  mockColumns,
-  currentlySelectedColor,
-  gridArray,
-  gridColors,
-  setGridColors,
-}) => {
-  const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
-    gridArray[yIndex][xIndex] = currentlySelectedColor;
-    setGridColors(gridColors);
-  };
+export const MiniMockGrid = ({ mockColumns, gridArray }) => {
   return (
     <Box>
       <Grid
@@ -35,9 +25,7 @@ export const MiniMockGrid = ({
                 <ProjectGridCell
                   xIndex={xindex}
                   yIndex={yindex}
-                  currentlySelectedColor={currentlySelectedColor}
-                  cellsColour={gridArray[yindex][rows]}
-                  modifyGridColorArray={modifyGridColorArray}
+                  cellsColour={gridArray[yindex][xindex]}
                   gridArray={gridArray}
                 />
               </Grid>
