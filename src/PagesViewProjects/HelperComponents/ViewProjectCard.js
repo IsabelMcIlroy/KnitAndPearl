@@ -10,7 +10,7 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import KnittingTheme, { palette } from "../../assets/theme";
-import { MockGrid } from "../MockData/MockGrid";
+import { MiniMockGrid } from "../MockData/MiniMockGrid";
 
 export const ViewProjectCard = ({ projectName, projectType }) => {
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ export const ViewProjectCard = ({ projectName, projectType }) => {
         }}
       >
         <CardContent>
-          <MockGrid gridArray={gridArray} />
+          <MiniMockGrid gridArray={gridArray} />
           <Box sx={{ margin: "8px", maxWidth: "90%" }}>
             <Typography
               variant="h4"
