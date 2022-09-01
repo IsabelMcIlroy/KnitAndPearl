@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Drawer, IconButton, Typography, Box } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import {
@@ -19,6 +20,7 @@ export const NewProjectEditorDrawer = ({
   clearGrid,
 }) => {
   const [isDrawerOpen, setIsDrawerOpened] = useState(false);
+  const navigate = useNavigate();
   return (
     <Box>
       <Box style={sideNavClosed}>
@@ -85,7 +87,10 @@ export const NewProjectEditorDrawer = ({
               clearGrid={clearGrid}
             />
             <EditDrawerButtonsAndPopover popoverText={"Save."} />
-            <EditDrawerButtonsAndPopover popoverText={"Exit."} />
+            <EditDrawerButtonsAndPopover
+              popoverText={"Exit."}
+              onClick={() => navigate("/KnittingProjectManager/ViewProject")}
+            />
           </Box>
         </Box>
         <Box
