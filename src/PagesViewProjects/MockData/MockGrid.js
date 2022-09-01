@@ -1,17 +1,15 @@
-import { useLocation } from "react-router-dom";
 import { Box, Grid, Typography } from "@mui/material";
 import { palette } from "../../assets/theme";
-import { ProjectGridCell } from "./ProjectGridCell";
+import { ProjectGridCell } from "../../PagesNewProject/HelperComponents/ProjectGridCell";
 
-export const ProjectGrid = ({
+export const MockGrid = ({
+  mockColumns,
   currentlySelectedColor,
   gridArray,
   gridColors,
   setGridColors,
   currentProjectName,
 }) => {
-  const { state } = useLocation();
-  const { currentColumns } = state;
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
     gridArray[yIndex][xIndex] = currentlySelectedColor;
     setGridColors(gridColors);
@@ -26,7 +24,7 @@ export const ProjectGrid = ({
       </Typography>
       <Grid
         container
-        spacing={12 / currentColumns}
+        spacing={12 / mockColumns}
         sx={{
           margin: "24px auto 0 auto",
           width: "50%",
@@ -37,7 +35,7 @@ export const ProjectGrid = ({
             return (
               <Grid
                 item
-                xs={12 / currentColumns}
+                xs={12 / mockColumns}
                 key={`x:${xindex} y:${yindex}`}
                 sx={{
                   border: "1px solid black",

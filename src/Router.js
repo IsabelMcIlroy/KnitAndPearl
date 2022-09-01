@@ -3,6 +3,7 @@ import { NavBar } from "./HelperComponents/NavBar";
 import { Home } from "./PagesHome/Home";
 import { NewProject } from "./PagesNewProject/NewProject";
 import { ViewProject } from "./PagesViewProjects/ViewProject";
+import { MockProject } from "./PagesViewProjects/MockData/MockProject";
 
 export const Router = () => {
   return (
@@ -15,6 +16,10 @@ export const Router = () => {
         <Route
           path="/KnittingProjectManager/ViewProject"
           element={<ViewProject />}
+        />
+        <Route
+          path="/KnittingProjectManager/MockProject"
+          element={<MockProject />}
         />
       </Route>
       <Route path="/KnittingProjectManager/" element={<Home />} />

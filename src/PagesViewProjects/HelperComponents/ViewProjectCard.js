@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -11,6 +12,7 @@ import KnittingTheme, { palette } from "../../assets/theme";
 import exampleImg from "../../images/grid.jpg";
 
 export const ViewProjectCard = ({ projectName, projectType }) => {
+  const navigate = useNavigate();
   return (
     <>
       <Card
@@ -48,7 +50,19 @@ export const ViewProjectCard = ({ projectName, projectType }) => {
             </Typography>
             <CardActions sx={{ padding: "0" }}>
               <ThemeProvider theme={KnittingTheme}>
-                <Button size="small">View</Button>
+                <Button
+                  size="small"
+                  onClick={() =>
+                    navigate("/KnittingProjectManager/MockProject", {
+                      state: {
+                        currentProjectName: projectName,
+                        currentProjectType: projectType,
+                      },
+                    })
+                  }
+                >
+                  View/Edit
+                </Button>
               </ThemeProvider>
             </CardActions>
           </Box>
