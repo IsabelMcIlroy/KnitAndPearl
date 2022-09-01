@@ -84,7 +84,7 @@ export const NewProjectEditorDrawer = ({
           <Box sx={{ textAlign: "center", marginTop: "24px" }}>
             <EditDrawerButtonsAndPopover
               popoverText={"Clear Grid."}
-              clearGrid={clearGrid}
+              onClick={clearGrid()}
             />
             <EditDrawerButtonsAndPopover popoverText={"Save."} />
             <EditDrawerButtonsAndPopover

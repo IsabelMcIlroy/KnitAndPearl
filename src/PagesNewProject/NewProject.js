@@ -26,7 +26,6 @@ export const NewProject = () => {
   const [gridColors, setGridColors] = useState(gridArray);
   const clearGrid = () => {
     setBackground(DEFAULT_COLOR);
-    setGridColors(background);
   };
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
