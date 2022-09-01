@@ -141,7 +141,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   value={state.Column}
                   onChange={handleInput}
                 >
-                  {_.range(4, maxGrid + 1).map((value) => (
+                  {_.range(6, maxGrid + 1).map((value) => (
                     <option key={value} value={value}>
                       {converter.toWords(value).charAt(0).toUpperCase() +
                         converter.toWords(value).substring(1)}
