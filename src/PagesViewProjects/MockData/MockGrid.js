@@ -1,5 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
-import { palette } from "../../assets/theme";
+import { Box, Grid } from "@mui/material";
 import { ProjectGridCell } from "../../PagesNewProject/HelperComponents/ProjectGridCell";
 
 export const MockGrid = ({
@@ -8,27 +7,17 @@ export const MockGrid = ({
   gridArray,
   gridColors,
   setGridColors,
-  currentProjectName,
 }) => {
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
     gridArray[yIndex][xIndex] = currentlySelectedColor;
     setGridColors(gridColors);
   };
   return (
-    <Box sx={{ padding: "100px 0 24px 100px" }}>
-      <Typography
-        variant="h1"
-        sx={{ fontFamily: "La Belle Aurore", color: palette.knittingPurple }}
-      >
-        {currentProjectName}
-      </Typography>
+    <Box>
       <Grid
         container
         spacing={12 / mockColumns}
-        sx={{
-          margin: "24px auto 0 auto",
-          width: "50%",
-        }}
+        sx={{ width: "65%", margin: "24px" }}
       >
         {gridArray.map((columns, yindex) => {
           return gridArray[1].map((rows, xindex) => {

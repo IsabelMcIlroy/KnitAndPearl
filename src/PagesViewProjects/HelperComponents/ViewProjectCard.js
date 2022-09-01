@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Card,
@@ -9,10 +10,17 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import KnittingTheme, { palette } from "../../assets/theme";
-import exampleImg from "../../images/grid.jpg";
+import { MockGrid } from "../MockData/MockGrid";
 
 export const ViewProjectCard = ({ projectName, projectType }) => {
   const navigate = useNavigate();
+  const DEFAULT_COLOR = "#E8E1EC";
+  const [background] = useState(DEFAULT_COLOR);
+  const mockColumns = 6;
+  const mockRows = 6;
+  const gridArray = Array(parseInt(mockColumns))
+    .fill(0)
+    .map(() => new Array(parseInt(mockRows)).fill(background));
   return (
     <>
       <Card
@@ -22,11 +30,7 @@ export const ViewProjectCard = ({ projectName, projectType }) => {
         }}
       >
         <CardContent>
-          <img
-            src={exampleImg}
-            alt="example"
-            style={{ maxWidth: "90%", margin: "8px" }}
-          />
+          <MockGrid gridArray={gridArray} />
           <Box sx={{ margin: "8px", maxWidth: "90%" }}>
             <Typography
               variant="h4"
