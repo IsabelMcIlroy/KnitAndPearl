@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Popover, Typography, IconButton } from "@mui/material";
 import ExitToAppRoundedIcon from "@mui/icons-material/ExitToAppRounded";
 import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
@@ -7,8 +8,8 @@ import { editBarButton, editBarButtonIcon } from "../../assets/theme";
 
 export const EditDrawerButtonsAndPopover = ({ popoverText }) => {
   const [anchorEl, setAnchorEl] = useState(null);
-
   const open = Boolean(anchorEl);
+  const navigate = useNavigate();
   return (
     <>
       <IconButton
@@ -22,6 +23,7 @@ export const EditDrawerButtonsAndPopover = ({ popoverText }) => {
         onMouseLeave={() => {
           setAnchorEl(null);
         }}
+        onClick={() => navigate("/KnittingProjectManager/ViewProject")}
       >
         {popoverText === "Clear Grid." ? (
           <SettingsBackupRestoreRoundedIcon sx={editBarButtonIcon} />
