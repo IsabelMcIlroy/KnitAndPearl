@@ -20,9 +20,9 @@ export const NewProject = () => {
   });
   const DEFAULT_COLOR = "#E8E1EC";
   const [background, setBackground] = useState(DEFAULT_COLOR);
-  const gridArray = Array(parseInt(currentColumns))
+  const gridArray = Array(parseInt(currentRows))
     .fill(0)
-    .map(() => new Array(parseInt(currentRows)).fill(background));
+    .map(() => new Array(parseInt(currentColumns)).fill(background));
   const [gridColors, setGridColors] = useState(gridArray);
   const clearGrid = () => {
     setBackground(DEFAULT_COLOR);
