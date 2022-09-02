@@ -86,14 +86,14 @@ export const NewProjectEditorDrawer = ({
           <Box sx={{ textAlign: "center", marginTop: "24px" }}>
             <EditDrawerButtonsAndPopover
               popoverText={"Clear Grid."}
-              onClick={() => {
-                console.log("hello");
-                for (let i = 0; i < gridArray.length; i++) {
-                  for (let j = 0; j < gridArray[i].length; j++) {
-                    gridArray[i][j] = { defaultColor };
-                  }
-                }
-              }}
+              // onClick={() => {
+              //   console.log("hello");
+              //   for (let i = 0; i < gridArray.length; i++) {
+              //     for (let j = 0; j < gridArray[i].length; j++) {
+              //       gridArray[i][j] = { defaultColor };
+              //     }
+              //   }
+              // }}
             />
             <EditDrawerButtonsAndPopover popoverText={"Save."} />
             <EditDrawerButtonsAndPopover

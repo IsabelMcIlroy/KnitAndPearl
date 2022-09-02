@@ -11,16 +11,19 @@ export const ProjectGridCell = ({
   const [cellColor, setCellColor] = useState(
     `rgba(${gridArray[xIndex][yIndex].r}, ${gridArray[xIndex][yIndex].g}, ${gridArray[xIndex][yIndex].b}, ${gridArray[xIndex][yIndex].a})`
   );
-  // useEffect(() => {
-  //   setCellColor(
-  //     `rgba(${gridArray[xIndex][yIndex].r}, ${gridArray[xIndex][yIndex].g}, ${gridArray[xIndex][yIndex].b}, ${gridArray[xIndex][yIndex].a})`
-  //   );
-  // }, [gridArray[xIndex][yIndex].r]);
-  const onClick = () => {
+  useEffect(() => {
     setCellColor(
-      `rgba(${currentlySelectedColor.r}, ${currentlySelectedColor.g}, ${currentlySelectedColor.b}, ${currentlySelectedColor.a})`
+      `rgba(${gridArray[xIndex][yIndex].r}, ${gridArray[xIndex][yIndex].g}, ${gridArray[xIndex][yIndex].b}, ${gridArray[xIndex][yIndex].a})`
     );
-    modifyGridColorArray(xIndex, yIndex, currentlySelectedColor);
+  }, [gridArray]);
+  const onClick = () => {
+    gridArray[xIndex][yIndex] = {
+      r: `${currentlySelectedColor.r}`,
+      g: `${currentlySelectedColor.g}`,
+      b: `${currentlySelectedColor.b}`,
+      a: `${currentlySelectedColor.a}`,
+    };
+    console.log(gridArray);
   };
   return (
     <Button

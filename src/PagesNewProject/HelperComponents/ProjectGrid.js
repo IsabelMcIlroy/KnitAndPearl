@@ -14,7 +14,6 @@ export const ProjectGrid = ({
   const { currentColumns } = state;
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
     gridArray[xIndex][yIndex] = currentlySelectedColor;
-    setGridColors(gridColors);
   };
   return (
     <Box sx={{ padding: "100px 0 24px 100px" }}>
