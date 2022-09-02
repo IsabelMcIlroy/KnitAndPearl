@@ -46,7 +46,10 @@ export const NavBar = () => {
           }}
         >
           <Grid container direction="column">
-            <Link to="/KnittingProjectManager/">
+            <Link
+              to="/KnittingProjectManager/"
+              style={{ textDecoration: "none" }}
+            >
               <WelcomePageOptionButtons btnText="Home" onClick={handleClose} />
             </Link>
             <WelcomePageOptionButtons
@@ -59,13 +62,19 @@ export const NavBar = () => {
               open={isOpen}
               setIsOpen={setIsOpen}
             />
-            <Link to="/KnittingProjectManager/ViewProject">
+            <Link
+              to="/KnittingProjectManager/ViewProject"
+              style={{ textDecoration: "none" }}
+            >
               <WelcomePageOptionButtons
                 btnText={"View Projects"}
                 onClick={handleClose}
               />
             </Link>
-            <Link to="/KnittingProjectManager/">
+            <Link
+              to="/KnittingProjectManager/"
+              style={{ textDecoration: "none" }}
+            >
               <WelcomePageOptionButtons
                 btnText="Log-in"
                 onClick={handleClose}
