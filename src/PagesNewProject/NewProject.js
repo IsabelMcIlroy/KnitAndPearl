@@ -42,6 +42,7 @@ export const NewProject = () => {
         gridColors={gridColors}
         setGridColors={setGridColors}
         currentProjectName={currentProjectName}
+        currentProjectType={currentProjectType}
       />
     </Box>
   );
