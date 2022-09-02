@@ -20,13 +20,10 @@ export const NewProject = () => {
   });
   const DEFAULT_COLOR = { r: "212", g: "196", b: "251", a: "1" };
   const [background, setBackground] = useState(DEFAULT_COLOR);
-  const gridArray = Array(parseInt(currentRows))
+  let gridArray = Array(parseInt(currentRows))
     .fill(0)
     .map(() => new Array(parseInt(currentColumns)).fill(background));
   const [gridColors, setGridColors] = useState(gridArray);
-  const clearGrid = () => {
-    setBackground(DEFAULT_COLOR);
-  };
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <NewProjectEditorDrawer
@@ -34,8 +31,9 @@ export const NewProject = () => {
         currentProjectTypeForDrawer={currentProjectType}
         currentlySelectedColor={currentlySelectedColor}
         setCurrentlySelectedColor={setCurrentlySelectedColor}
-        clearGrid={clearGrid}
         defaultColor={DEFAULT_COLOR}
+        setBackground={setBackground}
+        gridArray={gridArray}
       />
       <ProjectGrid
         currentlySelectedColor={currentlySelectedColor}

@@ -17,7 +17,9 @@ export const NewProjectEditorDrawer = ({
   currentProjectTypeForDrawer,
   currentlySelectedColor,
   setCurrentlySelectedColor,
-  clearGrid,
+  setBackground,
+  defaultColor,
+  gridArray,
 }) => {
   const [isDrawerOpen, setIsDrawerOpened] = useState(false);
   const navigate = useNavigate();
@@ -84,7 +86,14 @@ export const NewProjectEditorDrawer = ({
           <Box sx={{ textAlign: "center", marginTop: "24px" }}>
             <EditDrawerButtonsAndPopover
               popoverText={"Clear Grid."}
-              onClick={clearGrid()}
+              onClick={() => {
+                console.log("hello");
+                for (let i = 0; i < gridArray.length; i++) {
+                  for (let j = 0; j < gridArray[i].length; j++) {
+                    gridArray[i][j] = { defaultColor };
+                  }
+                }
+              }}
             />
             <EditDrawerButtonsAndPopover popoverText={"Save."} />
             <EditDrawerButtonsAndPopover
