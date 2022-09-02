@@ -42,7 +42,10 @@ export const Home = () => {
           <Link to="/KnittingProjectManager/">
             <Logo />
           </Link>
-          <Link to="/KnittingProjectManager/ViewProject">
+          <Link
+            to="/KnittingProjectManager/ViewProject"
+            style={{ textDecoration: "none" }}
+          >
             <WelcomePageOptionButtons btnText={"View Projects"} />
           </Link>
         </Box>
