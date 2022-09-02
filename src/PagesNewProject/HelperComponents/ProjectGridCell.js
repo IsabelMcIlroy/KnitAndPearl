@@ -9,15 +9,20 @@ export const ProjectGridCell = ({
   cellsColor,
   gridArray,
 }) => {
-  const [cellColor, setCellColor] = useState(gridArray[xIndex][yIndex]);
-  useEffect(() => {
-    setCellColor(gridArray[xIndex][yIndex]);
-  }, [cellsColor]);
+  const [cellColor, setCellColor] = useState(
+    `rgba(${gridArray[xIndex][yIndex].r}, ${gridArray[xIndex][yIndex].g}, ${gridArray[xIndex][yIndex].b}, ${gridArray[xIndex][yIndex].a})`
+  );
+  // useEffect(() => {
+  //   setCellColor(
+  //     `rgba(${gridArray[xIndex][yIndex].r}, ${gridArray[xIndex][yIndex].g}, ${gridArray[xIndex][yIndex].b}, ${gridArray[xIndex][yIndex].a})`
+  //   );
+  // }, [gridArray[xIndex][yIndex]]);
   const onClick = () => {
     setCellColor(
       `rgba(${currentlySelectedColor.r}, ${currentlySelectedColor.g}, ${currentlySelectedColor.b}, ${currentlySelectedColor.a})`
     );
     console.log(gridArray[xIndex][yIndex]);
+    console.log(gridArray);
     modifyGridColorArray(xIndex, yIndex, currentlySelectedColor);
   };
   return (
