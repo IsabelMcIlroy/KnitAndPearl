@@ -66,9 +66,10 @@ export const ProjectGrid = ({
           container
           spacing={12 / currentRows}
           sx={{
-            margin: "24px 0 0 0",
+            marginTop: "12px",
             maxWidth: "80vh",
             minWidth: "300px",
+            textAlign: "center",
           }}
         >
           {_.range(currentColumns, 0).map((value) => (
