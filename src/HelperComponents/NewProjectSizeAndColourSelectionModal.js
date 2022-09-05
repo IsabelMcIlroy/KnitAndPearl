@@ -62,7 +62,8 @@ export const NewProjectSizeAndColourSelectionModal = ({
       <Modal open={open} onClick={onClick}>
         <Box
           style={{
-            overflowY: "scroll",
+            overflowY: "auto",
+            overflowStyle: "scroll",
             transform: "translate(25%, 15%)",
             display: "inline-block",
             height: "80%",
