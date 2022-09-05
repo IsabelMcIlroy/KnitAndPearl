@@ -7,7 +7,7 @@ export const MiniMockGrid = ({ mockColumns, gridArray }) => {
       <Grid
         container
         spacing={12 / mockColumns}
-        sx={{ width: "65%", margin: "24px" }}
+        sx={{ width: "70%", margin: "24px" }}
       >
         {gridArray.map((columns, yindex) => {
           return gridArray[1].map((rows, xindex) => {
@@ -25,7 +25,7 @@ export const MiniMockGrid = ({ mockColumns, gridArray }) => {
                 <ProjectGridCell
                   xIndex={xindex}
                   yIndex={yindex}
-                  cellsColour={gridArray[yindex][xindex]}
+                  cellsColour={gridArray[xindex][columns]}
                   gridArray={gridArray}
                 />
               </Grid>
