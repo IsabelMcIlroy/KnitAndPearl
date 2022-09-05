@@ -66,11 +66,12 @@ export const ProjectGrid = ({
           container
           spacing={1}
           sx={{
-            marginTop: "112px",
-            marginLeft: "-4%",
+            marginTop: "-500px",
+            marginLeft: "-50%",
             justifyContent: "end",
             position: "absolute",
             zIndex: "-10",
+            minHeight: "80vh",
           }}
         >
           {_.range(currentRows, 0).map((value) => (
@@ -80,7 +81,7 @@ export const ProjectGrid = ({
               value={value}
               xs={12}
               sx={{
-                height: "50px",
+                padding: "12px",
                 textAlign: "end",
               }}
             >
