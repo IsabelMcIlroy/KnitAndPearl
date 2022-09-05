@@ -15,6 +15,7 @@ export const ProjectGrid = ({
   const { currentColumns } = state;
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
     gridArray[xIndex][yIndex] = currentlySelectedColor;
+    setGridColors(gridArray);
   };
   return (
     <Box sx={{ display: "flex", justifyContent: "center", minWidth: "100vw" }}>
@@ -23,7 +24,7 @@ export const ProjectGrid = ({
           variant="h3"
           sx={{ fontFamily: "La Belle Aurore", color: palette.knittingPurple }}
         >
-          Project: {currentProjectName}, {currentProjectType}
+          Project: {currentProjectName} {currentProjectType}
         </Typography>
         <Grid
           container
