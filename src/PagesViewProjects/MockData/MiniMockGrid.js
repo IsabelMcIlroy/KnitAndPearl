@@ -1,5 +1,5 @@
 import { Box, Grid } from "@mui/material";
-import { ProjectGridCell } from "../../PagesNewProject/HelperComponents/ProjectGridCell";
+import { MiniMockGridCell } from "./MiniMockGridCell";
 
 export const MiniMockGrid = ({ mockColumns }) => {
   const gridArray = [
@@ -72,7 +72,7 @@ export const MiniMockGrid = ({ mockColumns }) => {
                 }}
                 style={{ padding: "4px" }}
               >
-                <ProjectGridCell
+                <MiniMockGridCell
                   xIndex={xindex}
                   yIndex={yindex}
                   cellsColour={gridArray[xindex][columns]}
