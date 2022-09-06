@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 
 export const ProjectGridCell = ({
@@ -11,17 +11,14 @@ export const ProjectGridCell = ({
   const [cellColor, setCellColor] = useState(
     `rgba(${gridArray[xIndex][yIndex].r}, ${gridArray[xIndex][yIndex].g}, ${gridArray[xIndex][yIndex].b}, ${gridArray[xIndex][yIndex].a})`
   );
-  // useEffect(() => {
-  //   setCellColor(
-  //     `rgba(${gridArray[xIndex][yIndex].r}, ${gridArray[xIndex][yIndex].g}, ${gridArray[xIndex][yIndex].b}, ${gridArray[xIndex][yIndex].a})`
-  //   );
-  // }, [gridArray[xIndex][yIndex]]);
-  const onClick = () => {
+  useEffect(() => {
     setCellColor(
-      `rgba(${currentlySelectedColor.r}, ${currentlySelectedColor.g}, ${currentlySelectedColor.b}, ${currentlySelectedColor.a})`
+      `rgba(${gridArray[xIndex][yIndex].r}, ${gridArray[xIndex][yIndex].g}, ${gridArray[xIndex][yIndex].b}, ${gridArray[xIndex][yIndex].a})`
     );
-    console.log(gridArray[xIndex][yIndex]);
+  }, [gridArray, xIndex, yIndex, cellColor]);
+  const onClick = () => {
     console.log(gridArray);
+    console.log(currentlySelectedColor);
     modifyGridColorArray(xIndex, yIndex, currentlySelectedColor);
   };
   return (
