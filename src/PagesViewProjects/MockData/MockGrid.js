@@ -1,4 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
+import _ from "lodash";
 import { palette } from "../../assets/theme";
 import { ProjectGridCell } from "../../PagesNewProject/HelperComponents/ProjectGridCell";
 
@@ -28,11 +29,13 @@ export const MockGrid = ({
           spacing={12 / mockColumns}
           sx={{
             margin: "24px auto 0 auto",
-            width: "50%",
+            maxWidth: "80vh",
+            minWidth: "300px",
+            aspectRatio: "1/1",
           }}
         >
-          {gridArray.map((columns, yindex) => {
-            return gridArray[1].map((rows, xindex) => {
+          {gridArray.map((rows, xindex) => {
+            return gridArray[1].map((columns, yindex) => {
               return (
                 <Grid
                   item
@@ -40,7 +43,6 @@ export const MockGrid = ({
                   key={`x:${xindex} y:${yindex}`}
                   sx={{
                     border: "1px solid black",
-                    aspectRatio: "1/1",
                   }}
                   style={{ padding: "4px" }}
                 >
@@ -56,6 +58,22 @@ export const MockGrid = ({
               );
             });
           })}
+        </Grid>
+        <Grid
+          container
+          spacing={12 / 6}
+          sx={{
+            marginTop: "12px",
+            maxWidth: "80vh",
+            minWidth: "300px",
+            textAlign: "center",
+          }}
+        >
+          {_.range(mockColumns, 0).map((value) => (
+            <Grid item key={value} value={value} xs={12 / mockColumns}>
+              {value}
+            </Grid>
+          ))}
         </Grid>
       </Box>
     </Box>
