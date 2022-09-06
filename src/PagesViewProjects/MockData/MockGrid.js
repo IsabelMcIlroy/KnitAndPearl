@@ -6,7 +6,6 @@ export const MockGrid = ({
   mockColumns,
   currentlySelectedColor,
   gridArray,
-  gridColors,
   setGridColors,
   currentProjectName,
   currentProjectType,
