@@ -7,7 +7,6 @@ import { ProjectGridCell } from "./ProjectGridCell";
 export const ProjectGrid = ({
   currentlySelectedColor,
   gridArray,
-  gridColors,
   setGridColors,
   currentProjectName,
   currentProjectType,
