@@ -1,16 +1,8 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Drawer, IconButton, Typography, Box } from "@mui/material";
+import { Drawer, IconButton, Box } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import {
-  sideNavClosed,
-  palette,
-  editorDrawerProjectNames,
-  editorDrawerLabels,
-} from "../../assets/theme";
-import { ColorPicker } from "./ColorPicker";
-import { EditDrawerButtonsAndPopover } from "./EditDrawerButtonsAndPopovers";
-import woolSmall from "../../images/woolSmall.jpg";
+import { sideNavClosed, palette } from "../../assets/theme";
+import { NewProjectEditorDrawerFillings } from "./NewProjectEditorDrawerFillings";
 
 export const NewProjectEditorDrawer = ({
   currentProjectNameForDrawer,
@@ -21,8 +13,7 @@ export const NewProjectEditorDrawer = ({
   defaultColor,
   gridArray,
 }) => {
-  const [isDrawerOpen, setIsDrawerOpened] = useState(true);
-  const navigate = useNavigate();
+  const [isDrawerOpen, setIsDrawerOpened] = useState(false);
   return (
     <Box>
       <Box style={sideNavClosed}>
@@ -40,75 +31,43 @@ export const NewProjectEditorDrawer = ({
         onClose={() => {
           setIsDrawerOpened(false);
         }}
-        PaperProps={{
-          sx: { backgroundColor: palette.knittingGray, width: "300px" },
+        sx={{
+          display: { md: "block", lg: "none" },
+          "& .MuiDrawer-paper": {
+            backgroundColor: palette.knittingGray,
+            width: "300px",
+          },
         }}
       >
-        <Typography
-          variant="h4"
-          sx={{
-            backgroundColor: palette.knittingLightBlue,
-            paddingTop: "28px",
-            fontFamily: "La Belle Aurore",
-            textAlign: "center",
-            color: palette.knittingPurple,
-          }}
-        >
-          Edit Project
-          <EditIcon />
-        </Typography>
-        <Box sx={{ margin: "24px" }}>
-          <Box sx={{ display: "flex", paddingTop: "12px" }}>
-            <Typography variant="h8" sx={editorDrawerLabels}>
-              Project Name:
-            </Typography>
-            <Typography variant="h4" sx={editorDrawerProjectNames}>
-              {currentProjectNameForDrawer || "---"}
-            </Typography>
-          </Box>
-          <Box sx={{ display: "flex" }}>
-            <Typography variant="h8" sx={editorDrawerLabels}>
-              Project Type:
-            </Typography>
-            <Typography variant="h4" sx={editorDrawerProjectNames}>
-              {currentProjectTypeForDrawer || "---"}
-            </Typography>
-          </Box>
-          <hr sx={editorDrawerLabels} />
-          <Typography variant="h8" sx={editorDrawerLabels}>
-            Wool Color:
-          </Typography>
-          <ColorPicker
-            currentlySelectedColor={currentlySelectedColor}
-            setCurrentlySelectedColor={setCurrentlySelectedColor}
-          />
-          <hr sx={editorDrawerLabels} />
-          <Box sx={{ textAlign: "center", marginTop: "24px" }}>
-            <EditDrawerButtonsAndPopover
-              popoverText={"Clear Grid."}
-              // onClick={() => {
-              //   console.log("hello");
-              //   for (let i = 0; i < gridArray.length; i++) {
-              //     for (let j = 0; j < gridArray[i].length; j++) {
-              //       gridArray[i][j] = { defaultColor };
-              //     }
-              //   }
-              // }}
-            />
-            <EditDrawerButtonsAndPopover popoverText={"Save."} />
-            <EditDrawerButtonsAndPopover
-              popoverText={"Exit."}
-              onClick={() => navigate("/KnittingProjectManager/ViewProject")}
-            />
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            backgroundColor: palette.knittingLightBlue,
-            height: "100vh",
-            backgroundImage: `url(${woolSmall})`,
-            marginTop: "12px",
-          }}
+        <NewProjectEditorDrawerFillings
+          currentProjectNameForDrawer={currentProjectNameForDrawer}
+          currentProjectTypeForDrawer={currentProjectTypeForDrawer}
+          currentlySelectedColor={currentlySelectedColor}
+          setCurrentlySelectedColor={setCurrentlySelectedColor}
+          setBackground={setBackground}
+          defaultColor={defaultColor}
+          gridArray={gridArray}
+        />
+      </Drawer>
+      <Drawer
+        variant="permanent"
+        sx={{
+          display: { xs: "none", lg: "block" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            backgroundColor: palette.knittingGray,
+            width: "300px",
+          },
+        }}
+      >
+        <NewProjectEditorDrawerFillings
+          currentProjectNameForDrawer={currentProjectNameForDrawer}
+          currentProjectTypeForDrawer={currentProjectTypeForDrawer}
+          currentlySelectedColor={currentlySelectedColor}
+          setCurrentlySelectedColor={setCurrentlySelectedColor}
+          setBackground={setBackground}
+          defaultColor={defaultColor}
+          gridArray={gridArray}
         />
       </Drawer>
     </Box>
