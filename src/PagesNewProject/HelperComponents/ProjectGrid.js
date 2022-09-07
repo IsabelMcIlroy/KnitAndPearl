@@ -14,9 +14,11 @@ export const ProjectGrid = ({
   const { state } = useLocation();
   const { currentColumns, currentRows } = state;
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
+    console.log(gridArray);
     gridArray[xIndex][yIndex] = currentlySelectedColor;
     setGridColors(gridArray);
   };
+  console.log(gridArray);
   return (
     <Box sx={{ display: "flex", justifyContent: "center", minWidth: "100vw" }}>
       <Box sx={{ padding: "100px 0 24px 100px" }}>
@@ -36,8 +38,8 @@ export const ProjectGrid = ({
             aspectRatio: "1/1",
           }}
         >
-          {gridArray.map((rows, xindex) => {
-            return gridArray[1].map((columns, yindex) => {
+          {gridArray.map((row, xindex) => {
+            return row.map((column, yindex) => {
               return (
                 <Grid
                   item
@@ -52,7 +54,7 @@ export const ProjectGrid = ({
                     xIndex={xindex}
                     yIndex={yindex}
                     currentlySelectedColor={currentlySelectedColor}
-                    cellsColour={gridArray[xindex][columns]}
+                    cellsColor={column}
                     modifyGridColorArray={modifyGridColorArray}
                     gridArray={gridArray}
                   />

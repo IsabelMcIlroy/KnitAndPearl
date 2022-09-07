@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 
@@ -6,25 +7,21 @@ export const ProjectGridCell = ({
   xIndex,
   yIndex,
   currentlySelectedColor,
-  gridArray,
+  cellsColor,
 }) => {
-  const [cellColor, setCellColor] = useState(
-    `rgba(${gridArray[xIndex][yIndex].r}, ${gridArray[xIndex][yIndex].g}, ${gridArray[xIndex][yIndex].b}, ${gridArray[xIndex][yIndex].a})`
-  );
+  const [cellColor, setCellColor] = useState(cellsColor);
   useEffect(() => {
-    setCellColor(
-      `rgba(${gridArray[xIndex][yIndex].r}, ${gridArray[xIndex][yIndex].g}, ${gridArray[xIndex][yIndex].b}, ${gridArray[xIndex][yIndex].a})`
-    );
-  }, [gridArray, xIndex, yIndex, cellColor]);
+    console.log("hello");
+    setCellColor(cellsColor);
+  }, [cellsColor]);
   const onClick = () => {
-    console.log(gridArray);
     console.log(currentlySelectedColor);
     modifyGridColorArray(xIndex, yIndex, currentlySelectedColor);
   };
   return (
     <Button
       sx={{
-        backgroundColor: `${cellColor}`,
+        backgroundColor: `rgba(${cellsColor.r}, ${cellsColor.g}, ${cellsColor.b}, ${cellsColor.a})`,
         height: "100%",
         minWidth: "100%",
       }}
