@@ -21,7 +21,7 @@ export const NewProjectEditorDrawer = ({
   defaultColor,
   gridArray,
 }) => {
-  const [isDrawerOpen, setIsDrawerOpened] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpened] = useState(true);
   const navigate = useNavigate();
   return (
     <Box>
