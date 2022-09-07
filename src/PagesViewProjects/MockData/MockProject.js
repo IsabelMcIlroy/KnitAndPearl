@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Box } from "@mui/material";
 import { NewProjectEditorDrawer } from "../../PagesNewProject/HelperComponents/NewProjectEditorDrawer";
 import { MockGrid } from "./MockGrid";
+import { gridArray } from "./MockData";
 
 export const MockProject = () => {
   const { state } = useLocation();
@@ -17,56 +18,6 @@ export const MockProject = () => {
   });
   const DEFAULT_COLOR = { r: "212", g: "196", b: "251", a: "1" };
   const [background, setBackground] = useState(DEFAULT_COLOR);
-  const gridArray = [
-    [
-      { r: 241, g: 112, b: 19, a: 1 },
-      { r: 0, g: 107, b: 118, a: 1 },
-      { r: 241, g: 112, b: 19, a: 1 },
-      { r: 235, g: 150, b: 148, a: 1 },
-      { r: 0, g: 107, b: 118, a: 1 },
-      { r: 241, g: 112, b: 19, a: 1 },
-    ],
-    [
-      { r: 235, g: 150, b: 148, a: 1 },
-      { r: 0, g: 107, b: 118, a: 1 },
-      { r: 241, g: 112, b: 19, a: 1 },
-      { r: 0, g: 107, b: 118, a: 1 },
-      { r: 0, g: 107, b: 118, a: 1 },
-      { r: 235, g: 150, b: 148, a: 1 },
-    ],
-    [
-      { r: 0, g: 107, b: 118, a: 1 },
-      { r: 241, g: 112, b: 19, a: 1 },
-      { r: 0, g: 107, b: 118, a: 1 },
-      { r: 241, g: 112, b: 19, a: 1 },
-      { r: 241, g: 112, b: 19, a: 1 },
-      { r: 0, g: 107, b: 118, a: 1 },
-    ],
-    [
-      { r: 235, g: 150, b: 148, a: 1 },
-      { r: 241, g: 112, b: 19, a: 1 },
-      { r: 0, g: 107, b: 118, a: 1 },
-      { r: 0, g: 107, b: 118, a: 1 },
-      { r: 235, g: 150, b: 148, a: 1 },
-      { r: 235, g: 150, b: 148, a: 1 },
-    ],
-    [
-      { r: 0, g: 107, b: 118, a: 1 },
-      { r: 235, g: 150, b: 148, a: 1 },
-      { r: 0, g: 107, b: 118, a: 1 },
-      { r: 235, g: 150, b: 148, a: 1 },
-      { r: 0, g: 107, b: 118, a: 1 },
-      { r: 235, g: 150, b: 148, a: 1 },
-    ],
-    [
-      { r: 0, g: 107, b: 118, a: 1 },
-      { r: 235, g: 150, b: 148, a: 1 },
-      { r: 235, g: 150, b: 148, a: 1 },
-      { r: 235, g: 150, b: 148, a: 1 },
-      { r: 235, g: 150, b: 148, a: 1 },
-      { r: 0, g: 107, b: 118, a: 1 },
-    ],
-  ];
   const [gridColors, setGridColors] = useState(gridArray);
   const clearGrid = () => {
     setBackground(DEFAULT_COLOR);
