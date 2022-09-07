@@ -32,7 +32,7 @@ export const ProjectGrid = ({
           container
           spacing={12 / currentColumns}
           sx={{
-            margin: "24px auto 0 auto",
+            margin: "24px 8px 0 auto",
             maxWidth: "80vh",
             minWidth: "300px",
             aspectRatio: "1/1",
