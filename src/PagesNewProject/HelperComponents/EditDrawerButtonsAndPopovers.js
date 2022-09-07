@@ -23,13 +23,13 @@ export const EditDrawerButtonsAndPopover = ({ popoverText, onClick }) => {
         }}
         onClick={onClick}
       >
-        {popoverText === "Clear Grid." ? (
+        {popoverText === "Clear Grid." && (
           <SettingsBackupRestoreRoundedIcon sx={editBarButtonIcon} />
-        ) : popoverText === "Save." ? (
-          <SaveRoundedIcon sx={editBarButtonIcon} />
-        ) : popoverText === "Exit." ? (
+        )}
+        {popoverText === "Save." && <SaveRoundedIcon sx={editBarButtonIcon} />}
+        {popoverText === "Exit." && (
           <ExitToAppRoundedIcon sx={editBarButtonIcon} />
-        ) : null}
+        )}
       </IconButton>
       <Popover
         id="mouse-over-popover"
