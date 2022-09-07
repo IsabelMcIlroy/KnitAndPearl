@@ -16,7 +16,7 @@ export const NewProjectEditorDrawer = ({
   const [isDrawerOpen, setIsDrawerOpened] = useState(false);
   return (
     <Box>
-      <Box style={sideNavClosed}>
+      <Box style={sideNavClosed} sx={{ display: { md: "block", lg: "none" } }}>
         <IconButton
           onClick={() => {
             setIsDrawerOpened(true);
@@ -57,6 +57,10 @@ export const NewProjectEditorDrawer = ({
             boxSizing: "border-box",
             backgroundColor: palette.knittingGray,
             width: "300px",
+            height: "500px",
+            marginLeft: "24px",
+            borderBottom: "4px solid",
+            borderBottomColor: palette.knittingPurple,
           },
         }}
       >
