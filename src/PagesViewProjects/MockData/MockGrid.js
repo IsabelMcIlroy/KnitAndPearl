@@ -34,8 +34,8 @@ export const MockGrid = ({
             aspectRatio: "1/1",
           }}
         >
-          {gridArray.map((rows, xindex) => {
-            return gridArray[1].map((columns, yindex) => {
+          {gridArray.map((row, xindex) => {
+            return row.map((column, yindex) => {
               return (
                 <Grid
                   item
@@ -50,7 +50,7 @@ export const MockGrid = ({
                     xIndex={xindex}
                     yIndex={yindex}
                     currentlySelectedColor={currentlySelectedColor}
-                    cellsColour={gridArray[xindex][columns]}
+                    cellsColor={column}
                     modifyGridColorArray={modifyGridColorArray}
                     gridArray={gridArray}
                   />
