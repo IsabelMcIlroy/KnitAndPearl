@@ -26,7 +26,9 @@ export const NewProjectEditorDrawerFillings = ({
         variant="h4"
         sx={{
           backgroundColor: palette.knittingLightBlue,
-          paddingTop: "28px",
+          backgroundImage: `url(${woolSmall})`,
+          paddingTop: "36px",
+          paddingBottom: "28px",
           fontFamily: "La Belle Aurore",
           textAlign: "center",
           color: palette.knittingPurple,
