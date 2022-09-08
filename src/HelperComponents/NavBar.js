@@ -27,6 +27,16 @@ export const NavBar = () => {
           justifyContent: "end",
         }}
       >
+        <WelcomePageOptionButtons
+          btnText="New Project"
+          onClick={() => {
+            setIsOpen(true);
+          }}
+        />
+        <NewProjectSizeAndColourSelectionModal
+          open={isOpen}
+          setIsOpen={setIsOpen}
+        />
         <Button
           aria-controls={open ? "basic-menu" : undefined}
           aria-haspopup="true"
@@ -52,16 +62,6 @@ export const NavBar = () => {
             >
               <WelcomePageOptionButtons btnText="Home" onClick={handleClose} />
             </Link>
-            <WelcomePageOptionButtons
-              btnText="New Project"
-              onClick={() => {
-                setIsOpen(true);
-              }}
-            />
-            <NewProjectSizeAndColourSelectionModal
-              open={isOpen}
-              setIsOpen={setIsOpen}
-            />
             <Link
               to="/KnittingProjectManager/ViewProject"
               style={{ textDecoration: "none" }}
