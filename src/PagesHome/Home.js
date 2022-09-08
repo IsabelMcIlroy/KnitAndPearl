@@ -27,7 +27,9 @@ export const Home = () => {
       >
         <Title titleText={"Knitting Project Manager"} />
 
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Box
+          sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
+        >
           <WelcomePageOptionButtons
             btnText={"New Project"}
             onClick={() => {
