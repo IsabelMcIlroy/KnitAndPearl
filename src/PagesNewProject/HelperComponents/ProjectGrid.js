@@ -17,7 +17,7 @@ export const ProjectGrid = ({
   let gridArray = Array(parseInt(currentRows))
     .fill(0)
     .map(() => new Array(parseInt(currentColumns)).fill(background));
-  const [gridColors, setGridColors] = useState(gridArray);
+  const [gridColors, setGridColors] = useState();
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
     const newGridArray = [...gridArray];
     newGridArray[xIndex][yIndex] = currentlySelectedColor;
