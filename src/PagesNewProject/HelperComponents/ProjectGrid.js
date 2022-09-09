@@ -25,7 +25,7 @@ export const ProjectGrid = ({
   };
   return (
     <Box sx={{ display: "flex", justifyContent: "center", minWidth: "100vw" }}>
-      <Box sx={{ padding: "100px 0 24px 100px" }}>
+      <Box sx={{ padding: "112px 0 24px 100px" }}>
         <Typography
           variant="h3"
           sx={{ fontFamily: "La Belle Aurore", color: palette.knittingPurple }}

@@ -17,12 +17,7 @@ export const MockProject = () => {
     a: 1,
   });
   const DEFAULT_COLOR = { r: 212, g: 196, b: 251, a: 1 };
-  const [background, setBackground] = useState(DEFAULT_COLOR);
-  const [gridColors, setGridColors] = useState(gridArray);
-  const clearGrid = () => {
-    setBackground(DEFAULT_COLOR);
-    setGridColors(background);
-  };
+  const [background] = useState(DEFAULT_COLOR);
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <NewProjectEditorDrawer
@@ -30,7 +25,6 @@ export const MockProject = () => {
         currentProjectTypeForDrawer={currentProjectType}
         currentlySelectedColor={currentlySelectedColor}
         setCurrentlySelectedColor={setCurrentlySelectedColor}
-        clearGrid={clearGrid}
         defaultColor={DEFAULT_COLOR}
       />
       <MockGrid
@@ -39,8 +33,6 @@ export const MockProject = () => {
         currentlySelectedColor={currentlySelectedColor}
         background={background}
         gridArray={gridArray}
-        gridColors={gridColors}
-        setGridColors={setGridColors}
         currentProjectName={currentProjectName}
         currentProjectType={currentProjectType}
       />
