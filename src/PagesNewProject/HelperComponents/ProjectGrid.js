@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import _ from "lodash";
 import { Box, Grid, Typography } from "@mui/material";
@@ -6,19 +7,22 @@ import { ProjectGridCell } from "./ProjectGridCell";
 
 export const ProjectGrid = ({
   currentlySelectedColor,
-  gridArray,
-  setGridColors,
   currentProjectName,
   currentProjectType,
+  background,
 }) => {
   const { state } = useLocation();
   const { currentColumns, currentRows } = state;
+  let gridArray = Array(parseInt(currentRows))
+    .fill(0)
+    .map(() => new Array(parseInt(currentColumns)).fill(background));
+  const [gridColors, setGridColors] = useState(gridArray);
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
-    console.log(gridArray);
-    gridArray[xIndex][yIndex] = currentlySelectedColor;
-    setGridColors(gridArray);
+    const newGridArray = [...gridArray];
+    newGridArray[xIndex][yIndex] = currentlySelectedColor;
+    console.log("modified grid array: ", gridArray);
+    setGridColors(newGridArray);
   };
-  console.log(gridArray);
   return (
     <Box sx={{ display: "flex", justifyContent: "center", minWidth: "100vw" }}>
       <Box sx={{ padding: "100px 0 24px 100px" }}>

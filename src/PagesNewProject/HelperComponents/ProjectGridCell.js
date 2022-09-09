@@ -11,17 +11,15 @@ export const ProjectGridCell = ({
 }) => {
   const [cellColor, setCellColor] = useState(cellsColor);
   useEffect(() => {
-    console.log("hello");
     setCellColor(cellsColor);
   }, [cellsColor]);
   const onClick = () => {
-    console.log(currentlySelectedColor);
     modifyGridColorArray(xIndex, yIndex, currentlySelectedColor);
   };
   return (
     <Button
       sx={{
-        backgroundColor: `rgba(${cellsColor.r}, ${cellsColor.g}, ${cellsColor.b}, ${cellsColor.a})`,
+        backgroundColor: `rgba(${cellColor.r}, ${cellColor.g}, ${cellColor.b}, ${cellColor.a})`,
         height: "100%",
         minWidth: "100%",
       }}
