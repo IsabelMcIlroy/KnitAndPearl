@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import _ from "lodash";
@@ -17,11 +16,11 @@ export const ProjectGrid = ({
   let gridArray = Array(parseInt(currentRows))
     .fill(0)
     .map(() => new Array(parseInt(currentColumns)).fill(background));
-  const [gridColors, setGridColors] = useState();
+  const [gridColors, setGridColors] = useState(gridArray);
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
-    const newGridArray = [...gridArray];
+    const newGridArray = [...gridColors];
     newGridArray[xIndex][yIndex] = currentlySelectedColor;
-    console.log("modified grid array: ", gridArray);
+    console.log("modified grid array: ", gridColors);
     setGridColors(newGridArray);
   };
   return (

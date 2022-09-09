@@ -13,6 +13,7 @@ export const ProjectGridCell = ({
     setCellColor(cellsColor);
   }, [cellsColor]);
   const onClick = () => {
+    setCellColor(currentlySelectedColor);
     modifyGridColorArray(xIndex, yIndex, currentlySelectedColor);
   };
   return (
