@@ -13,15 +13,14 @@ export const ProjectGrid = ({
 }) => {
   const { state } = useLocation();
   const { currentColumns, currentRows } = state;
-  let gridArray = Array(parseInt(currentRows))
+  let grid = Array(parseInt(currentRows))
     .fill(0)
     .map(() => new Array(parseInt(currentColumns)).fill(background));
-  const [gridColors, setGridColors] = useState(gridArray);
+  const [gridArray, setGridArray] = useState(grid);
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
-    const newGridArray = [...gridColors];
+    const newGridArray = [...gridArray];
     newGridArray[xIndex][yIndex] = currentlySelectedColor;
-    console.log("modified grid array: ", gridColors);
-    setGridColors(newGridArray);
+    setGridArray(newGridArray);
   };
   return (
     <Box sx={{ display: "flex", justifyContent: "center", minWidth: "100vw" }}>
