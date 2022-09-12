@@ -1,6 +1,6 @@
 /* eslint-disable */
-import React, { useState, useEffect } from "react";
-import { Button } from "@mui/material";
+import React, { useState, useEffect } from 'react';
+import { Button } from '@mui/material';
 
 export const ProjectGridCell = ({
   modifyGridColorArray,
@@ -11,7 +11,7 @@ export const ProjectGridCell = ({
 }) => {
   const [cellColor, setCellColor] = useState(cellsColor);
   useEffect(() => {
-    console.log("hello");
+    console.log('hello');
     setCellColor(cellsColor);
   }, [cellsColor]);
   const onClick = () => {
@@ -21,9 +21,9 @@ export const ProjectGridCell = ({
   return (
     <Button
       sx={{
-        backgroundColor: `rgba(${cellsColor.r}, ${cellsColor.g}, ${cellsColor.b}, ${cellsColor.a})`,
-        height: "100%",
-        minWidth: "100%",
+        backgroundColor: `rgba(${cellColor.r}, ${cellColor.g}, ${cellColor.b}, ${cellColor.a})`,
+        height: '100%',
+        minWidth: '100%',
       }}
       onClick={() => onClick()}
     />
