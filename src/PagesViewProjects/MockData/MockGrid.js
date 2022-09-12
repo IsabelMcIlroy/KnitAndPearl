@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import _ from "lodash";
 import { palette } from "../../assets/theme";
@@ -8,15 +7,14 @@ export const MockGrid = ({
   mockColumns,
   currentlySelectedColor,
   gridArray,
+  setGridArray,
   currentProjectName,
   currentProjectType,
 }) => {
-  const [gridColors, setGridColors] = useState(gridArray);
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
-    const newGridArray = [...gridColors];
+    const newGridArray = [...gridArray];
     newGridArray[xIndex][yIndex] = currentlySelectedColor;
-    console.log("modified grid array: ", gridColors);
-    setGridColors(newGridArray);
+    setGridArray(newGridArray);
   };
   return (
     <Box sx={{ display: "flex", justifyContent: "center", minWidth: "100vw" }}>

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Box } from "@mui/material";
 import { NewProjectEditorDrawer } from "../../PagesNewProject/HelperComponents/NewProjectEditorDrawer";
 import { MockGrid } from "./MockGrid";
-import { gridArray } from "./MockData";
+import { grid } from "./MockData";
 
 export const MockProject = () => {
   const { state } = useLocation();
@@ -18,6 +18,10 @@ export const MockProject = () => {
   });
   const DEFAULT_COLOR = { r: 212, g: 196, b: 251, a: 1 };
   const [background] = useState(DEFAULT_COLOR);
+  const [gridArray, setGridArray] = useState(grid);
+  const clearGrid = () => {
+    setGridArray(grid);
+  };
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <NewProjectEditorDrawer
@@ -26,6 +30,7 @@ export const MockProject = () => {
         currentlySelectedColor={currentlySelectedColor}
         setCurrentlySelectedColor={setCurrentlySelectedColor}
         defaultColor={DEFAULT_COLOR}
+        clearGrid={clearGrid}
       />
       <MockGrid
         mockColumns={mockColumns}
@@ -33,6 +38,7 @@ export const MockProject = () => {
         currentlySelectedColor={currentlySelectedColor}
         background={background}
         gridArray={gridArray}
+        setGridArray={setGridArray}
         currentProjectName={currentProjectName}
         currentProjectType={currentProjectType}
       />

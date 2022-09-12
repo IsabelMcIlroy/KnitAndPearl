@@ -1,6 +1,6 @@
 import { Box, Grid } from "@mui/material";
 import { MiniMockGridCell } from "./MiniMockGridCell";
-import { gridArray } from "./MockData";
+import { grid } from "./MockData";
 
 export const MiniMockGrid = ({ mockColumns }) => {
   return (
@@ -10,8 +10,8 @@ export const MiniMockGrid = ({ mockColumns }) => {
         spacing={12 / mockColumns}
         sx={{ width: "70%", margin: "24px" }}
       >
-        {gridArray.map((columns, yindex) => {
-          return gridArray[1].map((rows, xindex) => {
+        {grid.map((columns, yindex) => {
+          return columns.map((rows, xindex) => {
             return (
               <Grid
                 item
@@ -26,8 +26,8 @@ export const MiniMockGrid = ({ mockColumns }) => {
                 <MiniMockGridCell
                   xIndex={xindex}
                   yIndex={yindex}
-                  cellsColour={gridArray[xindex][columns]}
-                  gridArray={gridArray}
+                  cellsColour={rows}
+                  gridArray={grid}
                 />
               </Grid>
             );

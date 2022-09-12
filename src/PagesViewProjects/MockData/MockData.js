@@ -5,7 +5,7 @@ export const ViewProjectMockDataList = [
   { projectName: "Fish", projectType: "Socks" },
 ];
 
-export const gridArray = [
+export const grid = [
   [
     { r: 241, g: 112, b: 19, a: 1 },
     { r: 0, g: 107, b: 118, a: 1 },
