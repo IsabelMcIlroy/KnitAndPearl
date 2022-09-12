@@ -6,7 +6,12 @@ import { ProjectGrid } from "./HelperComponents/ProjectGrid";
 
 export const NewProject = () => {
   const { state } = useLocation();
-  const { currentProjectName, currentProjectType } = state;
+  const {
+    currentProjectName,
+    currentProjectType,
+    currentColumns,
+    currentRows,
+  } = state;
   const [currentlySelectedColor, setCurrentlySelectedColor] = useState({
     r: 241,
     g: 112,
@@ -15,7 +20,13 @@ export const NewProject = () => {
   });
   const DEFAULT_COLOR = { r: 212, g: 196, b: 251, a: 1 };
   const [background, setBackground] = useState(DEFAULT_COLOR);
-
+  let grid = Array(parseInt(currentRows))
+    .fill(0)
+    .map(() => new Array(parseInt(currentColumns)).fill(background));
+  const [gridArray, setGridArray] = useState(grid);
+  const clearGrid = () => {
+    setGridArray(grid);
+  };
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <NewProjectEditorDrawer
@@ -25,12 +36,14 @@ export const NewProject = () => {
         setCurrentlySelectedColor={setCurrentlySelectedColor}
         defaultColor={DEFAULT_COLOR}
         setBackground={setBackground}
+        clearGrid={clearGrid}
       />
       <ProjectGrid
         currentlySelectedColor={currentlySelectedColor}
-        background={background}
         currentProjectName={currentProjectName}
         currentProjectType={currentProjectType}
+        gridArray={gridArray}
+        setGridArray={setGridArray}
       />
     </Box>
   );

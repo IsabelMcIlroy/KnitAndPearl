@@ -12,6 +12,7 @@ export const NewProjectEditorDrawer = ({
   setBackground,
   defaultColor,
   gridArray,
+  clearGrid,
 }) => {
   const [isDrawerOpen, setIsDrawerOpened] = useState(false);
   return (
@@ -47,6 +48,7 @@ export const NewProjectEditorDrawer = ({
           setBackground={setBackground}
           defaultColor={defaultColor}
           gridArray={gridArray}
+          clearGrid={clearGrid}
         />
       </Drawer>
       <Drawer
@@ -72,6 +74,7 @@ export const NewProjectEditorDrawer = ({
           setBackground={setBackground}
           defaultColor={defaultColor}
           gridArray={gridArray}
+          clearGrid={clearGrid}
         />
       </Drawer>
     </Box>

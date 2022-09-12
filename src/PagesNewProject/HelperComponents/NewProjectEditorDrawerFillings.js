@@ -15,9 +15,7 @@ export const NewProjectEditorDrawerFillings = ({
   currentProjectTypeForDrawer,
   currentlySelectedColor,
   setCurrentlySelectedColor,
-  setBackground,
-  defaultColor,
-  gridArray,
+  clearGrid,
 }) => {
   const navigate = useNavigate();
   return (
@@ -66,14 +64,9 @@ export const NewProjectEditorDrawerFillings = ({
         <Box sx={{ textAlign: "center", marginTop: "24px" }}>
           <EditDrawerButtonsAndPopover
             popoverText={"Clear Grid."}
-            // onClick={() => {
-            //   console.log("hello");
-            //   for (let i = 0; i < gridArray.length; i++) {
-            //     for (let j = 0; j < gridArray[i].length; j++) {
-            //       gridArray[i][j] = { defaultColor };
-            //     }
-            //   }
-            // }}
+            onClick={() => {
+              clearGrid();
+            }}
           />
           <EditDrawerButtonsAndPopover popoverText={"Save."} />
           <EditDrawerButtonsAndPopover
