@@ -10,8 +10,8 @@ export const MiniMockGrid = ({ mockColumns }) => {
         spacing={12 / mockColumns}
         sx={{ width: "70%", margin: "24px" }}
       >
-        {grid.map((columns, xindex) => {
-          return columns.map((rows, yindex) => {
+        {grid.map((row, xindex) => {
+          return row.map((column, yindex) => {
             return (
               <Grid
                 item
@@ -23,7 +23,7 @@ export const MiniMockGrid = ({ mockColumns }) => {
                 }}
                 style={{ padding: "4px" }}
               >
-                <MiniMockGridCell cellsColor={rows} />
+                <MiniMockGridCell cellsColor={column} />
               </Grid>
             );
           });

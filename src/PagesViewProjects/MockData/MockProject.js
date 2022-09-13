@@ -9,7 +9,6 @@ export const MockProject = () => {
   const { state } = useLocation();
   const { currentProjectName, currentProjectType } = state;
   const mockColumns = 6;
-  const mockRows = 6;
   const [currentlySelectedColor, setCurrentlySelectedColor] = useState({
     r: 241,
     g: 112,
@@ -17,7 +16,6 @@ export const MockProject = () => {
     a: 1,
   });
   const DEFAULT_COLOR = { r: 212, g: 196, b: 251, a: 1 };
-  const [background] = useState(DEFAULT_COLOR);
   const [gridArray, setGridArray] = useState(grid);
   const clearGrid = () => {
     setGridArray(grid);
@@ -34,9 +32,7 @@ export const MockProject = () => {
       />
       <MockGrid
         mockColumns={mockColumns}
-        mockRows={mockRows}
         currentlySelectedColor={currentlySelectedColor}
-        background={background}
         gridArray={gridArray}
         setGridArray={setGridArray}
         currentProjectName={currentProjectName}
