@@ -55,7 +55,6 @@ export const ProjectGrid = ({
                     currentlySelectedColor={currentlySelectedColor}
                     cellsColor={column}
                     modifyGridColorArray={modifyGridColorArray}
-                    gridArray={gridArray}
                   />
                 </Grid>
               );

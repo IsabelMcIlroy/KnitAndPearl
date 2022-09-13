@@ -19,10 +19,9 @@ export const NewProject = () => {
     a: 1,
   });
   const DEFAULT_COLOR = { r: 212, g: 196, b: 251, a: 1 };
-  const [background, setBackground] = useState(DEFAULT_COLOR);
   let grid = Array(parseInt(currentRows))
     .fill(0)
-    .map(() => new Array(parseInt(currentColumns)).fill(background));
+    .map(() => new Array(parseInt(currentColumns)).fill(DEFAULT_COLOR));
   const [gridArray, setGridArray] = useState(grid);
   const clearGrid = () => {
     setGridArray(grid);
@@ -34,8 +33,6 @@ export const NewProject = () => {
         currentProjectTypeForDrawer={currentProjectType}
         currentlySelectedColor={currentlySelectedColor}
         setCurrentlySelectedColor={setCurrentlySelectedColor}
-        defaultColor={DEFAULT_COLOR}
-        setBackground={setBackground}
         clearGrid={clearGrid}
       />
       <ProjectGrid

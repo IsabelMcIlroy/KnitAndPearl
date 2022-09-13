@@ -9,9 +9,6 @@ export const NewProjectEditorDrawer = ({
   currentProjectTypeForDrawer,
   currentlySelectedColor,
   setCurrentlySelectedColor,
-  setBackground,
-  defaultColor,
-  gridArray,
   clearGrid,
 }) => {
   const [isDrawerOpen, setIsDrawerOpened] = useState(false);
@@ -45,9 +42,6 @@ export const NewProjectEditorDrawer = ({
           currentProjectTypeForDrawer={currentProjectTypeForDrawer}
           currentlySelectedColor={currentlySelectedColor}
           setCurrentlySelectedColor={setCurrentlySelectedColor}
-          setBackground={setBackground}
-          defaultColor={defaultColor}
-          gridArray={gridArray}
           clearGrid={clearGrid}
         />
       </Drawer>
@@ -71,9 +65,6 @@ export const NewProjectEditorDrawer = ({
           currentProjectTypeForDrawer={currentProjectTypeForDrawer}
           currentlySelectedColor={currentlySelectedColor}
           setCurrentlySelectedColor={setCurrentlySelectedColor}
-          setBackground={setBackground}
-          defaultColor={defaultColor}
-          gridArray={gridArray}
           clearGrid={clearGrid}
         />
       </Drawer>
