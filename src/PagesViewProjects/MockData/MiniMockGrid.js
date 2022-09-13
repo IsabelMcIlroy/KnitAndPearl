@@ -23,12 +23,7 @@ export const MiniMockGrid = ({ mockColumns }) => {
                 }}
                 style={{ padding: "4px" }}
               >
-                <MiniMockGridCell
-                  xIndex={xindex}
-                  yIndex={yindex}
-                  cellsColour={rows}
-                  gridArray={grid}
-                />
+                <MiniMockGridCell cellsColor={rows} />
               </Grid>
             );
           });

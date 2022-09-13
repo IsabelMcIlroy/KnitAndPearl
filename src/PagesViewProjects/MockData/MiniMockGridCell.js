@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "@mui/material";
 
-export const MiniMockGridCell = ({ xIndex, yIndex, gridArray }) => {
+export const MiniMockGridCell = ({ cellsColor }) => {
   const [cellColor] = useState(
-    `rgba(${gridArray[xIndex][yIndex].r}, ${gridArray[xIndex][yIndex].g}, ${gridArray[xIndex][yIndex].b}, ${gridArray[xIndex][yIndex].a})`
+    `rgba(${cellsColor.r}, ${cellsColor.g}, ${cellsColor.b}, ${cellsColor.a})`
   );
   return (
     <Button
