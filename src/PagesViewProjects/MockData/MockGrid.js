@@ -53,7 +53,6 @@ export const MockGrid = ({
                     currentlySelectedColor={currentlySelectedColor}
                     cellsColor={column}
                     modifyGridColorArray={modifyGridColorArray}
-                    gridArray={gridArray}
                   />
                 </Grid>
               );
