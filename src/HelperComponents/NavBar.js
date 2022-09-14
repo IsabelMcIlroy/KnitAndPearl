@@ -16,6 +16,7 @@ export const NavBar = () => {
     setAnchorEl(null);
   };
   const [isOpen, setIsOpen] = useState(false);
+  const pathName = window.location.pathname;
   return (
     <>
       <AppBar
@@ -27,12 +28,14 @@ export const NavBar = () => {
           justifyContent: "end",
         }}
       >
-        <WelcomePageOptionButtons
-          btnText="New Project"
-          onClick={() => {
-            setIsOpen(true);
-          }}
-        />
+        {pathName !== "/KnittingProjectManager/NewProject" && (
+          <WelcomePageOptionButtons
+            btnText="New Project"
+            onClick={() => {
+              setIsOpen(true);
+            }}
+          />
+        )}
         <NewProjectSizeAndColourSelectionModal
           open={isOpen}
           setIsOpen={setIsOpen}
