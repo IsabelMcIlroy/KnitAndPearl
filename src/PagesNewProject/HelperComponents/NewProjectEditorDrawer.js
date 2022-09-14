@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Drawer, IconButton, Box } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import { sideNavClosed, palette } from "../../assets/theme";
-import { NewProjectEditorDrawerFillings } from "./NewProjectEditorDrawerFillings";
+import { NewProjectEditorDrawerDetails } from "./NewProjectEditorDrawerDetails";
 
 export const NewProjectEditorDrawer = ({
   currentProjectNameForDrawer,
@@ -37,7 +37,7 @@ export const NewProjectEditorDrawer = ({
           },
         }}
       >
-        <NewProjectEditorDrawerFillings
+        <NewProjectEditorDrawerDetails
           currentProjectNameForDrawer={currentProjectNameForDrawer}
           currentProjectTypeForDrawer={currentProjectTypeForDrawer}
           currentlySelectedColor={currentlySelectedColor}
@@ -60,7 +60,7 @@ export const NewProjectEditorDrawer = ({
           },
         }}
       >
-        <NewProjectEditorDrawerFillings
+        <NewProjectEditorDrawerDetails
           currentProjectNameForDrawer={currentProjectNameForDrawer}
           currentProjectTypeForDrawer={currentProjectTypeForDrawer}
           currentlySelectedColor={currentlySelectedColor}

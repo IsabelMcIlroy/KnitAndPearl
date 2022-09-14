@@ -10,7 +10,7 @@ import { ColorPicker } from "./ColorPicker";
 import { EditDrawerButtonsAndPopover } from "./EditDrawerButtonsAndPopovers";
 import woolSmall from "../../images/woolSmall.jpg";
 
-export const NewProjectEditorDrawerFillings = ({
+export const NewProjectEditorDrawerDetails = ({
   currentProjectNameForDrawer,
   currentProjectTypeForDrawer,
   currentlySelectedColor,
