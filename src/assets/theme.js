@@ -84,6 +84,7 @@ export const modalTitle = {
   textAlign: "center",
   backgroundColor: palette.knittingLightBlue,
   paddingTop: "18px",
+  paddingBottom: "12px",
   borderRadius: "12px 12px 0 0",
   width: "100%",
 };
