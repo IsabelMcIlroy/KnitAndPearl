@@ -35,7 +35,7 @@ export const NewProjectEditorDrawerDetails = ({
         Edit Project
         <EditIcon />
       </Typography>
-      <Box sx={{ margin: "24px" }}>
+      <Box sx={{ margin: "18px" }}>
         <Box sx={{ display: "flex", paddingTop: "12px" }}>
           <Typography variant="h8" sx={editorDrawerLabels}>
             Project Name:
@@ -61,7 +61,7 @@ export const NewProjectEditorDrawerDetails = ({
           setCurrentlySelectedColor={setCurrentlySelectedColor}
         />
         <hr sx={editorDrawerLabels} />
-        <Box sx={{ textAlign: "center", marginTop: "24px" }}>
+        <Box sx={{ textAlign: "center", marginTop: "18px" }}>
           <EditDrawerButtonsAndPopover
             popoverText={"Clear Grid."}
             onClick={() => {
@@ -78,9 +78,9 @@ export const NewProjectEditorDrawerDetails = ({
       <Box
         sx={{
           backgroundColor: palette.knittingLightBlue,
-          height: "100vh",
+          height: "25vh",
           backgroundImage: `url(${woolSmall})`,
-          marginTop: "12px",
+          marginTop: "6px",
         }}
       />
     </>

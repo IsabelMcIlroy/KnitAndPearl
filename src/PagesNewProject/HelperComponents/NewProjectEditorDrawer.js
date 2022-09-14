@@ -53,10 +53,12 @@ export const NewProjectEditorDrawer = ({
             boxSizing: "border-box",
             backgroundColor: palette.knittingGray,
             width: "300px",
-            height: "550px",
+            height: "500px",
             marginLeft: "36px",
+            marginTop: "112px",
             borderBottom: "4px solid",
             borderBottomColor: palette.knittingPurple,
+            borderRadius: "8px",
           },
         }}
       >
