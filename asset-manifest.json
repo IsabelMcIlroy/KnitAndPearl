@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/KnittingProjectManager/static/css/main.e6c13ad2.css",
-    "main.js": "/KnittingProjectManager/static/js/main.2e17b3cd.js",
+    "main.js": "/KnittingProjectManager/static/js/main.59af6bff.js",
     "static/media/wool.jpg": "/KnittingProjectManager/static/media/wool.50f5b02f8d3a5ede8980.jpg",
     "static/media/woolSmall.jpg": "/KnittingProjectManager/static/media/woolSmall.2d28a57b2b64359e465e.jpg",
     "index.html": "/KnittingProjectManager/index.html",
     "main.e6c13ad2.css.map": "/KnittingProjectManager/static/css/main.e6c13ad2.css.map",
-    "main.2e17b3cd.js.map": "/KnittingProjectManager/static/js/main.2e17b3cd.js.map"
+    "main.59af6bff.js.map": "/KnittingProjectManager/static/js/main.59af6bff.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.2e17b3cd.js"
+    "static/js/main.59af6bff.js"
   ]
 }
