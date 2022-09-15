@@ -4,7 +4,9 @@ import { Home } from "./PagesHome/Home";
 import { NewProject } from "./PagesNewProject/NewProject";
 import { ViewProject } from "./PagesViewProjects/ViewProject";
 import { TreesProject } from "./PagesViewProjects/MockData/TreesProject";
-import { MockProject } from "./PagesViewProjects/MockData/MockProject";
+import { MountainsProject } from "./PagesViewProjects/MockData/MountainsProject";
+import { CatsProject } from "./PagesViewProjects/MockData/CatsProject";
+import { FishProject } from "./PagesViewProjects/MockData/FishProject";
 
 export const Router = () => {
   return (
@@ -24,15 +26,15 @@ export const Router = () => {
         />
         <Route
           path="/KnittingProjectManager/MountainsProject"
-          element={<MockProject />}
+          element={<MountainsProject />}
         />
         <Route
           path="/KnittingProjectManager/CatsProject"
-          element={<MockProject />}
+          element={<CatsProject />}
         />
         <Route
           path="/KnittingProjectManager/FishProject"
-          element={<MockProject />}
+          element={<FishProject />}
         />
       </Route>
       <Route path="/KnittingProjectManager/" element={<Home />} />

@@ -3,9 +3,9 @@ import { useLocation } from "react-router-dom";
 import { Box } from "@mui/material";
 import { NewProjectEditorDrawer } from "../../PagesNewProject/HelperComponents/NewProjectEditorDrawer";
 import { ProjectGrid } from "../../PagesNewProject/HelperComponents/ProjectGrid";
-import { treesGrid } from "./MockData";
+import { mountainsGrid } from "./MockData";
 
-export const TreesProject = () => {
+export const MountainsProject = () => {
   const { state } = useLocation();
   const { currentProjectName, currentProjectType } = state;
   const currentColumns = 7;
@@ -16,9 +16,9 @@ export const TreesProject = () => {
     b: 19,
     a: 1,
   });
-  const [gridArray, setGridArray] = useState(treesGrid);
+  const [gridArray, setGridArray] = useState(mountainsGrid);
   const clearGrid = () => {
-    setGridArray(treesGrid);
+    setGridArray(mountainsGrid);
   };
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>

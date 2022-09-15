@@ -3,23 +3,24 @@ import { useLocation } from "react-router-dom";
 import { Box } from "@mui/material";
 import { NewProjectEditorDrawer } from "../../PagesNewProject/HelperComponents/NewProjectEditorDrawer";
 import { ProjectGrid } from "../../PagesNewProject/HelperComponents/ProjectGrid";
-import { treesGrid } from "./MockData";
+import { fishGrid } from "./MockData";
 
-export const TreesProject = () => {
+export const FishProject = () => {
   const { state } = useLocation();
   const { currentProjectName, currentProjectType } = state;
-  const currentColumns = 7;
-  const currentRows = 6;
+  const currentColumns = 9;
+  const currentRows = 7;
   const [currentlySelectedColor, setCurrentlySelectedColor] = useState({
     r: 241,
     g: 112,
     b: 19,
     a: 1,
   });
-  const [gridArray, setGridArray] = useState(treesGrid);
+  const [gridArray, setGridArray] = useState(fishGrid);
   const clearGrid = () => {
-    setGridArray(treesGrid);
+    setGridArray(fishGrid);
   };
+  console.log(currentlySelectedColor);
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <NewProjectEditorDrawer
