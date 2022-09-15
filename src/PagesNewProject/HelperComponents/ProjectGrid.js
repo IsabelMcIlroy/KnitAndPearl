@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import _ from "lodash";
 import { Box, Grid, Typography } from "@mui/material";
 import { palette } from "../../assets/theme";
@@ -10,9 +9,9 @@ export const ProjectGrid = ({
   currentProjectType,
   gridArray,
   setGridArray,
+  currentColumns,
+  currentRows,
 }) => {
-  const { state } = useLocation();
-  const { currentColumns, currentRows } = state;
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
     const newGridArray = [...gridArray];
     newGridArray[xIndex][yIndex] = currentlySelectedColor;

@@ -41,6 +41,8 @@ export const NewProject = () => {
         currentProjectType={currentProjectType}
         gridArray={gridArray}
         setGridArray={setGridArray}
+        currentColumns={currentColumns}
+        currentRows={currentRows}
       />
     </Box>
   );
