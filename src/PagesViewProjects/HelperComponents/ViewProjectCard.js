@@ -49,7 +49,7 @@ export const ViewProjectCard = ({ projectName, projectType }) => {
                 <Button
                   size="small"
                   onClick={() =>
-                    navigate("/KnittingProjectManager/MockProject", {
+                    navigate(`/KnittingProjectManager/${projectName}Project`, {
                       state: {
                         currentProjectName: projectName,
                         currentProjectType: projectType,
