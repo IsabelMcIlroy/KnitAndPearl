@@ -84,7 +84,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
             <form
               ref={form}
               onSubmit={handleSubmit(onSubmit)}
-              sx={{ textAlign: "center" }}
+              style={{ textAlign: "center" }}
             >
               <Box padding="10px">
                 <TextField
@@ -96,7 +96,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   name="projectName"
                   value={state.projectName}
                   onChange={handleInput}
-                  sx={{ width: "80%" }}
+                  sx={{ width: "90%" }}
                 />
                 <Typography variant="inherit" color={palette.knittingPurple}>
                   {errors.projectName?.message}
@@ -110,7 +110,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   name="projectType"
                   value={state.projectType}
                   onChange={handleInput}
-                  sx={{ width: "80%" }}
+                  sx={{ width: "90%" }}
                 />
               </Box>
               <Box padding="10px" textAlign="center">
