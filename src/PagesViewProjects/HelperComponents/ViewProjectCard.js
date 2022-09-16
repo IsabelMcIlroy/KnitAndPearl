@@ -9,13 +9,13 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import KnittingTheme, { palette } from "../../assets/theme";
-import { MiniProjectGrid } from "../MockData/MiniProjectGrid";
+import { MiniProjectGrid } from "../ProjectData/MiniProjectGrid";
 import {
   treesGrid,
   mountainsGrid,
   catsGrid,
   fishGrid,
-} from "../MockData/MockData";
+} from "../ProjectData/MockData";
 
 export const ViewProjectCard = ({ projectName, projectType }) => {
   const navigate = useNavigate();

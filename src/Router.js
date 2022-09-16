@@ -3,10 +3,10 @@ import { NavBar } from "./HelperComponents/NavBar";
 import { Home } from "./PagesHome/Home";
 import { NewProject } from "./PagesNewProject/NewProject";
 import { ViewProject } from "./PagesViewProjects/ViewProject";
-import { TreesProject } from "./PagesViewProjects/MockData/TreesProject";
-import { MountainsProject } from "./PagesViewProjects/MockData/MountainsProject";
-import { CatsProject } from "./PagesViewProjects/MockData/CatsProject";
-import { FishProject } from "./PagesViewProjects/MockData/FishProject";
+import { TreesProject } from "./PagesViewProjects/ProjectData/TreesProject";
+import { MountainsProject } from "./PagesViewProjects/ProjectData/MountainsProject";
+import { CatsProject } from "./PagesViewProjects/ProjectData/CatsProject";
+import { FishProject } from "./PagesViewProjects/ProjectData/FishProject";
 
 export const Router = () => {
   return (
