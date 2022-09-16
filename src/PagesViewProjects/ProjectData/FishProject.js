@@ -20,7 +20,6 @@ export const FishProject = () => {
   const clearGrid = () => {
     setGridArray(fishGrid);
   };
-  console.log(currentlySelectedColor);
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <NewProjectEditorDrawer
