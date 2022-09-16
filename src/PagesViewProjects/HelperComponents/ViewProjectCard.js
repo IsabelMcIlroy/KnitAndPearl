@@ -10,6 +10,12 @@ import {
 } from "@mui/material";
 import KnittingTheme, { palette } from "../../assets/theme";
 import { MiniMockGrid } from "../MockData/MiniMockGrid";
+import {
+  treesGrid,
+  mountainsGrid,
+  catsGrid,
+  fishGrid,
+} from "../MockData/MockData";
 
 export const ViewProjectCard = ({ projectName, projectType }) => {
   const navigate = useNavigate();
@@ -22,7 +28,18 @@ export const ViewProjectCard = ({ projectName, projectType }) => {
         }}
       >
         <CardContent>
-          <MiniMockGrid />
+          {projectName === "Trees" && (
+            <MiniMockGrid grid={treesGrid} mockColumns={7} />
+          )}
+          {projectName === "Mountains" && (
+            <MiniMockGrid grid={mountainsGrid} mockColumns={7} />
+          )}
+          {projectName === "Cats" && (
+            <MiniMockGrid grid={catsGrid} mockColumns={7} />
+          )}
+          {projectName === "Fish" && (
+            <MiniMockGrid grid={fishGrid} mockColumns={9} />
+          )}
           <Box sx={{ margin: "8px", maxWidth: "90%" }}>
             <Typography
               variant="h4"
