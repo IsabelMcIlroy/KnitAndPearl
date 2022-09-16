@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Box } from "@mui/material";
 import { NewProjectEditorDrawer } from "../../PagesNewProject/HelperComponents/NewProjectEditorDrawer";
 import { ProjectGrid } from "../../PagesNewProject/HelperComponents/ProjectGrid";
-import { fishGrid } from "./MockData";
+import { fishGrid } from "./ProjectData";
 
 export const FishProject = () => {
   const { state } = useLocation();

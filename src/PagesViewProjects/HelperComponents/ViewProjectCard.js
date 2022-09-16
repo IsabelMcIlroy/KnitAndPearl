@@ -15,7 +15,7 @@ import {
   mountainsGrid,
   catsGrid,
   fishGrid,
-} from "../ProjectData/MockData";
+} from "../ProjectData/ProjectData";
 
 export const ViewProjectCard = ({ projectName, projectType }) => {
   const navigate = useNavigate();

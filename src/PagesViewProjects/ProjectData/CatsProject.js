@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Box } from "@mui/material";
 import { NewProjectEditorDrawer } from "../../PagesNewProject/HelperComponents/NewProjectEditorDrawer";
 import { ProjectGrid } from "../../PagesNewProject/HelperComponents/ProjectGrid";
-import { catsGrid } from "./MockData";
+import { catsGrid } from "./ProjectData";
 
 export const CatsProject = () => {
   const { state } = useLocation();

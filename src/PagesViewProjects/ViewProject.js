@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Box, Typography, TextField } from "@mui/material";
 import { palette } from "../assets/theme";
 import { ViewProjectCard } from "./HelperComponents/ViewProjectCard";
-import { ViewProjectMockDataList } from "./ProjectData/MockData";
+import { ViewProjectMockDataList } from "./ProjectData/ProjectData";
 
 export const ViewProject = () => {
   const [allProjects] = useState(ViewProjectMockDataList);

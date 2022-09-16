@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Box } from "@mui/material";
 import { NewProjectEditorDrawer } from "../../PagesNewProject/HelperComponents/NewProjectEditorDrawer";
 import { ProjectGrid } from "../../PagesNewProject/HelperComponents/ProjectGrid";
-import { mountainsGrid } from "./MockData";
+import { mountainsGrid } from "./ProjectData";
 
 export const MountainsProject = () => {
   const { state } = useLocation();
