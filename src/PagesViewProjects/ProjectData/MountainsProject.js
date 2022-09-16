@@ -20,7 +20,6 @@ export const MountainsProject = () => {
   const clearGrid = () => {
     setGridArray(mountainsGrid);
   };
-  console.log(currentlySelectedColor);
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <NewProjectEditorDrawer
