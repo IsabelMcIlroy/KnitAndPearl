@@ -8,7 +8,7 @@ import { mountainsGrid } from "./MockData";
 export const MountainsProject = () => {
   const { state } = useLocation();
   const { currentProjectName, currentProjectType } = state;
-  const currentColumns = 7;
+  const currentColumns = 9;
   const currentRows = 6;
   const [currentlySelectedColor, setCurrentlySelectedColor] = useState({
     r: 241,
@@ -20,6 +20,7 @@ export const MountainsProject = () => {
   const clearGrid = () => {
     setGridArray(mountainsGrid);
   };
+  console.log(currentlySelectedColor);
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <NewProjectEditorDrawer

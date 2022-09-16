@@ -32,7 +32,7 @@ export const ViewProjectCard = ({ projectName, projectType }) => {
             <MiniMockGrid grid={treesGrid} mockColumns={7} />
           )}
           {projectName === "Mountains" && (
-            <MiniMockGrid grid={mountainsGrid} mockColumns={7} />
+            <MiniMockGrid grid={mountainsGrid} mockColumns={9} />
           )}
           {projectName === "Cats" && (
             <MiniMockGrid grid={catsGrid} mockColumns={7} />
