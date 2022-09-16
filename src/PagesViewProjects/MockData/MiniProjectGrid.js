@@ -1,12 +1,12 @@
 import { Box, Grid } from "@mui/material";
-import { MiniMockGridCell } from "./MiniMockGridCell";
+import { MiniProjectGridCell } from "./MiniProjectGridCell";
 
-export const MiniMockGrid = ({ mockColumns, grid }) => {
+export const MiniProjectGrid = ({ currentColumns, grid }) => {
   return (
     <Box>
       <Grid
         container
-        spacing={12 / mockColumns}
+        spacing={12 / currentColumns}
         sx={{ width: "85%", margin: "24px", aspectRatio: "1/1" }}
       >
         {grid.map((row, xindex) => {
@@ -14,14 +14,14 @@ export const MiniMockGrid = ({ mockColumns, grid }) => {
             return (
               <Grid
                 item
-                xs={12 / mockColumns}
+                xs={12 / currentColumns}
                 key={`x:${xindex} y:${yindex}`}
                 sx={{
                   border: "1px solid black",
                 }}
                 style={{ padding: "4px" }}
               >
-                <MiniMockGridCell cellsColor={column} />
+                <MiniProjectGridCell cellsColor={column} />
               </Grid>
             );
           });

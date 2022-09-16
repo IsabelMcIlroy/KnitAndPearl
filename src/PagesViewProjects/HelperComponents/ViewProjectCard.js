@@ -9,7 +9,7 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import KnittingTheme, { palette } from "../../assets/theme";
-import { MiniMockGrid } from "../MockData/MiniMockGrid";
+import { MiniProjectGrid } from "../MockData/MiniProjectGrid";
 import {
   treesGrid,
   mountainsGrid,
@@ -29,16 +29,16 @@ export const ViewProjectCard = ({ projectName, projectType }) => {
       >
         <CardContent>
           {projectName === "Trees" && (
-            <MiniMockGrid grid={treesGrid} mockColumns={7} />
+            <MiniProjectGrid grid={treesGrid} currentColumns={7} />
           )}
           {projectName === "Mountains" && (
-            <MiniMockGrid grid={mountainsGrid} mockColumns={9} />
+            <MiniProjectGrid grid={mountainsGrid} currentColumns={9} />
           )}
           {projectName === "Cats" && (
-            <MiniMockGrid grid={catsGrid} mockColumns={7} />
+            <MiniProjectGrid grid={catsGrid} currentColumns={7} />
           )}
           {projectName === "Fish" && (
-            <MiniMockGrid grid={fishGrid} mockColumns={9} />
+            <MiniProjectGrid grid={fishGrid} currentColumns={9} />
           )}
           <Box sx={{ margin: "8px", maxWidth: "90%" }}>
             <Typography
