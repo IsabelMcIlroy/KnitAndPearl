@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { Box, Typography, TextField } from "@mui/material";
 import { palette } from "../assets/theme";
 import { ViewProjectCard } from "./HelperComponents/ViewProjectCard";
-import { ViewProjectMockDataList } from "./ProjectData/ProjectData";
+import { ViewProjectDataList } from "./ProjectData/ProjectData";
 
 export const ViewProject = () => {
-  const [allProjects] = useState(ViewProjectMockDataList);
+  const [allProjects] = useState(ViewProjectDataList);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   useEffect(() => {

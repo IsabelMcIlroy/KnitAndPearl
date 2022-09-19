@@ -1,4 +1,4 @@
-export const ViewProjectMockDataList = [
+export const ViewProjectDataList = [
   { projectName: "Trees", projectType: "Hat" },
   { projectName: "Mountains", projectType: "Sweater" },
   { projectName: "Cats", projectType: "Socks" },
