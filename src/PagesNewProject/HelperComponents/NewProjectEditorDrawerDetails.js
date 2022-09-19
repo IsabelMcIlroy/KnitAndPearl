@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { Typography, Box } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import {
@@ -8,6 +8,7 @@ import {
 } from "../../assets/theme";
 import { ColorPicker } from "./ColorPicker";
 import { EditDrawerButtonsAndPopover } from "./EditDrawerButtonsAndPopovers";
+import { ProjectExitButtonModal } from "../../HelperComponents/ProjectExitButtonModal";
 import woolSmall from "../../images/woolSmall.jpg";
 
 export const NewProjectEditorDrawerDetails = ({
@@ -17,7 +18,7 @@ export const NewProjectEditorDrawerDetails = ({
   setCurrentlySelectedColor,
   clearGrid,
 }) => {
-  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <Typography
@@ -71,8 +72,11 @@ export const NewProjectEditorDrawerDetails = ({
           <EditDrawerButtonsAndPopover popoverText={"Save."} />
           <EditDrawerButtonsAndPopover
             popoverText={"Exit."}
-            onClick={() => navigate("/KnittingProjectManager/ViewProject")}
+            onClick={() => {
+              setIsOpen(true);
+            }}
           />
+          <ProjectExitButtonModal open={isOpen} setIsOpen={setIsOpen} />
         </Box>
       </Box>
       <Box
