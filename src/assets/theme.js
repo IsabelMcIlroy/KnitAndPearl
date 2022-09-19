@@ -47,8 +47,23 @@ const KnittingTheme = createTheme({
             backgroundColor: "#0B5082",
           },
         },
+        "Save and Exit": {
+          backgroundColor: palette.knittingBlue,
+          width: "fit-content",
+          "&:hover": {
+            backgroundColor: "#0B5082",
+          },
+        },
         Cancel: {
           backgroundColor: palette.knittingPurple,
+          width: "fit-content",
+          "&:hover": {
+            backgroundColor: "#724949",
+          },
+        },
+        Exit: {
+          backgroundColor: palette.knittingPurple,
+          width: "fit-content",
           "&:hover": {
             backgroundColor: "#724949",
           },

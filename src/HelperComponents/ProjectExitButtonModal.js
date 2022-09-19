@@ -12,11 +12,11 @@ export const ProjectExitButtonModal = ({ open, onClick, setIsOpen }) => {
           style={{
             overflowY: "auto",
             overflowStyle: "scroll",
-            transform: "translate(25%, 15%)",
+            transform: "translate(45%, 45%)",
             display: "inline-block",
             height: "80%",
             maxHeight: "500px",
-            width: "70%",
+            width: "50%",
           }}
         >
           <Typography variant="h4" sx={modalTitle}>
@@ -29,23 +29,27 @@ export const ProjectExitButtonModal = ({ open, onClick, setIsOpen }) => {
               borderRadius: "0 0 24px 24px",
             }}
           >
-            <Typography variant="inherit" color={palette.knittingPurple}>
-              Do you want to save before you exit?
-            </Typography>
-            <ModalButton
-              text="Save and Exit"
-              onClick={() => navigate("/KnittingProjectManager/ViewProject")}
-            />
-            <ModalButton
-              text="Exit"
-              onClick={() => navigate("/KnittingProjectManager/ViewProject")}
-            />
-            <ModalButton
-              text="Cancel"
-              onClick={() => {
-                setIsOpen(false);
-              }}
-            />
+            <Box padding="10px" textAlign="center">
+              <Typography variant="h7" color={palette.knittingPurple}>
+                WAIT! Do you want to save before you exit?
+              </Typography>
+            </Box>
+            <Box textAlign="center">
+              <ModalButton
+                text="Save and Exit"
+                onClick={() => navigate("/KnittingProjectManager/ViewProject")}
+              />
+              <ModalButton
+                text="Exit"
+                onClick={() => navigate("/KnittingProjectManager/ViewProject")}
+              />
+              <ModalButton
+                text="Cancel"
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+              />
+            </Box>
           </Box>
         </Box>
       </Modal>
