@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { AppBar, Grid, Menu, Button } from "@mui/material";
-import wool from "../images/wool.jpg";
+import navBarWool from "../images/navBarWool.jpg";
 import { WelcomePageOptionButtons } from "../PagesHome/HelperComponents/WelcomePageOptionButtons";
 import { Logo } from "./logo";
 import { NewProjectSizeAndColourSelectionModal } from "./NewProjectSizeAndColourSelectionModal";
@@ -22,7 +22,7 @@ export const NavBar = () => {
       <AppBar
         postion="sticky"
         sx={{
-          backgroundImage: `url(${wool})`,
+          backgroundImage: `url(${navBarWool})`,
           padding: "10px",
           flexDirection: "row",
           justifyContent: "end",
