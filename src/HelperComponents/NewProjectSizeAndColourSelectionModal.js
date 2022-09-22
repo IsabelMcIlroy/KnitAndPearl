@@ -113,48 +113,67 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   sx={{ width: "90%" }}
                 />
               </Box>
-              <Box padding="10px" textAlign="center">
-                <Typography variant="p">Row:</Typography>
-                <Select
-                  required
-                  {...register("Row")}
-                  error={errors.Row ? true : false}
-                  native
-                  label="Row"
-                  sx={{ margin: "10px" }}
-                  name="Row"
-                  value={state.Row}
-                  onChange={handleInput}
+              <Box
+                textAlign="center"
+                sx={{ display: "inline-flex", alignContent: "center" }}
+              >
+                <Box
+                  sx={{
+                    verticalAlign: "middle",
+                    display: "inline",
+                    padding: "12px",
+                  }}
                 >
-                  {_.range(4, maxGrid + 1).map((value) => (
-                    <option key={value} value={value}>
-                      {converter.toWords(value).charAt(0).toUpperCase() +
-                        converter.toWords(value).substring(1)}
-                    </option>
-                  ))}
-                </Select>
-                <Typography variant="inherit" color={palette.knittingPurple}>
-                  {errors.Row?.message}
-                </Typography>
-                <Typography variant="p">Column:</Typography>
-                <Select
-                  required
-                  {...register("Column")}
-                  error={errors.Column ? true : false}
-                  native
-                  label="Column"
-                  sx={{ margin: "10px" }}
-                  name="Column"
-                  value={state.Column}
-                  onChange={handleInput}
+                  <Typography variant="p">Row:</Typography>
+                  <Select
+                    required
+                    {...register("Row")}
+                    error={errors.Row ? true : false}
+                    native
+                    label="Row"
+                    sx={{ margin: "10px" }}
+                    name="Row"
+                    value={state.Row}
+                    onChange={handleInput}
+                  >
+                    {_.range(4, maxGrid + 1).map((value) => (
+                      <option key={value} value={value}>
+                        {converter.toWords(value).charAt(0).toUpperCase() +
+                          converter.toWords(value).substring(1)}
+                      </option>
+                    ))}
+                  </Select>
+                </Box>
+                <Box
+                  sx={{
+                    verticalAlign: "middle",
+                    display: "inline",
+                    padding: "12px",
+                  }}
                 >
-                  {_.range(6, maxGrid + 1).map((value) => (
-                    <option key={value} value={value}>
-                      {converter.toWords(value).charAt(0).toUpperCase() +
-                        converter.toWords(value).substring(1)}
-                    </option>
-                  ))}
-                </Select>
+                  <Typography variant="inherit" color={palette.knittingPurple}>
+                    {errors.Row?.message}
+                  </Typography>
+                  <Typography variant="p">Column:</Typography>
+                  <Select
+                    required
+                    {...register("Column")}
+                    error={errors.Column ? true : false}
+                    native
+                    label="Column"
+                    sx={{ margin: "10px" }}
+                    name="Column"
+                    value={state.Column}
+                    onChange={handleInput}
+                  >
+                    {_.range(6, maxGrid + 1).map((value) => (
+                      <option key={value} value={value}>
+                        {converter.toWords(value).charAt(0).toUpperCase() +
+                          converter.toWords(value).substring(1)}
+                      </option>
+                    ))}
+                  </Select>
+                </Box>
                 <Typography variant="inherit" color={palette.knittingPurple}>
                   {errors.Column?.message}
                 </Typography>
