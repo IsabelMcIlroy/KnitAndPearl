@@ -9,7 +9,6 @@ import {
 import { ColorPicker } from "./ColorPicker";
 import { EditDrawerButtonsAndPopover } from "./EditDrawerButtonsAndPopovers";
 import { ProjectExitButtonModal } from "../../HelperComponents/ProjectExitButtonModal";
-import woolSmall from "../../images/woolSmall.jpg";
 
 export const NewProjectEditorDrawerDetails = ({
   currentProjectNameForDrawer,
@@ -25,7 +24,6 @@ export const NewProjectEditorDrawerDetails = ({
         variant="h4"
         sx={{
           backgroundColor: palette.knittingLightBlue,
-          backgroundImage: `url(${woolSmall})`,
           paddingTop: "36px",
           paddingBottom: "28px",
           fontFamily: "La Belle Aurore",
@@ -41,7 +39,7 @@ export const NewProjectEditorDrawerDetails = ({
           <Typography variant="h8" sx={editorDrawerLabels}>
             Project Name:
           </Typography>
-          <Typography variant="h4" sx={editorDrawerProjectNames}>
+          <Typography variant="h5" sx={editorDrawerProjectNames}>
             {currentProjectNameForDrawer || "---"}
           </Typography>
         </Box>
@@ -49,7 +47,7 @@ export const NewProjectEditorDrawerDetails = ({
           <Typography variant="h8" sx={editorDrawerLabels}>
             Project Type:
           </Typography>
-          <Typography variant="h4" sx={editorDrawerProjectNames}>
+          <Typography variant="h5" sx={editorDrawerProjectNames}>
             {currentProjectTypeForDrawer || "---"}
           </Typography>
         </Box>
@@ -83,7 +81,6 @@ export const NewProjectEditorDrawerDetails = ({
         sx={{
           backgroundColor: palette.knittingLightBlue,
           height: "25vh",
-          backgroundImage: `url(${woolSmall})`,
           marginTop: "6px",
         }}
       />

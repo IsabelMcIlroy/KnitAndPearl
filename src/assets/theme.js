@@ -126,7 +126,6 @@ export const editBarButton = {
 
 export const editorDrawerProjectNames = {
   margin: "12px",
-  fontFamily: "La Belle Aurore",
   color: palette.knittingBlue,
 };
 
