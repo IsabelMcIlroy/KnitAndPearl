@@ -34,7 +34,15 @@ export const ProjectExitButtonModal = ({ open, onClick, setIsOpen }) => {
                 WAIT! Do you want to save before you exit?
               </Typography>
             </Box>
-            <Box textAlign="center" sx={{ display: "flex", flexWrap: "wrap" }}>
+            <Box
+              textAlign="center"
+              sx={{
+                display: "inline-flex",
+                width: "100%",
+                justifyContent: "center",
+                flexWrap: "wrap",
+              }}
+            >
               <ModalButton
                 text="Save and Exit"
                 onClick={() => navigate("/KnittingProjectManager/ViewProject")}
