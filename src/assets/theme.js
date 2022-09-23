@@ -43,8 +43,8 @@ const KnittingTheme = createTheme({
         },
         Submit: {
           backgroundColor: palette.knittingBlue,
+          width: "fit-content",
           "&:hover": {
-            width: "fit-content",
             backgroundColor: "#0B5082",
           },
         },
