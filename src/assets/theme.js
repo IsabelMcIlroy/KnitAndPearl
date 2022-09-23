@@ -133,4 +133,6 @@ export const editorDrawerProjectNames = {
 
 export const editorDrawerLabels = {
   color: palette.knittingPurple,
+  justifyContent: "start",
+  display: "flex",
 };
