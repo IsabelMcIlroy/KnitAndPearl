@@ -23,7 +23,7 @@ export const NavBar = () => {
         postion="sticky"
         sx={{
           backgroundImage: `url(${navBarWool})`,
-          padding: "10px",
+          padding: "8px",
           flexDirection: "row",
           justifyContent: "end",
         }}
