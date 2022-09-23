@@ -23,6 +23,9 @@ export const EditDrawerButtonsAndPopover = ({ popoverText, onClick }) => {
         }}
         onClick={onClick}
       >
+        {popoverText === "Reset Project." && (
+          <SettingsBackupRestoreRoundedIcon sx={editBarButtonIcon} />
+        )}
         {popoverText === "Clear Grid." && (
           <SettingsBackupRestoreRoundedIcon sx={editBarButtonIcon} />
         )}

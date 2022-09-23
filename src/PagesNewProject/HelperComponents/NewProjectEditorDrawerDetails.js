@@ -18,6 +18,7 @@ export const NewProjectEditorDrawerDetails = ({
   clearGrid,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathName = window.location.pathname;
   return (
     <>
       <Typography
@@ -61,12 +62,22 @@ export const NewProjectEditorDrawerDetails = ({
         />
         <hr sx={editorDrawerLabels} />
         <Box sx={{ textAlign: "center", marginTop: "18px" }}>
-          <EditDrawerButtonsAndPopover
-            popoverText={"Clear Grid."}
-            onClick={() => {
-              clearGrid();
-            }}
-          />
+          {pathName !== "/KnittingProjectManager/NewProject" && (
+            <EditDrawerButtonsAndPopover
+              popoverText={"Reset Project."}
+              onClick={() => {
+                clearGrid();
+              }}
+            />
+          )}
+          {pathName === "/KnittingProjectManager/NewProject" && (
+            <EditDrawerButtonsAndPopover
+              popoverText={"Clear Grid."}
+              onClick={() => {
+                clearGrid();
+              }}
+            />
+          )}
           <EditDrawerButtonsAndPopover popoverText={"Save."} />
           <EditDrawerButtonsAndPopover
             popoverText={"Exit."}
