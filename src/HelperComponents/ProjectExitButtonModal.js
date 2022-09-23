@@ -15,7 +15,7 @@ export const ProjectExitButtonModal = ({ open, onClick, setIsOpen }) => {
             transform: "translate(45%, 45%)",
             display: "inline-block",
             height: "80%",
-            maxHeight: "500px",
+            maxHeight: "250px",
             width: "50%",
           }}
         >
