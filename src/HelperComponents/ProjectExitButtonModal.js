@@ -44,7 +44,7 @@ export const ProjectExitButtonModal = ({ open, onClick, setIsOpen }) => {
               }}
             >
               <ModalButton
-                text="Save and Exit"
+                text="Save&amp; Exit"
                 onClick={() => navigate("/KnittingProjectManager/ViewProject")}
               />
               <ModalButton

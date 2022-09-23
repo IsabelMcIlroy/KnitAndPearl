@@ -48,9 +48,10 @@ const KnittingTheme = createTheme({
             backgroundColor: "#0B5082",
           },
         },
-        "Save and Exit": {
+        "Save&amp; Exit": {
           backgroundColor: palette.knittingBlue,
           width: "fit-content",
+          minHeight: "fit-content",
           "&:hover": {
             backgroundColor: "#0B5082",
           },
