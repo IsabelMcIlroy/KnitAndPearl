@@ -91,7 +91,7 @@ export const NewProjectEditorDrawerDetails = ({
       <Box
         sx={{
           backgroundColor: palette.knittingLightBlue,
-          height: "25vh",
+          height: "100%",
           marginTop: "6px",
         }}
       />
