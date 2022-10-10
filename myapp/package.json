@@ -10,7 +10,9 @@
   "author": "Isabel McIlroy",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.20"
   }
 }

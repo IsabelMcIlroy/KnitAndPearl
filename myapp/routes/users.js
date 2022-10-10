@@ -1,14 +1,13 @@
 const fs = require("fs");
 const express = require("express");
+const router = express.Router();
 
-const app = express();
-
-app.use(express.json());
+router.use(express.json());
 
 const usersFile = fs.readFileSync("users_db.json").toString();
 const users = usersFile ? JSON.parse(usersFile).users : [];
 
-app.post("/", (req, res) => {
+router.post("/", (req, res) => {
   const { name, password } = req.body;
 
   const id = users.length + 1;
@@ -19,7 +18,7 @@ app.post("/", (req, res) => {
   res.send({ id, name, password });
 });
 
-app.get("/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   const { id } = req.params;
 
   const { password: _, ...foundUser } = users.find(
