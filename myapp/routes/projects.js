@@ -8,20 +8,20 @@ const projectsFile = fs.readFileSync("projects_db.json").toString();
 const projects = projectsFile ? JSON.parse(projectsFile).projects : [];
 
 router.post("/", (req, res) => {
-  const { owner, name } = req.body;
+  const { owner, name, type } = req.body;
 
   const id = projects.length + 1;
 
-  projects.push({ id, owner, name });
+  projects.push({ id, owner, name, type });
   fs.writeFileSync("projects_db.json", JSON.stringify({ projects: projects }));
 
-  res.send({ id, owner, name });
+  res.send({ id, owner, name, type });
 });
 
 router.get("/:id", (req, res) => {
   const { id } = req.params;
 
-  const { foundProjects } = projects.find(
+  const foundProjects = projects.find(
     (projects) => projects.id === parseInt(id, 10)
   );
 
