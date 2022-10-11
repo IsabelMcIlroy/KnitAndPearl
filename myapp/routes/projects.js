@@ -18,14 +18,34 @@ router.post("/", (req, res) => {
   res.send({ id, owner, name, type, grid_colors, created_at });
 });
 
-router.get("/:id", (req, res) => {
-  const { id } = req.params;
+router
+  .route("/:id")
+  .get((req, res) => {
+    const { id } = req.params;
 
-  const foundProjects = projects.find(
-    (projects) => projects.id === parseInt(id, 10)
-  );
+    const foundProjects = projects.find(
+      (projects) => projects.id === parseInt(id, 10)
+    );
+    console.log("get this project");
+    res.send(foundProjects);
+  })
+  .put((req, res) => {
+    const { id } = req.params;
 
-  res.send(foundProjects);
-});
+    const foundProjects = projects.find(
+      (projects) => projects.id === parseInt(id, 10)
+    );
+    console.log("update this project");
+    res.send(foundProjects);
+  })
+  .delete((req, res) => {
+    const { id } = req.params;
+
+    const foundProjects = projects.find(
+      (projects) => projects.id === parseInt(id, 10)
+    );
+    console.log("delete this project");
+    res.send(foundProjects);
+  });
 
 module.exports = router;
