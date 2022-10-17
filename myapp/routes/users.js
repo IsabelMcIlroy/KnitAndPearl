@@ -2,8 +2,6 @@ const fs = require("fs");
 const express = require("express");
 const router = express.Router();
 
-router.use(express.json());
-
 const usersFile = fs.readFileSync("users_db.json").toString();
 const users = usersFile ? JSON.parse(usersFile).users : [];
 
