@@ -6,14 +6,14 @@ const projectsFile = fs.readFileSync("projects_db.json").toString();
 const projects = projectsFile ? JSON.parse(projectsFile).projects : [];
 
 router.post("/", (req, res) => {
-  const { owner, name, type, grid_colors, created_at } = req.body;
+  const { owner_id, name, type, grid_colors, created_at } = req.body;
 
   const id = projects.length + 1;
 
-  projects.push({ id, owner, name, type, grid_colors, created_at });
+  projects.push({ id, owner_id, name, type, grid_colors, created_at });
   fs.writeFileSync("projects_db.json", JSON.stringify({ projects: projects }));
 
-  res.send({ id, owner, name, type, grid_colors, created_at });
+  res.send({ id, owner_id, name, type, grid_colors, created_at });
 });
 
 router
