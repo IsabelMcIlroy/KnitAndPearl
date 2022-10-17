@@ -1,4 +1,7 @@
 const express = require("express");
+const { initSqlite } = require("./database");
+
+initSqlite();
 
 const app = express();
 

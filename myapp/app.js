@@ -3,7 +3,7 @@ let sql;
 
 //connect to DB
 const db = new sqlite3.Database(
-  "./knittingProject.db",
+  "./datebase.db",
   sqlite3.OPEN_READWRITE,
   (err) => {
     if (err) return console.error(err.message);
