@@ -36,9 +36,11 @@ app.get("/", function (req, res) {
 const userRouter = require("./routes/users");
 const projectRouter = require("./routes/projects");
 const loginRouter = require("./routes/login");
+const logoutRouter = require("./routes/logout");
 
 app.use("/users", userRouter);
 app.use("/projects", projectRouter);
 app.use("/login", loginRouter);
+app.use("/logout", logoutRouter);
 
 app.listen(3000);
