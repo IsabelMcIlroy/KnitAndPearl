@@ -1,5 +1,6 @@
 const express = require("express");
 const { initSqlite } = require("./database");
+app.use(session({ secret: "keyboard cat", cookie: { maxAge: 60000 } }));
 
 initSqlite();
 
