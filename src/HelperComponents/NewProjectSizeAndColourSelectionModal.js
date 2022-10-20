@@ -115,7 +115,11 @@ export const NewProjectSizeAndColourSelectionModal = ({
               </Box>
               <Box
                 textAlign="center"
-                sx={{ display: "inline-flex", alignContent: "center" }}
+                sx={{
+                  display: "inline-flex",
+                  alignContent: "center",
+                  flexWrap: "wrap",
+                }}
               >
                 <Box
                   sx={{
@@ -125,12 +129,12 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   }}
                 >
                   <Typography variant="p">Row:</Typography>
+                  <br />
                   <Select
                     required
                     {...register("Row")}
                     error={errors.Row ? true : false}
                     native
-                    label="Row"
                     sx={{ margin: "10px" }}
                     name="Row"
                     value={state.Row}
@@ -155,12 +159,12 @@ export const NewProjectSizeAndColourSelectionModal = ({
                     {errors.Row?.message}
                   </Typography>
                   <Typography variant="p">Column:</Typography>
+                  <br />
                   <Select
                     required
                     {...register("Column")}
                     error={errors.Column ? true : false}
                     native
-                    label="Column"
                     sx={{ margin: "10px" }}
                     name="Column"
                     value={state.Column}
