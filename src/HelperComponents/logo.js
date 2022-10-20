@@ -1,5 +1,5 @@
 import logo from "../images/logo.png";
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 
 export const Logo = (onClick) => {
   return (
@@ -10,9 +10,7 @@ export const Logo = (onClick) => {
         paddingRight: "12px",
       }}
     >
-      <Button onClick={onClick}>
-        <img src={logo} alt="ball of wool" />
-      </Button>
+      <img src={logo} alt="ball of wool" />
     </Box>
   );
 };
