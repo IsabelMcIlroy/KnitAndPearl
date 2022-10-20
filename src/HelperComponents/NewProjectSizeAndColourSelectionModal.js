@@ -48,7 +48,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
   const navigate = useNavigate();
   const onSubmit = (data) => {
     setIsOpen(false);
-    navigate("/KnittingProjectManager/NewProject", {
+    navigate("/KnitAndPearl/NewProject", {
       state: {
         currentProjectName: data.projectName,
         currentProjectType: data.projectType,

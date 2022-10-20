@@ -66,7 +66,7 @@ export const ViewProjectCard = ({ projectName, projectType }) => {
                 <Button
                   size="small"
                   onClick={() =>
-                    navigate(`/KnittingProjectManager/${projectName}Project`, {
+                    navigate(`/KnitAndPearl/${projectName}Project`, {
                       state: {
                         currentProjectName: projectName,
                         currentProjectType: projectType,

@@ -28,7 +28,7 @@ export const NavBar = () => {
           justifyContent: "end",
         }}
       >
-        {pathName !== "/KnittingProjectManager/NewProject" && (
+        {pathName !== "/KnitAndPearl/NewProject" && (
           <WelcomePageOptionButtons
             btnText="New Project"
             onClick={() => {
@@ -59,14 +59,11 @@ export const NavBar = () => {
           }}
         >
           <Grid container direction="column">
-            <Link
-              to="/KnittingProjectManager/"
-              style={{ textDecoration: "none" }}
-            >
+            <Link to="/KnitAndPearl/" style={{ textDecoration: "none" }}>
               <WelcomePageOptionButtons btnText="Home" onClick={handleClose} />
             </Link>
             <Link
-              to="/KnittingProjectManager/ViewProject"
+              to="/KnitAndPearl/ViewProject"
               style={{ textDecoration: "none" }}
             >
               <WelcomePageOptionButtons
@@ -74,10 +71,7 @@ export const NavBar = () => {
                 onClick={handleClose}
               />
             </Link>
-            <Link
-              to="/KnittingProjectManager/"
-              style={{ textDecoration: "none" }}
-            >
+            <Link to="/KnitAndPearl/" style={{ textDecoration: "none" }}>
               <WelcomePageOptionButtons
                 btnText="Log-in"
                 onClick={handleClose}
