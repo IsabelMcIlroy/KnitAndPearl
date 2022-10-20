@@ -1,4 +1,4 @@
-# Knitting Project Manager
+# Knit & Pearl
 
 ## Description
 
@@ -22,7 +22,7 @@ As someone who enjoys knitting I thought this would be a fun way to learn react,
 
 ## Link to Demo Site
 
-https://isabelmcilroy.github.io/KnittingProjectManager/
+https://isabelmcilroy.github.io/KnitAndPearl/
 
 ## Screenshot
 
