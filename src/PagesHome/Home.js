@@ -28,7 +28,7 @@ export const Home = () => {
           paddingTop: "100px",
         }}
       >
-        <Title titleText={"Knitting Project Manager"} />
+        <Title titleText={"Knit & Pearl"} />
 
         <Box
           sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
