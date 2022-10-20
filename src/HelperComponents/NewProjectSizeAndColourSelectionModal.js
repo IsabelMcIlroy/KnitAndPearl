@@ -119,6 +119,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   display: "inline-flex",
                   alignContent: "center",
                   flexWrap: "wrap",
+                  textAlign: "center",
                 }}
               >
                 <Box
@@ -126,6 +127,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
                     verticalAlign: "middle",
                     display: "inline",
                     padding: "12px",
+                    margin: "0 auto",
                   }}
                 >
                   <Typography variant="p">Row:</Typography>
@@ -153,6 +155,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
                     verticalAlign: "middle",
                     display: "inline",
                     padding: "12px",
+                    margin: "0 auto",
                   }}
                 >
                   <Typography variant="inherit" color={palette.knittingPurple}>
