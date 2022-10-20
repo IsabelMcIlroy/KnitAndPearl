@@ -12,32 +12,17 @@ export const Router = () => {
   return (
     <Routes>
       <Route element={<NavBar />}>
+        <Route path="/KnitAndPearl/NewProject" element={<NewProject />} />
+        <Route path="/KnitAndPearl/ViewProject" element={<ViewProject />} />
+        <Route path="/KnitAndPearl/TreesProject" element={<TreesProject />} />
         <Route
-          path="/KnittingProjectManager/NewProject"
-          element={<NewProject />}
-        />
-        <Route
-          path="/KnittingProjectManager/ViewProject"
-          element={<ViewProject />}
-        />
-        <Route
-          path="/KnittingProjectManager/TreesProject"
-          element={<TreesProject />}
-        />
-        <Route
-          path="/KnittingProjectManager/MountainsProject"
+          path="/KnitAndPearl/MountainsProject"
           element={<MountainsProject />}
         />
-        <Route
-          path="/KnittingProjectManager/CatsProject"
-          element={<CatsProject />}
-        />
-        <Route
-          path="/KnittingProjectManager/FishProject"
-          element={<FishProject />}
-        />
+        <Route path="/KnitAndPearl/CatsProject" element={<CatsProject />} />
+        <Route path="/KnitAndPearl/FishProject" element={<FishProject />} />
       </Route>
-      <Route path="/KnittingProjectManager/" element={<Home />} />
+      <Route path="/KnitAndPearl/" element={<Home />} />
       <Route
         path="*"
         element={
