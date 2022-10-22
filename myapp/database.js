@@ -1,15 +1,16 @@
 const sqlite3 = require("sqlite3").verbose();
 let sql;
 
+const db = new sqlite3.Database(
+  "./datebase.db",
+  sqlite3.OPEN_READWRITE,
+  (err) => {
+    if (err) return console.error(err.message);
+  }
+);
+
 const initSqlite = () => {
   //connect to DB
-  const db = new sqlite3.Database(
-    "./datebase.db",
-    sqlite3.OPEN_READWRITE,
-    (err) => {
-      if (err) return console.error(err.message);
-    }
-  );
 
   //create users table
   sql = `CREATE TABLE IF NOT EXISTS users (
@@ -33,4 +34,4 @@ const initSqlite = () => {
   db.run(sql);
 };
 
-module.exports.initSqlite = initSqlite;
+module.exports = { db, initSqlite };
