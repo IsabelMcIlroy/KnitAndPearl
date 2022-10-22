@@ -1,12 +1,13 @@
 const express = require("express");
+const session = require("express-session");
 const { initSqlite } = require("./database");
 const escapeHtml = require("escape-html");
 
 initSqlite();
 
-app.use(session({ secret: "keyboard cat", cookie: { maxAge: 60000 } }));
-
 const app = express();
+
+app.use(session({ secret: "keyboard cat", cookie: { maxAge: 60000 } }));
 
 app.use(express.json());
 
@@ -43,4 +44,4 @@ app.use("/projects", projectRouter);
 app.use("/login", loginRouter);
 app.use("/logout", logoutRouter);
 
-app.listen(3000);
+app.listen(3001);
