@@ -34,14 +34,25 @@ app.get("/", function (req, res) {
   );
 });
 
+app.get("/", function (req, res) {
+  res.send(
+    '<form action="/signup" method="post">' +
+      'Username: <input name="user"><br>' +
+      'Password: <input name="pass" type="password"><br>' +
+      '<input type="submit" text="Signup"></form>'
+  );
+});
+
 const userRouter = require("./routes/users");
 const projectRouter = require("./routes/projects");
 const loginRouter = require("./routes/login");
 const logoutRouter = require("./routes/logout");
+const signupRouter = require("./routes/signup");
 
 app.use("/users", userRouter);
 app.use("/projects", projectRouter);
 app.use("/login", loginRouter);
 app.use("/logout", logoutRouter);
+app.use("/signup", signupRouter);
 
 app.listen(3001);
