@@ -7,8 +7,7 @@ router.post("/", express.urlencoded({ extended: false }), function (req, res) {
     if (err) next(err);
 
     // https://github.com/TryGhost/node-sqlite3/wiki/API
-    // Query
-    db.run("SELECT * FROM user WHERE username = ?", req.body.username);
+    db.run("UPDATE tbl SET name = ? WHERE id = ?", "bar", 2);
 
     req.session.user = req.body.user;
 
