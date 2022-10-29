@@ -11,9 +11,11 @@ router.post(
       const hashedPassword = await bcrypt.hash(req.body.password, 10);
       // https://github.com/TryGhost/node-sqlite3/wiki/API
       let newUser = `INSERT INTO users(username, password) VALUES (?,?)`;
-      db.run(newUser, [req.body.username, hashedPassword]);
-      res.redirect("/");
-    } catch {
+      db.run(newUser, [req.body.username, hashedPassword], () => {
+        res.redirect("/");
+      });
+    } catch (e) {
+      console.log(e);
       res.redirect("/signup");
     }
   }
