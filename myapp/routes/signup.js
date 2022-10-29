@@ -12,6 +12,7 @@ router.post(
       // https://github.com/TryGhost/node-sqlite3/wiki/API
       let newUser = `INSERT INTO users(username, password) VALUES (?,?)`;
       db.run(newUser, [req.body.username, hashedPassword], () => {
+        req.session.user = { username: req.body.username };
         res.redirect("/");
       });
     } catch (e) {
