@@ -73,7 +73,7 @@ export const NavBar = () => {
             </Link>
             <Link to="/KnitAndPearl/" style={{ textDecoration: "none" }}>
               <WelcomePageOptionButtons
-                btnText="Log-in"
+                btnText="Logout"
                 onClick={handleClose}
               />
             </Link>
