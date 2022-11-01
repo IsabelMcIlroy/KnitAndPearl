@@ -6,7 +6,7 @@ import { Title } from "../HelperComponents/title";
 import { WelcomePageOptionButtons } from "./HelperComponents/WelcomePageOptionButtons";
 import wool from "../images/wool.jpg";
 import { Logo } from "../HelperComponents/logo";
-import { NewProjectSizeAndColourSelectionModal } from "../HelperComponents/NewProjectSizeAndColourSelectionModal";
+import { LoginModal } from "./HelperComponents/LoginModal";
 
 export const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,15 +31,12 @@ export const Home = () => {
           sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
         >
           <WelcomePageOptionButtons
-            btnText={"New Project"}
+            btnText={"Login"}
             onClick={() => {
               setIsOpen(true);
             }}
           />
-          <NewProjectSizeAndColourSelectionModal
-            open={isOpen}
-            setIsOpen={setIsOpen}
-          />
+          <LoginModal open={isOpen} setIsOpen={setIsOpen} />
 
           <Logo />
           <Link

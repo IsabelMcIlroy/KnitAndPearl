@@ -13,7 +13,7 @@ import {
 import KnittingTheme, { palette, modalTitle } from "../../assets/theme";
 import { ModalButton } from "../../HelperComponents/ModalButton";
 
-export const LoginModal = ({ open, onClick, setIsLoginOpen }) => {
+export const LoginModal = ({ open, onClick, setIsOpen }) => {
   const form = useRef();
   const validationSchema = yup.object().shape({
     userName: yup.string().required("Please enter your username"),
@@ -36,7 +36,7 @@ export const LoginModal = ({ open, onClick, setIsLoginOpen }) => {
   };
   const navigate = useNavigate();
   const onSubmit = () => {
-    setIsLoginOpen(false);
+    setIsOpen(false);
     navigate("/KnittingProjectManager/", {
       state: {
         userName: "",
@@ -108,7 +108,7 @@ export const LoginModal = ({ open, onClick, setIsLoginOpen }) => {
                 <ModalButton
                   text="Cancel"
                   onClick={() => {
-                    setIsLoginOpen(false);
+                    setIsOpen(false);
                   }}
                 />
               </Box>
