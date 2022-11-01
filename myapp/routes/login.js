@@ -9,16 +9,37 @@ router.post(
   async function (req, res) {
     // https://github.com/TryGhost/node-sqlite3/wiki/API
     // Query
-    db.run("SELECT * FROM user WHERE username = ?", req.body.username);
-    try {
-      if (await bcrypt.compare(req.body.password, user.password)) {
-        res.send("welcome!");
-      } else {
-        res.send("incorrect password/username");
+
+    // const user = await db.prepare(SELECT * FROM users WHERE username = ?).get(req.body.username);
+    // const passwordMatches = await bcrypt.compare(req.body.password, row.password);
+
+    // if (passwordMatches) {
+    //   res.send("welcome!");
+    // } else {
+    //   res.send("incorrect password/username");
+    // }
+    db.get(
+      "SELECT * FROM users WHERE username = ?",
+      req.body.username,
+      (err, row) => {
+        if (err) throw err;
+        try {
+          bcrypt.compare(req.body.password, row.password, (err, same) => {
+            if (err) throw err;
+            console.log(req.body.password, row.password);
+            if (same) {
+              res.send("welcome!");
+              req.session.user = { username: row.username };
+            } else {
+              res.send("incorrect password/username");
+            }
+          });
+        } catch (e) {
+          console.log(e);
+          res.status(500).send();
+        }
       }
-    } catch {
-      res.status(500).send();
-    }
+    );
   }
 );
 
