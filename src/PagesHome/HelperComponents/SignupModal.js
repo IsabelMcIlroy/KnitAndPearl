@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -20,29 +20,13 @@ export const SignupModal = ({ open, onClick, setIsSignupOpen }) => {
     password: yup.string().required("Please enter your password"),
   });
   const {
-    register,
     formState: { errors },
     handleSubmit,
   } = useForm({ resolver: yupResolver(validationSchema) });
-  const [state, setState] = useState({
-    username: "",
-    password: "",
-  });
-  const handleInput = (event) => {
-    setState({
-      ...state,
-      [event.target.name]: event.target.value,
-    });
-  };
   const navigate = useNavigate();
   const onSubmit = () => {
     setIsSignupOpen(false);
-    navigate("/KnitAndPearl/ViewProjects", {
-      state: {
-        username: "",
-        password: "",
-      },
-    });
+    navigate("/KnitAndPearl/ViewProjects", {});
   };
   return (
     <ThemeProvider theme={KnittingTheme}>
@@ -77,12 +61,9 @@ export const SignupModal = ({ open, onClick, setIsSignupOpen }) => {
                 <TextField
                   required
                   fullWidth
-                  {...register("username")}
                   error={errors.username ? true : false}
                   label="Username"
                   name="username"
-                  value={state.username}
-                  onChange={handleInput}
                   sx={{ width: "90%" }}
                 />
                 <Typography variant="inherit" color={palette.knittingPurple}>
@@ -92,12 +73,9 @@ export const SignupModal = ({ open, onClick, setIsSignupOpen }) => {
               <Box padding="10px">
                 <TextField
                   fullWidth
-                  {...register("password")}
                   error={errors.password ? true : false}
                   label="Password"
                   name="password"
-                  value={state.password}
-                  onChange={handleInput}
                   sx={{ width: "90%" }}
                 />
                 <Typography variant="inherit" color={palette.knittingPurple}>
