@@ -91,6 +91,7 @@ export const SignupModal = ({ open, onClick, setIsSignupOpen }) => {
                   error={errors.password ? true : false}
                   label="Password"
                   name="password"
+                  type="password"
                   value={state.password}
                   onChange={handleInput}
                   sx={{ width: "90%" }}
