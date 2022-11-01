@@ -1,15 +1,16 @@
 import { useState } from "react";
 import "../index.css";
-import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import { Title } from "../HelperComponents/title";
 import { WelcomePageOptionButtons } from "./HelperComponents/WelcomePageOptionButtons";
 import wool from "../images/wool.jpg";
 import { Logo } from "../HelperComponents/logo";
 import { LoginModal } from "./HelperComponents/LoginModal";
+import { SignupModal } from "./HelperComponents/SignupModal";
 
 export const Home = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isSignupOpen, setIsSignupOpen] = useState(false);
   return (
     <Box
       sx={{
@@ -33,18 +34,19 @@ export const Home = () => {
           <WelcomePageOptionButtons
             btnText={"Login"}
             onClick={() => {
-              setIsOpen(true);
+              setIsLoginOpen(true);
             }}
           />
-          <LoginModal open={isOpen} setIsOpen={setIsOpen} />
+          <LoginModal open={isLoginOpen} setIsLoginOpen={setIsLoginOpen} />
 
           <Logo />
-          <Link
-            to="/KnitAndPearl/ViewProject"
-            style={{ textDecoration: "none" }}
-          >
-            <WelcomePageOptionButtons btnText={"View Projects"} />
-          </Link>
+          <WelcomePageOptionButtons
+            btnText={"Signup"}
+            onClick={() => {
+              setIsSignupOpen(true);
+            }}
+          />
+          <SignupModal open={isSignupOpen} setIsSignupOpen={setIsSignupOpen} />
         </Box>
       </Box>
     </Box>
