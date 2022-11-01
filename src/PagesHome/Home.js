@@ -23,34 +23,48 @@ export const Home = () => {
       <Box
         sx={{
           textAlign: "center",
-          paddingTop: "100px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
         }}
       >
-        <Title titleText={"Knit & Pearl"} />
-
         <Box
           sx={{
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
+            backgroundColor: "rgba(232, 225, 236, 0.7)",
+            borderRadius: "36px",
+            padding: "12%",
           }}
         >
-          <WelcomePageOptionButtons
-            btnText={"Login"}
-            onClick={() => {
-              setIsLoginOpen(true);
-            }}
-          />
-          <LoginModal open={isLoginOpen} setIsLoginOpen={setIsLoginOpen} />
+          <Title titleText={"Knit & Pearl"} />
 
-          <Logo />
-          <WelcomePageOptionButtons
-            btnText={"Signup"}
-            onClick={() => {
-              setIsSignupOpen(true);
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              flexWrap: "wrap",
             }}
-          />
-          <SignupModal open={isSignupOpen} setIsSignupOpen={setIsSignupOpen} />
+          >
+            <WelcomePageOptionButtons
+              btnText={"Login"}
+              onClick={() => {
+                setIsLoginOpen(true);
+              }}
+            />
+            <LoginModal open={isLoginOpen} setIsLoginOpen={setIsLoginOpen} />
+
+            <Logo />
+            <WelcomePageOptionButtons
+              btnText={"Signup"}
+              onClick={() => {
+                setIsSignupOpen(true);
+              }}
+            />
+            <SignupModal
+              open={isSignupOpen}
+              setIsSignupOpen={setIsSignupOpen}
+            />
+          </Box>
         </Box>
       </Box>
     </Box>
