@@ -16,7 +16,7 @@ import { ModalButton } from "../../HelperComponents/ModalButton";
 export const SignupModal = ({ open, onClick, setIsSignupOpen }) => {
   const form = useRef();
   const validationSchema = yup.object().shape({
-    userName: yup.string().required("Please enter your username"),
+    username: yup.string().required("Please enter your username"),
     password: yup.string().required("Please enter your password"),
   });
   const {
@@ -25,7 +25,7 @@ export const SignupModal = ({ open, onClick, setIsSignupOpen }) => {
     handleSubmit,
   } = useForm({ resolver: yupResolver(validationSchema) });
   const [state, setState] = useState({
-    userName: "",
+    username: "",
     password: "",
   });
   const handleInput = (event) => {
@@ -37,9 +37,9 @@ export const SignupModal = ({ open, onClick, setIsSignupOpen }) => {
   const navigate = useNavigate();
   const onSubmit = () => {
     setIsSignupOpen(false);
-    navigate("/KnittingProjectManager/", {
+    navigate("/KnitAndPearl/ViewProjects", {
       state: {
-        userName: "",
+        username: "",
         password: "",
       },
     });
@@ -51,15 +51,15 @@ export const SignupModal = ({ open, onClick, setIsSignupOpen }) => {
           style={{
             overflowY: "auto",
             overflowStyle: "scroll",
-            transform: "translate(25%, 15%)",
+            transform: "translate(50%, 25%)",
             display: "inline-block",
             height: "80%",
             maxHeight: "500px",
-            width: "70%",
+            width: "50%",
           }}
         >
           <Typography variant="h4" sx={modalTitle}>
-            New Knitting Project
+            Signup
           </Typography>
           <Box
             sx={{
@@ -77,22 +77,23 @@ export const SignupModal = ({ open, onClick, setIsSignupOpen }) => {
                 <TextField
                   required
                   fullWidth
-                  {...register("projectName")}
-                  error={errors.projectName ? true : false}
-                  label="userame"
-                  name="userName"
-                  value={state.userName}
+                  {...register("username")}
+                  error={errors.username ? true : false}
+                  label="Username"
+                  name="username"
+                  value={state.username}
                   onChange={handleInput}
                   sx={{ width: "90%" }}
                 />
                 <Typography variant="inherit" color={palette.knittingPurple}>
-                  {errors.userame?.message}
+                  {errors.username?.message}
                 </Typography>
               </Box>
               <Box padding="10px">
                 <TextField
                   fullWidth
-                  {...register("projectType")}
+                  {...register("password")}
+                  error={errors.password ? true : false}
                   label="Password"
                   name="password"
                   value={state.password}

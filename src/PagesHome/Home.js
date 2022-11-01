@@ -29,7 +29,11 @@ export const Home = () => {
         <Title titleText={"Knit & Pearl"} />
 
         <Box
-          sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
         >
           <WelcomePageOptionButtons
             btnText={"Login"}
