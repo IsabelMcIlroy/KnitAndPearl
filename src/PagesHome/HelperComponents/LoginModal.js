@@ -13,7 +13,12 @@ import {
 import KnittingTheme, { palette, modalTitle } from "../../assets/theme";
 import { ModalButton } from "../../HelperComponents/ModalButton";
 
-export const LoginModal = ({ open, onClick, setIsLoginOpen }) => {
+export const LoginModal = ({
+  open,
+  onClick,
+  setIsLoginOpen,
+  setIsSignupOpen,
+}) => {
   const form = useRef();
   const validationSchema = yup.object().shape({
     username: yup.string().required("Please enter your username"),
@@ -68,7 +73,7 @@ export const LoginModal = ({ open, onClick, setIsLoginOpen }) => {
               onSubmit={handleSubmit(onSubmit)}
               style={{ textAlign: "center" }}
             >
-              <Box padding="10px">
+              <Box padding="12px">
                 <TextField
                   required
                   fullWidth
@@ -84,7 +89,7 @@ export const LoginModal = ({ open, onClick, setIsLoginOpen }) => {
                   {errors.username?.message}
                 </Typography>
               </Box>
-              <Box padding="10px">
+              <Box padding="12px">
                 <TextField
                   fullWidth
                   {...register("password")}
@@ -99,6 +104,20 @@ export const LoginModal = ({ open, onClick, setIsLoginOpen }) => {
                 <Typography variant="inherit" color={palette.knittingPurple}>
                   {errors.password?.message}
                 </Typography>
+                <Box padding="12px">
+                  <Typography
+                    variant="p"
+                    onClick={() => {
+                      setIsLoginOpen(false);
+                      setIsSignupOpen(true);
+                    }}
+                  >
+                    Not signed up yet?{" "}
+                    <span style={{ textDecoration: "underline" }}>
+                      Signup Here!
+                    </span>
+                  </Typography>
+                </Box>
               </Box>
               <Box textAlign="center">
                 <ModalButton onClick={handleSubmit(onSubmit)} text="Submit" />

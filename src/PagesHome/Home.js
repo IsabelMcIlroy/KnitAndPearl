@@ -51,7 +51,11 @@ export const Home = () => {
                 setIsLoginOpen(true);
               }}
             />
-            <LoginModal open={isLoginOpen} setIsLoginOpen={setIsLoginOpen} />
+            <LoginModal
+              open={isLoginOpen}
+              setIsLoginOpen={setIsLoginOpen}
+              setIsSignupOpen={setIsSignupOpen}
+            />
 
             <Logo />
             <WelcomePageOptionButtons
@@ -63,6 +67,7 @@ export const Home = () => {
             <SignupModal
               open={isSignupOpen}
               setIsSignupOpen={setIsSignupOpen}
+              setIsLoginOpen={setIsLoginOpen}
             />
           </Box>
         </Box>
