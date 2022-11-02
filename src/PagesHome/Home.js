@@ -31,7 +31,7 @@ export const Home = () => {
       >
         <Box
           sx={{
-            backgroundColor: "rgba(232, 225, 236, 0.7)",
+            backgroundColor: "rgba(232, 225, 236, 0.8)",
             borderRadius: "36px",
             padding: "12%",
           }}
@@ -41,8 +41,10 @@ export const Home = () => {
           <Box
             sx={{
               display: "flex",
+              alignItems: "center",
               justifyContent: "center",
               flexWrap: "wrap",
+              flexDirection: { xs: "column", lg: "row" },
             }}
           >
             <WelcomePageOptionButtons
