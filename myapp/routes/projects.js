@@ -41,32 +41,18 @@ router.get(
 
 router
   .route("/:id")
-  .get((req, res) => {
-    const { id } = req.params;
+  .get(express.urlencoded({ extended: false }), async (req, res) => {
+    db.get("SELECT * FROM projects WHERE name = ?", req.body.name);
 
-    const foundProjects = projects.find(
-      (projects) => projects.id === parseInt(id, 10)
-    );
     console.log("get this project");
-    res.send(foundProjects);
   })
-  .put((req, res) => {
-    const { id } = req.params;
-
-    const foundProjects = projects.find(
-      (projects) => projects.id === parseInt(id, 10)
-    );
+  .put(express.urlencoded({ extended: false }), async (req, res) => {
+    db.get("SELECT * FROM projects WHERE name = ?", req.body.name);
     console.log("update this project");
-    res.send(foundProjects);
   })
-  .delete((req, res) => {
-    const { id } = req.params;
-
-    const foundProjects = projects.find(
-      (projects) => projects.id === parseInt(id, 10)
-    );
+  .delete(express.urlencoded({ extended: false }), async (req, res) => {
+    db.get("SELECT * FROM projects WHERE name = ?", req.body.name);
     console.log("delete this project");
-    res.send(foundProjects);
   });
 
 module.exports = router;
