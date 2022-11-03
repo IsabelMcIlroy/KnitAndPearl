@@ -31,6 +31,14 @@ router.post(
   }
 );
 
+router.get(
+  "/",
+  express.urlencoded({ extended: false }),
+  async function (req, res) {
+    db.get("SELECT * FROM projects WHERE owner_id = ?", req.body.owner_id);
+  }
+);
+
 router
   .route("/:id")
   .get((req, res) => {
