@@ -5,7 +5,6 @@ import { palette, navBarButtons, titleFontSx } from "../assets/theme";
 
 export const NavBar = () => {
   const pathName = window.location.pathname;
-  console.log(window.location.pathname);
   return (
     <>
       <AppBar
@@ -19,11 +18,13 @@ export const NavBar = () => {
       >
         <Box
           sx={{
-            display: "inline-flex",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <Logo />
-          <Typography sx={titleFontSx} variant="h5">
+          <Typography sx={titleFontSx} variant="h4">
             Knit&Pearl
           </Typography>
         </Box>
