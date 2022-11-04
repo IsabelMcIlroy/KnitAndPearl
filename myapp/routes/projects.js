@@ -1,12 +1,14 @@
 const fs = require("fs");
 const express = require("express");
 const router = express.Router();
+const isAuthenticated = require("../isAuthenticated");
 
 const projectsFile = fs.readFileSync("projects_db.json").toString();
 const projects = projectsFile ? JSON.parse(projectsFile).projects : [];
 
 router.post(
   "/",
+  isAuthenticated,
   express.urlencoded({ extended: false }),
   async function (req, res) {
     try {
