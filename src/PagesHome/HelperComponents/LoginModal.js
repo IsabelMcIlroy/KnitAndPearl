@@ -42,7 +42,7 @@ export const LoginModal = ({
   const navigate = useNavigate();
   const onSubmit = () => {
     setIsLoginOpen(false);
-    navigate("/KnitAndPearl/ViewProjects", {});
+    navigate("/KnitAndPearl/ViewProject", {});
   };
   return (
     <ThemeProvider theme={KnittingTheme}>
