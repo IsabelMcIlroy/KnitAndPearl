@@ -120,7 +120,7 @@ export const SignupModal = ({
                 </Box>
               </Box>
               <Box textAlign="center">
-                <ModalButton onClick={handleSubmit(onSubmit)} text="Submit" />
+                <ModalButton onClick={handleSubmit(onSubmit)} text="Signup" />
                 <ModalButton
                   text="Cancel"
                   onClick={() => {
