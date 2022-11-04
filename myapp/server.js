@@ -7,7 +7,14 @@ initSqlite();
 
 const app = express();
 
-app.use(session({ secret: "keyboard cat", cookie: { maxAge: 60000 } }));
+app.use(
+  session({
+    secret: "keyboard cat",
+    resave: true,
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 },
+  })
+);
 
 app.use(express.json());
 
