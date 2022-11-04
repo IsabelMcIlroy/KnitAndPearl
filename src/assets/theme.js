@@ -70,6 +70,9 @@ const KnittingTheme = createTheme({
             backgroundColor: "#724949",
           },
         },
+        "View Projects": {
+          backgroundColor: "white",
+        },
       },
     },
     MuiModal: {
@@ -88,6 +91,17 @@ const KnittingTheme = createTheme({
 });
 
 export default KnittingTheme;
+
+export const navBarButtons = {
+  backgroundColor: palette.knittingGray,
+  color: palette.knittingLightBlue,
+  margin: "12px 24px",
+  flexBasis: "auto",
+  height: "3rem",
+  "&:hover": {
+    backgroundColor: "#A6A0AA",
+  },
+};
 
 export const titleFontSx = {
   fontFamily: "La Belle Aurore",
