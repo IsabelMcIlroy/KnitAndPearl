@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { AppBar, Grid, Menu, Button } from "@mui/material";
-import navBarWool from "../images/navBarWool.jpg";
 import { WelcomePageOptionButtons } from "../PagesHome/HelperComponents/WelcomePageOptionButtons";
 import { Logo } from "./logo";
-import { NewProjectSizeAndColourSelectionModal } from "./NewProjectSizeAndColourSelectionModal";
+import { palette } from "../assets/theme";
 
 export const NavBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -15,31 +14,17 @@ export const NavBar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const [isOpen, setIsOpen] = useState(false);
-  const pathName = window.location.pathname;
   return (
     <>
       <AppBar
         postion="sticky"
         sx={{
-          backgroundImage: `url(${navBarWool})`,
+          backgroundColor: palette.knittingLightBlue,
           padding: "10px",
           flexDirection: "row",
           justifyContent: "end",
         }}
       >
-        {pathName !== "/KnitAndPearl/NewProject" && (
-          <WelcomePageOptionButtons
-            btnText="New Project"
-            onClick={() => {
-              setIsOpen(true);
-            }}
-          />
-        )}
-        <NewProjectSizeAndColourSelectionModal
-          open={isOpen}
-          setIsOpen={setIsOpen}
-        />
         <Button
           aria-controls={open ? "basic-menu" : undefined}
           aria-haspopup="true"

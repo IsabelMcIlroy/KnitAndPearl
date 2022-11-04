@@ -3,8 +3,11 @@ import { Box, Typography, TextField } from "@mui/material";
 import { palette } from "../assets/theme";
 import { ViewProjectCard } from "./HelperComponents/ViewProjectCard";
 import { ViewProjectDataList } from "./ProjectData/ProjectData";
+import { WelcomePageOptionButtons } from "../PagesHome/HelperComponents/WelcomePageOptionButtons";
+import { NewProjectSizeAndColourSelectionModal } from "../HelperComponents/NewProjectSizeAndColourSelectionModal";
 
 export const ViewProject = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [allProjects] = useState(ViewProjectDataList);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -68,6 +71,16 @@ export const ViewProject = () => {
             );
           })}
         </Box>
+        <WelcomePageOptionButtons
+          btnText="New Project"
+          onClick={() => {
+            setIsOpen(true);
+          }}
+        />
+        <NewProjectSizeAndColourSelectionModal
+          open={isOpen}
+          setIsOpen={setIsOpen}
+        />
       </Box>
     </Box>
   );
