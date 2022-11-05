@@ -16,8 +16,6 @@ app.use(
   })
 );
 
-app.use(express.json());
-
 function isAuthenticated(req, res, next) {
   if (req.session.user) next();
   else next("route");
@@ -55,6 +53,8 @@ const projectRouter = require("./routes/projects");
 const loginRouter = require("./routes/login");
 const logoutRouter = require("./routes/logout");
 const signupRouter = require("./routes/signup");
+
+app.use(express.json());
 
 app.use("/users", userRouter);
 app.use("/projects", projectRouter);
