@@ -71,16 +71,18 @@ export const ViewProject = () => {
             );
           })}
         </Box>
-        <WelcomePageOptionButtons
-          btnText="New Project"
-          onClick={() => {
-            setIsOpen(true);
-          }}
-        />
-        <NewProjectSizeAndColourSelectionModal
-          open={isOpen}
-          setIsOpen={setIsOpen}
-        />
+        <Box sx={{ position: "sticky" }}>
+          <WelcomePageOptionButtons
+            btnText="New Project"
+            onClick={() => {
+              setIsOpen(true);
+            }}
+          />
+          <NewProjectSizeAndColourSelectionModal
+            open={isOpen}
+            setIsOpen={setIsOpen}
+          />
+        </Box>
       </Box>
     </Box>
   );
