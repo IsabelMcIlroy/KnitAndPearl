@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import useFetch from "react-fetch-hook";
 import { Box, Typography, TextField } from "@mui/material";
 import { palette } from "../assets/theme";
 import { ViewProjectCard } from "./HelperComponents/ViewProjectCard";
@@ -7,10 +8,11 @@ import { WelcomePageOptionButtons } from "../PagesHome/HelperComponents/WelcomeP
 import { NewProjectSizeAndColourSelectionModal } from "../HelperComponents/NewProjectSizeAndColourSelectionModal";
 
 export const ViewProject = () => {
+  const { isLoading, data, error } = useFetch("/projects");
   const [isOpen, setIsOpen] = useState(false);
   const [allProjects] = useState(ViewProjectDataList);
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  //const [searchResults, setSearchResults] = useState([]);
   useEffect(() => {
     const projectsToShow = allProjects.filter(
       (project) =>
@@ -61,7 +63,21 @@ export const ViewProject = () => {
             justifyContent: "space-evenly",
           }}
         >
-          {searchResults.map((displayProjectsArray) => {
+          {isLoading && <Typography variant="h5">Loading...</Typography>}
+          {error && (
+            <Typography variant="h5">
+              There has been a problem, {error}!
+            </Typography>
+          )}
+          {data &&
+            data.map(({ name, type }) => (
+              <ViewProjectCard
+                key={name}
+                projectName={name}
+                projectType={type}
+              />
+            ))}
+          {/* {searchResults.map((displayProjectsArray) => {
             return (
               <ViewProjectCard
                 key={displayProjectsArray.projectName}
@@ -69,7 +85,7 @@ export const ViewProject = () => {
                 projectType={displayProjectsArray.projectType}
               />
             );
-          })}
+          })} */}
         </Box>
         <Box sx={{ position: "sticky" }}>
           <WelcomePageOptionButtons
