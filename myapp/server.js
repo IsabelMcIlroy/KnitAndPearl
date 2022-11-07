@@ -30,24 +30,6 @@ app.get("/", isAuthenticated, function (req, res) {
   );
 });
 
-app.get("/test_login", function (req, res) {
-  res.send(
-    '<form action="/login" method="post">' +
-      'Username: <input name="username"><br>' +
-      'Password: <input name="password" type="password"><br>' +
-      '<input type="submit" text="Login"></form>'
-  );
-});
-
-app.get("/test_signup", function (req, res) {
-  res.send(
-    '<form action="/signup" method="post">' +
-      'Username: <input name="username"><br>' +
-      'Password: <input name="password" type="password"><br>' +
-      '<input type="submit" text="Signup"></form>'
-  );
-});
-
 const userRouter = require("./routes/users");
 const projectRouter = require("./routes/projects");
 const loginRouter = require("./routes/login");
