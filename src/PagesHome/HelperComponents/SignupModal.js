@@ -29,18 +29,17 @@ export const SignupModal = ({
     formState: { errors },
     handleSubmit,
   } = useForm({ resolver: yupResolver(validationSchema) });
-  const [state, setState] = useState({
-    username: "",
-    password: "",
-  });
-  const handleInput = (event) => {
-    setState({
-      ...state,
-      [event.target.name]: event.target.value,
-    });
-  };
   const navigate = useNavigate();
-  const onSubmit = () => {
+  const onSubmit = async (data) => {
+    const response = await fetch("/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const payload = await response.json();
+    console.log(payload);
     setIsSignupOpen(false);
     navigate("/KnitAndPearl/ViewProject", {});
   };
@@ -80,9 +79,6 @@ export const SignupModal = ({
                   {...register("username")}
                   error={errors.username ? true : false}
                   label="Username"
-                  name="username"
-                  value={state.username}
-                  onChange={handleInput}
                   sx={{ width: "90%" }}
                 />
                 <Typography variant="inherit" color={palette.knittingPurple}>
@@ -95,10 +91,7 @@ export const SignupModal = ({
                   {...register("password")}
                   error={errors.password ? true : false}
                   label="Password"
-                  name="password"
                   type="password"
-                  value={state.password}
-                  onChange={handleInput}
                   sx={{ width: "90%" }}
                 />
                 <Typography variant="inherit" color={palette.knittingPurple}>
