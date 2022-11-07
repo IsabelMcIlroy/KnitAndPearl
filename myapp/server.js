@@ -35,6 +35,7 @@ const projectRouter = require("./routes/projects");
 const loginRouter = require("./routes/login");
 const logoutRouter = require("./routes/logout");
 const signupRouter = require("./routes/signup");
+const currentUserRouter = require("./routes/currentUser");
 
 app.use(express.json());
 
@@ -43,5 +44,6 @@ app.use("/projects", projectRouter);
 app.use("/login", loginRouter);
 app.use("/logout", logoutRouter);
 app.use("/signup", signupRouter);
+app.use("/currentUser", currentUserRouter);
 
 app.listen(3001);
