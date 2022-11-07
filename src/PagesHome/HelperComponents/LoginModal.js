@@ -77,9 +77,9 @@ export const LoginModal = ({
                 <TextField
                   required
                   fullWidth
-                  {...register("username")}
-                  error={errors.username ? true : false}
                   label="Username"
+                  error={errors.username ? true : false}
+                  {...register("username")}
                   sx={{ width: "90%" }}
                 />
                 <Typography variant="inherit" color={palette.knittingPurple}>
@@ -89,10 +89,10 @@ export const LoginModal = ({
               <Box padding="12px">
                 <TextField
                   fullWidth
-                  {...register("password")}
                   error={errors.password ? true : false}
                   label="Password"
                   type="password"
+                  {...register("password")}
                   sx={{ width: "90%" }}
                 />
                 <Typography variant="inherit" color={palette.knittingPurple}>
