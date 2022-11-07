@@ -16,6 +16,11 @@ router.post("/", (req, res) => {
   res.send({ id, name, password });
 });
 
+router.get("/currentUser", (req, res) => {
+  // Return req.user if you're logged in
+  // If not, it will return 404
+});
+
 router.get("/:id", (req, res) => {
   const { id } = req.params;
 
