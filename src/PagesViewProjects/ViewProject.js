@@ -12,7 +12,8 @@ export const ViewProject = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [allProjects] = useState(ViewProjectDataList);
   const [searchQuery, setSearchQuery] = useState("");
-  //const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
+  console.log(searchResults);
   useEffect(() => {
     const projectsToShow = allProjects.filter(
       (project) =>
