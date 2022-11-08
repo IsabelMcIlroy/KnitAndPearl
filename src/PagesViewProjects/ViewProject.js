@@ -8,12 +8,15 @@ import { WelcomePageOptionButtons } from "../PagesHome/HelperComponents/WelcomeP
 import { NewProjectSizeAndColourSelectionModal } from "../HelperComponents/NewProjectSizeAndColourSelectionModal";
 
 export const ViewProject = () => {
-  const { isLoading, data, error } = useFetch("/projects");
+  const { isLoading, data, error } = useFetch("/currentUser");
+  console.log(isLoading);
+  console.log(error);
+  console.log(data);
+  // const { isLoading, data, error } = useFetch("/projects");
   const [isOpen, setIsOpen] = useState(false);
   const [allProjects] = useState(ViewProjectDataList);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  console.log(searchResults);
   useEffect(() => {
     const projectsToShow = allProjects.filter(
       (project) =>
@@ -64,10 +67,10 @@ export const ViewProject = () => {
             justifyContent: "space-evenly",
           }}
         >
-          {isLoading && <Typography variant="h5">Loading...</Typography>}
+          {/* {isLoading && <Typography variant="h5">Loading...</Typography>}
           {error && (
             <Typography variant="h5">
-              There has been a problem, {error}!
+              There has been a problem, {{ error }}!
             </Typography>
           )}
           {data &&
@@ -77,8 +80,8 @@ export const ViewProject = () => {
                 projectName={name}
                 projectType={type}
               />
-            ))}
-          {/* {searchResults.map((displayProjectsArray) => {
+            ))} */}
+          {searchResults.map((displayProjectsArray) => {
             return (
               <ViewProjectCard
                 key={displayProjectsArray.projectName}
@@ -86,7 +89,7 @@ export const ViewProject = () => {
                 projectType={displayProjectsArray.projectType}
               />
             );
-          })} */}
+          })}
         </Box>
         <Box sx={{ position: "sticky" }}>
           <WelcomePageOptionButtons
