@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import useFetch from "react-fetch-hook";
-import { Box, Typography, TextField } from "@mui/material";
+import { Box, Typography, TextField, Fab } from "@mui/material";
 import { palette } from "../assets/theme";
 import { ViewProjectCard } from "./HelperComponents/ViewProjectCard";
 import { ViewProjectDataList } from "./ProjectData/ProjectData";
@@ -91,18 +91,30 @@ export const ViewProject = () => {
             );
           })}
         </Box>
-        <Box sx={{ position: "sticky" }}>
-          <WelcomePageOptionButtons
-            btnText="New Project"
-            onClick={() => {
-              setIsOpen(true);
-            }}
-          />
-          <NewProjectSizeAndColourSelectionModal
-            open={isOpen}
-            setIsOpen={setIsOpen}
-          />
-        </Box>
+        <Fab
+          onClick={() => {
+            setIsOpen(true);
+          }}
+          sx={{
+            position: "sticky",
+            bottom: "16px",
+            padding: "8px",
+            height: "96px",
+            width: "96px",
+            backgroundColor: palette.knittingBlue,
+            color: palette.knittingGray,
+            "&:hover": {
+              backgroundColor: "#0B5082",
+              fontSize: "0.975rem",
+            },
+          }}
+        >
+          New Project
+        </Fab>
+        <NewProjectSizeAndColourSelectionModal
+          open={isOpen}
+          setIsOpen={setIsOpen}
+        />
       </Box>
     </Box>
   );
