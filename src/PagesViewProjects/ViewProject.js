@@ -91,31 +91,32 @@ export const ViewProject = () => {
             );
           })}
         </Box>
-        <Fab
-          onClick={() => {
-            setIsOpen(true);
-          }}
-          sx={{
-            position: "sticky",
-            bottom: "16px",
-            padding: "8px",
-            height: "96px",
-            width: "96px",
-            backgroundColor: palette.knittingBlue,
-            color: palette.knittingGray,
-            "&:hover": {
-              backgroundColor: "#0B5082",
-              fontSize: "0.975rem",
-            },
-          }}
-        >
-          New Project
-        </Fab>
-        <NewProjectSizeAndColourSelectionModal
-          open={isOpen}
-          setIsOpen={setIsOpen}
-        />
       </Box>
+      <Fab
+        onClick={() => {
+          setIsOpen(true);
+        }}
+        sx={{
+          position: "sticky",
+          bottom: "16px",
+          left: "16px",
+          padding: "8px",
+          height: "96px",
+          width: "96px",
+          backgroundColor: palette.knittingBlue,
+          color: palette.knittingGray,
+          "&:hover": {
+            backgroundColor: "#0B5082",
+            fontSize: "0.975rem",
+          },
+        }}
+      >
+        New Project
+      </Fab>
+      <NewProjectSizeAndColourSelectionModal
+        open={isOpen}
+        setIsOpen={setIsOpen}
+      />
     </Box>
   );
 };
