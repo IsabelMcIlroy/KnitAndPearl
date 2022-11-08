@@ -101,8 +101,8 @@ export const ViewProject = () => {
           bottom: "16px",
           left: "16px",
           padding: "8px",
-          height: "96px",
-          width: "96px",
+          height: "84px",
+          width: "84px",
           backgroundColor: palette.knittingBlue,
           color: palette.knittingGray,
           "&:hover": {
