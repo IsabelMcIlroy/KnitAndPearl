@@ -141,12 +141,11 @@ export const editBarButton = {
 };
 
 export const editorDrawerProjectNames = {
-  margin: "12px",
+  margin: "0 12px",
   color: palette.knittingBlue,
+  textTransform: "capitalize",
 };
 
 export const editorDrawerLabels = {
   color: palette.knittingPurple,
-  justifyContent: "start",
-  display: "flex",
 };
