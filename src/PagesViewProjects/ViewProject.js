@@ -96,9 +96,9 @@ export const ViewProject = () => {
           setIsOpen(true);
         }}
         sx={{
-          position: "sticky",
-          bottom: "16px",
-          left: "16px",
+          position: "fixed",
+          bottom: "24px",
+          right: "24px",
           padding: "8px",
           height: "84px",
           width: "84px",
