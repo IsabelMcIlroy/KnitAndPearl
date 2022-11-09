@@ -106,7 +106,6 @@ export const ViewProject = () => {
           color: palette.knittingGray,
           "&:hover": {
             backgroundColor: "#0B5082",
-            fontWeight: "bold",
           },
         }}
       >
