@@ -1,16 +1,18 @@
 import _ from "lodash";
-import { Box, Grid, Typography } from "@mui/material";
-import { palette } from "../../assets/theme";
+import { Box, Grid } from "@mui/material";
+import { NewProjectEditor } from "./NewProjectEditor";
 import { ProjectGridCell } from "./ProjectGridCell";
 
 export const ProjectGrid = ({
   currentlySelectedColor,
-  currentProjectName,
-  currentProjectType,
   gridArray,
   setGridArray,
   currentColumns,
   currentRows,
+  currentProjectName,
+  currentProjectType,
+  setCurrentlySelectedColor,
+  clearGrid,
 }) => {
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
     const newGridArray = [...gridArray];
@@ -20,12 +22,13 @@ export const ProjectGrid = ({
   return (
     <Box sx={{ display: "flex", justifyContent: "center", minWidth: "100vw" }}>
       <Box sx={{ padding: "112px 0 24px 100px" }}>
-        <Typography
-          variant="h3"
-          sx={{ fontFamily: "La Belle Aurore", color: palette.knittingPurple }}
-        >
-          Project: {currentProjectName} {currentProjectType}
-        </Typography>
+        <NewProjectEditor
+          currentProjectName={currentProjectName}
+          currentProjectType={currentProjectType}
+          currentlySelectedColor={currentlySelectedColor}
+          setCurrentlySelectedColor={setCurrentlySelectedColor}
+          clearGrid={clearGrid}
+        />
         <Grid
           container
           spacing={12 / currentColumns}

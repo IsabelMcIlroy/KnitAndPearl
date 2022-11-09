@@ -5,7 +5,7 @@ import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
 import SettingsBackupRestoreRoundedIcon from "@mui/icons-material/SettingsBackupRestoreRounded";
 import { editBarButton, editBarButtonIcon } from "../../assets/theme";
 
-export const EditDrawerButtonsAndPopover = ({ popoverText, onClick }) => {
+export const EditButtonsAndPopover = ({ popoverText, onClick }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   return (

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Box } from "@mui/material";
-import { NewProjectEditorDrawer } from "./HelperComponents/NewProjectEditorDrawer";
 import { ProjectGrid } from "./HelperComponents/ProjectGrid";
 
 export const NewProject = () => {
@@ -28,13 +27,6 @@ export const NewProject = () => {
   };
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
-      <NewProjectEditorDrawer
-        currentProjectNameForDrawer={currentProjectName}
-        currentProjectTypeForDrawer={currentProjectType}
-        currentlySelectedColor={currentlySelectedColor}
-        setCurrentlySelectedColor={setCurrentlySelectedColor}
-        clearGrid={clearGrid}
-      />
       <ProjectGrid
         currentlySelectedColor={currentlySelectedColor}
         currentProjectName={currentProjectName}
@@ -43,6 +35,8 @@ export const NewProject = () => {
         setGridArray={setGridArray}
         currentColumns={currentColumns}
         currentRows={currentRows}
+        clearGrid={clearGrid}
+        setCurrentlySelectedColor={setCurrentlySelectedColor}
       />
     </Box>
   );
