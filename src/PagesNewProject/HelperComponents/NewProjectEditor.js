@@ -1,22 +1,16 @@
-import { useState } from "react";
 import { Typography, Box } from "@mui/material";
 import {
   editorDrawerProjectNames,
   editorDrawerLabels,
 } from "../../assets/theme";
 import { ColorPicker } from "./ColorPicker";
-import { EditButtonsAndPopover } from "./EditButtonsAndPopovers";
-import { ProjectExitButtonModal } from "../../HelperComponents/ProjectExitButtonModal";
 
 export const NewProjectEditor = ({
   currentProjectName,
   currentProjectType,
   currentlySelectedColor,
   setCurrentlySelectedColor,
-  clearGrid,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const pathName = window.location.pathname;
   return (
     <>
       <Box sx={{ margin: "18px" }}>
@@ -42,7 +36,6 @@ export const NewProjectEditor = ({
             {currentProjectType || "---"}
           </Typography>
         </Box>
-        <hr sx={editorDrawerLabels} />
         <Typography variant="h5" sx={editorDrawerLabels}>
           Wool Color:
         </Typography>
@@ -50,32 +43,6 @@ export const NewProjectEditor = ({
           currentlySelectedColor={currentlySelectedColor}
           setCurrentlySelectedColor={setCurrentlySelectedColor}
         />
-        <Box sx={{ textAlign: "center", marginTop: "18px" }}>
-          {pathName !== "/KnittingProjectManager/NewProject" && (
-            <EditButtonsAndPopover
-              popoverText={"Reset Project."}
-              onClick={() => {
-                clearGrid();
-              }}
-            />
-          )}
-          {pathName === "/KnittingProjectManager/NewProject" && (
-            <EditButtonsAndPopover
-              popoverText={"Clear Grid."}
-              onClick={() => {
-                clearGrid();
-              }}
-            />
-          )}
-          <EditButtonsAndPopover popoverText={"Save."} />
-          <EditButtonsAndPopover
-            popoverText={"Exit."}
-            onClick={() => {
-              setIsOpen(true);
-            }}
-          />
-          <ProjectExitButtonModal open={isOpen} setIsOpen={setIsOpen} />
-        </Box>
       </Box>
     </>
   );

@@ -1,7 +1,10 @@
 import _ from "lodash";
+import { useState } from "react";
 import { Box, Grid } from "@mui/material";
 import { NewProjectEditor } from "./NewProjectEditor";
 import { ProjectGridCell } from "./ProjectGridCell";
+import { EditButtonsAndPopover } from "./EditButtonsAndPopovers";
+import { ProjectExitButtonModal } from "../../HelperComponents/ProjectExitButtonModal";
 
 export const ProjectGrid = ({
   currentlySelectedColor,
@@ -19,9 +22,11 @@ export const ProjectGrid = ({
     newGridArray[xIndex][yIndex] = currentlySelectedColor;
     setGridArray(newGridArray);
   };
+  const [isOpen, setIsOpen] = useState(false);
+  const pathName = window.location.pathname;
   return (
     <Box sx={{ display: "flex", justifyContent: "center", minWidth: "100vw" }}>
-      <Box sx={{ padding: "112px 0 24px 100px" }}>
+      <Box sx={{ padding: "112px 0 24px 0" }}>
         <NewProjectEditor
           currentProjectName={currentProjectName}
           currentProjectType={currentProjectType}
@@ -79,6 +84,32 @@ export const ProjectGrid = ({
             </Grid>
           ))}
         </Grid>
+        <Box sx={{ textAlign: "center", marginTop: "18px" }}>
+          {pathName !== "/KnittingProjectManager/NewProject" && (
+            <EditButtonsAndPopover
+              popoverText={"Reset Project."}
+              onClick={() => {
+                clearGrid();
+              }}
+            />
+          )}
+          {pathName === "/KnittingProjectManager/NewProject" && (
+            <EditButtonsAndPopover
+              popoverText={"Clear Grid."}
+              onClick={() => {
+                clearGrid();
+              }}
+            />
+          )}
+          <EditButtonsAndPopover popoverText={"Save."} />
+          <EditButtonsAndPopover
+            popoverText={"Exit."}
+            onClick={() => {
+              setIsOpen(true);
+            }}
+          />
+          <ProjectExitButtonModal open={isOpen} setIsOpen={setIsOpen} />
+        </Box>
       </Box>
     </Box>
   );

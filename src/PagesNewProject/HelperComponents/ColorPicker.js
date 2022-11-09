@@ -13,7 +13,7 @@ export const ColorPicker = ({
     setIsDisplayColorPicker(false);
   };
   return (
-    <Box sx={{ margin: "10px", textAlign: "center" }}>
+    <Box>
       <Box
         sx={{
           padding: "6px",
