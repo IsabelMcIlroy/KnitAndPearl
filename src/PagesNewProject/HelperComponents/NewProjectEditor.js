@@ -3,13 +3,10 @@ import {
   editorDrawerProjectNames,
   editorDrawerLabels,
 } from "../../assets/theme";
-import { ColorPicker } from "./ColorPicker";
 
 export const NewProjectEditor = ({
   currentProjectName,
   currentProjectType,
-  currentlySelectedColor,
-  setCurrentlySelectedColor,
 }) => {
   return (
     <>
@@ -36,13 +33,6 @@ export const NewProjectEditor = ({
             {currentProjectType || "---"}
           </Typography>
         </Box>
-        <Typography variant="h5" sx={editorDrawerLabels}>
-          Wool Color:
-        </Typography>
-        <ColorPicker
-          currentlySelectedColor={currentlySelectedColor}
-          setCurrentlySelectedColor={setCurrentlySelectedColor}
-        />
       </Box>
     </>
   );
