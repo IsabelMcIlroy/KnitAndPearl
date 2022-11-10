@@ -143,10 +143,11 @@ export const editBarButton = {
 
 export const editorDrawerProjectNames = {
   margin: "0 12px",
-  color: palette.knittingBlue,
+  color: palette.knittingPurple,
   textTransform: "capitalize",
 };
 
 export const editorDrawerLabels = {
-  color: palette.knittingPurple,
+  color: palette.knittingBlue,
+  textTransform: "capitalize",
 };
