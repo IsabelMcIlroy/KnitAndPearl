@@ -4,7 +4,6 @@ import { Logo } from "./logo";
 import { palette, navBarButtons, titleFontSx } from "../assets/theme";
 
 export const NavBar = () => {
-  const pathName = window.location.pathname;
   return (
     <>
       <AppBar
@@ -29,14 +28,6 @@ export const NavBar = () => {
           </Typography>
         </Box>
         <Box>
-          {pathName !== "/KnitAndPearl/ViewProject" && (
-            <Link
-              to="/KnitAndPearl/ViewProject"
-              style={{ textDecoration: "none" }}
-            >
-              <Button sx={navBarButtons}>View Projects</Button>
-            </Link>
-          )}
           <Link to="/KnitAndPearl/" style={{ textDecoration: "none" }}>
             <Button sx={navBarButtons}>Logout</Button>
           </Link>
