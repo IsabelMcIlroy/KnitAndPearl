@@ -26,43 +26,52 @@ export const EditButtonsAll = ({
       >
         <Box
           sx={{
-            backgroundColor: palette.knittingBlue,
+            height: "fit-content",
+            padding: "12px",
             borderRadius: "12px",
-            padding: "8px",
+            backgroundColor: palette.knittingGray,
           }}
         >
-          <Typography variant="h7" sx={{ color: palette.knittingGray }}>
-            Color:
-          </Typography>
-          <ColorPicker
-            currentlySelectedColor={currentlySelectedColor}
-            setCurrentlySelectedColor={setCurrentlySelectedColor}
+          <Box
+            sx={{
+              backgroundColor: palette.knittingBlue,
+              borderRadius: "12px",
+              padding: "8px",
+            }}
+          >
+            <Typography variant="h7" sx={{ color: palette.knittingGray }}>
+              Color:
+            </Typography>
+            <ColorPicker
+              currentlySelectedColor={currentlySelectedColor}
+              setCurrentlySelectedColor={setCurrentlySelectedColor}
+            />
+          </Box>
+          {pathName !== "/KnittingProjectManager/NewProject" && (
+            <EditButtonsAndPopover
+              popoverText={"Clear Grid."}
+              onClick={() => {
+                clearGrid();
+              }}
+            />
+          )}
+          {pathName === "/KnittingProjectManager/" && (
+            <EditButtonsAndPopover
+              popoverText={"Reset Project."}
+              onClick={() => {
+                clearGrid();
+              }}
+            />
+          )}
+          <EditButtonsAndPopover popoverText={"Save."} />
+          <EditButtonsAndPopover
+            popoverText={"Exit."}
+            onClick={() => {
+              setIsOpen(true);
+            }}
           />
+          <ProjectExitButtonModal open={isOpen} setIsOpen={setIsOpen} />
         </Box>
-        {pathName !== "/KnittingProjectManager/NewProject" && (
-          <EditButtonsAndPopover
-            popoverText={"Clear Grid."}
-            onClick={() => {
-              clearGrid();
-            }}
-          />
-        )}
-        {pathName === "/KnittingProjectManager/" && (
-          <EditButtonsAndPopover
-            popoverText={"Reset Project."}
-            onClick={() => {
-              clearGrid();
-            }}
-          />
-        )}
-        <EditButtonsAndPopover popoverText={"Save."} />
-        <EditButtonsAndPopover
-          popoverText={"Exit."}
-          onClick={() => {
-            setIsOpen(true);
-          }}
-        />
-        <ProjectExitButtonModal open={isOpen} setIsOpen={setIsOpen} />
       </Box>
     </>
   );
