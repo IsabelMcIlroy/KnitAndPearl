@@ -32,20 +32,23 @@ export const EditButtonsAll = ({
             backgroundColor: palette.knittingGray,
           }}
         >
-          <Box
-            sx={{
-              backgroundColor: palette.knittingBlue,
-              borderRadius: "12px",
-              padding: "8px",
-            }}
-          >
-            <Typography variant="h7" sx={{ color: palette.knittingGray }}>
-              Color:
-            </Typography>
-            <ColorPicker
-              currentlySelectedColor={currentlySelectedColor}
-              setCurrentlySelectedColor={setCurrentlySelectedColor}
-            />
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Box
+              sx={{
+                backgroundColor: palette.knittingBlue,
+                borderRadius: "12px",
+                padding: "8px",
+                width: "fit-content",
+              }}
+            >
+              <Typography variant="h7" sx={{ color: palette.knittingGray }}>
+                Color:
+              </Typography>
+              <ColorPicker
+                currentlySelectedColor={currentlySelectedColor}
+                setCurrentlySelectedColor={setCurrentlySelectedColor}
+              />
+            </Box>
           </Box>
           {pathName !== "/KnittingProjectManager/NewProject" && (
             <EditButtonsAndPopover
