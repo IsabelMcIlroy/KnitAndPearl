@@ -31,7 +31,6 @@ export const LoginModal = ({
   } = useForm({ resolver: yupResolver(validationSchema) });
   const navigate = useNavigate();
   const onSubmit = async (data) => {
-    console.log(JSON.stringify(data));
     const response = await fetch("/login", {
       method: "POST",
       headers: {
