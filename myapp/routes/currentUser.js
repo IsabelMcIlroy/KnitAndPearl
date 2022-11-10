@@ -6,7 +6,7 @@ router.get("/", isAuthenticated, async function (req, res) {
   const currentlyLoggedinUser = req.session.user;
   if (err) throw err;
   else {
-    res.send({ user: currentlyLoggedinUser });
+    res.send({ username: currentlyLoggedinUser });
   }
 });
 
