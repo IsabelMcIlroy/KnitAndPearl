@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import useFetch from "react-fetch-hook";
 import { Box, Typography, TextField, Fab } from "@mui/material";
 import { palette } from "../assets/theme";
 import { ViewProjectCard } from "./HelperComponents/ViewProjectCard";
@@ -7,11 +6,29 @@ import { ViewProjectDataList } from "./ProjectData/ProjectData";
 import { NewProjectSizeAndColourSelectionModal } from "../HelperComponents/NewProjectSizeAndColourSelectionModal";
 
 export const ViewProject = () => {
-  const { isLoading, data, error } = useFetch("/currentUser");
-  console.log(isLoading);
-  console.log(error);
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  useEffect(() => {
+    fetch("./currentUser")
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw response;
+      })
+      .then((data) => {
+        setData(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+        setError(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
   console.log(data);
-  // const { isLoading, data, error } = useFetch("/projects");
   const [isOpen, setIsOpen] = useState(false);
   const [allProjects] = useState(ViewProjectDataList);
   const [searchQuery, setSearchQuery] = useState("");
@@ -24,6 +41,8 @@ export const ViewProject = () => {
     );
     setSearchResults(projectsToShow);
   }, [searchQuery, allProjects]);
+  if (loading) return "Loading...";
+  if (error) return "Error!";
   return (
     <Box
       sx={{
@@ -66,20 +85,6 @@ export const ViewProject = () => {
             justifyContent: "space-evenly",
           }}
         >
-          {/* {isLoading && <Typography variant="h5">Loading...</Typography>}
-          {error && (
-            <Typography variant="h5">
-              There has been a problem, {{ error }}!
-            </Typography>
-          )}
-          {data &&
-            data.map(({ name, type }) => (
-              <ViewProjectCard
-                key={name}
-                projectName={name}
-                projectType={type}
-              />
-            ))} */}
           {searchResults.map((displayProjectsArray) => {
             return (
               <ViewProjectCard
