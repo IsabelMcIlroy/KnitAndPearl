@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import useFetch from "react-fetch-hook";
 import { Box, Typography, TextField, Fab } from "@mui/material";
 import { palette } from "../assets/theme";
 import { ViewProjectCard } from "./HelperComponents/ViewProjectCard";
@@ -6,28 +7,9 @@ import { ViewProjectDataList } from "./ProjectData/ProjectData";
 import { NewProjectSizeAndColourSelectionModal } from "../HelperComponents/NewProjectSizeAndColourSelectionModal";
 
 export const ViewProject = () => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  useEffect(() => {
-    fetch("./currentUser")
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw response;
-      })
-      .then((data) => {
-        setData(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data: ", error);
-        setError(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
+  const { isLoading, data, error } = useFetch("/currentUser");
+  console.log(isLoading);
+  console.log(error);
   console.log(data);
   const [isOpen, setIsOpen] = useState(false);
   const [allProjects] = useState(ViewProjectDataList);
@@ -41,7 +23,7 @@ export const ViewProject = () => {
     );
     setSearchResults(projectsToShow);
   }, [searchQuery, allProjects]);
-  if (loading) return "Loading...";
+  if (isLoading) return "Loading...";
   if (error) return "Error!";
   return (
     <Box
