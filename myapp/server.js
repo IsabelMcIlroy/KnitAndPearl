@@ -19,8 +19,9 @@ app.use(
 
 function isAuthenticated(req, res, next) {
   if (req.session.user) next();
-  else next("route");
+  else next(401);
 }
+module.exports = isAuthenticated;
 
 app.get("/", isAuthenticated, function (req, res) {
   res.send(
