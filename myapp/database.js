@@ -17,7 +17,8 @@ const initSqlite = () => {
 	    id INTEGER PRIMARY KEY,
 	    username TEXT NOT NULL,
 	    password TEXT NOT NULL,
-	    created_at DATETIME NOT NULL DEFAULT (datetime('now', 'localtime')) 
+	    created_at DATETIME NOT NULL DEFAULT (datetime('now', 'localtime')), 
+		UNIQUE(username)
 	)`;
   db.run(sql);
 
