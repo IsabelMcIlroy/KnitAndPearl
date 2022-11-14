@@ -30,7 +30,7 @@ router.post("/", function (req, res) {
               req.session.user = { username: row.name };
               res.json({ message: "welcome!" });
             } else {
-              res.send({ error: "incorrect password!" });
+              res.json({ error: "incorrect password!" });
             }
           });
         } catch (e) {

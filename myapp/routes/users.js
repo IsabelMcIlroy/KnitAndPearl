@@ -13,12 +13,7 @@ router.post("/", (req, res) => {
   users.push({ id, name, password });
   fs.writeFileSync("users_db.json", JSON.stringify({ users: users }));
 
-  res.send({ id, name, password });
-});
-
-router.get("/currentUser", (req, res) => {
-  // Return req.user if you're logged in
-  // If not, it will return 404
+  res.json({ id, name, password });
 });
 
 router.get("/:id", (req, res) => {
@@ -28,7 +23,7 @@ router.get("/:id", (req, res) => {
     (user) => user.id === parseInt(id, 10)
   );
 
-  res.send(foundUser);
+  res.json({ foundUser });
 });
 
 module.exports = router;

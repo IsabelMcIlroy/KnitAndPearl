@@ -24,7 +24,7 @@ function isAuthenticated(req, res, next) {
 module.exports = isAuthenticated;
 
 app.get("/", isAuthenticated, function (req, res) {
-  res.send(
+  res.json(
     "hello, " +
       escapeHtml(req.session.user) +
       "!" +

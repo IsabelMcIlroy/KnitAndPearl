@@ -11,12 +11,12 @@ router.post("/", isAuthenticated, async function (req, res) {
       newProject,
       [req.session.user.id, req.body.name, req.body.type, req.body.grid_colors],
       () => {
-        res.status(200).send();
+        res.status(200).json();
       }
     );
   } catch (e) {
     console.log(e);
-    res.status(500).send();
+    res.status(500).json();
   }
 });
 
