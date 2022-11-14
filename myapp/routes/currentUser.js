@@ -4,10 +4,7 @@ const isAuthenticated = require("../isAuthenticated");
 
 router.get("/", isAuthenticated, async function (req, res) {
   const currentlyLoggedinUser = req.session.user;
-  if (err) throw err;
-  else {
-    res.send({ username: currentlyLoggedinUser });
-  }
+  res.json({ username: currentlyLoggedinUser });
 });
 
 module.exports = router;
