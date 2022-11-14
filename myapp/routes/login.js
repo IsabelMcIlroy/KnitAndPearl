@@ -27,7 +27,7 @@ router.post("/", function (req, res) {
           bcrypt.compare(req.body.password, row.password, (err, same) => {
             if (err) throw err;
             if (same) {
-              req.session.user = { username: row.name };
+              req.session.user = { id: row.id, username: row.username };
               res.json({ message: "welcome!" });
             } else {
               res.json({ error: "incorrect password!" });
