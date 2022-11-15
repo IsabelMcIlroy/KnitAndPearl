@@ -10,8 +10,11 @@ router.post("/", isAuthenticated, async function (req, res) {
     db.run(
       newProject,
       [req.session.user.id, req.body.name, req.body.type, req.body.grid_colors],
-      () => {
-        res.status(200).json();
+      (err) => {
+        if (err) throw error;
+        else {
+          res.status(200).json();
+        }
       }
     );
   } catch (e) {
