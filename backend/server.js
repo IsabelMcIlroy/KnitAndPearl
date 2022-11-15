@@ -8,6 +8,8 @@ initSqlite();
 const app = express();
 app.use(express.json());
 
+const isAuthenticated = require("./isAuthenticated");
+
 app.use(
   session({
     secret: "keyboard cat",
