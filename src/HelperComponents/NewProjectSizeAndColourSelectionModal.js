@@ -46,7 +46,16 @@ export const NewProjectSizeAndColourSelectionModal = ({
     });
   };
   const navigate = useNavigate();
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    const response = await fetch("/projects", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const payload = await response.json();
+    console.log(payload);
     setIsOpen(false);
     navigate("/KnitAndPearl/NewProject", {
       state: {
