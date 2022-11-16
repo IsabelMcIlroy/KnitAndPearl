@@ -6,10 +6,15 @@ const isAuthenticated = require("../isAuthenticated");
 
 router.post("/", isAuthenticated, async function (req, res) {
   try {
-    let newProject = `INSERT INTO projects(owner_id, name, type, grid_colors) VALUES (?,?,?,?)`;
+    let newProject = `INSERT INTO projects(owner_id, name, type, grid_colours) VALUES (?,?,?,?)`;
     db.run(
       newProject,
-      [req.session.user.id, req.body.name, req.body.type, req.body.grid_colors],
+      [
+        req.session.user.id,
+        req.body.name,
+        req.body.type,
+        req.body.grid_colours,
+      ],
       (err) => {
         if (err) throw err;
         else {
