@@ -11,7 +11,7 @@ router.post("/", isAuthenticated, async function (req, res) {
       newProject,
       [req.session.user.id, req.body.name, req.body.type, req.body.grid_colors],
       (err) => {
-        if (err) throw error;
+        if (err) throw err;
         else {
           res.status(200).json();
         }
