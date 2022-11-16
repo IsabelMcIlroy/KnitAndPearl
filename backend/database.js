@@ -28,7 +28,9 @@ const initSqlite = () => {
 	    owner_id INTEGER,
 	    name TEXT NOT NULL,
 	    type TEXT,
-	    grid_colours TEXT NOT NULL,
+		rows TEXT NOT NULL,
+		columns TEXT NOT NULL,
+	    grid_colours TEXT,
 	    created_at DATETIME NOT NULL DEFAULT (datetime('now', 'localtime')),
 	    FOREIGN KEY(owner_id) REFERENCES users(id)
 	)`;
