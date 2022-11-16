@@ -1,4 +1,3 @@
-const fs = require("fs");
 const express = require("express");
 const { db } = require("../database");
 const router = express.Router();
