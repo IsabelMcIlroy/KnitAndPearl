@@ -47,6 +47,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
   };
   const navigate = useNavigate();
   const onSubmit = async (data) => {
+    console.log(data);
     const response = await fetch("/projects", {
       method: "POST",
       headers: {
