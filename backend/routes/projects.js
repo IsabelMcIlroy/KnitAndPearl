@@ -29,24 +29,24 @@ router.post("/", isAuthenticated, async function (req, res) {
   }
 });
 
-router.get("/", isAuthenticated, async function (req, res) {
-  db.get("SELECT * FROM projects WHERE owner_id = ?", req.session.owner_id);
-});
+// router.get("/", isAuthenticated, async function (req, res) {
+//   db.get("SELECT * FROM projects WHERE owner_id = ?", req.session.owner_id);
+// });
 
-router
-  .route("/:id")
-  .get(express.urlencoded({ extended: false }), async (req, res) => {
-    db.get("SELECT * FROM projects WHERE name = ?", req.body.name);
+// router
+//   .route("/:id")
+//   .get(express.urlencoded({ extended: false }), async (req, res) => {
+//     db.get("SELECT * FROM projects WHERE name = ?", req.body.name);
 
-    console.log("get this project");
-  })
-  .put(express.urlencoded({ extended: false }), async (req, res) => {
-    db.get("SELECT * FROM projects WHERE name = ?", req.body.name);
-    console.log("update this project");
-  })
-  .delete(express.urlencoded({ extended: false }), async (req, res) => {
-    db.get("SELECT * FROM projects WHERE name = ?", req.body.name);
-    console.log("delete this project");
-  });
+//     console.log("get this project");
+//   })
+//   .put(express.urlencoded({ extended: false }), async (req, res) => {
+//     db.get("SELECT * FROM projects WHERE name = ?", req.body.name);
+//     console.log("update this project");
+//   })
+//   .delete(express.urlencoded({ extended: false }), async (req, res) => {
+//     db.get("SELECT * FROM projects WHERE name = ?", req.body.name);
+//     console.log("delete this project");
+//   });
 
 module.exports = router;
