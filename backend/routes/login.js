@@ -11,7 +11,10 @@ router.post("/", async function (req, res) {
   const user = await db
     .prepare("SELECT * FROM users WHERE username = ?")
     .get(req.body.username);
-  const passwordMatches = await bcrypt.compare(req.body.password, row.password);
+  const passwordMatches = await bcrypt.compare(
+    req.body.password,
+    user.password
+  );
 
   if (passwordMatches) {
     req.session.user = { id: user.id, username: user.username };
