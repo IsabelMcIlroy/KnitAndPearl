@@ -4,18 +4,16 @@ const { db } = require("../database");
 const bcrypt = require("bcrypt");
 
 router.post("/", async function (req, res) {
-  try {
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    // https://github.com/TryGhost/node-sqlite3/wiki/API
-    let newUser = `INSERT INTO users(username, password) VALUES (?,?)`;
-    db.run(newUser, [req.body.username, hashedPassword], () => {
-      req.session.user = { username: req.body.username };
-      res.status(200).json();
-    });
-  } catch (e) {
-    console.log(e);
-    res.status(200).json();
-  }
+  const hashedPassword = await bcrypt.hash(req.body.password, 10);
+  // https://github.com/TryGhost/node-sqlite3/wiki/API
+  const newUser = await db
+    .prepare(`INSERT INTO users(username, password) VALUES (?,?)`)
+    .run(req.body.username, hashedPassword);
+
+  req.session.user = { username: newUser.username };
+  res.json({ message: "welcome!" });
+
+  //   need make something to check for unique usernames...
 });
 
 module.exports = router;
