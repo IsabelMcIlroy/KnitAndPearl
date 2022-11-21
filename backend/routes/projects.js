@@ -7,7 +7,6 @@ router.post("/", isAuthenticated, async function (req, res) {
   try {
     let newProject = `INSERT INTO projects(owner_id, name, type, rows, columns) VALUES (?,?,?,?,?)`;
     let currentUser = req.session.user;
-    console.log(currentUser);
     db.run(
       newProject,
       [
@@ -18,9 +17,10 @@ router.post("/", isAuthenticated, async function (req, res) {
         req.body.Column,
       ],
       (err) => {
-        console.log(currentUser);
-        if (err) throw err;
-        else {
+        if (err) {
+          console.log(err);
+          res.status(400).send();
+        } else {
           res.status(200).json();
         }
       }
