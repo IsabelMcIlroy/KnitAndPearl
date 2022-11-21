@@ -3,18 +3,20 @@ const router = express.Router();
 const { db } = require("../database");
 const bcrypt = require("bcrypt");
 
-router.post("/", function (req, res) {
+router.post("/", async function (req, res) {
   console.log(req.body);
   // https://github.com/TryGhost/node-sqlite3/wiki/API
   // Query
 
-  // const user = await db.prepare(SELECT * FROM users WHERE username = ?).get(req.body.username);
+  // const user = await db
+  //   .prepare("SELECT * FROM users WHERE username = ?")
+  //   .get(req.body.username);
   // const passwordMatches = await bcrypt.compare(req.body.password, row.password);
 
   // if (passwordMatches) {
-  //   res.send("welcome!");
+  //   res.json({ message: "welcome!" });
   // } else {
-  //   res.send("incorrect password/username");
+  //   res.json({ error: "incorrect password/username" });
   // }
   db.get(
     "SELECT * FROM users WHERE username = ?",
