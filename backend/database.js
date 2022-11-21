@@ -1,13 +1,11 @@
-const sqlite3 = require("sqlite3").verbose();
-let sql;
-
-const db = new sqlite3.Database(
-  "./database.db",
-  sqlite3.OPEN_READWRITE,
-  (err) => {
-    if (err) return console.error(err.message);
+const sqlitedb = require("better-sqlite3");
+const db = new sqlitedb("database.db", sqlitedb.OPEN_READWRITE, (err) => {
+  if (err) {
+    console.error(err.message);
   }
-);
+  verbose: console.log;
+});
+let sql;
 
 const initSqlite = () => {
   //connect to DB
@@ -20,7 +18,7 @@ const initSqlite = () => {
 	    created_at DATETIME NOT NULL DEFAULT (datetime('now', 'localtime')), 
 		UNIQUE(username)
 	)`;
-  db.run(sql);
+  db.exec(sql);
 
   //create projects table
   sql = `CREATE TABLE IF NOT EXISTS projects (
@@ -34,7 +32,7 @@ const initSqlite = () => {
 	    created_at DATETIME NOT NULL DEFAULT (datetime('now', 'localtime')),
 	    FOREIGN KEY(owner_id) REFERENCES users(id)
 	)`;
-  db.run(sql);
+  db.exec(sql);
 };
 
 module.exports = { db, initSqlite };
