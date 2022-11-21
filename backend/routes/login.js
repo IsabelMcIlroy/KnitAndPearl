@@ -22,33 +22,6 @@ router.post("/", async function (req, res) {
   } else {
     res.json({ error: "incorrect password/username" });
   }
-  // db.get(
-  //   "SELECT * FROM users WHERE username = ?",
-  //   req.body.username,
-  //   (err, row) => {
-  //     if (err) throw err;
-  //     if (!row) res.status(404).send();
-  //     else {
-  //       try {
-  //         bcrypt.compare(req.body.password, row.password, (err, same) => {
-  //           if (err) {
-  //             console.log(err);
-  //             res.status(400).send();
-  //           }
-  //           if (same) {
-  //             req.session.user = { id: row.id, username: row.username };
-  //             res.json({ message: "welcome!" });
-  //           } else {
-  //             res.json({ error: "incorrect password!" });
-  //           }
-  //         });
-  //       } catch (e) {
-  //         console.log(e);
-  //         res.status(500).send();
-  //       }
-  //     }
-  //   }
-  // );
 });
 
 module.exports = router;
