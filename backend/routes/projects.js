@@ -11,7 +11,7 @@ router.post("/", isAuthenticated, async function (req, res) {
     db.run(
       newProject,
       [
-        currentUser,
+        currentUser.id,
         req.body.projectName,
         req.body.projectType,
         req.body.Row,
