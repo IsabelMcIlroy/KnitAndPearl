@@ -4,31 +4,19 @@ const router = express.Router();
 const isAuthenticated = require("../isAuthenticated");
 
 router.post("/", isAuthenticated, async function (req, res) {
-  try {
-    let newProject = `INSERT INTO projects(owner_id, name, type, rows, columns) VALUES (?,?,?,?,?)`;
-    let currentUser = req.session.user;
-    db.run(
-      newProject,
-      [
-        currentUser.id,
-        req.body.projectName,
-        req.body.projectType,
-        req.body.Row,
-        req.body.Column,
-      ],
-      (err) => {
-        if (err) {
-          console.log(err);
-          res.status(400).send();
-        } else {
-          res.status(200).json();
-        }
-      }
+  let currentUser = req.session.user;
+  const newProject = await db
+    .prepare(
+      `INSERT INTO projects(owner_id, name, type, rows, columns) VALUES (?,?,?,?,?)`
+    )
+    .run(
+      currentUser.id,
+      req.body.projectName,
+      req.body.projectType,
+      req.body.Row,
+      req.body.Column
     );
-  } catch (e) {
-    console.log(e);
-    res.status(500).json();
-  }
+  res.json({ message: newProject.name });
 });
 
 // router.get("/", isAuthenticated, async function (req, res) {
