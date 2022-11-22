@@ -45,11 +45,11 @@ export const ProjectExitButtonModal = ({ open, onClick, setIsOpen }) => {
             >
               <ModalButton
                 text="Save&amp; Exit"
-                onClick={() => navigate("/KnittingProjectManager/ViewProject")}
+                onClick={() => navigate("/KnitAndPearl/ViewProject")}
               />
               <ModalButton
                 text="Exit"
-                onClick={() => navigate("/KnittingProjectManager/ViewProject")}
+                onClick={() => navigate("/KnitAndPearl/ViewProject")}
               />
               <ModalButton
                 text="Cancel"
