@@ -14,6 +14,7 @@ export const Router = () => {
       <Route element={<NavBar />}>
         <Route path="/KnitAndPearl/NewProject" element={<NewProject />} />
         <Route path="/KnitAndPearl/ViewProject" element={<ViewProject />} />
+        <Route path="/KnitAndPearl/ViewProject/id" element={<ViewProject />} />
         <Route path="/KnitAndPearl/TreesProject" element={<TreesProject />} />
         <Route
           path="/KnitAndPearl/MountainsProject"
