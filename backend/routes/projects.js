@@ -19,6 +19,13 @@ router.post("/", isAuthenticated, async function (req, res) {
   res.json({ message: newProject.name });
 });
 
+router.get("/projectList", isAuthenticated, async function (req, res) {
+  const project = await db
+    .prepare("SELECT * FROM projects WHERE owner_id = ?")
+    .get(req.session.user.id);
+  res.json({ currentProject: project });
+});
+
 // router.get("/", isAuthenticated, async function (req, res) {
 //   db.get("SELECT * FROM projects WHERE owner_id = ?", req.session.owner_id);
 // });

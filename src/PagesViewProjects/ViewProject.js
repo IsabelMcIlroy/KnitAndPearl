@@ -11,6 +11,10 @@ export const ViewProject = () => {
   console.log(isLoading);
   console.log(error);
   console.log(data);
+  const { projectsLoading, projectsList, projectListError } = useFetch(
+    "/projects/projectList"
+  );
+  console.log(projectsLoading, projectsList, projectListError);
   const [isOpen, setIsOpen] = useState(false);
   const [allProjects] = useState(ViewProjectDataList);
   const [searchQuery, setSearchQuery] = useState("");
