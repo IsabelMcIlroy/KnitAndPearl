@@ -23,7 +23,17 @@ router.get("/projectList", isAuthenticated, async function (req, res) {
   const project = await db
     .prepare("SELECT * FROM projects WHERE owner_id = ?")
     .get(req.session.user.id);
-  res.json({ currentProject: project });
+
+  if (project === undefined) {
+    res.json({
+      projects: "you've got no projects",
+    });
+  } else {
+    console.log(project);
+    res.json({
+      projects: "you've got some projects",
+    });
+  }
 });
 
 // router.get("/", isAuthenticated, async function (req, res) {
