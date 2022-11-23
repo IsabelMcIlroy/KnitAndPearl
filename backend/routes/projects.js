@@ -16,6 +16,7 @@ router.post("/", isAuthenticated, async function (req, res) {
       req.body.Row,
       req.body.Column
     );
+  req.session.project = newProject;
   res.json({ message: newProject.name });
 });
 
@@ -34,6 +35,15 @@ router.get("/projectList", isAuthenticated, async function (req, res) {
       projects: "you've got some projects",
     });
   }
+});
+
+router.put("/:id", isAuthenticated, async function (req, res) {
+  const currentProject = req.session.project.id;
+  const updateProject = await db
+    .prepare(`UPDATE users SET gridColours = ? WHERE id = ?`)
+    .run(req.body.grid, currentProject);
+  req.session.project = updateProject;
+  res.json({ message: "saved!" });
 });
 
 // router.get("/", isAuthenticated, async function (req, res) {
