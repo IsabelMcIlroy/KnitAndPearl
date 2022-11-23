@@ -21,7 +21,7 @@ router.post("/", isAuthenticated, async function (req, res) {
 
 router.get("/projectList", isAuthenticated, async function (req, res) {
   const project = await db
-    .prepare("SELECT * FROM projects WHERE owner_id = ?")
+    .prepare("SELECT * FROM projects WHERE name = ?")
     .get(req.session.user.id);
 
   if (project === undefined) {
