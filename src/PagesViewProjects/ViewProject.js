@@ -7,16 +7,14 @@ import { ViewProjectDataList } from "./ProjectData/ProjectData";
 import { NewProjectSizeAndColourSelectionModal } from "../HelperComponents/NewProjectSizeAndColourSelectionModal";
 
 export const ViewProject = () => {
-  const { isLoading, data, error } = useFetch("/currentUser");
+  // const { isLoading, data, error } = useFetch("/currentUser");
+  // console.log(isLoading);
+  // console.log(error);
+  // console.log(data);
+  const { isLoading, data, error } = useFetch("/projects/projectList");
   console.log(isLoading);
   console.log(error);
   console.log(data);
-  const { projectsLoading, projectsList, projectListError } = useFetch(
-    "/projects/projectList"
-  );
-  console.log(projectsLoading);
-  console.log(projectListError);
-  console.log("project list " + projectsList);
   const [isOpen, setIsOpen] = useState(false);
   const [allProjects] = useState(ViewProjectDataList);
   const [searchQuery, setSearchQuery] = useState("");
@@ -73,12 +71,12 @@ export const ViewProject = () => {
             justifyContent: "space-evenly",
           }}
         >
-          {searchResults.map((displayProjectsArray) => {
+          {searchResults.map((data) => {
             return (
               <ViewProjectCard
-                key={displayProjectsArray.projectName}
-                projectName={displayProjectsArray.projectName}
-                projectType={displayProjectsArray.projectType}
+                key={data.name}
+                projectName={data.name}
+                projectType={data.type}
               />
             );
           })}

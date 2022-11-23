@@ -21,18 +21,19 @@ router.post("/", isAuthenticated, async function (req, res) {
 });
 
 router.get("/projectList", isAuthenticated, async function (req, res) {
-  const project = await db
-    .prepare("SELECT * FROM projects WHERE name = ?")
+  console.log(req.session.user.id);
+  const projectList = await db
+    .prepare("SELECT * FROM projects WHERE owner_id = ?")
     .get(req.session.user.id);
 
-  if (project === undefined) {
+  if (projectList === undefined) {
     res.json({
       projects: "you've got no projects",
     });
   } else {
-    console.log(project);
+    console.log(projectList);
     res.json({
-      projects: "you've got some projects",
+      projectsList: projectList,
     });
   }
 });

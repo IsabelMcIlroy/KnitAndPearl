@@ -10,12 +10,7 @@ import {
 } from "@mui/material";
 import KnittingTheme, { palette } from "../../assets/theme";
 import { MiniProjectGrid } from "../ProjectData/MiniProjectGrid";
-import {
-  treesGrid,
-  mountainsGrid,
-  catsGrid,
-  fishGrid,
-} from "../ProjectData/ProjectData";
+import { fishGrid } from "../ProjectData/ProjectData";
 
 export const ViewProjectCard = ({ projectName, projectType }) => {
   const navigate = useNavigate();
@@ -28,18 +23,7 @@ export const ViewProjectCard = ({ projectName, projectType }) => {
         }}
       >
         <CardContent>
-          {projectName === "Trees" && (
-            <MiniProjectGrid grid={treesGrid} currentColumns={7} />
-          )}
-          {projectName === "Mountains" && (
-            <MiniProjectGrid grid={mountainsGrid} currentColumns={9} />
-          )}
-          {projectName === "Cats" && (
-            <MiniProjectGrid grid={catsGrid} currentColumns={7} />
-          )}
-          {projectName === "Fish" && (
-            <MiniProjectGrid grid={fishGrid} currentColumns={9} />
-          )}
+          <MiniProjectGrid grid={fishGrid} currentColumns={9} />
           <Box sx={{ margin: "8px", maxWidth: "90%" }}>
             <Typography
               variant="h4"
@@ -66,7 +50,7 @@ export const ViewProjectCard = ({ projectName, projectType }) => {
                 <Button
                   size="small"
                   onClick={() =>
-                    navigate(`/KnitAndPearl/${projectName}Project`, {
+                    navigate(`/KnitAndPearl/:id`, {
                       state: {
                         currentProjectName: projectName,
                         currentProjectType: projectType,
