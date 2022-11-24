@@ -1,4 +1,5 @@
 const express = require("express");
+const sqlite = require("better-sqlite3");
 const session = require("express-session");
 const { initSqlite } = require("./database");
 const escapeHtml = require("escape-html");
@@ -8,14 +9,23 @@ initSqlite();
 const app = express();
 app.use(express.json());
 
+const SqliteStore = require("better-sqlite3-session-store")(session);
+const db = new sqlite("sessions.db", { verbose: console.log });
+
 const isAuthenticated = require("./isAuthenticated");
 
 app.use(
   session({
+    store: new SqliteStore({
+      client: db,
+      expired: {
+        clear: true,
+        intervalMs: 900000, //ms = 15min
+      },
+    }),
     secret: "keyboard cat",
-    resave: true,
+    resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 60000 },
   })
 );
 
