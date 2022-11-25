@@ -5,6 +5,18 @@ import { ModalButton } from "./ModalButton";
 
 export const ProjectExitButtonModal = ({ open, onClick, setIsOpen }) => {
   const navigate = useNavigate();
+  const onSave = async (data) => {
+    const response = await fetch("/projects/:id", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const payload = await response.json();
+    console.log(payload);
+    navigate("/KnitAndPearl/ViewProject");
+  };
   return (
     <ThemeProvider theme={KnittingTheme}>
       <Modal open={open} onClick={onClick}>
@@ -43,10 +55,7 @@ export const ProjectExitButtonModal = ({ open, onClick, setIsOpen }) => {
                 flexWrap: "wrap",
               }}
             >
-              <ModalButton
-                text="Save&amp; Exit"
-                onClick={() => navigate("/KnitAndPearl/ViewProject")}
-              />
+              <ModalButton text="Save&amp; Exit" onClick={onSave()} />
               <ModalButton
                 text="Exit"
                 onClick={() => navigate("/KnitAndPearl/ViewProject")}

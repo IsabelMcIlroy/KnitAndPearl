@@ -12,6 +12,17 @@ export const EditButtonsAll = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const pathName = window.location.pathname;
+  const onSave = async (data) => {
+    const response = await fetch("/projects/:id", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const payload = await response.json();
+    console.log(payload);
+  };
   return (
     <>
       <Box
@@ -66,7 +77,7 @@ export const EditButtonsAll = ({
               }}
             />
           )}
-          <EditButtonsAndPopover popoverText={"Save."} />
+          <EditButtonsAndPopover popoverText={"Save."} onClick={onSave()} />
           <EditButtonsAndPopover
             popoverText={"Exit."}
             onClick={() => {
