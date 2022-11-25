@@ -41,7 +41,7 @@ router.get("/projectList", isAuthenticated, async function (req, res) {
 router.put("/:id", isAuthenticated, async function (req, res) {
   const currentProject = req.session.project.id;
   const updateProject = await db
-    .prepare(`UPDATE users SET gridColours = ? WHERE id = ?`)
+    .prepare(`UPDATE users SET grid_colours = ? WHERE id = ?`)
     .run(req.body.grid, currentProject);
   req.session.project = updateProject;
   res.json({ message: "saved!" });
