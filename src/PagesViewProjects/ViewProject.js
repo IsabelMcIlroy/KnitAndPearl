@@ -3,7 +3,7 @@ import useFetch from "react-fetch-hook";
 import { Box, Typography, TextField, Fab } from "@mui/material";
 import { palette } from "../assets/theme";
 import { ViewProjectCard } from "./HelperComponents/ViewProjectCard";
-import { ViewProjectDataList } from "./ProjectData/ProjectData";
+// import { ViewProjectDataList } from "./ProjectData/ProjectData";
 import { NewProjectSizeAndColourSelectionModal } from "../HelperComponents/NewProjectSizeAndColourSelectionModal";
 
 export const ViewProject = () => {
@@ -11,19 +11,23 @@ export const ViewProject = () => {
   // console.log(isLoading);
   // console.log(error);
   // console.log(data);
-  const { isLoading, data, error } = useFetch("/projects/projectList");
+  const {
+    isLoading,
+    data: allProjects,
+    error,
+  } = useFetch("/projects/projectList");
   console.log(isLoading);
   console.log(error);
-  console.log(data);
+  console.log(allProjects);
   const [isOpen, setIsOpen] = useState(false);
-  const [allProjects] = useState(ViewProjectDataList);
+  // const [allProjects] = useState(ViewProjectDataList);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   useEffect(() => {
     const projectsToShow = allProjects.filter(
       (project) =>
-        project.projectName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.projectType.toLowerCase().includes(searchQuery.toLowerCase())
+        project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        project.type.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setSearchResults(projectsToShow);
   }, [searchQuery, allProjects]);
@@ -71,12 +75,12 @@ export const ViewProject = () => {
             justifyContent: "space-evenly",
           }}
         >
-          {searchResults.map((data) => {
+          {searchResults.map((displayProjectsArray) => {
             return (
               <ViewProjectCard
-                key={data.name}
-                projectName={data.name}
-                projectType={data.type}
+                key={displayProjectsArray.name}
+                projectName={displayProjectsArray.name}
+                projectType={displayProjectsArray.type}
               />
             );
           })}
