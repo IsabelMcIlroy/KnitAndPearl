@@ -77,7 +77,7 @@ export const EditButtonsAll = ({
               }}
             />
           )}
-          <EditButtonsAndPopover popoverText={"Save."} onClick={onSave()} />
+          <EditButtonsAndPopover popoverText={"Save."} onClick={onSave} />
           <EditButtonsAndPopover
             popoverText={"Exit."}
             onClick={() => {
