@@ -1,8 +1,8 @@
 export const ViewProjectDataList = [
-  { projectName: "Trees", projectType: "Hat" },
-  { projectName: "Mountains", projectType: "Sweater" },
-  { projectName: "Cats", projectType: "Socks" },
-  { projectName: "Fish", projectType: "Socks" },
+  { name: "Trees", type: "Hat" },
+  { name: "Mountains", type: "Sweater" },
+  { name: "Cats", type: "Socks" },
+  { name: "Fish", type: "Socks" },
 ];
 
 export const grid = [
