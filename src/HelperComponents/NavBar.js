@@ -1,9 +1,22 @@
 import { Link, Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AppBar, Box, Typography, Button } from "@mui/material";
 import { Logo } from "./logo";
 import { palette, navBarButtons, titleFontSx } from "../assets/theme";
 
 export const NavBar = () => {
+  const navigate = useNavigate();
+  const onLogout = async (data) => {
+    const response = await fetch("/logout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const payload = await response.json();
+    console.log(payload);
+    navigate("/KnitAndPearl/", {});
+  };
   return (
     <>
       <AppBar
@@ -29,7 +42,9 @@ export const NavBar = () => {
         </Box>
         <Box>
           <Link to="/KnitAndPearl/" style={{ textDecoration: "none" }}>
-            <Button sx={navBarButtons}>Logout</Button>
+            <Button sx={navBarButtons} onClick={onLogout}>
+              Logout
+            </Button>
           </Link>
         </Box>
       </AppBar>

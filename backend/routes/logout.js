@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const isAuthenticated = require("../isAuthenticated");
 
-router.get("/", isAuthenticated, function (req, res, next) {
+router.post("/", isAuthenticated, function (req, res) {
   req.session.user = null;
   res.json({ message: "See ya later!" });
 });
