@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../index.css";
 import Box from "@mui/material/Box";
 import { Title } from "../HelperComponents/title";
@@ -9,6 +10,15 @@ import { LoginModal } from "./HelperComponents/LoginModal";
 import { SignupModal } from "./HelperComponents/SignupModal";
 
 export const Home = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("username");
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+      console.log(foundUser);
+      navigate("/KnitAndPearl/ViewProject", {});
+    }
+  }, []);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSignupOpen, setIsSignupOpen] = useState(false);
   return (
