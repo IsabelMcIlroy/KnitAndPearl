@@ -24,7 +24,7 @@ router.get("/projectList", isAuthenticated, async function (req, res) {
   console.log(req.session.user.id);
   const projectList = await db
     .prepare("SELECT * FROM projects WHERE owner_id = ?")
-    .get(req.session.user.id);
+    .all(req.session.user.id);
 
   if (projectList === undefined) {
     res.json({
@@ -32,9 +32,7 @@ router.get("/projectList", isAuthenticated, async function (req, res) {
     });
   } else {
     console.log(projectList);
-    res.json({
-      projectsList: projectList,
-    });
+    res.json(projectList);
   }
 });
 

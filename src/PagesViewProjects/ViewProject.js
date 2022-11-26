@@ -24,7 +24,7 @@ export const ViewProject = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   useEffect(() => {
-    const projectsToShow = allProjects.filter(
+    const projectsToShow = allProjects?.filter(
       (project) =>
         project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         project.type.toLowerCase().includes(searchQuery.toLowerCase())
@@ -75,7 +75,7 @@ export const ViewProject = () => {
             justifyContent: "space-evenly",
           }}
         >
-          {searchResults.map((displayProjectsArray) => {
+          {searchResults?.map((displayProjectsArray) => {
             return (
               <ViewProjectCard
                 key={displayProjectsArray.name}
