@@ -78,7 +78,7 @@ export const ViewProject = () => {
           {searchResults?.map((displayProjectsArray) => {
             return (
               <ViewProjectCard
-                key={displayProjectsArray.name}
+                key={displayProjectsArray.id}
                 projectName={displayProjectsArray.name}
                 projectType={displayProjectsArray.type}
               />
