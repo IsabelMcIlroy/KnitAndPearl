@@ -20,7 +20,7 @@ router.post("/", isAuthenticated, async function (req, res) {
   res.json({ message: newProject.name });
 });
 
-router.get("/projectList", isAuthenticated, async function (req, res) {
+router.get("/", isAuthenticated, async function (req, res) {
   console.log(req.session.user.id);
   const projectList = await db
     .prepare("SELECT * FROM projects WHERE owner_id = ?")
