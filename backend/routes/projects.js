@@ -27,9 +27,7 @@ router.get("/projectList", isAuthenticated, async function (req, res) {
     .all(req.session.user.id);
 
   if (projectList === undefined) {
-    res.json({
-      message: "you've got no projects",
-    });
+    res.json({});
   } else {
     console.log(projectList);
     res.json(projectList);
