@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, redirect } from "react-router-dom";
 import { NavBar } from "./HelperComponents/NavBar";
 import { Home } from "./PagesHome/Home";
 import { NewProject } from "./PagesNewProject/NewProject";
@@ -13,7 +13,20 @@ export const Router = () => {
     <Routes>
       <Route element={<NavBar />}>
         <Route path="/KnitAndPearl/NewProject" element={<NewProject />} />
-        <Route path="/KnitAndPearl/ViewProject" element={<ViewProject />} />
+        <Route
+          path="/KnitAndPearl/ViewProject"
+          element={<ViewProject />}
+          loader={async () => {
+            const resp = await fetch("/currentUser", {
+              "Content-Type": "application/json",
+            });
+            const user = await resp.json();
+            if (!user) {
+              throw redirect("/KnitAndPearl/ViewProject");
+            }
+            return {};
+          }}
+        />
         <Route path="/KnitAndPearl/ViewProject/id" element={<ViewProject />} />
         <Route path="/KnitAndPearl/TreesProject" element={<TreesProject />} />
         <Route
