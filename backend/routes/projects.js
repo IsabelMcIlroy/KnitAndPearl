@@ -28,7 +28,7 @@ router.get("/projectList", isAuthenticated, async function (req, res) {
 
   if (projectList === undefined) {
     res.json({
-      projects: "you've got no projects",
+      message: "you've got no projects",
     });
   } else {
     console.log(projectList);
@@ -41,7 +41,6 @@ router.put("/:id", isAuthenticated, async function (req, res) {
   const updateProject = await db
     .prepare(`UPDATE users SET grid_colours = ? WHERE id = ?`)
     .run(req.body.grid, currentProject);
-  req.session.project = updateProject;
   res.json({ message: "saved!" });
 });
 
