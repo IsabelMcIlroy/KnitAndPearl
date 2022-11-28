@@ -6,10 +6,6 @@ import { ViewProjectCard } from "./HelperComponents/ViewProjectCard";
 import { NewProjectSizeAndColourSelectionModal } from "../HelperComponents/NewProjectSizeAndColourSelectionModal";
 
 export const ViewProject = () => {
-  // const { isLoading, data, error } = useFetch("/currentUser");
-  // console.log(isLoading);
-  // console.log(error);
-  // console.log(data);
   const { isLoading, data: allProjects, error } = useFetch("/projects");
   console.log(allProjects);
   const [isOpen, setIsOpen] = useState(false);
