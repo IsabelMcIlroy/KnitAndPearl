@@ -3,7 +3,6 @@ import useFetch from "react-fetch-hook";
 import { Box, Typography, TextField, Fab } from "@mui/material";
 import { palette } from "../assets/theme";
 import { ViewProjectCard } from "./HelperComponents/ViewProjectCard";
-// import { ViewProjectDataList } from "./ProjectData/ProjectData";
 import { NewProjectSizeAndColourSelectionModal } from "../HelperComponents/NewProjectSizeAndColourSelectionModal";
 
 export const ViewProject = () => {
@@ -12,11 +11,8 @@ export const ViewProject = () => {
   // console.log(error);
   // console.log(data);
   const { isLoading, data: allProjects, error } = useFetch("/projects");
-  console.log(isLoading);
-  console.log(error);
   console.log(allProjects);
   const [isOpen, setIsOpen] = useState(false);
-  // const [allProjects] = useState(ViewProjectDataList);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   useEffect(() => {
