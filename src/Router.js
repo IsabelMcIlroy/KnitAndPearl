@@ -22,7 +22,7 @@ export const Router = () => {
             });
             const user = await resp.json();
             if (!user) {
-              throw redirect("/KnitAndPearl/ViewProject");
+              throw redirect("/KnitAndPearl/");
             }
             return {};
           }}
