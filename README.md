@@ -26,4 +26,4 @@ https://isabelmcilroy.github.io/KnitAndPearl/
 
 ## Screenshot
 
-![Screenshot](Screenshot.jpg)
+![Screenshot](Screenshot.png)
