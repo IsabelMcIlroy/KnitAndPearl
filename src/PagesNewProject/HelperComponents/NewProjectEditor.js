@@ -24,7 +24,7 @@ export const NewProjectEditor = ({
           {currentProjectName || "---"}
         </Typography>
       </Box>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", alignItems: "baseline" }}>
         <Typography variant="h4" sx={editorDrawerLabels}>
           Project Type:
         </Typography>
