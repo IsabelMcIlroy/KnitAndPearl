@@ -9,15 +9,11 @@ export const ViewProject = () => {
   const { isLoading, data: allProjects, error } = useFetch("/projects");
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
-  useEffect(() => {
-    const projectsToShow = allProjects?.filter(
-      (project) =>
-        project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.type.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    setSearchResults(projectsToShow);
-  }, [searchQuery, allProjects]);
+  const projectsToShow = allProjects?.filter(
+    (project) =>
+      project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.type.toLowerCase().includes(searchQuery.toLowerCase())
+  );
   if (isLoading) return "Loading...";
   if (error) return "Error!";
   return (
@@ -62,7 +58,7 @@ export const ViewProject = () => {
             justifyContent: "space-evenly",
           }}
         >
-          {searchResults?.map((displayProjectsArray) => {
+          {projectsToShow?.map((displayProjectsArray) => {
             return (
               <ViewProjectCard
                 key={displayProjectsArray.id}
