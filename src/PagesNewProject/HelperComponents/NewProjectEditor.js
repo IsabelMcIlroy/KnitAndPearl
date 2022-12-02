@@ -26,6 +26,7 @@ export const NewProjectEditor = ({
             display: "flex",
             paddingTop: "12px",
             alignItems: "baseline",
+            flexWrap: "wrap",
           }}
         >
           <Typography variant="h5" sx={editorDrawerLabels}>
@@ -36,7 +37,9 @@ export const NewProjectEditor = ({
           </Typography>
         </Box>
         {currentProjectType && (
-          <Box sx={{ display: "flex", alignItems: "baseline" }}>
+          <Box
+            sx={{ display: "flex", alignItems: "baseline", flexWrap: "wrap" }}
+          >
             <Typography variant="h5" sx={editorDrawerLabels}>
               Project Type:
             </Typography>
