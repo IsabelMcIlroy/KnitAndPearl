@@ -28,7 +28,6 @@ export const EditButtonsAll = ({
       <Box
         sx={{
           textAlign: "center",
-          marginTop: "18px",
           flexDirection: "column",
           display: "flex",
           justifyContent: "center",
@@ -39,8 +38,6 @@ export const EditButtonsAll = ({
           sx={{
             height: "fit-content",
             padding: "12px",
-            borderRadius: "12px",
-            backgroundColor: palette.knittingGray,
             display: "flex",
             width: "100%",
             justifyContent: "space-between",
