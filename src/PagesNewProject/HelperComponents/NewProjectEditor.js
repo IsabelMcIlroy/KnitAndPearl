@@ -3,10 +3,14 @@ import {
   editorDrawerProjectNames,
   editorDrawerLabels,
 } from "../../assets/theme";
+import { EditButtonsAll } from "./EditButtonsAll";
 
 export const NewProjectEditor = ({
   currentProjectName,
   currentProjectType,
+  clearGrid,
+  currentlySelectedColor,
+  setCurrentlySelectedColor,
 }) => {
   return (
     <>
@@ -17,21 +21,28 @@ export const NewProjectEditor = ({
           alignItems: "baseline",
         }}
       >
-        <Typography variant="h4" sx={editorDrawerLabels}>
+        <Typography variant="h5" sx={editorDrawerLabels}>
           Project Name:
         </Typography>
         <Typography variant="h5" sx={editorDrawerProjectNames}>
           {currentProjectName || "---"}
         </Typography>
       </Box>
-      <Box sx={{ display: "flex", alignItems: "baseline" }}>
-        <Typography variant="h4" sx={editorDrawerLabels}>
-          Project Type:
-        </Typography>
-        <Typography variant="h5" sx={editorDrawerProjectNames}>
-          {currentProjectType || "---"}
-        </Typography>
-      </Box>
+      {currentProjectType && (
+        <Box sx={{ display: "flex", alignItems: "baseline" }}>
+          <Typography variant="h5" sx={editorDrawerLabels}>
+            Project Type:
+          </Typography>
+          <Typography variant="h5" sx={editorDrawerProjectNames}>
+            {currentProjectType}
+          </Typography>
+        </Box>
+      )}
+      <EditButtonsAll
+        clearGrid={clearGrid}
+        currentlySelectedColor={currentlySelectedColor}
+        setCurrentlySelectedColor={setCurrentlySelectedColor}
+      />
     </>
   );
 };

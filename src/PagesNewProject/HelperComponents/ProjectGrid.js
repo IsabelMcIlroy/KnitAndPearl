@@ -1,15 +1,12 @@
-import _ from "lodash";
 import { Box, Grid } from "@mui/material";
 import { NewProjectEditor } from "./NewProjectEditor";
 import { ProjectGridCell } from "./ProjectGridCell";
-import { EditButtonsAll } from "./EditButtonsAll";
 
 export const ProjectGrid = ({
   currentlySelectedColor,
   gridArray,
   setGridArray,
   currentColumns,
-  currentRows,
   currentProjectName,
   currentProjectType,
   setCurrentlySelectedColor,
@@ -36,6 +33,9 @@ export const ProjectGrid = ({
           <NewProjectEditor
             currentProjectName={currentProjectName}
             currentProjectType={currentProjectType}
+            clearGrid={clearGrid}
+            currentlySelectedColor={currentlySelectedColor}
+            setCurrentlySelectedColor={setCurrentlySelectedColor}
           />
           <Grid
             container
@@ -71,28 +71,7 @@ export const ProjectGrid = ({
               });
             })}
           </Grid>
-          <Grid
-            container
-            spacing={12 / currentRows}
-            sx={{
-              marginTop: "12px",
-              maxWidth: "80vh",
-              minWidth: "300px",
-              textAlign: "center",
-            }}
-          >
-            {_.range(currentColumns, 0).map((value) => (
-              <Grid item key={value} value={value} xs={12 / currentColumns}>
-                {value}
-              </Grid>
-            ))}
-          </Grid>
         </Box>
-        <EditButtonsAll
-          clearGrid={clearGrid}
-          currentlySelectedColor={currentlySelectedColor}
-          setCurrentlySelectedColor={setCurrentlySelectedColor}
-        />
       </Box>
     </Box>
   );

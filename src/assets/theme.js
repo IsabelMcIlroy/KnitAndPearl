@@ -145,6 +145,7 @@ export const editorDrawerProjectNames = {
   margin: "0 12px",
   color: palette.knittingBlue,
   textTransform: "capitalize",
+  fontWeight: "bold",
 };
 
 export const editorDrawerLabels = {

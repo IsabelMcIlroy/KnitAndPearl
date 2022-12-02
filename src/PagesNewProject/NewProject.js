@@ -34,7 +34,6 @@ export const NewProject = () => {
         gridArray={gridArray}
         setGridArray={setGridArray}
         currentColumns={currentColumns}
-        currentRows={currentRows}
         clearGrid={clearGrid}
         setCurrentlySelectedColor={setCurrentlySelectedColor}
       />
