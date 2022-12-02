@@ -42,6 +42,8 @@ export const EditButtonsAll = ({
             borderRadius: "12px",
             backgroundColor: palette.knittingGray,
             display: "flex",
+            width: "100%",
+            justifyContent: "space-between",
           }}
         >
           <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -60,30 +62,32 @@ export const EditButtonsAll = ({
               />
             </Box>
           </Box>
-          {pathName !== "/KnittingProjectManager/NewProject" && (
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            {pathName !== "/KnittingProjectManager/NewProject" && (
+              <EditButtonsAndPopover
+                popoverText={"Clear Grid."}
+                onClick={() => {
+                  clearGrid();
+                }}
+              />
+            )}
+            {pathName === "/KnittingProjectManager/" && (
+              <EditButtonsAndPopover
+                popoverText={"Reset Project."}
+                onClick={() => {
+                  clearGrid();
+                }}
+              />
+            )}
+            <EditButtonsAndPopover popoverText={"Save."} onClick={onSave} />
             <EditButtonsAndPopover
-              popoverText={"Clear Grid."}
+              popoverText={"Exit."}
               onClick={() => {
-                clearGrid();
+                setIsOpen(true);
               }}
             />
-          )}
-          {pathName === "/KnittingProjectManager/" && (
-            <EditButtonsAndPopover
-              popoverText={"Reset Project."}
-              onClick={() => {
-                clearGrid();
-              }}
-            />
-          )}
-          <EditButtonsAndPopover popoverText={"Save."} onClick={onSave} />
-          <EditButtonsAndPopover
-            popoverText={"Exit."}
-            onClick={() => {
-              setIsOpen(true);
-            }}
-          />
-          <ProjectExitButtonModal open={isOpen} setIsOpen={setIsOpen} />
+            <ProjectExitButtonModal open={isOpen} setIsOpen={setIsOpen} />
+          </Box>
         </Box>
       </Box>
     </>
