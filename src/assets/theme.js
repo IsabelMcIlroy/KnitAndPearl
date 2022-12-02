@@ -135,6 +135,7 @@ export const editBarButtonIcon = {
 export const editBarButton = {
   backgroundColor: palette.knittingBlue,
   margin: "4px",
+  height: "fit-content",
   width: "fit-content",
   "&:hover": {
     backgroundColor: "#0B5082",

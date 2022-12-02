@@ -41,19 +41,18 @@ export const EditButtonsAll = ({
             padding: "12px",
             borderRadius: "12px",
             backgroundColor: palette.knittingGray,
+            display: "flex",
           }}
         >
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             <Box
               sx={{
-                backgroundColor: palette.knittingBlue,
-                borderRadius: "12px",
                 padding: "8px",
                 width: "fit-content",
               }}
             >
-              <Typography variant="h7" sx={{ color: palette.knittingGray }}>
-                Color:
+              <Typography variant="h7" sx={{ color: palette.knittingBlue }}>
+                Pick Color:
               </Typography>
               <ColorPicker
                 currentlySelectedColor={currentlySelectedColor}
