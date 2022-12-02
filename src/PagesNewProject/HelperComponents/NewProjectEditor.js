@@ -16,33 +16,41 @@ export const NewProjectEditor = ({
     <>
       <Box
         sx={{
-          display: "flex",
-          paddingTop: "12px",
-          alignItems: "baseline",
+          borderRadius: "24px",
+          backgroundColor: "#F3ECF6",
+          padding: "24px",
         }}
       >
-        <Typography variant="h5" sx={editorDrawerLabels}>
-          Project Name:
-        </Typography>
-        <Typography variant="h5" sx={editorDrawerProjectNames}>
-          {currentProjectName || "---"}
-        </Typography>
-      </Box>
-      {currentProjectType && (
-        <Box sx={{ display: "flex", alignItems: "baseline" }}>
+        <Box
+          sx={{
+            display: "flex",
+            paddingTop: "12px",
+            alignItems: "baseline",
+          }}
+        >
           <Typography variant="h5" sx={editorDrawerLabels}>
-            Project Type:
+            Project Name:
           </Typography>
           <Typography variant="h5" sx={editorDrawerProjectNames}>
-            {currentProjectType}
+            {currentProjectName || "---"}
           </Typography>
         </Box>
-      )}
-      <EditButtonsAll
-        clearGrid={clearGrid}
-        currentlySelectedColor={currentlySelectedColor}
-        setCurrentlySelectedColor={setCurrentlySelectedColor}
-      />
+        {currentProjectType && (
+          <Box sx={{ display: "flex", alignItems: "baseline" }}>
+            <Typography variant="h5" sx={editorDrawerLabels}>
+              Project Type:
+            </Typography>
+            <Typography variant="h5" sx={editorDrawerProjectNames}>
+              {currentProjectType}
+            </Typography>
+          </Box>
+        )}
+        <EditButtonsAll
+          clearGrid={clearGrid}
+          currentlySelectedColor={currentlySelectedColor}
+          setCurrentlySelectedColor={setCurrentlySelectedColor}
+        />
+      </Box>
     </>
   );
 };

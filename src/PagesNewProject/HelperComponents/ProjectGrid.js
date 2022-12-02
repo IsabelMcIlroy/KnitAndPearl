@@ -24,9 +24,6 @@ export const ProjectGrid = ({
         sx={{
           display: "flex",
           margin: "112px 0 24px 0",
-          padding: "24px",
-          borderRadius: "24px",
-          backgroundColor: "#F3ECF6",
         }}
       >
         <Box sx={{ margin: "24px" }}>
@@ -45,6 +42,9 @@ export const ProjectGrid = ({
               maxWidth: "80vh",
               minWidth: "300px",
               aspectRatio: "1/1",
+              padding: "24px",
+              borderRadius: "24px",
+              backgroundColor: "#F3ECF6",
             }}
           >
             {gridArray.map((row, xindex) => {
