@@ -38,10 +38,17 @@ export const LoginModal = ({
       },
       body: JSON.stringify(data),
     });
-    const payload = await response.json();
-    console.log(payload);
-    setIsLoginOpen(false);
-    navigate("/KnitAndPearl/ViewProject", {});
+    console.log(response.ok, response.status);
+    if (!response.ok) {
+      if (response.status === 401) {
+        console.log("Incorrect username/password");
+      }
+    } else {
+      const payload = await response.json();
+      console.log(payload);
+      setIsLoginOpen(false);
+      navigate("/KnitAndPearl/ViewProject", {});
+    }
   };
   return (
     <ThemeProvider theme={KnittingTheme}>

@@ -36,6 +36,7 @@ export const NewProject = () => {
         currentColumns={currentColumns}
         clearGrid={clearGrid}
         setCurrentlySelectedColor={setCurrentlySelectedColor}
+        grid={grid}
       />
     </Box>
   );

@@ -19,8 +19,9 @@ router.post("/", async function (req, res) {
     } else {
       res.json({ error: "incorrect password/username" });
     }
-  } catch {
-    res.send(401);
+  } catch (e) {
+    console.error(e);
+    res.sendStatus(401);
   }
 });
 

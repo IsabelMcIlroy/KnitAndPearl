@@ -9,6 +9,7 @@ export const EditButtonsAll = ({
   clearGrid,
   currentlySelectedColor,
   setCurrentlySelectedColor,
+  grid,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const pathName = window.location.pathname;
@@ -76,14 +77,21 @@ export const EditButtonsAll = ({
                 }}
               />
             )}
-            <EditButtonsAndPopover popoverText={"Save."} onClick={onSave} />
+            <EditButtonsAndPopover
+              popoverText={"Save."}
+              onClick={() => onSave(grid)}
+            />
             <EditButtonsAndPopover
               popoverText={"Exit."}
               onClick={() => {
                 setIsOpen(true);
               }}
             />
-            <ProjectExitButtonModal open={isOpen} setIsOpen={setIsOpen} />
+            <ProjectExitButtonModal
+              open={isOpen}
+              setIsOpen={setIsOpen}
+              gridColours={grid}
+            />
           </Box>
         </Box>
       </Box>

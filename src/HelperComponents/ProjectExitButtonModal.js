@@ -3,7 +3,12 @@ import { Modal, ThemeProvider, Typography, Box } from "@mui/material";
 import KnittingTheme, { palette, modalTitle } from "../assets/theme";
 import { ModalButton } from "./ModalButton";
 
-export const ProjectExitButtonModal = ({ open, onClick, setIsOpen }) => {
+export const ProjectExitButtonModal = ({
+  open,
+  onClick,
+  setIsOpen,
+  gridColours,
+}) => {
   const navigate = useNavigate();
   const onSave = async (data) => {
     const response = await fetch("/projects/:id", {
@@ -55,7 +60,10 @@ export const ProjectExitButtonModal = ({ open, onClick, setIsOpen }) => {
                 flexWrap: "wrap",
               }}
             >
-              <ModalButton text="Save&amp; Exit" onClick={onSave()} />
+              <ModalButton
+                text="Save&amp; Exit"
+                onClick={() => onSave({ gridColours })}
+              />
               <ModalButton
                 text="Exit"
                 onClick={() => navigate("/KnitAndPearl/ViewProject")}
