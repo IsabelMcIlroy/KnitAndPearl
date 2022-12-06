@@ -25,7 +25,7 @@ export const Router = () => {
         <Route element={<NavBar />}>
           <Route path="/KnitAndPearl/NewProject" element={<NewProject />} />
           <Route path="/KnitAndPearl/ViewProjects" element={<ViewProjects />} />
-          <Route path="/KnitAndPearl/:id" element={<Project />} />
+          <Route path="/KnitAndPearl/ViewProjects/:id" element={<Project />} />
         </Route>
       )}
       <Route path="/KnitAndPearl/" element={<Home />} />

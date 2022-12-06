@@ -64,6 +64,7 @@ export const ViewProjects = () => {
                 key={displayProjectsArray.id}
                 projectName={displayProjectsArray.name}
                 projectType={displayProjectsArray.type}
+                projectID={displayProjectsArray.id}
               />
             );
           })}

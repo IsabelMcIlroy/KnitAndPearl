@@ -12,7 +12,7 @@ import KnittingTheme, { palette } from "../../assets/theme";
 import { MiniProjectGrid } from "../ProjectData/MiniProjectGrid";
 import { fishGrid } from "../ProjectData/ProjectData";
 
-export const ViewProjectCard = ({ projectName, projectType }) => {
+export const ViewProjectCard = ({ projectName, projectType, projectID }) => {
   const navigate = useNavigate();
   return (
     <>
@@ -50,7 +50,7 @@ export const ViewProjectCard = ({ projectName, projectType }) => {
                 <Button
                   size="small"
                   onClick={() =>
-                    navigate(`/KnitAndPearl/:id`, {
+                    navigate(`/KnitAndPearl/ViewProjects/${projectID}`, {
                       state: {
                         currentProjectName: projectName,
                         currentProjectType: projectType,
