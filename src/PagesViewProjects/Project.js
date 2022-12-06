@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Box } from "@mui/material";
 import { ProjectGrid } from "../PagesNewProject/HelperComponents/ProjectGrid";
 
 export const Project = () => {
-  const { id } = useParams;
-  console.log(id);
   const { state } = useLocation();
   const {
     currentProjectName,
