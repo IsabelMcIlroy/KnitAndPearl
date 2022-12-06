@@ -3,7 +3,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { Box } from "@mui/material";
 import { ProjectGrid } from "../PagesNewProject/HelperComponents/ProjectGrid";
 
-export const NewProject = () => {
+export const Project = () => {
   const { id } = useParams;
   console.log(id);
   const { state } = useLocation();

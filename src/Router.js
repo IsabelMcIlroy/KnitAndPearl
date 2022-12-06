@@ -3,10 +3,7 @@ import { NavBar } from "./HelperComponents/NavBar";
 import { Home } from "./PagesHome/Home";
 import { NewProject } from "./PagesNewProject/NewProject";
 import { ViewProject } from "./PagesViewProjects/ViewProject";
-import { TreesProject } from "./PagesViewProjects/ProjectData/TreesProject";
-import { MountainsProject } from "./PagesViewProjects/ProjectData/MountainsProject";
-import { CatsProject } from "./PagesViewProjects/ProjectData/CatsProject";
-import { FishProject } from "./PagesViewProjects/ProjectData/FishProject";
+import { Project } from "./PagesViewProjects/Project";
 import { useEffect, useState } from "react";
 
 export const Router = () => {
@@ -28,17 +25,7 @@ export const Router = () => {
         <Route element={<NavBar />}>
           <Route path="/KnitAndPearl/NewProject" element={<NewProject />} />
           <Route path="/KnitAndPearl/ViewProject" element={<ViewProject />} />
-          <Route
-            path="/KnitAndPearl/ViewProject/:id"
-            element={<ViewProject />}
-          />
-          <Route path="/KnitAndPearl/TreesProject" element={<TreesProject />} />
-          <Route
-            path="/KnitAndPearl/MountainsProject"
-            element={<MountainsProject />}
-          />
-          <Route path="/KnitAndPearl/CatsProject" element={<CatsProject />} />
-          <Route path="/KnitAndPearl/FishProject" element={<FishProject />} />
+          <Route path="/KnitAndPearl/:id" element={<Project />} />
         </Route>
       )}
       <Route path="/KnitAndPearl/" element={<Home />} />
