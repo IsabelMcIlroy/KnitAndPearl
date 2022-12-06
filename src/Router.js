@@ -12,13 +12,15 @@ import { useEffect, useState } from "react";
 export const Router = () => {
   const [user, setUser] = useState();
   useEffect(() => {
-    (async () => {
-      const resp = await fetch("/currentUser", {
-        "Content-Type": "application/json",
-      });
-      const user = await resp.json();
-      setUser(user);
-    })();
+    if (!user) {
+      (async () => {
+        const resp = await fetch("/currentUser", {
+          "Content-Type": "application/json",
+        });
+        const user = await resp.json();
+        setUser(user);
+      })();
+    }
   });
   return (
     <Routes>
