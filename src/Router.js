@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { NavBar } from "./HelperComponents/NavBar";
 import { Home } from "./PagesHome/Home";
 import { NewProject } from "./PagesNewProject/NewProject";
-import { ViewProject } from "./PagesViewProjects/ViewProject";
+import { ViewProjects } from "./PagesViewProjects/ViewProjects";
 import { Project } from "./PagesViewProjects/Project";
 import { useEffect, useState } from "react";
 
@@ -24,7 +24,7 @@ export const Router = () => {
       {user && (
         <Route element={<NavBar />}>
           <Route path="/KnitAndPearl/NewProject" element={<NewProject />} />
-          <Route path="/KnitAndPearl/ViewProject" element={<ViewProject />} />
+          <Route path="/KnitAndPearl/ViewProjects" element={<ViewProjects />} />
           <Route path="/KnitAndPearl/:id" element={<Project />} />
         </Route>
       )}

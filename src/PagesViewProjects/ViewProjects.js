@@ -5,7 +5,7 @@ import { palette } from "../assets/theme";
 import { ViewProjectCard } from "./HelperComponents/ViewProjectCard";
 import { NewProjectSizeAndColourSelectionModal } from "../HelperComponents/NewProjectSizeAndColourSelectionModal";
 
-export const ViewProject = () => {
+export const ViewProjects = () => {
   const { isLoading, data: allProjects, error } = useFetch("/projects");
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
