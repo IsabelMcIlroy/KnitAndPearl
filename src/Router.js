@@ -1,4 +1,4 @@
-import { Routes, Route, redirect } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { NavBar } from "./HelperComponents/NavBar";
 import { Home } from "./PagesHome/Home";
 import { NewProject } from "./PagesNewProject/NewProject";
