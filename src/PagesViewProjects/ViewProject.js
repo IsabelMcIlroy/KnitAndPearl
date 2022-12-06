@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import useFetch from "react-fetch-hook";
 import { Box, Typography, TextField, Fab } from "@mui/material";
 import { palette } from "../assets/theme";
