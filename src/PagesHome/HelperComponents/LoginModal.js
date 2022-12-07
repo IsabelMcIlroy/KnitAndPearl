@@ -47,7 +47,7 @@ export const LoginModal = ({
       const payload = await response.json();
       console.log(payload);
       setIsLoginOpen(false);
-      navigate("/KnitAndPearl/ViewProject", {});
+      navigate("/KnitAndPearl/ViewProjects", {});
     }
   };
   return (

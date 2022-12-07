@@ -41,7 +41,7 @@ export const SignupModal = ({
     const payload = await response.json();
     console.log(payload);
     setIsSignupOpen(false);
-    navigate("/KnitAndPearl/ViewProject", {});
+    navigate("/KnitAndPearl/ViewProjects", {});
   };
   return (
     <ThemeProvider theme={KnittingTheme}>
