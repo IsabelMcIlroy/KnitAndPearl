@@ -7,7 +7,6 @@ import { NewProjectSizeAndColourSelectionModal } from "../HelperComponents/NewPr
 
 export const ViewProjects = () => {
   const { isLoading, data: allProjects, error } = useFetch("/projects");
-  console.log(allProjects.gridColours);
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const projectsToShow = allProjects?.filter(
