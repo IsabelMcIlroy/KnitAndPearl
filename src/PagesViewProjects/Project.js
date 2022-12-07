@@ -8,8 +8,9 @@ export const Project = () => {
   const {
     currentProjectName,
     currentProjectType,
-    currentColumns,
     currentRows,
+    currentColumns,
+    // gridColours,
   } = state;
   const [currentlySelectedColor, setCurrentlySelectedColor] = useState({
     r: 241,

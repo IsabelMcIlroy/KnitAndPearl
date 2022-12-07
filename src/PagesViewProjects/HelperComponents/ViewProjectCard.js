@@ -12,7 +12,14 @@ import KnittingTheme, { palette } from "../../assets/theme";
 import { MiniProjectGrid } from "../ProjectData/MiniProjectGrid";
 import { fishGrid } from "../ProjectData/ProjectData";
 
-export const ViewProjectCard = ({ projectName, projectType, projectID }) => {
+export const ViewProjectCard = ({
+  projectName,
+  projectType,
+  projectID,
+  currentRows,
+  currentColumns,
+  gridColours,
+}) => {
   const navigate = useNavigate();
   return (
     <>
@@ -23,7 +30,7 @@ export const ViewProjectCard = ({ projectName, projectType, projectID }) => {
         }}
       >
         <CardContent>
-          <MiniProjectGrid grid={fishGrid} currentColumns={9} />
+          <MiniProjectGrid grid={fishGrid} currentColumns={currentColumns} />
           <Box sx={{ margin: "8px", maxWidth: "90%" }}>
             <Typography
               variant="h4"
@@ -54,6 +61,9 @@ export const ViewProjectCard = ({ projectName, projectType, projectID }) => {
                       state: {
                         currentProjectName: projectName,
                         currentProjectType: projectType,
+                        currentRows: currentRows,
+                        currentColumns: currentColumns,
+                        gridColours: gridColours,
                       },
                     })
                   }
