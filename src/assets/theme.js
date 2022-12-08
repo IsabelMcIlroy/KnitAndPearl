@@ -106,7 +106,6 @@ export const navBarButtons = {
 export const titleFontSx = {
   fontFamily: "La Belle Aurore",
   color: palette.knittingPurple,
-  marginBottom: "4%",
   userSelect: "none",
 };
 

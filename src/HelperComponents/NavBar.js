@@ -26,6 +26,7 @@ export const NavBar = () => {
           padding: "10px",
           flexDirection: "row",
           justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
         <Box
