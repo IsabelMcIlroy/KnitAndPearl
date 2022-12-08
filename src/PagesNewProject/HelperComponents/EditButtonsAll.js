@@ -63,7 +63,7 @@ export const EditButtonsAll = ({
           <Box sx={{ display: "flex", alignItems: "center" }}>
             {pathName !== "/KnittingProjectManager/NewProject" && (
               <EditButtonsAndPopover
-                popoverText={"Clear Grid."}
+                popoverText={"Reset"}
                 onClick={() => {
                   clearGrid();
                 }}
@@ -71,18 +71,18 @@ export const EditButtonsAll = ({
             )}
             {pathName === "/KnittingProjectManager/" && (
               <EditButtonsAndPopover
-                popoverText={"Reset Project."}
+                popoverText={"Clear"}
                 onClick={() => {
                   clearGrid();
                 }}
               />
             )}
             <EditButtonsAndPopover
-              popoverText={"Save."}
+              popoverText={"Save"}
               onClick={() => onSave(grid)}
             />
             <EditButtonsAndPopover
-              popoverText={"Exit."}
+              popoverText={"Exit"}
               onClick={() => {
                 setIsOpen(true);
               }}

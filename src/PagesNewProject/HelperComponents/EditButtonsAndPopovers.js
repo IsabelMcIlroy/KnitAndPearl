@@ -23,14 +23,14 @@ export const EditButtonsAndPopover = ({ popoverText, onClick }) => {
         }}
         onClick={onClick}
       >
-        {popoverText === "Reset Project." && (
+        {popoverText === "Reset" && (
           <SettingsBackupRestoreRoundedIcon sx={editBarButtonIcon} />
         )}
-        {popoverText === "Clear Grid." && (
+        {popoverText === "Clear" && (
           <SettingsBackupRestoreRoundedIcon sx={editBarButtonIcon} />
         )}
-        {popoverText === "Save." && <SaveRoundedIcon sx={editBarButtonIcon} />}
-        {popoverText === "Exit." && (
+        {popoverText === "Save" && <SaveRoundedIcon sx={editBarButtonIcon} />}
+        {popoverText === "Exit" && (
           <ExitToAppRoundedIcon sx={editBarButtonIcon} />
         )}
       </IconButton>
