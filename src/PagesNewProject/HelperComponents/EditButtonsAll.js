@@ -42,6 +42,7 @@ export const EditButtonsAll = ({
             display: "flex",
             width: "100%",
             justifyContent: "space-between",
+            alignItems: "center",
           }}
         >
           <Box sx={{ display: "flex", justifyContent: "center" }}>
