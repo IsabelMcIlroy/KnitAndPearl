@@ -112,7 +112,12 @@ export const SignupModal = ({
                     }}
                   >
                     Already signedup?{" "}
-                    <span style={{ textDecoration: "underline" }}>
+                    <span
+                      style={{
+                        textDecoration: "underline",
+                        color: palette.knittingLightBlue,
+                      }}
+                    >
                       Login Here!
                     </span>
                   </Typography>
