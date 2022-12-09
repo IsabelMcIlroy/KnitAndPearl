@@ -29,11 +29,11 @@ export const ProjectExitButtonModal = ({
           style={{
             overflowY: "auto",
             overflowStyle: "scroll",
-            transform: "translate(25%, 35%)",
+            transform: "translate(50%, 35%)",
             display: "inline-block",
             height: "80%",
             maxHeight: "500px",
-            width: "70%",
+            width: "50%",
           }}
         >
           <Typography variant="h4" sx={modalTitle}>
