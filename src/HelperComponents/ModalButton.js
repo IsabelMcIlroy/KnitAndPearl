@@ -1,8 +1,8 @@
 import { Button } from "@mui/material";
 
-export const ModalButton = ({ text, onClick }) => {
+export const ModalButton = ({ text, onClick, variant }) => {
   return (
-    <Button variant={text} onClick={onClick}>
+    <Button variant={variant} onClick={onClick}>
       {text}
     </Button>
   );

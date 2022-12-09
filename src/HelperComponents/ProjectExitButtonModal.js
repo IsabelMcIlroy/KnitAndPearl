@@ -29,11 +29,11 @@ export const ProjectExitButtonModal = ({
           style={{
             overflowY: "auto",
             overflowStyle: "scroll",
-            transform: "translate(45%, 45%)",
+            transform: "translate(25%, 35%)",
             display: "inline-block",
             height: "80%",
-            maxHeight: "250px",
-            width: "50%",
+            maxHeight: "500px",
+            width: "70%",
           }}
         >
           <Typography variant="h4" sx={modalTitle}>
@@ -61,15 +61,19 @@ export const ProjectExitButtonModal = ({
               }}
             >
               <ModalButton
-                text="Save&amp; Exit"
+                text="Save &amp; Exit"
+                variant="SaveAndExit"
                 onClick={() => onSave({ gridColours })}
+                sx={{ width: "fit-content" }}
               />
               <ModalButton
                 text="Exit"
-                onClick={() => navigate("/KnitAndPearl/ViewProject")}
+                variant="Exit"
+                onClick={() => navigate("/KnitAndPearl/ViewProjects")}
               />
               <ModalButton
                 text="Cancel"
+                variant="Cancel"
                 onClick={() => {
                   setIsOpen(false);
                 }}

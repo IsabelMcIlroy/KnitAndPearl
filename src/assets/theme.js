@@ -48,12 +48,11 @@ const KnittingTheme = createTheme({
             backgroundColor: "#0B5082",
           },
         },
-        "Save&amp; Exit": {
-          backgroundColor: palette.knittingBlue,
+        SaveAndExit: {
+          backgroundColor: palette.knittingLightBlue,
           width: "fit-content",
-          minHeight: "fit-content",
           "&:hover": {
-            backgroundColor: "#0B5082",
+            backgroundColor: palette.knittingBlue,
           },
         },
         Cancel: {
@@ -70,7 +69,7 @@ const KnittingTheme = createTheme({
             backgroundColor: "#724949",
           },
         },
-        "View Projects": {
+        ViewProjects: {
           backgroundColor: "white",
         },
       },
