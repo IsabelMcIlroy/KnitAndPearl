@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -30,6 +30,7 @@ export const LoginModal = ({
     handleSubmit,
   } = useForm({ resolver: yupResolver(validationSchema) });
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
   const onSubmit = async (data) => {
     const response = await fetch("/login", {
       method: "POST",
@@ -42,6 +43,7 @@ export const LoginModal = ({
     if (!response.ok) {
       if (response.status === 401) {
         console.log("Incorrect username/password");
+        setErrorMessage("Incorrect username/password");
       }
     } else {
       const payload = await response.json();
@@ -79,6 +81,11 @@ export const LoginModal = ({
               onSubmit={handleSubmit(onSubmit)}
               style={{ textAlign: "center" }}
             >
+              {errorMessage && (
+                <Typography variant="inherit" color="darkRed">
+                  {errorMessage}
+                </Typography>
+              )}
               <Box padding="12px">
                 <TextField
                   required
@@ -88,7 +95,7 @@ export const LoginModal = ({
                   {...register("username")}
                   sx={{ width: "90%" }}
                 />
-                <Typography variant="inherit" color={palette.knittingPurple}>
+                <Typography variant="inherit" color="darkRed">
                   {errors.username?.message}
                 </Typography>
               </Box>
@@ -101,7 +108,7 @@ export const LoginModal = ({
                   {...register("password")}
                   sx={{ width: "90%" }}
                 />
-                <Typography variant="inherit" color={palette.knittingPurple}>
+                <Typography variant="inherit" color="darkRed">
                   {errors.password?.message}
                 </Typography>
                 <Box padding="12px">
