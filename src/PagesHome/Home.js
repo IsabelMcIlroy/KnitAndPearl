@@ -22,55 +22,65 @@ export const Home = () => {
     >
       <Box
         sx={{
-          textAlign: "center",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
+          padding: "4% 12%",
+          height: "86vh",
         }}
       >
         <Box
           sx={{
-            backgroundColor: "rgba(232, 225, 236, 0.8)",
+            backgroundColor: "rgba(232, 225, 236, 0.85)",
             borderRadius: "36px",
-            padding: "12%",
+            textAlign: "center",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+            width: "100%",
           }}
         >
-          <Title titleText={"Knit & Pearl"} />
+          <Box>
+            <Title titleText={"Knit & Pearl"} />
 
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexWrap: "wrap",
-              flexDirection: { xs: "column", lg: "row" },
-            }}
-          >
-            <WelcomePageOptionButtons
-              btnText={"Login"}
-              onClick={() => {
-                setIsLoginOpen(true);
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexWrap: "wrap",
+                flexDirection: {
+                  xl: "row",
+                  lg: "row",
+                  md: "row",
+                  sm: "column",
+                  xs: "column",
+                },
               }}
-            />
-            <LoginModal
-              open={isLoginOpen}
-              setIsLoginOpen={setIsLoginOpen}
-              setIsSignupOpen={setIsSignupOpen}
-            />
+            >
+              <WelcomePageOptionButtons
+                btnText={"Login"}
+                onClick={() => {
+                  setIsLoginOpen(true);
+                }}
+              />
+              <LoginModal
+                open={isLoginOpen}
+                setIsLoginOpen={setIsLoginOpen}
+                setIsSignupOpen={setIsSignupOpen}
+              />
 
-            <Logo />
-            <WelcomePageOptionButtons
-              btnText={"Signup"}
-              onClick={() => {
-                setIsSignupOpen(true);
-              }}
-            />
-            <SignupModal
-              open={isSignupOpen}
-              setIsSignupOpen={setIsSignupOpen}
-              setIsLoginOpen={setIsLoginOpen}
-            />
+              <Logo />
+              <WelcomePageOptionButtons
+                btnText={"Signup"}
+                onClick={() => {
+                  setIsSignupOpen(true);
+                }}
+              />
+              <SignupModal
+                open={isSignupOpen}
+                setIsSignupOpen={setIsSignupOpen}
+                setIsLoginOpen={setIsLoginOpen}
+              />
+            </Box>
           </Box>
         </Box>
       </Box>
