@@ -6,6 +6,7 @@ export const palette = {
   knittingLightBlue: "#468189",
   knittingPurple: "#4B3843",
   knittingLightPurple: "#927F8A",
+  knittingErrorColour: "#D32F2F",
 };
 
 const KnittingTheme = createTheme({
@@ -24,6 +25,9 @@ const KnittingTheme = createTheme({
     },
     purple: {
       main: palette.knittingLightPurple,
+    },
+    error: {
+      main: palette.knittingErrorColour,
     },
   },
   components: {

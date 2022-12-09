@@ -81,7 +81,10 @@ export const SignupModal = ({
                   {...register("username")}
                   sx={{ width: "90%" }}
                 />
-                <Typography variant="inherit" color={palette.knittingPurple}>
+                <Typography
+                  variant="inherit"
+                  color={palette.knittingErrorColour}
+                >
                   {errors.username?.message}
                 </Typography>
               </Box>
@@ -94,7 +97,10 @@ export const SignupModal = ({
                   {...register("password")}
                   sx={{ width: "90%" }}
                 />
-                <Typography variant="inherit" color={palette.knittingPurple}>
+                <Typography
+                  variant="inherit"
+                  color={palette.knittingErrorColour}
+                >
                   {errors.password?.message}
                 </Typography>
                 <Box padding="12px">

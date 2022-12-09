@@ -82,7 +82,10 @@ export const LoginModal = ({
               style={{ textAlign: "center" }}
             >
               {errorMessage && (
-                <Typography variant="inherit" color="darkRed">
+                <Typography
+                  variant="inherit"
+                  color={palette.knittingErrorColour}
+                >
                   {errorMessage}
                 </Typography>
               )}
@@ -95,7 +98,10 @@ export const LoginModal = ({
                   {...register("username")}
                   sx={{ width: "90%" }}
                 />
-                <Typography variant="inherit" color="darkRed">
+                <Typography
+                  variant="inherit"
+                  color={palette.knittingErrorColour}
+                >
                   {errors.username?.message}
                 </Typography>
               </Box>
@@ -108,7 +114,10 @@ export const LoginModal = ({
                   {...register("password")}
                   sx={{ width: "90%" }}
                 />
-                <Typography variant="inherit" color="darkRed">
+                <Typography
+                  variant="inherit"
+                  color={palette.knittingErrorColour}
+                >
                   {errors.password?.message}
                 </Typography>
                 <Box padding="12px">

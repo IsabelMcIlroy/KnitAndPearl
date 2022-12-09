@@ -108,7 +108,10 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   onChange={handleInput}
                   sx={{ width: "90%" }}
                 />
-                <Typography variant="inherit" color={palette.knittingPurple}>
+                <Typography
+                  variant="inherit"
+                  color={palette.knittingErrorColour}
+                >
                   {errors.projectName?.message}
                 </Typography>
               </Box>
@@ -168,7 +171,10 @@ export const NewProjectSizeAndColourSelectionModal = ({
                     margin: "0 auto",
                   }}
                 >
-                  <Typography variant="inherit" color={palette.knittingPurple}>
+                  <Typography
+                    variant="inherit"
+                    color={palette.knittingErrorColour}
+                  >
                     {errors.Row?.message}
                   </Typography>
                   <Typography variant="p">Column:</Typography>
@@ -191,7 +197,10 @@ export const NewProjectSizeAndColourSelectionModal = ({
                     ))}
                   </Select>
                 </Box>
-                <Typography variant="inherit" color={palette.knittingPurple}>
+                <Typography
+                  variant="inherit"
+                  color={palette.knittingErrorColour}
+                >
                   {errors.Column?.message}
                 </Typography>
               </Box>
