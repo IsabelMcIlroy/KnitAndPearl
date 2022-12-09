@@ -116,6 +116,7 @@ export const SignupModal = ({
                       style={{
                         textDecoration: "underline",
                         color: palette.knittingLightBlue,
+                        cursor: "pointer",
                       }}
                     >
                       Login Here!

@@ -133,6 +133,7 @@ export const LoginModal = ({
                       style={{
                         textDecoration: "underline",
                         color: palette.knittingLightBlue,
+                        cursor: "pointer",
                       }}
                     >
                       Signup Here!
