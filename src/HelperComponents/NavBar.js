@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import useFetch from "react-fetch-hook";
 import { AppBar, Box, Typography, Button } from "@mui/material";
 import { Logo } from "./logo";
 import { palette, navBarButtons, titleFontSx } from "../assets/theme";
@@ -17,6 +18,9 @@ export const NavBar = () => {
     console.log(payload);
     navigate("/KnitAndPearl/", {});
   };
+  const { loading, data: user, error } = useFetch("/currentUser");
+  console.log(loading);
+  console.log(error);
   return (
     <>
       <AppBar
@@ -41,12 +45,15 @@ export const NavBar = () => {
             Knit&Pearl
           </Typography>
         </Box>
-        <Box>
-          <Link to="/KnitAndPearl/" style={{ textDecoration: "none" }}>
-            <Button sx={navBarButtons} onClick={onLogout}>
-              Logout
-            </Button>
-          </Link>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          {user && <Typography variant="p">{user.username}</Typography>}
+          <Box>
+            <Link to="/KnitAndPearl/" style={{ textDecoration: "none" }}>
+              <Button sx={navBarButtons} onClick={onLogout}>
+                Logout
+              </Button>
+            </Link>
+          </Box>
         </Box>
       </AppBar>
       <Outlet />
