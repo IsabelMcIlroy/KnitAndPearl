@@ -24,8 +24,7 @@ router.post("/", isAuthenticated, async function (req, res) {
         })
       )
     );
-  req.session.project = newProject;
-  res.json({ message: newProject });
+  res.json(newProject);
 });
 
 router.get("/", isAuthenticated, async function (req, res) {
