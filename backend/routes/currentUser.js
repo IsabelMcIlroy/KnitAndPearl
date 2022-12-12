@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const isAuthenticated = require("../isAuthenticated");
 
 router.get("/", async function (req, res) {
   const currentlyLoggedinUser = req.session.user;
