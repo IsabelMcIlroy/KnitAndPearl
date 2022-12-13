@@ -10,7 +10,6 @@ import {
 } from "@mui/material";
 import KnittingTheme, { palette } from "../../assets/theme";
 import { MiniProjectGrid } from "../ProjectData/MiniProjectGrid";
-import { fishGrid } from "../ProjectData/ProjectData";
 
 export const ViewProjectCard = ({
   projectName,
@@ -30,7 +29,10 @@ export const ViewProjectCard = ({
         }}
       >
         <CardContent>
-          <MiniProjectGrid grid={fishGrid} currentColumns={currentColumns} />
+          <MiniProjectGrid
+            grid={JSON.parse(gridColours)}
+            currentColumns={currentColumns}
+          />
           <Box sx={{ margin: "8px", maxWidth: "90%" }}>
             <Typography
               variant="h4"
