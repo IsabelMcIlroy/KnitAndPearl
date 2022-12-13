@@ -18,22 +18,17 @@ export const Project = () => {
     b: 19,
     a: 1,
   });
-  const DEFAULT_COLOR = { r: 212, g: 196, b: 251, a: 1 };
-  let grid = Array(parseInt(currentRows))
-    .fill(0)
-    .map(() => new Array(parseInt(currentColumns)).fill(DEFAULT_COLOR));
   const [gridArray, setGridArray] = useState(gridColours);
   const clearGrid = () => {
-    setGridArray(grid);
+    setGridArray(gridColours);
   };
-  console.log(gridArray);
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <ProjectGrid
         currentlySelectedColor={currentlySelectedColor}
         currentProjectName={currentProjectName}
         currentProjectType={currentProjectType}
-        gridArray={gridArray}
+        gridArray={JSON.parse(gridArray)}
         setGridArray={setGridArray}
         currentColumns={currentColumns}
         currentRows={currentRows}
