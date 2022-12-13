@@ -64,6 +64,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
         currentProjectType: data.projectType,
         currentRows: data.Row,
         currentColumns: data.Column,
+        currrentGridColours: data.grid_colours,
       },
     });
   };

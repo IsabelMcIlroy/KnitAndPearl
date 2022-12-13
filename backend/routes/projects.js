@@ -16,12 +16,16 @@ router.post("/", isAuthenticated, async function (req, res) {
       req.body.Row,
       req.body.Column,
       JSON.stringify(
-        Array(req.body.Row * req.body.Column).fill({
-          r: 212,
-          g: 196,
-          b: 251,
-          a: 1,
-        })
+        Array(parseInt(req.body.Row))
+          .fill(0)
+          .map(() =>
+            new Array(parseInt(req.body.Column)).fill({
+              r: 212,
+              g: 196,
+              b: 251,
+              a: 1,
+            })
+          )
       )
     );
   res.json(newProject);

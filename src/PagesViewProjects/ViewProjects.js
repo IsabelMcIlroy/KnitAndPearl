@@ -14,6 +14,7 @@ export const ViewProjects = () => {
       project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.type.toLowerCase().includes(searchQuery.toLowerCase())
   );
+  console.log(allProjects);
   return (
     <Box
       sx={{
