@@ -12,6 +12,7 @@ export const Project = () => {
     currentColumns,
     gridColours,
   } = state;
+  console.log(gridColours);
   const [currentlySelectedColor, setCurrentlySelectedColor] = useState({
     r: 241,
     g: 112,

@@ -5,6 +5,7 @@ const isAuthenticated = require("../isAuthenticated");
 
 router.post("/", isAuthenticated, async function (req, res) {
   let currentUser = req.session.user;
+  req.session.projectName = req.body.projectName;
   const newProject = await db
     .prepare(
       `INSERT INTO projects(owner_id, name, type, rows, columns, grid_colours) VALUES (?,?,?,?,?,?)`
@@ -42,6 +43,14 @@ router.get("/", isAuthenticated, async function (req, res) {
   } else {
     res.json(projectList);
   }
+});
+
+router.get("/project", isAuthenticated, async function (req, res) {
+  let projectName = req.session.projectName;
+  const project = await db
+    .prepare("SELECT grid_colours FROM projects WHERE name = ?")
+    .all(projectName);
+  res.json(project);
 });
 
 router.put("/:id", isAuthenticated, async function (req, res) {

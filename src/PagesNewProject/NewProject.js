@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import useFetch from "react-fetch-hook";
 import { Box } from "@mui/material";
 import { ProjectGrid } from "./HelperComponents/ProjectGrid";
 
 export const NewProject = () => {
+  const { isLoading, data: project, error } = useFetch("/projects/project");
+  console.log(isLoading);
+  console.log(project);
+  console.log(error);
   const { state } = useLocation();
   const {
     currentProjectName,
