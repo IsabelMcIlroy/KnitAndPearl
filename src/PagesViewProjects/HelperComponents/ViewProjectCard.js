@@ -61,6 +61,7 @@ export const ViewProjectCard = ({
                   onClick={() =>
                     navigate(`/KnitAndPearl/ViewProjects/${projectID}`, {
                       state: {
+                        projectID: projectID,
                         currentProjectName: projectName,
                         currentProjectType: projectType,
                         currentRows: currentRows,

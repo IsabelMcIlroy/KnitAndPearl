@@ -10,11 +10,12 @@ export const EditButtonsAll = ({
   currentlySelectedColor,
   setCurrentlySelectedColor,
   grid,
+  projectID,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const pathName = window.location.pathname;
   const onSave = async (data) => {
-    const response = await fetch("/projects/:id", {
+    const response = await fetch(`/projects/${projectID}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -122,6 +123,7 @@ export const EditButtonsAll = ({
                 open={isOpen}
                 setIsOpen={setIsOpen}
                 gridColours={grid}
+                projectID={projectID}
               />
             </Box>
           </Box>

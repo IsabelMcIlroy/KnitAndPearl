@@ -8,10 +8,11 @@ export const ProjectExitButtonModal = ({
   onClick,
   setIsOpen,
   gridColours,
+  projectID,
 }) => {
   const navigate = useNavigate();
   const onSave = async (data) => {
-    const response = await fetch("/projects/:id", {
+    const response = await fetch(`/projects/${projectID}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

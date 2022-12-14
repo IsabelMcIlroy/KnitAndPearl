@@ -6,6 +6,7 @@ import { ProjectGrid } from "../PagesNewProject/HelperComponents/ProjectGrid";
 export const Project = () => {
   const { state } = useLocation();
   const {
+    projectID,
     currentProjectName,
     currentProjectType,
     currentRows,
@@ -35,6 +36,7 @@ export const Project = () => {
         currentRows={currentRows}
         clearGrid={clearGrid}
         setCurrentlySelectedColor={setCurrentlySelectedColor}
+        projectID={projectID}
       />
     </Box>
   );

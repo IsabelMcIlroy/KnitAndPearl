@@ -12,6 +12,7 @@ export const NewProjectEditor = ({
   currentlySelectedColor,
   setCurrentlySelectedColor,
   grid,
+  projectID,
 }) => {
   return (
     <>
@@ -54,6 +55,7 @@ export const NewProjectEditor = ({
           currentlySelectedColor={currentlySelectedColor}
           setCurrentlySelectedColor={setCurrentlySelectedColor}
           grid={grid}
+          projectID={projectID}
         />
       </Box>
     </>

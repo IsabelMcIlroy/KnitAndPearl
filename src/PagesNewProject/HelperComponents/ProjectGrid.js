@@ -12,6 +12,7 @@ export const ProjectGrid = ({
   setCurrentlySelectedColor,
   clearGrid,
   grid,
+  projectID,
 }) => {
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
     const newGridArray = [...gridArray];
@@ -35,6 +36,7 @@ export const ProjectGrid = ({
             currentlySelectedColor={currentlySelectedColor}
             setCurrentlySelectedColor={setCurrentlySelectedColor}
             grid={grid}
+            projectID={projectID}
           />
           <Grid
             container
