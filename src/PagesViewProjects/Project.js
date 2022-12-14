@@ -13,16 +13,16 @@ export const Project = () => {
     currentColumns,
     gridColours,
   } = state;
-  console.log(gridColours);
+  let grid = JSON.parse(gridColours);
   const [currentlySelectedColor, setCurrentlySelectedColor] = useState({
     r: 241,
     g: 112,
     b: 19,
     a: 1,
   });
-  const [gridArray, setGridArray] = useState(gridColours);
+  const [gridArray, setGridArray] = useState(grid);
   const clearGrid = () => {
-    setGridArray(gridColours);
+    setGridArray(grid);
   };
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
@@ -30,7 +30,7 @@ export const Project = () => {
         currentlySelectedColor={currentlySelectedColor}
         currentProjectName={currentProjectName}
         currentProjectType={currentProjectType}
-        gridArray={JSON.parse(gridArray)}
+        gridArray={gridArray}
         setGridArray={setGridArray}
         currentColumns={currentColumns}
         currentRows={currentRows}

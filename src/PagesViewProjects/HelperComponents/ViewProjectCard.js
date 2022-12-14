@@ -19,6 +19,7 @@ export const ViewProjectCard = ({
   currentColumns,
   gridColours,
 }) => {
+  let grid = JSON.parse(gridColours);
   const navigate = useNavigate();
   return (
     <>
@@ -29,10 +30,7 @@ export const ViewProjectCard = ({
         }}
       >
         <CardContent>
-          <MiniProjectGrid
-            grid={JSON.parse(gridColours)}
-            currentColumns={currentColumns}
-          />
+          <MiniProjectGrid grid={grid} currentColumns={currentColumns} />
           <Box sx={{ margin: "8px", maxWidth: "90%" }}>
             <Typography
               variant="h4"

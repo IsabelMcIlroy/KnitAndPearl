@@ -11,7 +11,6 @@ export const NewProjectEditor = ({
   clearGrid,
   currentlySelectedColor,
   setCurrentlySelectedColor,
-  grid,
   projectID,
   gridArray,
 }) => {
@@ -55,7 +54,6 @@ export const NewProjectEditor = ({
           clearGrid={clearGrid}
           currentlySelectedColor={currentlySelectedColor}
           setCurrentlySelectedColor={setCurrentlySelectedColor}
-          grid={grid}
           projectID={projectID}
           gridArray={gridArray}
         />

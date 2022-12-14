@@ -9,7 +9,6 @@ export const EditButtonsAll = ({
   clearGrid,
   currentlySelectedColor,
   setCurrentlySelectedColor,
-  grid,
   projectID,
   gridArray,
 }) => {
