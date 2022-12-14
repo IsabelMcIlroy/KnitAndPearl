@@ -21,7 +21,7 @@ export const ProjectExitButtonModal = ({
     });
     const payload = await response.json();
     console.log(payload);
-    navigate("/KnitAndPearl/ViewProject");
+    navigate("/KnitAndPearl/ViewProjects");
   };
   return (
     <ThemeProvider theme={KnittingTheme}>

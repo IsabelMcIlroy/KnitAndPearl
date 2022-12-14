@@ -37,6 +37,7 @@ export const ProjectGrid = ({
             setCurrentlySelectedColor={setCurrentlySelectedColor}
             grid={grid}
             projectID={projectID}
+            gridArray={gridArray}
           />
           <Grid
             container

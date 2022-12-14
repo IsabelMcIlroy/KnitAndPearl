@@ -12,8 +12,6 @@ router.post("/", async function (req, res) {
 
   req.session.user = { username: newUser.username };
   res.json({ message: req.body.username });
-
-  //   need make something to check for unique usernames...
 });
 
 module.exports = router;

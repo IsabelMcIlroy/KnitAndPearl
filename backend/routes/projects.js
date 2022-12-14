@@ -54,10 +54,10 @@ router.get("/project", isAuthenticated, async function (req, res) {
 });
 
 router.put("/:id", isAuthenticated, async function (req, res) {
-  const currentProject = req.session.project.id;
+  const currentProject = req.params.id;
   const updateProject = await db
     .prepare(`UPDATE projects SET grid_colours = ? WHERE id = ?`)
-    .run(JSON.stringify(req.body.grid), currentProject);
+    .run(JSON.stringify(req.body.gridArray), currentProject);
   res.json(updateProject);
 });
 

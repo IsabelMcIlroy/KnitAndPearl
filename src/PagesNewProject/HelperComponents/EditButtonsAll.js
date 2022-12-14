@@ -11,16 +11,17 @@ export const EditButtonsAll = ({
   setCurrentlySelectedColor,
   grid,
   projectID,
+  gridArray,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const pathName = window.location.pathname;
-  const onSave = async (data) => {
+  const onSave = async (gridArray) => {
     const response = await fetch(`/projects/${projectID}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(gridArray),
     });
     const payload = await response.json();
     console.log(payload);
@@ -111,7 +112,7 @@ export const EditButtonsAll = ({
               )}
               <EditButtonsAndPopover
                 popoverText={"Save"}
-                onClick={() => onSave(grid)}
+                onClick={() => onSave(gridArray)}
               />
               <EditButtonsAndPopover
                 popoverText={"Exit"}
@@ -122,7 +123,7 @@ export const EditButtonsAll = ({
               <ProjectExitButtonModal
                 open={isOpen}
                 setIsOpen={setIsOpen}
-                gridColours={grid}
+                gridColours={gridArray}
                 projectID={projectID}
               />
             </Box>
