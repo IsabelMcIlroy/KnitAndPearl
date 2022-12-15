@@ -101,6 +101,7 @@ export const navBarButtons = {
   margin: "12px 24px",
   flexBasis: "auto",
   height: "3rem",
+  fontWeight: "bold",
   "&:hover": {
     backgroundColor: "#A6A0AA",
   },

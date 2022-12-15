@@ -1,11 +1,21 @@
 import { Link, Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import useFetch from "react-fetch-hook";
-import { AppBar, Box, Typography, Button } from "@mui/material";
+import { AppBar, Box, Typography, Button, Menu } from "@mui/material";
+import EmojiFoodBeverageIcon from "@mui/icons-material/EmojiFoodBeverage";
 import { Logo } from "./logo";
 import { palette, navBarButtons, titleFontSx } from "../assets/theme";
 
 export const NavBar = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const navigate = useNavigate();
   const onLogout = async (data) => {
     const response = await fetch("/logout", {
@@ -46,14 +56,37 @@ export const NavBar = () => {
           </Typography>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          {user && <Typography variant="p">{user.username}</Typography>}
-          <Box>
-            <Link to="/KnitAndPearl/" style={{ textDecoration: "none" }}>
-              <Button sx={navBarButtons} onClick={onLogout}>
-                Logout
-              </Button>
-            </Link>
-          </Box>
+          <Button
+            aria-controls={open ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={handleClick}
+            sx={navBarButtons}
+          >
+            {user && (
+              <>
+                <EmojiFoodBeverageIcon sx={{ paddingRight: "4px" }} />
+                {user.username}
+              </>
+            )}
+          </Button>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
+          >
+            <Box>
+              <Link to="/KnitAndPearl/" style={{ textDecoration: "none" }}>
+                <Button sx={navBarButtons} onClick={onLogout}>
+                  Logout
+                </Button>
+              </Link>
+            </Box>
+          </Menu>
         </Box>
       </AppBar>
       <Outlet />

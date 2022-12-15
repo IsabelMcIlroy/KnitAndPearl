@@ -9,7 +9,7 @@ router.post("/", async function (req, res) {
   const newUser = await db
     .prepare(`INSERT INTO users(username, password) VALUES (?,?)`)
     .run(req.body.username, hashedPassword);
-
+  console.log(newUser);
   req.session.user = { username: req.body.username };
   res.json({ message: req.body.username });
 });
