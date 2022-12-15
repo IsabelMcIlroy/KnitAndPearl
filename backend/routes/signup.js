@@ -10,7 +10,7 @@ router.post("/", async function (req, res) {
     .prepare(`INSERT INTO users(username, password) VALUES (?,?)`)
     .run(req.body.username, hashedPassword);
 
-  req.session.user = { username: newUser.username };
+  req.session.user = { username: req.body.username };
   res.json({ message: req.body.username });
 });
 
