@@ -5,19 +5,24 @@ import { Box } from "@mui/material";
 import { ProjectGrid } from "./HelperComponents/ProjectGrid";
 
 export const NewProject = () => {
-  const { isLoading, data: project, error } = useFetch("/projects/project");
-  //let gridColours = project[0].grid_colours;
-  console.log(isLoading);
-  console.log(project);
-  //console.log(gridColours);
-  console.log(error);
   const { state } = useLocation();
   const {
+    projectID,
     currentProjectName,
     currentProjectType,
     currentColumns,
     currentRows,
   } = state;
+  const {
+    isLoading,
+    data: project,
+    error,
+  } = useFetch(`/projects/${projectID}`);
+  //let gridColours = JSON.parse(project[0].grid_colours);
+  console.log(isLoading);
+  console.log(project);
+  //console.log(gridColours);
+  console.log(error);
   const [currentlySelectedColor, setCurrentlySelectedColor] = useState({
     r: 241,
     g: 112,

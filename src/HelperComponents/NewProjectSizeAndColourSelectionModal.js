@@ -34,6 +34,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
     handleSubmit,
   } = useForm({ resolver: yupResolver(validationSchema) });
   const [state, setState] = useState({
+    projectID: "",
     projectName: "",
     projectType: "",
     Row: " ",
@@ -60,6 +61,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
     setIsOpen(false);
     navigate(`/KnitAndPearl/NewProject/${payload.projectID}`, {
       state: {
+        projectID: payload.projectID,
         currentProjectName: data.projectName,
         currentProjectType: data.projectType,
         currentRows: data.Row,

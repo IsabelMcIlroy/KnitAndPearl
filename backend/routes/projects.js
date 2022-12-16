@@ -46,11 +46,11 @@ router.get("/", isAuthenticated, async function (req, res) {
   }
 });
 
-router.get("/project", isAuthenticated, async function (req, res) {
+router.get("/:id", isAuthenticated, async function (req, res) {
   const currentProject = req.params.id;
   console.log(currentProject);
   const project = await db
-    .prepare("SELECT grid_colours FROM projects WHERE name = ?")
+    .prepare("SELECT grid_colours FROM projects WHERE id = ?")
     .all(currentProject);
   res.json(project);
 });
