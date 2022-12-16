@@ -29,7 +29,8 @@ router.post("/", isAuthenticated, async function (req, res) {
           )
       )
     );
-  res.json(newProject);
+  const projectID = newProject.lastInsertRowid;
+  res.json({ projectID });
 });
 
 router.get("/", isAuthenticated, async function (req, res) {
@@ -46,10 +47,11 @@ router.get("/", isAuthenticated, async function (req, res) {
 });
 
 router.get("/project", isAuthenticated, async function (req, res) {
-  let projectName = req.session.projectName;
+  const currentProject = req.params.id;
+  console.log(currentProject);
   const project = await db
     .prepare("SELECT grid_colours FROM projects WHERE name = ?")
-    .all(projectName);
+    .all(currentProject);
   res.json(project);
 });
 

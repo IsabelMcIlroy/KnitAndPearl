@@ -27,7 +27,7 @@ export const router = createBrowserRouter(
           return {};
         }}
       >
-        <Route path="/KnitAndPearl/NewProject" element={<NewProject />} />
+        <Route path="/KnitAndPearl/NewProject/:id" element={<NewProject />} />
         <Route path="/KnitAndPearl/ViewProjects" element={<ViewProjects />} />
         <Route path="/KnitAndPearl/ViewProjects/:id" element={<Project />} />
       </Route>

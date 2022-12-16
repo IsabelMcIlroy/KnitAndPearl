@@ -58,7 +58,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
     const payload = await response.json();
     console.log(payload);
     setIsOpen(false);
-    navigate("/KnitAndPearl/NewProject", {
+    navigate(`/KnitAndPearl/NewProject/${payload.projectID}`, {
       state: {
         currentProjectName: data.projectName,
         currentProjectType: data.projectType,

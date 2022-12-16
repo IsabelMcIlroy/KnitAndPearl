@@ -13,13 +13,17 @@ export const Project = () => {
     currentColumns,
     gridColours,
   } = state;
-  let grid = JSON.parse(gridColours);
+  //let grid = JSON.parse(gridColours);
   const [currentlySelectedColor, setCurrentlySelectedColor] = useState({
     r: 241,
     g: 112,
     b: 19,
     a: 1,
   });
+  const DEFAULT_COLOR = { r: 212, g: 196, b: 251, a: 1 };
+  let grid = Array(parseInt(currentRows))
+    .fill(0)
+    .map(() => new Array(parseInt(currentColumns)).fill(DEFAULT_COLOR));
   const [gridArray, setGridArray] = useState(grid);
   const clearGrid = () => {
     setGridArray(grid);
