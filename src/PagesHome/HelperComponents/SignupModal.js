@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -30,6 +30,7 @@ export const SignupModal = ({
     handleSubmit,
   } = useForm({ resolver: yupResolver(validationSchema) });
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
   const onSubmit = async (data) => {
     const response = await fetch("/signup", {
       method: "POST",
@@ -38,10 +39,17 @@ export const SignupModal = ({
       },
       body: JSON.stringify(data),
     });
-    const payload = await response.json();
-    console.log(payload);
-    setIsSignupOpen(false);
-    navigate("/KnitAndPearl/ViewProjects", {});
+    if (!response.ok) {
+      if (response.status === 401) {
+        console.log("Try another username");
+        setErrorMessage("Try another username");
+      }
+    } else {
+      const payload = await response.json();
+      console.log(payload);
+      setIsSignupOpen(false);
+      navigate("/KnitAndPearl/ViewProjects", {});
+    }
   };
   return (
     <ThemeProvider theme={KnittingTheme}>
@@ -72,6 +80,14 @@ export const SignupModal = ({
               onSubmit={handleSubmit(onSubmit)}
               style={{ textAlign: "center" }}
             >
+              {errorMessage && (
+                <Typography
+                  variant="inherit"
+                  color={palette.knittingErrorColour}
+                >
+                  {errorMessage}
+                </Typography>
+              )}
               <Box padding="12px">
                 <TextField
                   required
