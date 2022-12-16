@@ -7,10 +7,12 @@ router.post("/", async function (req, res) {
   const hashedPassword = await bcrypt.hash(req.body.password, 10);
   // https://github.com/TryGhost/node-sqlite3/wiki/API
   const newUser = await db
-    .prepare(`INSERT INTO users(username, password) VALUES (?,?)`)
+    .prepare(`INSERT INTO users(username, password) VALUES (?,?) RETURNING id`)
     .run(req.body.username, hashedPassword);
-  console.log(newUser);
-  req.session.user = { username: req.body.username };
+  req.session.user = {
+    id: newUser.lastInsertRowid,
+    username: req.body.username,
+  };
   res.json({ message: req.body.username });
 });
 
