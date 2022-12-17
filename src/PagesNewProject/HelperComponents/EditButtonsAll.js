@@ -20,7 +20,7 @@ export const EditButtonsAll = ({
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(gridArray),
+      body: JSON.stringify({ gridArray }),
     });
     const payload = await response.json();
     console.log(payload);

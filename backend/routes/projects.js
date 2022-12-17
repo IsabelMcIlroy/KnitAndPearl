@@ -51,15 +51,16 @@ router.get("/:id", isAuthenticated, async function (req, res) {
   console.log(currentProject);
   const project = await db
     .prepare("SELECT grid_colours FROM projects WHERE id = ?")
-    .all(currentProject);
+    .get(currentProject);
   res.json(project);
 });
 
 router.put("/:id", isAuthenticated, async function (req, res) {
   const currentProject = req.params.id;
   const updateProject = await db
-    .prepare(`UPDATE projects SET grid_colours = ? WHERE id = ?`)
-    .run(JSON.stringify(req.body.gridArray), currentProject);
+    .prepare(`UPDATE projects SET grid_colours = ? WHERE id = ? RETURNING *`)
+    .get(JSON.stringify(req.body.gridArray), currentProject);
+  console.log(updateProject);
   res.json(updateProject);
 });
 

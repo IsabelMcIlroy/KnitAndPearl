@@ -18,11 +18,13 @@ export const NewProject = () => {
     data: project,
     error,
   } = useFetch(`/projects/${projectID}`);
-  //let gridColours = JSON.parse(project[0].grid_colours);
-  console.log(isLoading);
-  console.log(project);
-  //console.log(gridColours);
-  console.log(error);
+  if (project) {
+    let gridColours = JSON.parse(project.grid_colours);
+    console.log(isLoading);
+    console.log(project);
+    console.log(gridColours);
+    console.log(error);
+  }
   const [currentlySelectedColor, setCurrentlySelectedColor] = useState({
     r: 241,
     g: 112,
