@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Typography, Box } from "@mui/material";
 import {
   editorDrawerProjectNames,
   editorDrawerLabels,
 } from "../../assets/theme";
+import { EditProjectNameModal } from "../../HelperComponents/EditProjectNameModal";
 import { EditButtonsAll } from "./EditButtonsAll";
 
 export const NewProjectEditor = ({
@@ -13,7 +15,9 @@ export const NewProjectEditor = ({
   setCurrentlySelectedColor,
   projectID,
   gridArray,
+  gridColours,
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <Box
@@ -30,6 +34,9 @@ export const NewProjectEditor = ({
             alignItems: "baseline",
             flexWrap: "wrap",
           }}
+          onClick={() => {
+            setIsOpen(true);
+          }}
         >
           <Typography variant="h5" sx={editorDrawerLabels}>
             Project Name:
@@ -37,6 +44,14 @@ export const NewProjectEditor = ({
           <Typography variant="h5" sx={editorDrawerProjectNames}>
             {currentProjectName || "---"}
           </Typography>
+          <EditProjectNameModal
+            open={isOpen}
+            setIsOpen={setIsOpen}
+            projectID={projectID}
+            projectName={currentProjectName}
+            projectType={currentProjectType}
+            gridColours={gridColours}
+          />
         </Box>
         {currentProjectType && (
           <Box

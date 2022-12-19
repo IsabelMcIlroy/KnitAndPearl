@@ -42,6 +42,7 @@ export const Project = () => {
         clearGrid={clearGrid}
         setCurrentlySelectedColor={setCurrentlySelectedColor}
         projectID={projectID}
+        gridColours={currentGridColours}
       />
     </Box>
   );

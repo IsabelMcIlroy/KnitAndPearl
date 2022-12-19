@@ -63,4 +63,15 @@ router.put("/:id", isAuthenticated, async function (req, res) {
   res.json(updateProject);
 });
 
+router.put("/editNames/:id", isAuthenticated, async function (req, res) {
+  const currentProject = req.params.id;
+  const updateProject = await db
+    .prepare(
+      `UPDATE projects SET (name, type) = (?,?) WHERE id = ? RETURNING *`
+    )
+    .get(req.body.projectName, req.body.projectType, currentProject);
+  console.log(updateProject);
+  res.json(updateProject);
+});
+
 module.exports = router;

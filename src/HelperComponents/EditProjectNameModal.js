@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import {
@@ -12,7 +13,17 @@ import {
 import KnittingTheme, { palette, modalTitle } from "../assets/theme";
 import { ModalButton } from "./ModalButton";
 
-export const EditProjectNameModal = ({ open, onClick, setIsOpen }) => {
+export const EditProjectNameModal = ({
+  open,
+  onClick,
+  setIsOpen,
+  projectID,
+  projectName,
+  projectType,
+  currentColumns,
+  currentRows,
+}) => {
+  const navigate = useNavigate();
   const form = useRef();
   const validationSchema = yup.object().shape({
     projectName: yup.string().required("This is required"),
@@ -23,10 +34,11 @@ export const EditProjectNameModal = ({ open, onClick, setIsOpen }) => {
     handleSubmit,
   } = useForm({ resolver: yupResolver(validationSchema) });
   const [state, setState] = useState({
-    projectID: "",
-    projectName: "",
-    projectType: "",
+    projectID: projectID,
+    projectName: projectName,
+    projectType: projectType,
   });
+  console.log(projectID);
   const handleInput = (event) => {
     setState({
       ...state,
@@ -35,7 +47,7 @@ export const EditProjectNameModal = ({ open, onClick, setIsOpen }) => {
   };
   const onSubmit = async (data) => {
     console.log(data);
-    const response = await fetch("/projects/editNames", {
+    const response = await fetch(`/projects/editNames/${projectID}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -45,6 +57,16 @@ export const EditProjectNameModal = ({ open, onClick, setIsOpen }) => {
     const payload = await response.json();
     console.log(payload);
     setIsOpen(false);
+    navigate(`/KnitAndPearl/ViewProjects/${projectID}`, {
+      state: {
+        projectID: payload.id,
+        currentProjectName: payload.name,
+        currentProjectType: payload.type,
+        currentRows: payload.rows,
+        currentColumns: payload.columns,
+        gridColours: payload.grid_colours,
+      },
+    });
   };
   return (
     <ThemeProvider theme={KnittingTheme}>
