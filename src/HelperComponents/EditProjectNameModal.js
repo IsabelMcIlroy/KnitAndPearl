@@ -20,8 +20,6 @@ export const EditProjectNameModal = ({
   projectID,
   projectName,
   projectType,
-  currentColumns,
-  currentRows,
 }) => {
   const navigate = useNavigate();
   const form = useRef();
@@ -38,7 +36,6 @@ export const EditProjectNameModal = ({
     projectName: projectName,
     projectType: projectType,
   });
-  console.log(projectID);
   const handleInput = (event) => {
     setState({
       ...state,

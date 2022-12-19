@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, Popover } from "@mui/material";
 import {
   editorDrawerProjectNames,
   editorDrawerLabels,
@@ -18,6 +18,8 @@ export const NewProjectEditor = ({
   gridColours,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
   return (
     <>
       <Box
@@ -33,6 +35,13 @@ export const NewProjectEditor = ({
             paddingTop: "12px",
             alignItems: "baseline",
             flexWrap: "wrap",
+            cursor: "pointer",
+          }}
+          onMouseEnter={(event) => {
+            setAnchorEl(event.currentTarget);
+          }}
+          onMouseLeave={() => {
+            setAnchorEl(null);
           }}
           onClick={() => {
             setIsOpen(true);
@@ -44,18 +53,24 @@ export const NewProjectEditor = ({
           <Typography variant="h5" sx={editorDrawerProjectNames}>
             {currentProjectName || "---"}
           </Typography>
-          <EditProjectNameModal
-            open={isOpen}
-            setIsOpen={setIsOpen}
-            projectID={projectID}
-            projectName={currentProjectName}
-            projectType={currentProjectType}
-            gridColours={gridColours}
-          />
         </Box>
         {currentProjectType && (
           <Box
-            sx={{ display: "flex", alignItems: "baseline", flexWrap: "wrap" }}
+            sx={{
+              display: "flex",
+              alignItems: "baseline",
+              flexWrap: "wrap",
+              cursor: "pointer",
+            }}
+            onMouseEnter={(event) => {
+              setAnchorEl(event.currentTarget);
+            }}
+            onMouseLeave={() => {
+              setAnchorEl(null);
+            }}
+            onClick={() => {
+              setIsOpen(true);
+            }}
           >
             <Typography variant="h5" sx={editorDrawerLabels}>
               Project Type:
@@ -65,6 +80,33 @@ export const NewProjectEditor = ({
             </Typography>
           </Box>
         )}
+        <EditProjectNameModal
+          open={isOpen}
+          setIsOpen={setIsOpen}
+          projectID={projectID}
+          projectName={currentProjectName}
+          projectType={currentProjectType}
+          gridColours={gridColours}
+        />
+        <Popover
+          id="mouse-over-popover"
+          sx={{
+            pointerEvents: "none",
+          }}
+          open={open}
+          anchorEl={anchorEl}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "left",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+          disableRestoreFocus
+        >
+          <Typography sx={{ p: 1 }}>Edit</Typography>
+        </Popover>
         <EditButtonsAll
           clearGrid={clearGrid}
           currentlySelectedColor={currentlySelectedColor}
