@@ -8,9 +8,9 @@ router.post("/", isAuthenticated, async function (req, res) {
   req.session.projectName = req.body.projectName;
   const newProject = await db
     .prepare(
-      `INSERT INTO projects(owner_id, name, type, rows, columns, grid_colours) VALUES (?,?,?,?,?,?)`
+      `INSERT INTO projects(owner_id, name, type, rows, columns, grid_colours) VALUES (?,?,?,?,?,?) RETURNING *`
     )
-    .run(
+    .get(
       currentUser.id,
       req.body.projectName,
       req.body.projectType,
@@ -29,8 +29,7 @@ router.post("/", isAuthenticated, async function (req, res) {
           )
       )
     );
-  const projectID = newProject.lastInsertRowid;
-  res.json({ projectID });
+  res.json(newProject);
 });
 
 router.get("/", isAuthenticated, async function (req, res) {
