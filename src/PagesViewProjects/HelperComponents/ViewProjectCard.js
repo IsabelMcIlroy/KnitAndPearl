@@ -9,7 +9,7 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import KnittingTheme, { palette } from "../../assets/theme";
-import { MiniProjectGrid } from "../ProjectData/MiniProjectGrid";
+import { MiniProjectGrid } from "./MiniProjectGrid";
 
 export const ViewProjectCard = ({
   projectName,

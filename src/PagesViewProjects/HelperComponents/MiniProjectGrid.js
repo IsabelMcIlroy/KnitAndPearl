@@ -19,7 +19,7 @@ export const MiniProjectGrid = ({ currentColumns, grid }) => {
                 sx={{
                   border: "1px solid black",
                 }}
-                style={{ padding: "4px" }}
+                style={{ padding: "1%" }}
               >
                 <MiniProjectGridCell cellsColor={column} />
               </Grid>
