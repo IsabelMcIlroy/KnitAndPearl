@@ -207,9 +207,14 @@ export const NewProjectSizeAndColourSelectionModal = ({
                 </Typography>
               </Box>
               <Box textAlign="center">
-                <ModalButton onClick={handleSubmit(onSubmit)} text="Submit" />
+                <ModalButton
+                  onClick={handleSubmit(onSubmit)}
+                  text="Submit"
+                  variant="Sumbit"
+                />
                 <ModalButton
                   text="Cancel"
+                  variant="Cancel"
                   onClick={() => {
                     setIsOpen(false);
                   }}
