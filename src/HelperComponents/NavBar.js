@@ -28,8 +28,8 @@ export const NavBar = () => {
     console.log(payload);
     navigate("/KnitAndPearl/", {});
   };
-  const { loading, data: user, error } = useFetch("/currentUser");
-  console.log(loading);
+  const { isLoading, data: user, error } = useFetch("/currentUser");
+  console.log(isLoading);
   console.log(error);
   return (
     <>
