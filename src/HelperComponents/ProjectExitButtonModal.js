@@ -7,17 +7,17 @@ export const ProjectExitButtonModal = ({
   open,
   onClick,
   setIsOpen,
-  gridColours,
+  gridArray,
   projectID,
 }) => {
   const navigate = useNavigate();
-  const onSave = async (gridColours) => {
+  const onSave = async (gridArray) => {
     const response = await fetch(`/projects/${projectID}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ gridColours }),
+      body: JSON.stringify({ gridArray }),
     });
     const payload = await response.json();
     console.log(payload);
@@ -64,7 +64,7 @@ export const ProjectExitButtonModal = ({
               <ModalButton
                 text="Save &amp; Exit"
                 variant="SaveAndExit"
-                onClick={() => onSave({ gridColours })}
+                onClick={() => onSave(gridArray)}
                 sx={{ width: "fit-content" }}
               />
               <ModalButton

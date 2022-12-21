@@ -122,7 +122,7 @@ export const EditButtonsAll = ({
               <ProjectExitButtonModal
                 open={isOpen}
                 setIsOpen={setIsOpen}
-                gridColours={gridArray}
+                gridArray={gridArray}
                 projectID={projectID}
               />
             </Box>

@@ -1,11 +1,17 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import useFetch from "react-fetch-hook";
 import { Box } from "@mui/material";
 import { ProjectGrid } from "./HelperComponents/ProjectGrid";
 
 export const NewProject = () => {
+  const { isLoading, data, error } = useFetch("/projects/checkUser");
+  console.log(isLoading);
+  console.log(data);
+  console.log(error);
   const { state } = useLocation();
   const {
+    projectID,
     currentProjectName,
     currentProjectType,
     currentColumns,
@@ -37,8 +43,11 @@ export const NewProject = () => {
           gridArray={gridArray}
           setGridArray={setGridArray}
           currentColumns={currentColumns}
+          currentRows={currentRows}
           clearGrid={clearGrid}
           setCurrentlySelectedColor={setCurrentlySelectedColor}
+          projectID={projectID}
+          gridColours={currentGridColours}
           grid={grid}
         />
       </Box>
