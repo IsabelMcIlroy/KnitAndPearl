@@ -6,9 +6,9 @@ import {
 } from "react-router-dom";
 import { NavBar } from "./HelperComponents/NavBar";
 import { Home } from "./PagesHome/Home";
-import { NewProject } from "./PagesNewProject/NewProject";
+import { NewProjectPage } from "./PagesNewProject/NewProjectPage";
 import { ViewProjects } from "./PagesViewProjects/ViewProjects";
-import { Project } from "./PagesViewProjects/Project";
+import { ProjectPage } from "./PagesViewProjects/ProjectPage";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,9 +27,15 @@ export const router = createBrowserRouter(
           return {};
         }}
       >
-        <Route path="/KnitAndPearl/NewProject/:id" element={<NewProject />} />
+        <Route
+          path="/KnitAndPearl/NewProject/:id"
+          element={<NewProjectPage />}
+        />
         <Route path="/KnitAndPearl/ViewProjects" element={<ViewProjects />} />
-        <Route path="/KnitAndPearl/ViewProjects/:id" element={<Project />} />
+        <Route
+          path="/KnitAndPearl/ViewProjects/:id"
+          element={<ProjectPage />}
+        />
       </Route>
       <Route
         path="*"

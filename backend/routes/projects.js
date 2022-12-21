@@ -33,7 +33,6 @@ router.post("/", isAuthenticated, async function (req, res) {
 });
 
 router.get("/", isAuthenticated, async function (req, res) {
-  console.log(req.session.user.id);
   const projectList = await db
     .prepare("SELECT * FROM projects WHERE owner_id = ?")
     .all(req.session.user.id);
@@ -47,9 +46,8 @@ router.get("/", isAuthenticated, async function (req, res) {
 
 router.get("/:id", isAuthenticated, async function (req, res) {
   const currentProject = req.params.id;
-  console.log(currentProject);
   const project = await db
-    .prepare("SELECT grid_colours FROM projects WHERE id = ?")
+    .prepare("SELECT * FROM projects WHERE id = ?")
     .get(currentProject);
   res.json(project);
 });
@@ -70,8 +68,23 @@ router.put("/editNames/:id", isAuthenticated, async function (req, res) {
       `UPDATE projects SET (name, type) = (?,?) WHERE id = ? RETURNING *`
     )
     .get(req.body.projectName, req.body.projectType, currentProject);
-  console.log(updateProject);
   res.json(updateProject);
+});
+
+router.get("/checkUser/:id", async function (req, res) {
+  const currentProject = req.params.id;
+  const currentlyLoggedinUser = req.session.user.id;
+  try {
+    const checkUser = await db
+      .prepare("SELECT * FROM projects WHERE owner_id=? AND id = ?")
+      .get(currentlyLoggedinUser, currentProject);
+    res.json(checkUser);
+  } catch (e) {
+    const notUser = await db
+      .prepare("SELECT * FROM projects WHERE id = ?")
+      .get(currentProject);
+    res.json(notUser);
+  }
 });
 
 module.exports = router;

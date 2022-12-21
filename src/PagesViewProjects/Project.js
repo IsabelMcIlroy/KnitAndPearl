@@ -1,18 +1,22 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 import { Box } from "@mui/material";
 import { ProjectGrid } from "../PagesNewProject/HelperComponents/ProjectGrid";
+//import useFetch from "react-fetch-hook";
 
-export const Project = () => {
-  const { state } = useLocation();
-  const {
-    projectID,
-    currentProjectName,
-    currentProjectType,
-    currentRows,
-    currentColumns,
-    gridColours,
-  } = state;
+export const Project = (project) => {
+  console.log(project.project.grid_colours);
+  const projectID = project.project.id;
+  const currentProjectName = project.project.name;
+  const currentProjectType = project.project.type;
+  const currentRows = project.project.rows;
+  const currentColumns = project.project.columns;
+  const gridColours = project.project.grid_colours;
+  // const { isLoading, data, error } = useFetch(
+  //   `/projects/checkUser/${projectID}`
+  // );
+  // console.log(isLoading);
+  // console.log(data);
+  // console.log(error);
   let currentGridColours = JSON.parse(gridColours);
   console.log(currentGridColours);
   const [currentlySelectedColor, setCurrentlySelectedColor] = useState({

@@ -57,16 +57,7 @@ export const ViewProjectCard = ({
                 <Button
                   size="small"
                   onClick={() =>
-                    navigate(`/KnitAndPearl/ViewProjects/${projectID}`, {
-                      state: {
-                        projectID: projectID,
-                        currentProjectName: projectName,
-                        currentProjectType: projectType,
-                        currentRows: currentRows,
-                        currentColumns: currentColumns,
-                        gridColours: gridColours,
-                      },
-                    })
+                    navigate(`/KnitAndPearl/ViewProjects/${projectID}`, {})
                   }
                 >
                   View/Edit
