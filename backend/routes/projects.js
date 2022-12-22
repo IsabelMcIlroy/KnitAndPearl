@@ -80,10 +80,7 @@ router.get("/checkUser/:id", async function (req, res) {
       .get(currentlyLoggedinUser, currentProject);
     res.json(checkUser);
   } catch (e) {
-    const notUser = await db
-      .prepare("SELECT * FROM projects WHERE id = ?")
-      .get(currentProject);
-    res.json(notUser);
+    res.json({});
   }
 });
 

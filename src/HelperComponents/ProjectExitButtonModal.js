@@ -9,6 +9,7 @@ export const ProjectExitButtonModal = ({
   setIsOpen,
   gridArray,
   projectID,
+  user,
 }) => {
   const navigate = useNavigate();
   const onSave = async (gridArray) => {
@@ -61,12 +62,14 @@ export const ProjectExitButtonModal = ({
                 flexWrap: "wrap",
               }}
             >
-              <ModalButton
-                text="Save &amp; Exit"
-                variant="SaveAndExit"
-                onClick={() => onSave(gridArray)}
-                sx={{ width: "fit-content" }}
-              />
+              {user && (
+                <ModalButton
+                  text="Save &amp; Exit"
+                  variant="SaveAndExit"
+                  onClick={() => onSave(gridArray)}
+                  sx={{ width: "fit-content" }}
+                />
+              )}
               <ModalButton
                 text="Exit"
                 variant="Exit"

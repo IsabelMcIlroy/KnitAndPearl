@@ -11,6 +11,7 @@ export const EditButtonsAll = ({
   setCurrentlySelectedColor,
   projectID,
   gridArray,
+  user,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const pathName = window.location.pathname;
@@ -47,20 +48,22 @@ export const EditButtonsAll = ({
           }}
         >
           <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <Box
-              sx={{
-                padding: "8px",
-                width: "fit-content",
-              }}
-            >
-              <Typography variant="h7" sx={{ color: palette.knittingBlue }}>
-                Pick Color:
-              </Typography>
-              <ColorPicker
-                currentlySelectedColor={currentlySelectedColor}
-                setCurrentlySelectedColor={setCurrentlySelectedColor}
-              />
-            </Box>
+            {user && (
+              <Box
+                sx={{
+                  padding: "8px",
+                  width: "fit-content",
+                }}
+              >
+                <Typography variant="h7" sx={{ color: palette.knittingBlue }}>
+                  Pick Color:
+                </Typography>
+                <ColorPicker
+                  currentlySelectedColor={currentlySelectedColor}
+                  setCurrentlySelectedColor={setCurrentlySelectedColor}
+                />
+              </Box>
+            )}
           </Box>
           <Box>
             <Box sx={{ display: { sm: "block", md: "none" } }}>
@@ -93,7 +96,7 @@ export const EditButtonsAll = ({
               </Box>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
-              {pathName !== "/KnittingProjectManager/NewProject" && (
+              {pathName !== "/KnittingProjectManager/NewProject" && user && (
                 <EditButtonsAndPopover
                   popoverText={"Reset"}
                   onClick={() => {
@@ -101,7 +104,7 @@ export const EditButtonsAll = ({
                   }}
                 />
               )}
-              {pathName === "/KnittingProjectManager/" && (
+              {pathName === "/KnittingProjectManager/" && user && (
                 <EditButtonsAndPopover
                   popoverText={"Clear"}
                   onClick={() => {
@@ -109,10 +112,12 @@ export const EditButtonsAll = ({
                   }}
                 />
               )}
-              <EditButtonsAndPopover
-                popoverText={"Save"}
-                onClick={() => onSave(gridArray)}
-              />
+              {user && (
+                <EditButtonsAndPopover
+                  popoverText={"Save"}
+                  onClick={() => onSave(gridArray)}
+                />
+              )}
               <EditButtonsAndPopover
                 popoverText={"Exit"}
                 onClick={() => {
@@ -124,6 +129,7 @@ export const EditButtonsAll = ({
                 setIsOpen={setIsOpen}
                 gridArray={gridArray}
                 projectID={projectID}
+                user={user}
               />
             </Box>
           </Box>

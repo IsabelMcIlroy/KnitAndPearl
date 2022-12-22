@@ -16,6 +16,7 @@ export const NewProjectEditor = ({
   projectID,
   gridArray,
   gridColours,
+  user,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -80,39 +81,44 @@ export const NewProjectEditor = ({
             </Typography>
           </Box>
         )}
-        <EditProjectNameModal
-          open={isOpen}
-          setIsOpen={setIsOpen}
-          projectID={projectID}
-          projectName={currentProjectName}
-          projectType={currentProjectType}
-          gridColours={gridColours}
-        />
-        <Popover
-          id="mouse-over-popover"
-          sx={{
-            pointerEvents: "none",
-          }}
-          open={open}
-          anchorEl={anchorEl}
-          anchorOrigin={{
-            vertical: "bottom",
-            horizontal: "left",
-          }}
-          transformOrigin={{
-            vertical: "top",
-            horizontal: "left",
-          }}
-          disableRestoreFocus
-        >
-          <Typography sx={{ p: 1 }}>Edit</Typography>
-        </Popover>
+        {user && (
+          <>
+            <EditProjectNameModal
+              open={isOpen}
+              setIsOpen={setIsOpen}
+              projectID={projectID}
+              projectName={currentProjectName}
+              projectType={currentProjectType}
+              gridColours={gridColours}
+            />
+            <Popover
+              id="mouse-over-popover"
+              sx={{
+                pointerEvents: "none",
+              }}
+              open={open}
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              disableRestoreFocus
+            >
+              <Typography sx={{ p: 1 }}>Edit</Typography>
+            </Popover>
+          </>
+        )}
         <EditButtonsAll
           clearGrid={clearGrid}
           currentlySelectedColor={currentlySelectedColor}
           setCurrentlySelectedColor={setCurrentlySelectedColor}
           projectID={projectID}
           gridArray={gridArray}
+          user={user}
         />
       </Box>
     </>
