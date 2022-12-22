@@ -4,7 +4,6 @@ import { ProjectGrid } from "../PagesNewProject/HelperComponents/ProjectGrid";
 import useFetch from "react-fetch-hook";
 
 export const Project = (project) => {
-  console.log(project.project.grid_colours);
   const projectID = project.project.id;
   const currentProjectName = project.project.name;
   const currentProjectType = project.project.type;
@@ -17,10 +16,8 @@ export const Project = (project) => {
     error,
   } = useFetch(`/projects/checkUser/${projectID}`);
   console.log(isLoading);
-  console.log(user);
   console.log(error);
   let currentGridColours = JSON.parse(gridColours);
-  console.log(currentGridColours);
   const [currentlySelectedColor, setCurrentlySelectedColor] = useState({
     r: 241,
     g: 112,

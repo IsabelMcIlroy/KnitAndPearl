@@ -18,6 +18,7 @@ export const NavBar = () => {
   };
   const navigate = useNavigate();
   const onLogout = async (data) => {
+    console.log(data);
     const response = await fetch("/logout", {
       method: "POST",
       headers: {

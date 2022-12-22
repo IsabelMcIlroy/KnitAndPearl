@@ -43,7 +43,6 @@ export const EditProjectNameModal = ({
     });
   };
   const onSubmit = async (data) => {
-    console.log(data);
     const response = await fetch(`/projects/editNames/${projectID}`, {
       method: "PUT",
       headers: {
