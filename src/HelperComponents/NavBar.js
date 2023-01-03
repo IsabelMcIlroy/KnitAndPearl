@@ -62,7 +62,7 @@ export const NavBar = () => {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
-            sx={navBarButtons}
+            sx={{ ...navBarButtons, margin: "12px 24px" }}
           >
             {user && (
               <>
@@ -79,10 +79,14 @@ export const NavBar = () => {
             MenuListProps={{
               "aria-labelledby": "basic-button",
             }}
+            sx={{ marginTop: "4px" }}
           >
             <Box>
               <Link to="/KnitAndPearl/" style={{ textDecoration: "none" }}>
-                <Button sx={navBarButtons} onClick={onLogout}>
+                <Button
+                  sx={{ ...navBarButtons, margin: "0 12px" }}
+                  onClick={onLogout}
+                >
                   Logout
                 </Button>
               </Link>

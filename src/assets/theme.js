@@ -98,7 +98,6 @@ export default KnittingTheme;
 export const navBarButtons = {
   backgroundColor: palette.knittingGray,
   color: palette.knittingLightBlue,
-  margin: "12px 24px",
   flexBasis: "auto",
   height: "3rem",
   fontWeight: "bold",
