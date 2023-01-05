@@ -1,14 +1,17 @@
 import { useState } from "react";
-//import useFetch from "react-fetch-hook";
+import useFetch from "react-fetch-hook";
 import { Box } from "@mui/material";
 import { ProjectGrid } from "../../../PagesNewProject/HelperComponents/ProjectGrid";
 
 export const NewProject = (project) => {
-  // const { isLoading, data, error } = useFetch("/projects/checkUser");
-  // console.log(isLoading);
-  // console.log(data);
-  // console.log(error);
   const projectID = project.project.id;
+  const {
+    isLoading,
+    data: user,
+    error,
+  } = useFetch(`/projects/checkUser/${projectID}`);
+  console.log(isLoading);
+  console.log(error);
   const currentProjectName = project.project.name;
   const currentProjectType = project.project.type;
   const currentRows = project.project.rows;
@@ -45,6 +48,7 @@ export const NewProject = (project) => {
           projectID={projectID}
           gridColours={currentGridColours}
           grid={grid}
+          user={user}
         />
       </Box>
     </>
