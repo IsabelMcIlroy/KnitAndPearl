@@ -3,7 +3,7 @@ import "../index.css";
 import Box from "@mui/material/Box";
 import { Title } from "../HelperComponents/title";
 import { WelcomePageOptionButtons } from "./HelperComponents/WelcomePageOptionButtons";
-import wool from "../images/wool.jpg";
+import wool from "../assets/images/wool.jpg";
 import { Logo } from "../HelperComponents/logo";
 import { LoginModal } from "./HelperComponents/LoginModal";
 import { SignupModal } from "./HelperComponents/SignupModal";
