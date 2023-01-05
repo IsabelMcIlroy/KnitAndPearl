@@ -1,9 +1,9 @@
 import { useState } from "react";
 import useFetch from "react-fetch-hook";
 import { Box, Typography, TextField, Fab } from "@mui/material";
-import { palette } from "../assets/theme";
+import { palette } from "../../assets/theme";
 import { ViewProjectCard } from "./HelperComponents/ViewProjectCard";
-import { NewProjectSizeAndColourSelectionModal } from "../HelperComponents/NewProjectSizeAndColourSelectionModal";
+import { NewProjectSizeAndColourSelectionModal } from "../../HelperComponents/NewProjectSizeAndColourSelectionModal";
 
 export const ViewProjects = () => {
   const { isLoading, data: allProjects, error } = useFetch("/projects");

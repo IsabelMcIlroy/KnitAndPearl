@@ -6,9 +6,9 @@ import {
 } from "react-router-dom";
 import { NavBar } from "./HelperComponents/NavBar";
 import { Home } from "./PagesHome/Home";
-import { NewProjectPage } from "./PagesNewProject/NewProjectPage";
-import { ViewProjects } from "./PagesViewProjects/ViewProjects";
-import { ProjectPage } from "./PagesViewProjects/ProjectPage";
+import { NewProjectPage } from "./ProjectPages/NewProject/NewProjectPage";
+import { ViewProjects } from "./ProjectPages/ViewAllProjects/ViewProjects";
+import { ProjectPage } from "./ProjectPages/ViewProject/ProjectPage";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(

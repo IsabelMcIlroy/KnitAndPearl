@@ -4,7 +4,7 @@ import {
   editorDrawerProjectNames,
   editorDrawerLabels,
 } from "../../assets/theme";
-import { EditProjectNameModal } from "../../HelperComponents/EditProjectNameModal";
+import { EditProjectNameModal } from "../../ProjectPages/HelperComponents/EditProjectNameModal";
 import { EditButtonsAll } from "./EditButtonsAll";
 
 export const NewProjectEditor = ({

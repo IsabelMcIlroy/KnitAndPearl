@@ -1,7 +1,7 @@
-import logo from "../images/logo.png";
+import logo from "../assets/images/logo.png";
 import { Box } from "@mui/material";
 
-export const Logo = (onClick) => {
+export const Logo = () => {
   return (
     <Box
       sx={{

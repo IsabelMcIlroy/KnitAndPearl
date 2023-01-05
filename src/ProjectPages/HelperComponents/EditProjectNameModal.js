@@ -10,8 +10,8 @@ import {
   Box,
   TextField,
 } from "@mui/material";
-import KnittingTheme, { palette, modalTitle } from "../assets/theme";
-import { ModalButton } from "./ModalButton";
+import KnittingTheme, { palette, modalTitle } from "../../assets/theme";
+import { ModalButton } from "../../HelperComponents/ModalButton";
 
 export const EditProjectNameModal = ({
   open,

@@ -8,7 +8,7 @@ import {
   Box,
   ThemeProvider,
 } from "@mui/material";
-import KnittingTheme, { palette } from "../../assets/theme";
+import KnittingTheme, { palette } from "../../../assets/theme";
 import { MiniProjectGrid } from "./MiniProjectGrid";
 
 export const ViewProjectCard = ({

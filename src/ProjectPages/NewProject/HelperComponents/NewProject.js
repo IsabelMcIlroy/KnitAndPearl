@@ -1,7 +1,7 @@
 import { useState } from "react";
 //import useFetch from "react-fetch-hook";
 import { Box } from "@mui/material";
-import { ProjectGrid } from "./HelperComponents/ProjectGrid";
+import { ProjectGrid } from "../../../PagesNewProject/HelperComponents/ProjectGrid";
 
 export const NewProject = (project) => {
   // const { isLoading, data, error } = useFetch("/projects/checkUser");

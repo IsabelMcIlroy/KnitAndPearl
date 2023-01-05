@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Modal, ThemeProvider, Typography, Box } from "@mui/material";
-import KnittingTheme, { palette, modalTitle } from "../assets/theme";
-import { ModalButton } from "./ModalButton";
+import KnittingTheme, { palette, modalTitle } from "../../assets/theme";
+import { ModalButton } from "../../HelperComponents/ModalButton";
 
 export const ProjectExitButtonModal = ({
   open,

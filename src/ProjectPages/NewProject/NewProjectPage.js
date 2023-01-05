@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import useFetch from "react-fetch-hook";
 import { Typography } from "@mui/material";
-import { NewProject } from "./NewProject.js";
-import { palette } from "../assets/theme";
+import { NewProject } from "./HelperComponents/NewProject.js";
+import { palette } from "../../assets/theme";
 
 export const NewProjectPage = () => {
   let { id } = useParams();
