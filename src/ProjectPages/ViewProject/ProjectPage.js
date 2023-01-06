@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import useFetch from "react-fetch-hook";
 import { Typography } from "@mui/material";
-import { Project } from "./HelperComponents/Project";
+import { Project } from "../HelperComponents/Project";
 import { palette } from "../../assets/theme";
 
 export const ProjectPage = () => {

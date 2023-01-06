@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useFetch from "react-fetch-hook";
 import { Box } from "@mui/material";
-import { ProjectGrid } from "../../../PagesNewProject/HelperComponents/ProjectGrid";
+import { ProjectGrid } from "../../HelperComponents/ProjectGrid";
 
 export const NewProject = (project) => {
   const projectID = project.project.id;

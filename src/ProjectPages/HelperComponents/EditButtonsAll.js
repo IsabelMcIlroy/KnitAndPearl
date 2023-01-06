@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import { palette } from "../../assets/theme";
 import { EditButtonsAndPopover } from "./EditButtonsAndPopovers";
-import { ProjectExitButtonModal } from "../../ProjectPages/HelperComponents/ProjectExitButtonModal";
+import { ProjectExitButtonModal } from "./ProjectExitButtonModal";
 import { ColorPicker } from "./ColorPicker";
 
 export const EditButtonsAll = ({
