@@ -11,7 +11,7 @@ export const ViewProjects = () => {
     isLoading: usersProjectsLoading,
     data: allUsersProjects,
     error: usersProjectsError,
-  } = useFetch("/projects");
+  } = useFetch("/projects/allUsers");
   console.log(usersProjectsLoading);
   console.log(allUsersProjects);
   console.log(usersProjectsError);
