@@ -45,6 +45,7 @@ export const Project = (project) => {
         projectID={projectID}
         gridColours={currentGridColours}
         user={user}
+        username={project.project.username}
       />
     </Box>
   );

@@ -47,6 +47,7 @@ export const NewProject = (project) => {
           gridColours={currentGridColours}
           grid={grid}
           user={user}
+          username={project.project.username}
         />
       </Box>
     </>

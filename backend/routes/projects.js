@@ -62,7 +62,9 @@ router.get("/allUsers", isAuthenticated, async function (req, res) {
 router.get("/:id", isAuthenticated, async function (req, res) {
   const currentProject = req.params.id;
   const project = await db
-    .prepare("SELECT * FROM projects WHERE id = ?")
+    .prepare(
+      "SELECT projects.*, users.username FROM projects JOIN users ON projects.owner_id = users.id WHERE projects.id = ?"
+    )
     .get(currentProject);
   res.json(project);
 });

@@ -1,6 +1,7 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { NewProjectEditor } from "./NewProjectEditor";
 import { ProjectGridCell } from "./ProjectGridCell";
+import { palette } from "../../assets/theme";
 
 export const ProjectGrid = ({
   currentlySelectedColor,
@@ -14,6 +15,7 @@ export const ProjectGrid = ({
   projectID,
   gridColours,
   user,
+  username,
 }) => {
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
     const newGridArray = [...gridArray];
@@ -41,44 +43,61 @@ export const ProjectGrid = ({
             gridColours={gridColours}
             user={user}
           />
-          <Grid
-            container
-            spacing={12 / currentColumns}
+          <Box
             sx={{
-              margin: "24px 8px 0 auto",
-              maxWidth: "80vh",
-              minWidth: "300px",
-              aspectRatio: "1/1",
+              margin: "24px 0 0 auto",
               padding: "24px",
               borderRadius: "24px",
               backgroundColor: "#F3ECF6",
             }}
           >
-            {gridArray.map((row, xindex) => {
-              return row.map((column, yindex) => {
-                return (
-                  <Grid
-                    item
-                    xs={12 / currentColumns}
-                    key={`x:${xindex} y:${yindex}`}
-                    sx={{
-                      border: "1px solid black",
-                    }}
-                    style={{ padding: "4px" }}
-                  >
-                    <ProjectGridCell
-                      xIndex={xindex}
-                      yIndex={yindex}
-                      currentlySelectedColor={currentlySelectedColor}
-                      cellsColor={column}
-                      modifyGridColorArray={modifyGridColorArray}
-                      user={user}
-                    />
-                  </Grid>
-                );
-              });
-            })}
-          </Grid>
+            <Grid
+              container
+              spacing={12 / currentColumns}
+              sx={{
+                margin: "24px 8px 0 auto",
+                maxWidth: "80vh",
+                minWidth: "300px",
+                aspectRatio: "1/1",
+              }}
+            >
+              {gridArray.map((row, xindex) => {
+                return row.map((column, yindex) => {
+                  return (
+                    <Grid
+                      item
+                      xs={12 / currentColumns}
+                      key={`x:${xindex} y:${yindex}`}
+                      sx={{
+                        border: "1px solid black",
+                      }}
+                      style={{ padding: "4px" }}
+                    >
+                      <ProjectGridCell
+                        xIndex={xindex}
+                        yIndex={yindex}
+                        currentlySelectedColor={currentlySelectedColor}
+                        cellsColor={column}
+                        modifyGridColorArray={modifyGridColorArray}
+                        user={user}
+                      />
+                    </Grid>
+                  );
+                });
+              })}
+            </Grid>
+            <Typography
+              variant="p"
+              sx={{
+                color: palette.knittingLightPurple,
+                display: "flex",
+                justifyContent: "end",
+                margin: "8px",
+              }}
+            >
+              {username}'s Project
+            </Typography>
+          </Box>
         </Box>
       </Box>
     </Box>
