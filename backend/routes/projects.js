@@ -44,6 +44,18 @@ router.get("/", isAuthenticated, async function (req, res) {
   }
 });
 
+router.get("/allUsers", isAuthenticated, async function (req, res) {
+  const projectList = await db.prepare(
+    "SELECT projects.*, user.username FROM projects INNER JOIN users ON users.id = projects.owner_id"
+  );
+
+  if (projectList === undefined) {
+    res.json({});
+  } else {
+    res.json(projectList);
+  }
+});
+
 router.get("/:id", isAuthenticated, async function (req, res) {
   const currentProject = req.params.id;
   const project = await db

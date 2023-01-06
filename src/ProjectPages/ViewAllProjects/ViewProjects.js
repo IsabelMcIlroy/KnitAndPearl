@@ -7,6 +7,14 @@ import { NewProjectSizeAndColourSelectionModal } from "../../HelperComponents/Ne
 
 export const ViewProjects = () => {
   const { isLoading, data: allProjects, error } = useFetch("/projects");
+  const {
+    isLoading: usersProjectsLoading,
+    data: allUsersProjects,
+    error: usersProjectsError,
+  } = useFetch("/projects");
+  console.log(usersProjectsLoading);
+  console.log(allUsersProjects);
+  console.log(usersProjectsError);
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const projectsToShow = allProjects?.filter(
