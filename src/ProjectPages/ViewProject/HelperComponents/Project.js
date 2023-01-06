@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Box } from "@mui/material";
-import { ProjectGrid } from "./ProjectGrid";
+import { ProjectGrid } from "../../HelperComponents/ProjectGrid";
 import useFetch from "react-fetch-hook";
 
 export const Project = (project) => {
