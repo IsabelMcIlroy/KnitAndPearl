@@ -66,20 +66,24 @@ export const UsersProjectCards = ({ searchQuery }) => {
           You don't have an projects yet!
         </Typography>
       )}
-      {projectsToShow?.map((displayProjectsArray) => {
-        return (
-          <ViewProjectCard
-            key={displayProjectsArray.id}
-            projectName={displayProjectsArray.name}
-            projectType={displayProjectsArray.type}
-            projectID={displayProjectsArray.id}
-            currentRows={displayProjectsArray.rows}
-            currentColumns={displayProjectsArray.columns}
-            gridColours={displayProjectsArray.grid_colours}
-            user={user.username}
-          />
-        );
-      })}
+      {user && (
+        <>
+          {projectsToShow?.map((displayProjectsArray) => {
+            return (
+              <ViewProjectCard
+                key={displayProjectsArray.id}
+                projectName={displayProjectsArray.name}
+                projectType={displayProjectsArray.type}
+                projectID={displayProjectsArray.id}
+                currentRows={displayProjectsArray.rows}
+                currentColumns={displayProjectsArray.columns}
+                gridColours={displayProjectsArray.grid_colours}
+                user={user.username}
+              />
+            );
+          })}
+        </>
+      )}
     </Box>
   );
 };
