@@ -15,9 +15,9 @@ export const ViewProjectCard = ({
   projectName,
   projectType,
   projectID,
-  currentRows,
   currentColumns,
   gridColours,
+  user,
 }) => {
   let grid = JSON.parse(gridColours);
   const navigate = useNavigate();
@@ -65,6 +65,17 @@ export const ViewProjectCard = ({
               </ThemeProvider>
             </CardActions>
           </Box>
+          <Typography
+            variant="p"
+            sx={{
+              margin: "0 24px",
+              color: palette.knittingLightPurple,
+              display: "flex",
+              justifyContent: "end",
+            }}
+          >
+            {user}'s Project
+          </Typography>
         </CardContent>
       </Card>
     </>

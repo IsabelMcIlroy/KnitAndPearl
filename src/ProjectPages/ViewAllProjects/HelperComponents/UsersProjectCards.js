@@ -11,6 +11,13 @@ export const UsersProjectCards = ({ searchQuery }) => {
       project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.type.toLowerCase().includes(searchQuery.toLowerCase())
   );
+  const {
+    isLoading: userLoading,
+    data: user,
+    error: userError,
+  } = useFetch("/currentUser");
+  console.log(userLoading);
+  console.log(userError);
   return (
     <Box
       sx={{
@@ -69,6 +76,7 @@ export const UsersProjectCards = ({ searchQuery }) => {
             currentRows={displayProjectsArray.rows}
             currentColumns={displayProjectsArray.columns}
             gridColours={displayProjectsArray.grid_colours}
+            user={user.username}
           />
         );
       })}
