@@ -5,8 +5,6 @@ import useFetch from "react-fetch-hook";
 
 export const Project = (project) => {
   const projectID = project.project.id;
-  const currentProjectName = project.project.name;
-  const currentProjectType = project.project.type;
   const currentRows = project.project.rows;
   const currentColumns = project.project.columns;
   const gridColours = project.project.grid_colours;
@@ -36,8 +34,8 @@ export const Project = (project) => {
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <ProjectGrid
         currentlySelectedColor={currentlySelectedColor}
-        currentProjectName={currentProjectName}
-        currentProjectType={currentProjectType}
+        currentProjectName={project.project.name}
+        currentProjectType={project.project.type}
         gridArray={gridArray}
         setGridArray={setGridArray}
         currentColumns={currentColumns}
