@@ -34,7 +34,9 @@ router.post("/", isAuthenticated, async function (req, res) {
 
 router.get("/", isAuthenticated, async function (req, res) {
   const projectList = await db
-    .prepare("SELECT * FROM projects WHERE owner_id = ?")
+    .prepare(
+      "SELECT projects.*, users.username FROM projects JOIN users ON projects.owner_id = users.id WHERE owner_id = ?"
+    )
     .all(req.session.user.id);
 
   if (projectList === undefined) {
