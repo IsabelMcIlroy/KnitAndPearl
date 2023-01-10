@@ -50,19 +50,26 @@ export const EditProjectNameModal = ({
       },
       body: JSON.stringify(data),
     });
-    const payload = await response.json();
-    console.log(payload);
-    setIsOpen(false);
-    navigate(`/KnitAndPearl/ViewProjects/${projectID}`, {
-      state: {
-        projectID: payload.id,
-        currentProjectName: payload.name,
-        currentProjectType: payload.type,
-        currentRows: payload.rows,
-        currentColumns: payload.columns,
-        gridColours: payload.grid_colours,
-      },
-    });
+    if (!response.ok) {
+      if (response.status === 401) {
+        console.log("No Project");
+        navigate("/KnitAndPearl/NoProject");
+      }
+    } else {
+      const payload = await response.json();
+      console.log(payload);
+      setIsOpen(false);
+      navigate(`/KnitAndPearl/ViewProjects/${projectID}`, {
+        state: {
+          projectID: payload.id,
+          currentProjectName: payload.name,
+          currentProjectType: payload.type,
+          currentRows: payload.rows,
+          currentColumns: payload.columns,
+          gridColours: payload.grid_colours,
+        },
+      });
+    }
   };
   return (
     <ThemeProvider theme={KnittingTheme}>
