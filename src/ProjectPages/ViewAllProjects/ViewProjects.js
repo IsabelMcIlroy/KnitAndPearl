@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useFetch from "react-fetch-hook";
 import {
   Box,
   Typography,
@@ -11,12 +12,17 @@ import {
 import { palette } from "../../assets/theme";
 import { NewProjectSizeAndColourSelectionModal } from "../../HelperComponents/NewProjectSizeAndColourSelectionModal";
 import { UsersProjectCards } from "./HelperComponents/UsersProjectCards";
-import { AllUsersProjectCards } from "./HelperComponents/AllUsersProjectCards";
 
 export const ViewProjects = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [checked, setChecked] = React.useState(true);
+
+  const {
+    isLoading,
+    data: allProjects,
+    error,
+  } = useFetch(`/projects/${checked}`);
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
@@ -76,8 +82,12 @@ export const ViewProjects = () => {
             </FormGroup>
           </Box>
         </Box>
-        {checked === true && <UsersProjectCards searchQuery={searchQuery} />}
-        {!checked && <AllUsersProjectCards searchQuery={searchQuery} />}
+        <UsersProjectCards
+          searchQuery={searchQuery}
+          isLoading={isLoading}
+          allProjects={allProjects}
+          error={error}
+        />
       </Box>
       <Fab
         onClick={() => {

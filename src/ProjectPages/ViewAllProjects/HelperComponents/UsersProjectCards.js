@@ -1,11 +1,14 @@
 import React from "react";
-import useFetch from "react-fetch-hook";
 import { Box, Typography } from "@mui/material";
 import { palette } from "../../../assets/theme";
 import { ViewProjectCard } from "./ViewProjectCard";
 
-export const UsersProjectCards = ({ searchQuery }) => {
-  const { isLoading, data: allProjects, error } = useFetch("/projects");
+export const UsersProjectCards = ({
+  searchQuery,
+  isLoading,
+  allProjects,
+  error,
+}) => {
   const projectsToShow = allProjects?.filter(
     (project) =>
       project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
