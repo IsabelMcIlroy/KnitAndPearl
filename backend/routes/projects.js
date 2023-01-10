@@ -73,11 +73,19 @@ router.get("/:id", isAuthenticated, async function (req, res) {
 
 router.put("/:id", isAuthenticated, async function (req, res) {
   const currentProject = req.params.id;
-  const updateProject = await db
-    .prepare(`UPDATE projects SET grid_colours = ? WHERE id = ? RETURNING *`)
-    .get(JSON.stringify(req.body.gridArray), currentProject);
-  console.log(updateProject);
-  res.json(updateProject);
+  const currentUser = req.session.user.id;
+  try {
+    const updateProject = await db
+      .prepare(
+        `UPDATE projects SET grid_colours = ? WHERE id = ? AND owner_id = ? RETURNING *`
+      )
+      .get(JSON.stringify(req.body.gridArray), currentProject, currentUser);
+    console.log(updateProject);
+    res.json(updateProject);
+  } catch (e) {
+    console.error(e);
+    res.sendStatus(401);
+  }
 });
 
 router.put("/editNames/:id", isAuthenticated, async function (req, res) {

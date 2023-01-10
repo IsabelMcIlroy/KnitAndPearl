@@ -20,9 +20,16 @@ export const ProjectExitButtonModal = ({
       },
       body: JSON.stringify({ gridArray }),
     });
-    const payload = await response.json();
-    console.log(payload);
-    navigate("/KnitAndPearl/ViewProjects");
+    if (!response.ok) {
+      if (response.status === 401) {
+        console.log("No Project");
+        navigate("/KnitAndPearl/NoProject");
+      }
+    } else {
+      const payload = await response.json();
+      console.log(payload);
+      navigate("/KnitAndPearl/ViewProjects");
+    }
   };
   return (
     <ThemeProvider theme={KnittingTheme}>

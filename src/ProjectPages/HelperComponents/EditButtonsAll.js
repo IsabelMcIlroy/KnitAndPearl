@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import { palette } from "../../assets/theme";
 import { EditButtonsAndPopover } from "./EditButtonsAndPopovers";
@@ -13,6 +14,7 @@ export const EditButtonsAll = ({
   gridArray,
   user,
 }) => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const pathName = window.location.pathname;
   const onSave = async (gridArray) => {
@@ -23,8 +25,15 @@ export const EditButtonsAll = ({
       },
       body: JSON.stringify({ gridArray }),
     });
-    const payload = await response.json();
-    console.log(payload);
+    if (!response.ok) {
+      if (response.status === 401) {
+        console.log("No Project");
+        navigate("/KnitAndPearl/NoProject");
+      }
+    } else {
+      const payload = await response.json();
+      console.log(payload);
+    }
   };
   return (
     <>
