@@ -22,7 +22,7 @@ export const ViewProjects = () => {
     isLoading,
     data: allProjects,
     error,
-  } = useFetch(`/projects/${checked}`);
+  } = useFetch(`/projects/projectsList/${checked}`);
 
   const handleChange = (event) => {
     setChecked(event.target.checked);

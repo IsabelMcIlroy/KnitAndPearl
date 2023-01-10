@@ -32,35 +32,38 @@ router.post("/", isAuthenticated, async function (req, res) {
   res.json(newProject);
 });
 
-router.get("/:checked", isAuthenticated, async function (req, res) {
-  const checked = req.params.checked;
-  console.log(checked);
-  if (checked === "true") {
-    const projectList = await db
-      .prepare(
-        "SELECT projects.*, users.username FROM projects JOIN users ON projects.owner_id = users.id WHERE owner_id = ?"
-      )
-      .all(req.session.user.id);
+router.get(
+  "/projectsList/:checked",
+  isAuthenticated,
+  async function (req, res) {
+    const checked = req.params.checked;
+    if (checked === "true") {
+      const projectList = await db
+        .prepare(
+          "SELECT projects.*, users.username FROM projects JOIN users ON projects.owner_id = users.id WHERE owner_id = ?"
+        )
+        .all(req.session.user.id);
 
-    if (projectList === undefined) {
-      res.json({});
+      if (projectList === undefined) {
+        res.json({});
+      } else {
+        res.json(projectList);
+      }
     } else {
-      res.json(projectList);
-    }
-  } else {
-    const projectList = await db
-      .prepare(
-        "SELECT projects.*, users.username FROM projects JOIN users ON projects.owner_id = users.id"
-      )
-      .all();
+      const projectList = await db
+        .prepare(
+          "SELECT projects.*, users.username FROM projects JOIN users ON projects.owner_id = users.id"
+        )
+        .all();
 
-    if (projectList === undefined) {
-      res.json({});
-    } else {
-      res.json(projectList);
+      if (projectList === undefined) {
+        res.json({});
+      } else {
+        res.json(projectList);
+      }
     }
   }
-});
+);
 
 router.get("/:id", isAuthenticated, async function (req, res) {
   const currentProject = req.params.id;
