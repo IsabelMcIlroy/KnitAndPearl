@@ -30,8 +30,6 @@ export const NavBar = () => {
     navigate("/KnitAndPearl/", {});
   };
   const { isLoading, data: user, error } = useFetch("/currentUser");
-  console.log(isLoading);
-  console.log(error);
   return (
     <>
       <AppBar
@@ -64,10 +62,22 @@ export const NavBar = () => {
             onClick={handleClick}
             sx={{ ...navBarButtons, margin: "12px 24px" }}
           >
+            {isLoading && (
+              <>
+                <EmojiFoodBeverageIcon sx={{ paddingRight: "4px" }} />
+                loading
+              </>
+            )}
             {user && (
               <>
                 <EmojiFoodBeverageIcon sx={{ paddingRight: "4px" }} />
                 {user.username}
+              </>
+            )}
+            {error && (
+              <>
+                <EmojiFoodBeverageIcon sx={{ paddingRight: "4px" }} />
+                error
               </>
             )}
           </Button>
