@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import _ from "lodash";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -33,19 +33,6 @@ export const NewProjectSizeAndColourSelectionModal = ({
     formState: { errors },
     handleSubmit,
   } = useForm({ resolver: yupResolver(validationSchema) });
-  const [state, setState] = useState({
-    projectID: "",
-    projectName: "",
-    projectType: "",
-    Row: " ",
-    Column: " ",
-  });
-  const handleInput = (event) => {
-    setState({
-      ...state,
-      [event.target.name]: event.target.value,
-    });
-  };
   const navigate = useNavigate();
   const onSubmit = async (data) => {
     console.log(data);
@@ -59,16 +46,12 @@ export const NewProjectSizeAndColourSelectionModal = ({
     const payload = await response.json();
     console.log(payload);
     setIsOpen(false);
-    navigate(`/KnitAndPearl/NewProject/${payload.id}`, {
-      state: {
-        projectID: payload.id,
-        currentProjectName: data.projectName,
-        currentProjectType: data.projectType,
-        currentRows: data.Row,
-        currentColumns: data.Column,
-        gridColours: payload.grid_colours,
-      },
-    });
+    navigate(`/KnitAndPearl/NewProject/${payload.id}`, {});
+  };
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      handleSubmit(onSubmit)();
+    }
   };
   return (
     <ThemeProvider theme={KnittingTheme}>
@@ -107,8 +90,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   error={errors.projectName ? true : false}
                   label="Project Name"
                   name="projectName"
-                  value={state.projectName}
-                  onChange={handleInput}
+                  onKeyDown={handleKeyPress}
                   sx={{ width: "90%" }}
                 />
                 <Typography
@@ -124,8 +106,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
                   {...register("projectType")}
                   label="Project Type"
                   name="projectType"
-                  value={state.projectType}
-                  onChange={handleInput}
+                  onKeyDown={handleKeyPress}
                   sx={{ width: "90%" }}
                 />
               </Box>
@@ -155,8 +136,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
                     native
                     sx={{ margin: "10px" }}
                     name="Row"
-                    value={state.Row}
-                    onChange={handleInput}
+                    onKeyDown={handleKeyPress}
                   >
                     {_.range(4, maxGrid + 1).map((value) => (
                       <option key={value} value={value}>
@@ -189,8 +169,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
                     native
                     sx={{ margin: "10px" }}
                     name="Column"
-                    value={state.Column}
-                    onChange={handleInput}
+                    onKeyDown={handleKeyPress}
                   >
                     {_.range(6, maxGrid + 1).map((value) => (
                       <option key={value} value={value}>
