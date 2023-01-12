@@ -52,6 +52,11 @@ export const LoginModal = ({
       navigate("/KnitAndPearl/ViewProjects", {});
     }
   };
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      handleSubmit(onSubmit)();
+    }
+  };
   return (
     <ThemeProvider theme={KnittingTheme}>
       <Modal open={open} onClick={onClick}>
@@ -96,6 +101,7 @@ export const LoginModal = ({
                   label="Username"
                   error={errors.username ? true : false}
                   {...register("username")}
+                  onKeyDown={handleKeyPress}
                   sx={{ width: "90%" }}
                 />
                 <Typography
@@ -112,6 +118,7 @@ export const LoginModal = ({
                   label="Password"
                   type="password"
                   {...register("password")}
+                  onKeyDown={handleKeyPress}
                   sx={{ width: "90%" }}
                 />
                 <Typography
@@ -142,7 +149,11 @@ export const LoginModal = ({
                 </Box>
               </Box>
               <Box textAlign="center">
-                <ModalButton onClick={handleSubmit(onSubmit)} text="Login" />
+                <ModalButton
+                  onClick={handleSubmit(onSubmit)}
+                  type="submit"
+                  text="Login"
+                />
                 <ModalButton
                   text="Cancel"
                   onClick={() => {
