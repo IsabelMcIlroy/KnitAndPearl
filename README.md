@@ -19,7 +19,7 @@ As someone who enjoys knitting I thought this would be a fun way to learn react,
 -React Color\
 -lodash\
 -number-to-words\
--node.js
+-node.js\
 -BetterSQLite3
 
 ## Link to Demo Site
