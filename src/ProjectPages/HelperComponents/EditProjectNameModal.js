@@ -59,16 +59,7 @@ export const EditProjectNameModal = ({
       const payload = await response.json();
       console.log(payload);
       setIsOpen(false);
-      navigate(`/KnitAndPearl/ViewProjects/${projectID}`, {
-        state: {
-          projectID: payload.id,
-          currentProjectName: payload.name,
-          currentProjectType: payload.type,
-          currentRows: payload.rows,
-          currentColumns: payload.columns,
-          gridColours: payload.grid_colours,
-        },
-      });
+      window.location.reload();
     }
   };
   return (
