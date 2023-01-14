@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLoaderData } from "react-router-dom";
 import { Button } from "@mui/material";
 
 export const ProjectGridCell = ({
@@ -7,8 +8,10 @@ export const ProjectGridCell = ({
   yIndex,
   currentlySelectedColor,
   cellsColor,
-  user,
+  userID,
+  ownerID,
 }) => {
+  let { user } = useLoaderData();
   const [cellColor, setCellColor] = useState(cellsColor);
   useEffect(() => {
     setCellColor(cellsColor);
@@ -18,7 +21,7 @@ export const ProjectGridCell = ({
   };
   return (
     <>
-      {user && (
+      {user.id === ownerID && (
         <Button
           sx={{
             backgroundColor: `rgba(${cellColor.r}, ${cellColor.g}, ${cellColor.b}, ${cellColor.a})`,
@@ -28,7 +31,7 @@ export const ProjectGridCell = ({
           onClick={() => onClick()}
         />
       )}
-      {!user && (
+      {user.id !== ownerID && (
         <Button
           sx={{
             backgroundColor: `rgba(${cellColor.r}, ${cellColor.g}, ${cellColor.b}, ${cellColor.a})`,

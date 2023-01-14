@@ -1,20 +1,12 @@
 import { useState } from "react";
 import { Box } from "@mui/material";
 import { ProjectGrid } from "../../HelperComponents/ProjectGrid";
-import useFetch from "react-fetch-hook";
 
 export const Project = (project) => {
   const projectID = project.project.id;
   const currentRows = project.project.rows;
   const currentColumns = project.project.columns;
   const gridColours = project.project.grid_colours;
-  const {
-    isLoading,
-    data: user,
-    error,
-  } = useFetch(`/projects/checkUser/${projectID}`);
-  console.log(isLoading);
-  console.log(error);
   let currentGridColours = JSON.parse(gridColours);
   const [currentlySelectedColor, setCurrentlySelectedColor] = useState({
     r: 241,
@@ -44,7 +36,7 @@ export const Project = (project) => {
         setCurrentlySelectedColor={setCurrentlySelectedColor}
         projectID={projectID}
         gridColours={currentGridColours}
-        user={user}
+        ownerID={project.project.owner_id}
         username={project.project.username}
       />
     </Box>

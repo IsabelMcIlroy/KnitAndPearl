@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { Modal, ThemeProvider, Typography, Box } from "@mui/material";
 import KnittingTheme, { palette, modalTitle } from "../../assets/theme";
 import { ModalButton } from "../../HelperComponents/ModalButton";
@@ -9,8 +10,9 @@ export const ProjectExitButtonModal = ({
   setIsOpen,
   gridArray,
   projectID,
-  user,
+  ownerID,
 }) => {
+  let { user } = useLoaderData();
   const navigate = useNavigate();
   const onSave = async (gridArray) => {
     const response = await fetch(`/projects/${projectID}`, {
@@ -69,7 +71,7 @@ export const ProjectExitButtonModal = ({
                 flexWrap: "wrap",
               }}
             >
-              {user && (
+              {user.id === ownerID && (
                 <ModalButton
                   text="Save &amp; Exit"
                   variant="SaveAndExit"

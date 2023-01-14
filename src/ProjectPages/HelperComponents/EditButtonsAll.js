@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import { palette } from "../../assets/theme";
@@ -12,8 +13,10 @@ export const EditButtonsAll = ({
   setCurrentlySelectedColor,
   projectID,
   gridArray,
-  user,
+  userID,
+  ownerID,
 }) => {
+  let { user } = useLoaderData();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const pathName = window.location.pathname;
@@ -57,7 +60,7 @@ export const EditButtonsAll = ({
           }}
         >
           <Box sx={{ display: "flex", justifyContent: "center" }}>
-            {user && (
+            {user.id === ownerID && (
               <Box
                 sx={{
                   padding: "8px",
@@ -105,23 +108,25 @@ export const EditButtonsAll = ({
               </Box>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
-              {pathName !== "/KnittingProjectManager/NewProject" && user && (
-                <EditButtonsAndPopover
-                  popoverText={"Reset"}
-                  onClick={() => {
-                    clearGrid();
-                  }}
-                />
-              )}
-              {pathName === "/KnittingProjectManager/" && user && (
-                <EditButtonsAndPopover
-                  popoverText={"Clear"}
-                  onClick={() => {
-                    clearGrid();
-                  }}
-                />
-              )}
-              {user && (
+              {pathName !== "/KnittingProjectManager/NewProject" &&
+                user.id === ownerID && (
+                  <EditButtonsAndPopover
+                    popoverText={"Reset"}
+                    onClick={() => {
+                      clearGrid();
+                    }}
+                  />
+                )}
+              {pathName === "/KnittingProjectManager/" &&
+                user.id === ownerID && (
+                  <EditButtonsAndPopover
+                    popoverText={"Clear"}
+                    onClick={() => {
+                      clearGrid();
+                    }}
+                  />
+                )}
+              {user.id === ownerID && (
                 <EditButtonsAndPopover
                   popoverText={"Save"}
                   onClick={() => onSave(gridArray)}
@@ -138,7 +143,7 @@ export const EditButtonsAll = ({
                 setIsOpen={setIsOpen}
                 gridArray={gridArray}
                 projectID={projectID}
-                user={user}
+                ownerID={ownerID}
               />
             </Box>
           </Box>

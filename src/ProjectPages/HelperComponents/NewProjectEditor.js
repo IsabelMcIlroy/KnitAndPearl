@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import { Typography, Box, Popover } from "@mui/material";
 import {
   editorDrawerProjectNames,
@@ -16,8 +17,9 @@ export const NewProjectEditor = ({
   projectID,
   gridArray,
   gridColours,
-  user,
+  ownerID,
 }) => {
+  let { user } = useLoaderData();
   const [isOpen, setIsOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -81,7 +83,7 @@ export const NewProjectEditor = ({
             </Typography>
           </Box>
         )}
-        {user && (
+        {user.id === ownerID && (
           <>
             <EditProjectNameModal
               open={isOpen}
@@ -118,7 +120,7 @@ export const NewProjectEditor = ({
           setCurrentlySelectedColor={setCurrentlySelectedColor}
           projectID={projectID}
           gridArray={gridArray}
-          user={user}
+          ownerID={ownerID}
         />
       </Box>
     </>

@@ -14,7 +14,7 @@ export const ProjectGrid = ({
   clearGrid,
   projectID,
   gridColours,
-  user,
+  ownerID,
   username,
 }) => {
   const modifyGridColorArray = (xIndex, yIndex, currentlySelectedColor) => {
@@ -41,7 +41,7 @@ export const ProjectGrid = ({
             gridArray={gridArray}
             currentColumns={currentColumns}
             gridColours={gridColours}
-            user={user}
+            ownerID={ownerID}
           />
           <Box
             sx={{
@@ -79,7 +79,7 @@ export const ProjectGrid = ({
                         currentlySelectedColor={currentlySelectedColor}
                         cellsColor={column}
                         modifyGridColorArray={modifyGridColorArray}
-                        user={user}
+                        ownerID={ownerID}
                       />
                     </Grid>
                   );

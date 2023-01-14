@@ -30,11 +30,25 @@ export const router = createBrowserRouter(
         <Route
           path="/KnitAndPearl/NewProject/:id"
           element={<NewProjectPage />}
+          loader={async () => {
+            const resp = await fetch("/currentUser", {
+              "Content-Type": "application/json",
+            });
+            const user = await resp.json();
+            return { user };
+          }}
         />
         <Route path="/KnitAndPearl/ViewProjects" element={<ViewProjects />} />
         <Route
           path="/KnitAndPearl/ViewProjects/:id"
           element={<ProjectPage />}
+          loader={async () => {
+            const resp = await fetch("/currentUser", {
+              "Content-Type": "application/json",
+            });
+            const user = await resp.json();
+            return { user };
+          }}
         />
       </Route>
       <Route

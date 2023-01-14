@@ -6,7 +6,10 @@ router.get("/", async function (req, res) {
   if (currentlyLoggedinUser === undefined) {
     res.json(null);
   } else {
-    res.json({ username: currentlyLoggedinUser.username });
+    res.json({
+      username: currentlyLoggedinUser.username,
+      id: currentlyLoggedinUser.id,
+    });
   }
 });
 
