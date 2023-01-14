@@ -113,17 +113,4 @@ router.put("/editNames/:id", isAuthenticated, async function (req, res) {
   }
 });
 
-router.get("/checkUser/:id", async function (req, res) {
-  const currentProject = req.params.id;
-  const currentlyLoggedinUser = req.session.user.id;
-  try {
-    const checkUser = await db
-      .prepare("SELECT * FROM projects WHERE owner_id=? AND id = ?")
-      .get(currentlyLoggedinUser, currentProject);
-    res.json(checkUser);
-  } catch (e) {
-    res.json({});
-  }
-});
-
 module.exports = router;
