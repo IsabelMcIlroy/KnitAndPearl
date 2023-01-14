@@ -27,7 +27,6 @@ export const ViewProjects = () => {
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
-  console.log(checked);
   return (
     <Box
       sx={{
