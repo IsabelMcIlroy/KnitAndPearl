@@ -15,16 +15,13 @@ export const ProjectExitButtonModal = ({
   let { user } = useLoaderData();
   const navigate = useNavigate();
   const onSave = async (gridArray) => {
-    const response = await fetch(
-      `/knitandpearl-backend.up.railway.app/projects/${projectID}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ gridArray }),
-      }
-    );
+    const response = await fetch(`/projects/${projectID}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ gridArray }),
+    });
     if (!response.ok) {
       if (response.status === 401) {
         console.log("No Project");

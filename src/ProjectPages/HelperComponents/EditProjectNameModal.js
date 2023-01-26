@@ -43,16 +43,13 @@ export const EditProjectNameModal = ({
     });
   };
   const onSubmit = async (data) => {
-    const response = await fetch(
-      `/knitandpearl-backend.up.railway.app/projects/editNames/${projectID}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    );
+    const response = await fetch(`/projects/editNames/${projectID}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
     if (!response.ok) {
       if (response.status === 401) {
         console.log("No Project");
