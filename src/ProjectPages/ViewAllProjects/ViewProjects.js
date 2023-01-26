@@ -22,7 +22,9 @@ export const ViewProjects = () => {
     isLoading,
     data: allProjects,
     error,
-  } = useFetch(`/projects/projectsList/${checked}`);
+  } = useFetch(
+    `/knitandpearl-backend.up.railway.app/projects/projectsList/${checked}`
+  );
 
   const handleChange = (event) => {
     setChecked(event.target.checked);

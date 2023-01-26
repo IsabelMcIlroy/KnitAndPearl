@@ -2,6 +2,7 @@
   "name": "myapp",
   "version": "1.0.0",
   "description": "knitting project manager",
+  "home": "https://IsabelMcIlroy.github.io/KnitAndPearl",
   "main": "index.js",
   "scripts": {
     "test": "jest",
