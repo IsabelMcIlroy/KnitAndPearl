@@ -18,7 +18,6 @@ export const ProjectGridCell = ({
   const onClick = () => {
     modifyGridColorArray(xIndex, yIndex, currentlySelectedColor);
   };
-
   return (
     <>
       {user.id === ownerID && (
