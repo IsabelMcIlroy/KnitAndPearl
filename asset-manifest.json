@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/KnitAndPearl/static/css/main.e6c13ad2.css",
-    "main.js": "/KnitAndPearl/static/js/main.d1b30d06.js",
+    "main.js": "/KnitAndPearl/static/js/main.412e1d01.js",
     "static/media/wool.jpg": "/KnitAndPearl/static/media/wool.50f5b02f8d3a5ede8980.jpg",
     "index.html": "/KnitAndPearl/index.html",
     "main.e6c13ad2.css.map": "/KnitAndPearl/static/css/main.e6c13ad2.css.map",
-    "main.d1b30d06.js.map": "/KnitAndPearl/static/js/main.d1b30d06.js.map"
+    "main.412e1d01.js.map": "/KnitAndPearl/static/js/main.412e1d01.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.d1b30d06.js"
+    "static/js/main.412e1d01.js"
   ]
 }
