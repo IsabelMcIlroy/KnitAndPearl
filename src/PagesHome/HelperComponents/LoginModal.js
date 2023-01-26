@@ -32,7 +32,7 @@ export const LoginModal = ({
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
   const onSubmit = async (data) => {
-    const response = await fetch("/login", {
+    const response = await fetch("knitandpearl-backend.up.railway.app/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

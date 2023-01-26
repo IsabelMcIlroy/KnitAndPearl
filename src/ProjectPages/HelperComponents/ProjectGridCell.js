@@ -8,7 +8,6 @@ export const ProjectGridCell = ({
   yIndex,
   currentlySelectedColor,
   cellsColor,
-  userID,
   ownerID,
 }) => {
   let { user } = useLoaderData();

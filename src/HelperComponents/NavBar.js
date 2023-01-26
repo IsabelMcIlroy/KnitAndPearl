@@ -19,7 +19,7 @@ export const NavBar = () => {
   const navigate = useNavigate();
   const onLogout = async (data) => {
     console.log(data);
-    const response = await fetch("/logout", {
+    const response = await fetch("knitandpearl-backend.up.railway.app/logout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

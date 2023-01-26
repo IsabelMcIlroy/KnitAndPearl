@@ -32,7 +32,7 @@ export const SignupModal = ({
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
   const onSubmit = async (data) => {
-    const response = await fetch("/signup", {
+    const response = await fetch("knitandpearl-backend.up.railway.app/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
