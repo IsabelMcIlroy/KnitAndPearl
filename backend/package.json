@@ -4,7 +4,7 @@
   "description": "knitting project manager",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon server.js"
   },
   "author": "Isabel McIlroy",
@@ -19,6 +19,7 @@
     "sqlite3": "^5.1.2"
   },
   "devDependencies": {
+    "jest": "^29.4.0",
     "nodemon": "^2.0.20"
   }
 }
