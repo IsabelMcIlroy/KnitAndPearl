@@ -2,6 +2,7 @@
   "name": "myapp",
   "version": "1.0.0",
   "description": "knitting project manager",
+  "homepage": "",
   "main": "index.js",
   "scripts": {
     "test": "jest",
