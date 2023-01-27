@@ -2,7 +2,6 @@ const express = require("express");
 const sqlite = require("better-sqlite3");
 const session = require("express-session");
 const { initSqlite } = require("./database");
-const escapeHtml = require("escape-html");
 
 initSqlite();
 
@@ -11,8 +10,6 @@ app.use(express.json());
 
 const SqliteStore = require("better-sqlite3-session-store")(session);
 const db = new sqlite("sessions.db", { verbose: console.log });
-
-const isAuthenticated = require("./isAuthenticated");
 
 app.use(
   session({
