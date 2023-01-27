@@ -29,15 +29,6 @@ app.use(
   })
 );
 
-app.get("/", isAuthenticated, function (req, res) {
-  res.json(
-    "hello, " +
-      escapeHtml(req.session.user) +
-      "!" +
-      ' <a href="/logout">Logout</a>'
-  );
-});
-
 const userRouter = require("./routes/users");
 const projectRouter = require("./routes/projects");
 const loginRouter = require("./routes/login");
