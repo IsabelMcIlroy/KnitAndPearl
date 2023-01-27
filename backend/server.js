@@ -2,6 +2,12 @@ const express = require("express");
 const sqlite = require("better-sqlite3");
 const session = require("express-session");
 const { initSqlite } = require("./database");
+const login = require("./requests/login");
+const logout = require("./requests/logout");
+const signup = require("./requests/signup");
+const currentUser = require("./requests/currentUser");
+const users = require("./requests/users");
+const projects = require("./requests/projects");
 
 initSqlite();
 
@@ -26,18 +32,16 @@ app.use(
   })
 );
 
-const userRouter = require("./routes/users");
-const projectRouter = require("./routes/projects");
-const loginRouter = require("./routes/login");
-const logoutRouter = require("./routes/logout");
-const signupRouter = require("./routes/signup");
-const currentUserRouter = require("./routes/currentUser");
-
-app.use("/users", userRouter);
-app.use("/projects", projectRouter);
-app.use("/login", loginRouter);
-app.use("/logout", logoutRouter);
-app.use("/signup", signupRouter);
-app.use("/currentUser", currentUserRouter);
+login(app, "/login/");
+logout(app, "/logout/");
+signup(app, "/signup/");
+currentUser(app, "/currentUser/");
+users.user(app, "/users/");
+users.userID(app, "/users/:id");
+projects.newProject(app, "/projects/");
+projects.projectsList(app, "/projects/projectsList/:checked");
+projects.getProject(app, "/projects/:id");
+projects.saveProject(app, "/projects/:id");
+projects.changeProjectName(app, "/projects/editNames/:id");
 
 app.listen(3001);
