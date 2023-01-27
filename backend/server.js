@@ -6,7 +6,6 @@ const login = require("./requests/login");
 const logout = require("./requests/logout");
 const signup = require("./requests/signup");
 const currentUser = require("./requests/currentUser");
-const users = require("./requests/users");
 const projects = require("./requests/projects");
 
 initSqlite();
@@ -36,8 +35,6 @@ login(app, "/login/");
 logout(app, "/logout/");
 signup(app, "/signup/");
 currentUser(app, "/currentUser/");
-users.user(app, "/users/");
-users.userID(app, "/users/:id");
 projects.newProject(app, "/projects/");
 projects.projectsList(app, "/projects/projectsList/:checked");
 projects.getProject(app, "/projects/:id");
