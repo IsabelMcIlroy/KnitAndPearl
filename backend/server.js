@@ -31,11 +31,12 @@ const currentUserHandler = require("./requests/currentUser");
 const loginHandler = require("./requests/login");
 const signupHandler = require("./requests/signup");
 const logoutHandler = require("./requests/logout");
+const isAuthenticated = require("./isAuthenticated");
 
 app.get("/currentUser/", currentUserHandler);
 app.post("/login", loginHandler);
 app.post("/signup", signupHandler);
-app.post("/logout", logoutHandler);
+app.post("/logout", isAuthenticated, logoutHandler);
 
 projects.newProject(app, "/projects/");
 projects.projectsList(app, "/projects/projectsList/:checked");
