@@ -31,10 +31,11 @@ app.use(
 );
 
 const currentUserHandler = require("./requests/currentUser");
+const loginHandler = require("./requests/login");
 
 app.get("/currentUser/", currentUserHandler);
+app.post("/login", loginHandler);
 
-login(app, "/login/");
 logout(app, "/logout/");
 signup(app, "/signup/");
 projects.newProject(app, "/projects/");
