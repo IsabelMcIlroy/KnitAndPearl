@@ -2,7 +2,6 @@ const express = require("express");
 const sqlite = require("better-sqlite3");
 const session = require("express-session");
 const { initSqlite } = require("./database");
-const logout = require("./requests/logout");
 const projects = require("./requests/projects");
 
 initSqlite();
@@ -31,12 +30,13 @@ app.use(
 const currentUserHandler = require("./requests/currentUser");
 const loginHandler = require("./requests/login");
 const signupHandler = require("./requests/signup");
+const logoutHandler = require("./requests/logout");
 
 app.get("/currentUser/", currentUserHandler);
 app.post("/login", loginHandler);
 app.post("/signup", signupHandler);
+app.post("/logout", logoutHandler);
 
-logout(app, "/logout/");
 projects.newProject(app, "/projects/");
 projects.projectsList(app, "/projects/projectsList/:checked");
 projects.getProject(app, "/projects/:id");
