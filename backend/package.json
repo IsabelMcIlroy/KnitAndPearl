@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon server.js --max-old-space-size=4096 start"
+    "start": "nodemon server.js --max-old-space-size=5120 start"
   },
   "author": "Isabel McIlroy",
   "license": "ISC",
