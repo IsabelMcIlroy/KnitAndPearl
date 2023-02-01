@@ -2,7 +2,6 @@ const express = require("express");
 const sqlite = require("better-sqlite3");
 const session = require("express-session");
 const { initSqlite } = require("./database");
-// const projects = require("./requests/projects");
 
 initSqlite();
 
@@ -53,3 +52,5 @@ app.put("/projects/:id", isAuthenticated, saveProjectHandler);
 app.put("/projects/editNames/:id", isAuthenticated, changeProjectNameHandler);
 
 app.listen(3001);
+
+// module.exports = { app };

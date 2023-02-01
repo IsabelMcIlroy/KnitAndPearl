@@ -8,6 +8,7 @@ function currentUserHandler(req, res) {
       id: currentlyLoggedinUser.id,
     });
   }
+  return currentlyLoggedinUser;
 }
 
 module.exports = currentUserHandler;
