@@ -1,4 +1,4 @@
-//const currentUserHandler = require("../requests/currentUser");
+//const currentUserHandler = require("../../requests/currentUser");
 
 test.todo("fix these tests");
 

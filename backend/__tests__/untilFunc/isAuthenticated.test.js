@@ -1,4 +1,4 @@
-const isAuthenticated = require("../isAuthenticated");
+const isAuthenticated = require("../../isAuthenticated");
 
 test("should pass 401 to next() if no user", () => {
   const req = {};
