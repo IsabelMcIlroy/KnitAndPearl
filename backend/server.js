@@ -52,5 +52,3 @@ app.put("/projects/:id", isAuthenticated, saveProjectHandler);
 app.put("/projects/editNames/:id", isAuthenticated, changeProjectNameHandler);
 
 app.listen(3001);
-
-// module.exports = { app };
