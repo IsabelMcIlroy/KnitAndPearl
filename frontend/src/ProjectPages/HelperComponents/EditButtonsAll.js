@@ -21,7 +21,7 @@ export const EditButtonsAll = ({
   const pathName = window.location.pathname;
   const onSave = async (gridArray) => {
     const response = await fetch(
-      `https://knitandpearl-backend.up.railway.app/projects/${projectID}`,
+      `https://backend.knitandpearl.online/projects/${projectID}`,
       {
         method: "PUT",
         headers: {

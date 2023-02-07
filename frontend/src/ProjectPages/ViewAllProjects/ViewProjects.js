@@ -23,7 +23,7 @@ export const ViewProjects = () => {
     data: allProjects,
     error,
   } = useFetch(
-    `https://knitandpearl-backend.up.railway.app/projects/projectsList/${checked}`
+    `https://backend.knitandpearl.online/projects/projectsList/${checked}`
   );
 
   const handleChange = (event) => {

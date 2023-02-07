@@ -44,7 +44,7 @@ export const EditProjectNameModal = ({
   };
   const onSubmit = async (data) => {
     const response = await fetch(
-      `https://knitandpearl-backend.up.railway.app/projects/editNames/${projectID}`,
+      `https://backend.knitandpearl.online/projects/editNames/${projectID}`,
       {
         method: "PUT",
         headers: {

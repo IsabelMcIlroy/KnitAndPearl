@@ -18,7 +18,7 @@ export const router = createBrowserRouter(
         element={<NavBar />}
         loader={async () => {
           const resp = await fetch(
-            "https://knitandpearl-backend.up.railway.app/currentUser",
+            "https://backend.knitandpearl.online/currentUser",
             {
               "Content-Type": "application/json",
             }
@@ -35,7 +35,7 @@ export const router = createBrowserRouter(
           element={<NewProjectPage />}
           loader={async () => {
             const resp = await fetch(
-              "https://knitandpearl-backend.up.railway.app/currentUser",
+              "https://backend.knitandpearl.online/currentUser",
               {
                 "Content-Type": "application/json",
               }
@@ -50,7 +50,7 @@ export const router = createBrowserRouter(
           element={<ProjectPage />}
           loader={async () => {
             const resp = await fetch(
-              "https://knitandpearl-backend.up.railway.app/currentUser",
+              "https://backend.knitandpearl.online/currentUser",
               {
                 "Content-Type": "application/json",
               }

@@ -7,7 +7,7 @@ import { palette } from "../../assets/theme";
 export const ProjectPage = () => {
   let { id } = useParams();
   const { isLoading, data, error } = useFetch(
-    `https://knitandpearl-backend.up.railway.app/projects/${id}`
+    `https://backend.knitandpearl.online/projects/${id}`
   );
   return (
     <>

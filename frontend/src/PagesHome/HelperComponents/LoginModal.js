@@ -32,16 +32,13 @@ export const LoginModal = ({
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
   const onSubmit = async (data) => {
-    const response = await fetch(
-      "https://knitandpearl-backend.up.railway.app/login",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    );
+    const response = await fetch("https://backend.knitandpearl.online/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
     console.log(response.ok, response.status);
     if (!response.ok) {
       if (response.status === 401) {
