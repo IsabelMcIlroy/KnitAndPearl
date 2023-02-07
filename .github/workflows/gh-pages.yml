@@ -18,13 +18,13 @@ jobs:
           node-version: "16"
 
       - name: Install dependencies
-        run: npm install
+        run: npm install ./frontend
 
       - name: Build
-        run: npm run build
+        run: npm run build ./frontend
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages
-          folder: build
+          folder: frontend/build
