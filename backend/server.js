@@ -8,6 +8,9 @@ initSqlite();
 const app = express();
 app.use(express.json());
 
+const cors = require("cors");
+app.use(cors({ origin: true }));
+
 const SqliteStore = require("better-sqlite3-session-store")(session);
 const db = new sqlite("sessions.db", { verbose: console.log });
 
