@@ -33,7 +33,7 @@ export const EditButtonsAll = ({
     if (!response.ok) {
       if (response.status === 401) {
         console.log("No Project");
-        navigate("/KnitAndPearl/NoProject");
+        navigate("/NoProject");
       }
     } else {
       const payload = await response.json();
@@ -110,24 +110,22 @@ export const EditButtonsAll = ({
               </Box>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
-              {pathName !== "/KnittingProjectManager/NewProject" &&
-                user.id === ownerID && (
-                  <EditButtonsAndPopover
-                    popoverText={"Reset"}
-                    onClick={() => {
-                      clearGrid();
-                    }}
-                  />
-                )}
-              {pathName === "/KnittingProjectManager/" &&
-                user.id === ownerID && (
-                  <EditButtonsAndPopover
-                    popoverText={"Clear"}
-                    onClick={() => {
-                      clearGrid();
-                    }}
-                  />
-                )}
+              {pathName !== "/NewProject" && user.id === ownerID && (
+                <EditButtonsAndPopover
+                  popoverText={"Reset"}
+                  onClick={() => {
+                    clearGrid();
+                  }}
+                />
+              )}
+              {pathName === "/NewProject" && user.id === ownerID && (
+                <EditButtonsAndPopover
+                  popoverText={"Clear"}
+                  onClick={() => {
+                    clearGrid();
+                  }}
+                />
+              )}
               {user.id === ownerID && (
                 <EditButtonsAndPopover
                   popoverText={"Save"}

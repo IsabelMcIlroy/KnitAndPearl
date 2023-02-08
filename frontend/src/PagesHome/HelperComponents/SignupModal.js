@@ -48,7 +48,7 @@ export const SignupModal = ({
       const payload = await response.json();
       console.log(payload);
       setIsSignupOpen(false);
-      navigate("/KnitAndPearl/ViewProjects", {});
+      navigate("/ViewProjects", {});
     }
   };
   const handleKeyPress = (e) => {

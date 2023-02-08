@@ -49,7 +49,7 @@ export const LoginModal = ({
       const payload = await response.json();
       console.log(payload);
       setIsLoginOpen(false);
-      navigate("/KnitAndPearl/ViewProjects", {});
+      navigate("/ViewProjects", {});
     }
   };
   const handleKeyPress = (e) => {

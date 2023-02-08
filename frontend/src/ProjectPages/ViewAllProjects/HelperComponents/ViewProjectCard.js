@@ -56,9 +56,7 @@ export const ViewProjectCard = ({
               <ThemeProvider theme={KnittingTheme}>
                 <Button
                   size="small"
-                  onClick={() =>
-                    navigate(`/KnitAndPearl/ViewProjects/${projectID}`, {})
-                  }
+                  onClick={() => navigate(`/ViewProjects/${projectID}`, {})}
                 >
                   View/Edit
                 </Button>

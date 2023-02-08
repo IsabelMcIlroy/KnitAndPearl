@@ -12,7 +12,7 @@ import { ProjectPage } from "./ProjectPages/ViewProject/ProjectPage";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/KnitAndPearl/">
+    <Route path="/">
       <Route index element={<Home />} />
       <Route
         element={<NavBar />}
@@ -25,13 +25,13 @@ export const router = createBrowserRouter(
           );
           const user = await resp.json();
           if (!user) {
-            throw redirect("/KnitAndPearl/");
+            throw redirect("/");
           }
           return {};
         }}
       >
         <Route
-          path="/KnitAndPearl/NewProject/:id"
+          path="/NewProject/:id"
           element={<NewProjectPage />}
           loader={async () => {
             const resp = await fetch(
@@ -44,9 +44,9 @@ export const router = createBrowserRouter(
             return { user };
           }}
         />
-        <Route path="/KnitAndPearl/ViewProjects" element={<ViewProjects />} />
+        <Route path="/ViewProjects" element={<ViewProjects />} />
         <Route
-          path="/KnitAndPearl/ViewProjects/:id"
+          path="/ViewProjects/:id"
           element={<ProjectPage />}
           loader={async () => {
             const resp = await fetch(

@@ -56,7 +56,7 @@ export const EditProjectNameModal = ({
     if (!response.ok) {
       if (response.status === 401) {
         console.log("No Project");
-        navigate("/KnitAndPearl/NoProject");
+        navigate("/NoProject");
       }
     } else {
       const payload = await response.json();

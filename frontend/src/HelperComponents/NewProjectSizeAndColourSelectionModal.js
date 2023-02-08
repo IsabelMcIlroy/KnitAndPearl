@@ -46,7 +46,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
     const payload = await response.json();
     console.log(payload);
     setIsOpen(false);
-    navigate(`/KnitAndPearl/NewProject/${payload.id}`, {});
+    navigate(`/NewProject/${payload.id}`, {});
   };
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {

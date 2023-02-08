@@ -28,12 +28,12 @@ export const ProjectExitButtonModal = ({
     if (!response.ok) {
       if (response.status === 401) {
         console.log("No Project");
-        navigate("/KnitAndPearl/NoProject");
+        navigate("/NoProject");
       }
     } else {
       const payload = await response.json();
       console.log(payload);
-      navigate("/KnitAndPearl/ViewProjects");
+      navigate("/ViewProjects");
     }
   };
   return (
@@ -85,7 +85,7 @@ export const ProjectExitButtonModal = ({
               <ModalButton
                 text="Exit"
                 variant="Exit"
-                onClick={() => navigate("/KnitAndPearl/ViewProjects")}
+                onClick={() => navigate("/ViewProjects")}
               />
               <ModalButton
                 text="Cancel"

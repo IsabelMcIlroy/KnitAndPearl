@@ -27,7 +27,7 @@ export const NavBar = () => {
     });
     const payload = await response.json();
     console.log(payload);
-    navigate("/KnitAndPearl/", {});
+    navigate("/", {});
   };
   const { isLoading, data: user, error } = useFetch("/currentUser");
   return (
