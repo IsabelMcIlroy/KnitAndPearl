@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://knitandpearl.online",
+  "homepage": "https://knitandpearl.online/",
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "@emotion/react": "^11.9.3",
