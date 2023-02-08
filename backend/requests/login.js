@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 loginHandler = async (req, res) => {
   res.set(
     "Access-Control-Allow-Origin",
-    "https://backend.knitandpearl.online/"
+    "https://backend.knitandpearl.online/login"
   );
   try {
     const user = await db
