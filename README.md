@@ -24,7 +24,7 @@ As someone who enjoys knitting I thought this would be a fun way to learn react,
 
 ## Link to Demo Site
 
-https://isabelmcilroy.github.io/KnitAndPearl/
+https://knitandpearl.online/
 
 ## Screenshot
 
