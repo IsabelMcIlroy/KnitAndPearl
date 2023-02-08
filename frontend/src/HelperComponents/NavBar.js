@@ -65,7 +65,7 @@ export const NavBar = () => {
             {isLoading && (
               <>
                 <EmojiFoodBeverageIcon sx={{ paddingRight: "4px" }} />
-                ....
+                ...
               </>
             )}
             {user && (

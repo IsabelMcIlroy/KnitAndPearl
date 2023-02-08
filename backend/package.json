@@ -7,9 +7,6 @@
     "test": "jest",
     "start": "nodemon server.js"
   },
-  "proxy": {
-    "proxy": "https://backend.knitandpearl.online"
-    },
   "author": "Isabel McIlroy",
   "license": "ISC",
   "dependencies": {
