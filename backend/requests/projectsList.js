@@ -1,6 +1,7 @@
 const { db } = require("../database");
 
 projectsListHandler = async (req, res) => {
+  res.set("Access-Control-Allow-Origin", "https://knitandpearl.online/");
   const checked = req.params.checked;
   if (checked === "true") {
     const projectList = await db

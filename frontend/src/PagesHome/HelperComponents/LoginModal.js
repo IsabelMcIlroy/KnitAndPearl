@@ -33,7 +33,6 @@ export const LoginModal = ({
   const [errorMessage, setErrorMessage] = useState("");
   const onSubmit = async (data) => {
     const response = await fetch("https://backend.knitandpearl.online/login", {
-      mode: "cors",
       method: "POST",
       headers: {
         "Content-Type": "application/json",

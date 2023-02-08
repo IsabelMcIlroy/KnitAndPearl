@@ -1,6 +1,7 @@
 const { db } = require("../database");
 
 newProjectHandler = async (req, res) => {
+  res.set("Access-Control-Allow-Origin", "https://knitandpearl.online/");
   let currentUser = req.session.user;
   req.session.projectName = req.body.projectName;
   const newProject = await db

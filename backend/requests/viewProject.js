@@ -1,6 +1,7 @@
 const { db } = require("../database");
 
 viewProjectHandler = async (req, res) => {
+  res.set("Access-Control-Allow-Origin", "https://knitandpearl.online/");
   const currentProject = req.params.id;
   const project = await db
     .prepare(
