@@ -2,6 +2,7 @@ const { db } = require("../database");
 const bcrypt = require("bcrypt");
 
 signupHandler = async (req, res) => {
+  res.set("Access-Control-Allow-Origin", "http://backend.knitandpearl.online");
   const hashedPassword = await bcrypt.hash(req.body.password, 10);
   try {
     const newUser = await db
