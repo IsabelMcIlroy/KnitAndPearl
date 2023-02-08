@@ -2,10 +2,7 @@ const { db } = require("../database");
 const bcrypt = require("bcrypt");
 
 loginHandler = async (req, res) => {
-  res.set(
-    "Access-Control-Allow-Origin",
-    "https://backend.knitandpearl.online/login"
-  );
+  res.set("Access-Control-Allow-Origin", "https://knitandpearl.online/");
   try {
     const user = await db
       .prepare("SELECT * FROM users WHERE username = ?")
