@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon server.js react-scripts --max-old-space-size=4096 start "
+    "start": "nodemon server.js"
   },
+  "proxy": {
+    "proxy": "https://backend.knitandpearl.online"
+    },
   "author": "Isabel McIlroy",
   "license": "ISC",
   "dependencies": {
