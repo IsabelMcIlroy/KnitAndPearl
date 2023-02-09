@@ -148,9 +148,15 @@ export const SignupModal = ({
                 </Box>
               </Box>
               <Box textAlign="center">
-                <ModalButton onClick={handleSubmit(onSubmit)} text="Signup" />
+                <ModalButton
+                  onClick={handleSubmit(onSubmit)}
+                  text="Signup"
+                  type="submit"
+                  variant="Submit"
+                />
                 <ModalButton
                   text="Cancel"
+                  variant="Cancel"
                   onClick={() => {
                     setIsSignupOpen(false);
                   }}

@@ -156,9 +156,11 @@ export const LoginModal = ({
                   onClick={handleSubmit(onSubmit)}
                   type="submit"
                   text="Login"
+                  variant="Submit"
                 />
                 <ModalButton
                   text="Cancel"
+                  variant="Cancel"
                   onClick={() => {
                     setIsLoginOpen(false);
                   }}
