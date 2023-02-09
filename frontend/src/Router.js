@@ -38,7 +38,17 @@ export const router = createBrowserRouter(
             return { user };
           }}
         />
-        <Route path="/ViewProjects" element={<ViewProjects />} />
+        <Route
+          path="/ViewProjects"
+          element={<ViewProjects />}
+          loader={async () => {
+            const resp = await fetch("/api/currentUser", {
+              "Content-Type": "application/json",
+            });
+            const user = await resp.json();
+            return { user };
+          }}
+        />
         <Route
           path="/ViewProjects/:id"
           element={<ProjectPage />}

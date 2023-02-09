@@ -73,6 +73,7 @@ export const UsersProjectCards = ({
             currentColumns={displayProjectsArray.columns}
             gridColours={displayProjectsArray.grid_colours}
             username={displayProjectsArray.username}
+            ownerID={displayProjectsArray.owner_id}
           />
         );
       })}

@@ -19,9 +19,9 @@ export const ViewProjectCard = ({
   currentColumns,
   gridColours,
   username,
+  ownerID,
 }) => {
   let { user } = useLoaderData();
-  console.log(user);
   let grid = JSON.parse(gridColours);
   const navigate = useNavigate();
   return (
@@ -61,7 +61,12 @@ export const ViewProjectCard = ({
                   size="small"
                   onClick={() => navigate(`/ViewProjects/${projectID}`, {})}
                 >
-                  View/Edit
+                  {user.id === ownerID && (
+                    <Typography variant="p">View/Edit</Typography>
+                  )}
+                  {user.id !== ownerID && (
+                    <Typography variant="p">View</Typography>
+                  )}
                 </Button>
               </ThemeProvider>
             </CardActions>
