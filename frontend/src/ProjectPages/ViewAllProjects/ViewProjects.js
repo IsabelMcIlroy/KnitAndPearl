@@ -48,7 +48,7 @@ export const ViewProjects = () => {
               xl: "row",
               lg: "row",
               md: "row",
-              sm: "column",
+              sm: "row",
               xs: "column",
             },
           }}

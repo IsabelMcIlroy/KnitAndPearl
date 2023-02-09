@@ -67,11 +67,11 @@ export const LoginModal = ({
           style={{
             overflowY: "auto",
             overflowStyle: "scroll",
-            transform: "translate(50%, 25%)",
+            transform: "translate(35%, 25%)",
             display: "inline-block",
             height: "80%",
             maxHeight: "500px",
-            width: "50%",
+            width: "60%",
           }}
         >
           <Typography variant="h4" sx={modalTitle}>

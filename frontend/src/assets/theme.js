@@ -47,28 +47,28 @@ const KnittingTheme = createTheme({
         },
         Submit: {
           backgroundColor: palette.knittingBlue,
-          width: "fit-content",
+          width: "6rem",
           "&:hover": {
             backgroundColor: "#0B5082",
           },
         },
         SaveAndExit: {
           backgroundColor: palette.knittingLightBlue,
-          width: "fit-content",
+          width: "6rem",
           "&:hover": {
             backgroundColor: palette.knittingBlue,
           },
         },
         Cancel: {
           backgroundColor: palette.knittingPurple,
-          width: "fit-content",
+          width: "6rem",
           "&:hover": {
             backgroundColor: "#724949",
           },
         },
         Exit: {
           backgroundColor: palette.knittingPurple,
-          width: "fit-content",
+          width: "6rem",
           "&:hover": {
             backgroundColor: "#724949",
           },
