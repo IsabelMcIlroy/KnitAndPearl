@@ -17,8 +17,10 @@ export const ViewProjectCard = ({
   projectID,
   currentColumns,
   gridColours,
-  user,
+  username,
 }) => {
+  let { user } = useLoaderData();
+  console.log(user);
   let grid = JSON.parse(gridColours);
   const navigate = useNavigate();
   return (
@@ -72,7 +74,7 @@ export const ViewProjectCard = ({
               justifyContent: "end",
             }}
           >
-            {user}'s Project
+            {username}'s Project
           </Typography>
         </CardContent>
       </Card>

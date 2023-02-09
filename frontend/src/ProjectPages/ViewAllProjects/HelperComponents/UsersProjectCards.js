@@ -72,7 +72,7 @@ export const UsersProjectCards = ({
             currentRows={displayProjectsArray.rows}
             currentColumns={displayProjectsArray.columns}
             gridColours={displayProjectsArray.grid_colours}
-            user={displayProjectsArray.username}
+            username={displayProjectsArray.username}
           />
         );
       })}
