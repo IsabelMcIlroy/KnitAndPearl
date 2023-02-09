@@ -16,7 +16,8 @@ loginHandler = async (req, res) => {
       req.session.user = { id: user.id, username: user.username };
       res.json({ message: "welcome!" });
     } else {
-      res.json({ error: "incorrect password/username" });
+      console.error(e);
+      res.sendStatus(401);
     }
   } catch (e) {
     console.error(e);
