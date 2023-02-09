@@ -79,7 +79,13 @@ export const LoginModal = ({
           </Typography>
           <Box
             sx={{
-              padding: "24px 24px 0 24px",
+              padding: {
+                xl: "36px 36px 0 36px",
+                lg: "24px 24px 0 24px",
+                md: "12px 12px 0 12px",
+                sm: "8px 8px 0 8px",
+                xs: "4px 4px 0 4px",
+              },
               backgroundColor: palette.knittingGray,
               borderRadius: "0 0 24px 24px",
             }}

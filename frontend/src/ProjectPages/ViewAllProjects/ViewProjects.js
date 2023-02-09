@@ -44,6 +44,13 @@ export const ViewProjects = () => {
             margin: "0 24px",
             display: "flex",
             justifyContent: "space-between",
+            flexDirection: {
+              xl: "row",
+              lg: "row",
+              md: "row",
+              sm: "column",
+              xs: "column",
+            },
           }}
         >
           <Typography
