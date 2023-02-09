@@ -13,6 +13,8 @@ import {
 import KnittingTheme, { palette, modalTitle } from "../../assets/theme";
 import { ModalButton } from "../../HelperComponents/ModalButton";
 
+const url = process.env.APP_URL || "/api/login";
+
 export const LoginModal = ({
   open,
   onClick,
@@ -32,7 +34,8 @@ export const LoginModal = ({
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
   const onSubmit = async (data) => {
-    const response = await fetch("https://backend.knitandpearl.online/login", {
+    const response = await fetch(url, {
+      mode: "cors",
       method: "POST",
       headers: {
         "Content-Type": "application/json",

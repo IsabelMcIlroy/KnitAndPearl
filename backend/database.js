@@ -35,4 +35,11 @@ const initSqlite = () => {
   db.exec(sql);
 };
 
+// const login = (loginInfo) => {
+// 	sql = ''
+// 	db.exec(sql);
+
+// 	return blah
+// }
+
 module.exports = { db, initSqlite };

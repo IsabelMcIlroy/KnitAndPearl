@@ -51,4 +51,6 @@ app.get("/projects/:id", isAuthenticated, viewProjectHandler);
 app.put("/projects/:id", isAuthenticated, saveProjectHandler);
 app.put("/projects/editNames/:id", isAuthenticated, changeProjectNameHandler);
 
-app.listen(3001);
+const port = process.env.PORT || 3001;
+
+app.listen(port, () => console.log(`Listening on port ${Number(port)}`));

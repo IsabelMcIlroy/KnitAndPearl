@@ -17,12 +17,9 @@ export const router = createBrowserRouter(
       <Route
         element={<NavBar />}
         loader={async () => {
-          const resp = await fetch(
-            "https://backend.knitandpearl.online/currentUser",
-            {
-              "Content-Type": "application/json",
-            }
-          );
+          const resp = await fetch("/currentUser", {
+            "Content-Type": "application/json",
+          });
           const user = await resp.json();
           if (!user) {
             throw redirect("/");
@@ -34,12 +31,9 @@ export const router = createBrowserRouter(
           path="/NewProject/:id"
           element={<NewProjectPage />}
           loader={async () => {
-            const resp = await fetch(
-              "https://backend.knitandpearl.online/currentUser",
-              {
-                "Content-Type": "application/json",
-              }
-            );
+            const resp = await fetch("/currentUser", {
+              "Content-Type": "application/json",
+            });
             const user = await resp.json();
             return { user };
           }}
@@ -49,12 +43,9 @@ export const router = createBrowserRouter(
           path="/ViewProjects/:id"
           element={<ProjectPage />}
           loader={async () => {
-            const resp = await fetch(
-              "https://backend.knitandpearl.online/currentUser",
-              {
-                "Content-Type": "application/json",
-              }
-            );
+            const resp = await fetch("/currentUser", {
+              "Content-Type": "application/json",
+            });
             const user = await resp.json();
             return { user };
           }}

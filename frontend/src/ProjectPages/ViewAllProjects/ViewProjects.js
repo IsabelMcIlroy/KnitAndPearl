@@ -22,9 +22,7 @@ export const ViewProjects = () => {
     isLoading,
     data: allProjects,
     error,
-  } = useFetch(
-    `https://backend.knitandpearl.online/projects/projectsList/${checked}`
-  );
+  } = useFetch(`/api/projects/projectsList/${checked}`);
 
   const handleChange = (event) => {
     setChecked(event.target.checked);

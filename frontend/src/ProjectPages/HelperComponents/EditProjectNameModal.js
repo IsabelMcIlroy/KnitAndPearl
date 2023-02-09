@@ -43,16 +43,13 @@ export const EditProjectNameModal = ({
     });
   };
   const onSubmit = async (data) => {
-    const response = await fetch(
-      `https://backend.knitandpearl.online/projects/editNames/${projectID}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    );
+    const response = await fetch(`/api/projects/editNames/${projectID}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
     if (!response.ok) {
       if (response.status === 401) {
         console.log("No Project");

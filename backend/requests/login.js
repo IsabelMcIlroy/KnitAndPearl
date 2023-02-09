@@ -2,17 +2,12 @@ const { db } = require("../database");
 const bcrypt = require("bcrypt");
 
 loginHandler = async (req, res) => {
-  res.header("Access-Control-Allow-Origin", "https://knitandpearl.online/");
-  res.header("Access-Control-Allow-Credentials", true);
-  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin,X-Requested-With,Content-Type,Accept,content-type,application/json"
-  );
+  res.set("Access-Control-Allow-Origin", "https://knitandpearl.online/");
   try {
     const user = await db
       .prepare("SELECT * FROM users WHERE username = ?")
       .get(req.body.username);
+    // const user = await db.login(req.body.username);
     const passwordMatches = await bcrypt.compare(
       req.body.password,
       user.password
