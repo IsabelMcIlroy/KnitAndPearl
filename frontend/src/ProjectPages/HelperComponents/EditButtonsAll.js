@@ -86,18 +86,22 @@ export const EditButtonsAll = ({
                   flexWrap: "nowarp",
                 }}
               >
-                <Typography
-                  variant="p"
-                  sx={{ margin: "4px", textAlign: "center", width: "40px" }}
-                >
-                  Clear
-                </Typography>
-                <Typography
-                  variant="p"
-                  sx={{ margin: "4px", textAlign: "center", width: "40px" }}
-                >
-                  Save
-                </Typography>
+                {user.id === ownerID && (
+                  <Typography
+                    variant="p"
+                    sx={{ margin: "4px", textAlign: "center", width: "40px" }}
+                  >
+                    Clear
+                  </Typography>
+                )}
+                {user.id === ownerID && (
+                  <Typography
+                    variant="p"
+                    sx={{ margin: "4px", textAlign: "center", width: "40px" }}
+                  >
+                    Save
+                  </Typography>
+                )}
                 <Typography
                   variant="p"
                   sx={{ margin: "4px", textAlign: "center", width: "40px" }}
