@@ -1,5 +1,4 @@
 function currentUserHandler(req, res) {
-  res.set("Access-Control-Allow-Origin", "https://knitandpearl.online/");
   const currentlyLoggedinUser = req.session?.user;
   if (currentlyLoggedinUser === undefined) {
     res.json(null);

@@ -35,7 +35,6 @@ export const LoginModal = ({
   const [errorMessage, setErrorMessage] = useState("");
   const onSubmit = async (data) => {
     const response = await fetch("/api/login", {
-      mode: "cors",
       method: "POST",
       headers: {
         "Content-Type": "application/json",
