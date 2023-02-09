@@ -9,6 +9,7 @@ export const UsersProjectCards = ({
   allProjects,
   error,
 }) => {
+  console.log(allProjects.owner_id);
   const projectsToShow = allProjects?.filter(
     (project) =>
       project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
