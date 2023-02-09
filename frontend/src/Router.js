@@ -17,7 +17,7 @@ export const router = createBrowserRouter(
       <Route
         element={<NavBar />}
         loader={async () => {
-          const resp = await fetch("/currentUser", {
+          const resp = await fetch("/api/currentUser", {
             "Content-Type": "application/json",
           });
           const user = await resp.json();
@@ -31,7 +31,7 @@ export const router = createBrowserRouter(
           path="/NewProject/:id"
           element={<NewProjectPage />}
           loader={async () => {
-            const resp = await fetch("/currentUser", {
+            const resp = await fetch("/api/currentUser", {
               "Content-Type": "application/json",
             });
             const user = await resp.json();
@@ -43,7 +43,7 @@ export const router = createBrowserRouter(
           path="/ViewProjects/:id"
           element={<ProjectPage />}
           loader={async () => {
-            const resp = await fetch("/currentUser", {
+            const resp = await fetch("/api/currentUser", {
               "Content-Type": "application/json",
             });
             const user = await resp.json();
