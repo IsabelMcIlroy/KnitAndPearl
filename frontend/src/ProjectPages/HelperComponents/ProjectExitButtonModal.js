@@ -58,9 +58,16 @@ export const ProjectExitButtonModal = ({
             }}
           >
             <Box padding="10px" textAlign="center">
-              <Typography variant="h7" color={palette.knittingPurple}>
-                WAIT! Do you want to save before you exit?
-              </Typography>
+              {user.id === ownerID && (
+                <Typography variant="h7" color={palette.knittingPurple}>
+                  WAIT! Do you want to save before you exit?
+                </Typography>
+              )}
+              {user.id !== ownerID && (
+                <Typography variant="h7" color={palette.knittingPurple}>
+                  WAIT! Are you sure you want to exit?
+                </Typography>
+              )}
             </Box>
             <Box
               textAlign="center"
