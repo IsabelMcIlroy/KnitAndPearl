@@ -92,7 +92,7 @@ export const NavBar = () => {
             sx={{ marginTop: "4px" }}
           >
             <Box>
-              <Link to="/KnitAndPearl/" style={{ textDecoration: "none" }}>
+              <Link to="/" style={{ textDecoration: "none" }}>
                 <Button
                   sx={{ ...navBarButtons, margin: "0 12px" }}
                   onClick={onLogout}
