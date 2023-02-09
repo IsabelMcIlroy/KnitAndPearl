@@ -19,7 +19,7 @@ export const NavBar = () => {
   const navigate = useNavigate();
   const onLogout = async (data) => {
     console.log(data);
-    const response = await fetch("/logout", {
+    const response = await fetch("/api/logout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export const NavBar = () => {
     console.log(payload);
     navigate("/", {});
   };
-  const { isLoading, data: user, error } = useFetch("/currentUser");
+  const { isLoading, data: user, error } = useFetch("/api/currentUser");
   return (
     <>
       <AppBar
