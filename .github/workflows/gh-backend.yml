@@ -16,7 +16,7 @@ jobs:
           node-version: "16"
 
       - name: Install dependencies
-        run: npm install ./backend
+        run: cd backend && npm install
 
       - name: test
         run: npm test
