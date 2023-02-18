@@ -15,17 +15,8 @@ jobs:
         with:
           node-version: "16"
 
-      - name: something
-        run: cd backend
-
-      - name: debugging
-        run: ls -la
-
       - name: Install dependencies
-        run: npm install
-
-      - name: debugging
-        run: ls -la
+        run: cd backend && npm install
 
       - name: test
-        run: npm test
+        run: cd backend && npm test
