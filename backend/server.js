@@ -63,4 +63,4 @@ app.get("/projects/:id", isAuthenticated, viewProjectHandler);
 app.put("/projects/:id", isAuthenticated, saveProjectHandler);
 app.put("/projects/editNames/:id", isAuthenticated, changeProjectNameHandler);
 
-app.listen(process.env.DB_PORT);
+app.listen(3001);
