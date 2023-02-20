@@ -1,5 +1,5 @@
 const mysql = require("mysql2/promise");
-const pool = mysql.createPool(process.env.DATABASE_URL);
+const pool = mysql.createPool(process.env.MYSQL_URL);
 const bcrypt = require("bcrypt");
 
 signupHandler = async (req, res) => {
