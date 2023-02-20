@@ -1,7 +1,6 @@
 const express = require("express");
 const sqlite = require("better-sqlite3");
 const session = require("express-session");
-const mysql = require("mysql");
 
 require("dotenv").config();
 const mysql = require("mysql2");
