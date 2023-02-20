@@ -37,43 +37,6 @@ app.use(
     },
   })
 );
-// var options = {
-//   host: process.env.DB_HOST,
-//   port: process.env.DB_PORT,
-//   user: process.env.DB_USER,
-//   password: process.env.DB_PASS,
-//   database: process.env.DB_NAME,
-//   // createDatabaseTable: false,
-//   // schema: {
-//   //   tableName: "sessions",
-//   //   columnNames: {
-//   //     session_id: "session_id",
-//   //     expires: "expires",
-//   //     data: "JSON",
-//   //   },
-//   // },
-// };
-
-// var connection = mysql.createPool(options);
-// var sessionStore = new MySQLStore({}, connection);
-// //const sessionStore = new MySQLStore(options);
-// const expiryDate = new Date(Date.now() + 60 * 60 * 1000);
-// app.use(
-//   session({
-//     key: "Knit_And_Pearl",
-//     store: sessionStore,
-//     secret: process.env.SESSION_SECERT,
-//     resave: false,
-//     saveUninitialized: false,
-//     cookie: {
-//       secure: true,
-//       path: "/",
-//       expires: expiryDate,
-//       httpOnly: true,
-//       sameSite: "lax",
-//     },
-//   })
-// );
 
 const isAuthenticated = require("./isAuthenticated");
 const loginHandler = require("./requests/login");
@@ -100,6 +63,6 @@ app.get("/projects/:id", isAuthenticated, viewProjectHandler);
 app.put("/projects/:id", isAuthenticated, saveProjectHandler);
 app.put("/projects/editNames/:id", isAuthenticated, changeProjectNameHandler);
 
-const port = process.env.PORT || 3001;
+const port = process.env.DB_PORT || 3001;
 
 app.listen(port, () => console.log(`Listening on port ${Number(port)}`));
