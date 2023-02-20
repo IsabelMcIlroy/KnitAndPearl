@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://knitandpearl.online/",
-  "proxy": "http://localhost:3001/",
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
@@ -13,6 +12,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "http-proxy-middleware": "^2.0.6",
     "lodash.range": "^3.2.0",
     "number-to-words": "^1.2.4",
     "react": "^18.2.0",

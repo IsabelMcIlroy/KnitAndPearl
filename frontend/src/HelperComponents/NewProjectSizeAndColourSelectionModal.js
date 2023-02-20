@@ -35,7 +35,6 @@ export const NewProjectSizeAndColourSelectionModal = ({
   } = useForm({ resolver: yupResolver(validationSchema) });
   const navigate = useNavigate();
   const onSubmit = async (data) => {
-    console.log(data);
     const response = await fetch("/api/projects", {
       method: "POST",
       headers: {
@@ -46,7 +45,7 @@ export const NewProjectSizeAndColourSelectionModal = ({
     const payload = await response.json();
     console.log(payload);
     setIsOpen(false);
-    navigate(`/NewProject/${payload.id}`, {});
+    navigate(`/NewProject/${payload}`, {});
   };
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {

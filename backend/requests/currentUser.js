@@ -1,5 +1,5 @@
-function currentUserHandler(req, res) {
-  const currentlyLoggedinUser = req.session?.user;
+currentUserHandler = (req, res) => {
+  const currentlyLoggedinUser = req.session.user;
   if (currentlyLoggedinUser === undefined) {
     res.json(null);
   } else {
@@ -9,6 +9,6 @@ function currentUserHandler(req, res) {
     });
   }
   return currentlyLoggedinUser;
-}
+};
 
 module.exports = currentUserHandler;

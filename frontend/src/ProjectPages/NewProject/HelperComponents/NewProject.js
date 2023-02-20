@@ -4,8 +4,8 @@ import { ProjectGrid } from "../../HelperComponents/ProjectGrid";
 
 export const NewProject = (project) => {
   const projectID = project.project.id;
-  const currentRows = project.project.rows;
-  const currentColumns = project.project.columns;
+  const currentRows = project.project.grid_rows;
+  const currentColumns = project.project.grid_columns;
   const gridColours = project.project.grid_colours;
   const currentGridColours = JSON.parse(gridColours);
   const [currentlySelectedColor, setCurrentlySelectedColor] = useState({
