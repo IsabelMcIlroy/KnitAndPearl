@@ -1,5 +1,5 @@
 const mysql = require("mysql2/promise");
-const pool = mysql.createPool(process.env.MYSQL_URL);
+const pool = mysql.createPool(process.env.MYSQL_DATABASE);
 
 newProjectHandler = async (req, res) => {
   let currentUser = req.session.user;

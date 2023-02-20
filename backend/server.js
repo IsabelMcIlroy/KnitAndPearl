@@ -4,7 +4,7 @@ const session = require("express-session");
 
 require("dotenv").config();
 const mysql = require("mysql");
-const connection = mysql.createPool(process.env.MYSQL_URL);
+const connection = mysql.createPool(process.env.MYSQL_DATABASE);
 // console.log("Connected to PlanetScale!");
 // connection.end();
 // var session = require("express-session");
