@@ -1,11 +1,11 @@
 const express = require("express");
 const sqlite = require("better-sqlite3");
 const session = require("express-session");
-// const mysql = require("mysql");
+const mysql = require("mysql");
 
 require("dotenv").config();
-// const mysql = require("mysql2");
-// const connection = mysql.createConnection();
+const mysql = require("mysql2");
+const connection = mysql.createConnection(process.env.DATABASE_URL);
 // console.log("Connected to PlanetScale!");
 // connection.end();
 // var session = require("express-session");
