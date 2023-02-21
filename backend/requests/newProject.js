@@ -34,30 +34,6 @@ newProjectHandler = async (req, res) => {
     console.error(error);
     res.sendStatus(401);
   }
-  // const newProject = await connection
-  //   .prepare(
-  //     `INSERT INTO projects(owner_id, name, type, grid_rows, grid_columns, grid_colours) VALUES (?,?,?,?,?,?) RETURNING *`
-  //   )
-  //   .get(
-  //     currentUser.id,
-  //     req.body.projectName,
-  //     req.body.projectType,
-  //     req.body.Row,
-  //     req.body.Column,
-  //     JSON.stringify(
-  //       Array(parseInt(req.body.Row))
-  //         .fill(0)
-  //         .map(() =>
-  //           new Array(parseInt(req.body.Column)).fill({
-  //             r: 212,
-  //             g: 196,
-  //             b: 251,
-  //             a: 1,
-  //           })
-  //         )
-  //     )
-  //   );
-  // res.json(newProject);
 };
 
 module.exports = newProjectHandler;

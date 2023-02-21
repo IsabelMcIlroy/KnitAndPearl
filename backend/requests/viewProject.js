@@ -14,12 +14,6 @@ viewProjectHandler = async (req, res) => {
     console.error(error);
     res.sendStatus(401);
   }
-  // const project = await connection
-  //   .prepare(
-  //     "SELECT projects.*, users.username FROM projects JOIN users ON projects.owner_id = users.id WHERE projects.id = ?"
-  //   )
-  //   .get(currentProject);
-  // res.json(project);
 };
 
 module.exports = viewProjectHandler;

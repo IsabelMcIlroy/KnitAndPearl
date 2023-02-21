@@ -7,8 +7,6 @@ require("dotenv").config();
 // const connection = mysql.createConnection(process.env.DATABASE_URL);
 // console.log("Connected to PlanetScale!");
 // connection.end();
-// var session = require("express-session");
-// var MySQLStore = require("express-mysql-session")(session);
 
 const app = express();
 app.use(express.json());
