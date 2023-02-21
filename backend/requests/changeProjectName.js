@@ -1,5 +1,5 @@
 const mysql = require("mysql2/promise");
-const pool = mysql.createPool(process.env.MYSQL_DATABASE);
+const pool = mysql.createPool(process.env.DATABASE_URL);
 
 changeProjectNameHandler = async (req, res) => {
   const currentProject = req.params.id;

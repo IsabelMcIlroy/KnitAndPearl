@@ -1,14 +1,13 @@
 const mysql = require("mysql2/promise");
-const pool = mysql.createPool(process.env.MYSQL_DATABASE);
+const pool = mysql.createPool(process.env.DATABASE_URL);
 const bcrypt = require("bcrypt");
 
 loginHandler = async (req, res) => {
   const username = req.body.username;
   try {
-    const [rows, fields] = await pool.query(
-      "SELECT * FROM users WHERE username = ?",
-      [username]
-    );
+    const [rows] = await pool.query("SELECT * FROM users WHERE username = ?", [
+      username,
+    ]);
     const user = rows[0];
 
     if (!user) {
