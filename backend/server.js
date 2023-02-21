@@ -49,22 +49,18 @@ const viewProjectHandler = require("./requests/viewProject");
 const saveProjectHandler = require("./requests/saveProject");
 const changeProjectNameHandler = require("./requests/changeProjectName");
 
-app.post("/api/login", loginHandler);
-app.post("/api/signup", signupHandler);
-app.get("/api/currentUser", currentUserHandler);
-app.post("/api/logout", isAuthenticated, logoutHandler);
-app.post("/api/projects", isAuthenticated, newProjectHandler);
+app.post("/login", loginHandler);
+app.post("/signup", signupHandler);
+app.get("/currentUser", currentUserHandler);
+app.post("/logout", isAuthenticated, logoutHandler);
+app.post("/projects", isAuthenticated, newProjectHandler);
 app.get(
-  "/api/projects/projectsList/:checked",
+  "/projects/projectsList/:checked",
   isAuthenticated,
   projectsListHandler
 );
-app.get("/api/projects/:id", isAuthenticated, viewProjectHandler);
-app.put("/api/projects/:id", isAuthenticated, saveProjectHandler);
-app.put(
-  "/api/projects/editNames/:id",
-  isAuthenticated,
-  changeProjectNameHandler
-);
+app.get("/projects/:id", isAuthenticated, viewProjectHandler);
+app.put("/projects/:id", isAuthenticated, saveProjectHandler);
+app.put("/projects/editNames/:id", isAuthenticated, changeProjectNameHandler);
 
 app.listen(3001);
