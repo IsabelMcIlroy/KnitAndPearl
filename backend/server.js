@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 
 const SqliteStore = require("better-sqlite3-session-store")(session);
-const db = new sqlite("sessions.db", { verbose: console.log });
+const db = new sqlite("sessions.db");
 
 app.use(
   session({
