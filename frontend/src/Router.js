@@ -9,6 +9,7 @@ import { Home } from "./PagesHome/Home";
 import { NewProjectPage } from "./ProjectPages/NewProject/NewProjectPage";
 import { ViewProjects } from "./ProjectPages/ViewAllProjects/ViewProjects";
 import { ProjectPage } from "./ProjectPages/ViewProject/ProjectPage";
+import { PageNotFoundPage } from "./PageNotFoundPage/PageNotFoundPage";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -60,15 +61,8 @@ export const router = createBrowserRouter(
             return { user };
           }}
         />
+        <Route path="*" element={<PageNotFoundPage />} />
       </Route>
-      <Route
-        path="*"
-        element={
-          <main style={{ padding: "1rem", marginTop: "112px" }}>
-            <p>404 No such page!</p>
-          </main>
-        }
-      />
     </Route>
   )
 );
