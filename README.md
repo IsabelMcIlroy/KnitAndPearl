@@ -21,7 +21,7 @@ As someone who enjoys knitting I thought this would be a fun way to learn react,
 -node.js\
 -Express\
 -MySQL\
--PlanetScale\
+-PlanetScale
 
 ## Link to Demo Site
 
