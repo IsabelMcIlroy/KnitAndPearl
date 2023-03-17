@@ -3,6 +3,7 @@ import useFetch from "react-fetch-hook";
 import { Typography } from "@mui/material";
 import { NewProject } from "./HelperComponents/NewProject.js";
 import { palette } from "../../assets/theme";
+import { PageNotFoundPage } from "../../PageNotFoundPage/PageNotFoundPage.js";
 
 export const NewProjectPage = () => {
   let { id } = useParams();
@@ -22,19 +23,7 @@ export const NewProjectPage = () => {
           Loading...
         </Typography>
       )}
-      {error && (
-        <Typography
-          variant="p"
-          sx={{
-            color: palette.knittingErrorColour,
-            alignItems: "center",
-            display: "flex",
-            height: "50vh",
-          }}
-        >
-          error
-        </Typography>
-      )}
+      {error && <PageNotFoundPage />}
       {data && <NewProject project={data} />}
     </>
   );
