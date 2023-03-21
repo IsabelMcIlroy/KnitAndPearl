@@ -6,6 +6,7 @@ import { palette } from "../../assets/theme";
 import { EditButtonsAndPopover } from "./EditButtonsAndPopovers";
 import { ProjectExitButtonModal } from "./ProjectExitButtonModal";
 import { ColorPicker } from "./ColorPicker";
+import { DeleteProjectModal } from "./DeleteProjectModal";
 
 export const EditButtonsAll = ({
   clearGrid,
@@ -18,6 +19,7 @@ export const EditButtonsAll = ({
   let { user } = useLoaderData();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false);
   const pathName = window.location.pathname;
   const onSave = async (gridArray) => {
     const response = await fetch(`/api/projects/${projectID}`, {
@@ -102,6 +104,14 @@ export const EditButtonsAll = ({
                     Save
                   </Typography>
                 )}
+                {user.id === ownerID && (
+                  <Typography
+                    variant="p"
+                    sx={{ margin: "4px", textAlign: "center", width: "40px" }}
+                  >
+                    Delete
+                  </Typography>
+                )}
                 <Typography
                   variant="p"
                   sx={{ margin: "4px", textAlign: "center", width: "40px" }}
@@ -132,6 +142,22 @@ export const EditButtonsAll = ({
                   popoverText={"Save"}
                   onClick={() => onSave(gridArray)}
                 />
+              )}
+              {user.id === ownerID && (
+                <>
+                  <EditButtonsAndPopover
+                    popoverText={"Delete"}
+                    onClick={() => {
+                      setIsDeleteOpen(true);
+                    }}
+                  />
+                  <DeleteProjectModal
+                    open={isDeleteOpen}
+                    setIsOpen={setIsDeleteOpen}
+                    projectID={projectID}
+                    ownerID={ownerID}
+                  />
+                </>
               )}
               <EditButtonsAndPopover
                 popoverText={"Exit"}

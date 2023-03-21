@@ -3,6 +3,7 @@ import { Popover, Typography, IconButton } from "@mui/material";
 import ExitToAppRoundedIcon from "@mui/icons-material/ExitToAppRounded";
 import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
 import SettingsBackupRestoreRoundedIcon from "@mui/icons-material/SettingsBackupRestoreRounded";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { editBarButton, editBarButtonIcon } from "../../assets/theme";
 
 export const EditButtonsAndPopover = ({ popoverText, onClick }) => {
@@ -30,6 +31,9 @@ export const EditButtonsAndPopover = ({ popoverText, onClick }) => {
           <SettingsBackupRestoreRoundedIcon sx={editBarButtonIcon} />
         )}
         {popoverText === "Save" && <SaveRoundedIcon sx={editBarButtonIcon} />}
+        {popoverText === "Delete" && (
+          <DeleteForeverIcon sx={editBarButtonIcon} />
+        )}
         {popoverText === "Exit" && (
           <ExitToAppRoundedIcon sx={editBarButtonIcon} />
         )}
