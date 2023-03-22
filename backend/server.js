@@ -45,6 +45,7 @@ const newProjectHandler = require("./requests/newProject");
 const projectsListHandler = require("./requests/projectsList");
 const viewProjectHandler = require("./requests/viewProject");
 const saveProjectHandler = require("./requests/saveProject");
+const deleteProjectHandler = require("./requests/deleteProject");
 const changeProjectNameHandler = require("./requests/changeProjectName");
 
 app.post("/login", loginHandler);
@@ -59,6 +60,7 @@ app.get(
 );
 app.get("/projects/:id", isAuthenticated, viewProjectHandler);
 app.put("/projects/:id", isAuthenticated, saveProjectHandler);
+app.delete("/projects/:id", isAuthenticated, deleteProjectHandler);
 app.put("/projects/editNames/:id", isAuthenticated, changeProjectNameHandler);
 
 app.listen(3001);
